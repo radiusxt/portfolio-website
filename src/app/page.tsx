@@ -28,7 +28,7 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="l" gap="xl" paddingY="12" horizontal="center">
+    <Column maxWidth="l" gap="xl" paddingY="24" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -43,7 +43,7 @@ export default function Home() {
         }}
       />
       <Column fillWidth horizontal="center" gap="l">
-        <Column maxWidth="m" horizontal="center" align="center">
+        <Column maxWidth="l" horizontal="center" align="center">
           {home.featured.display && (
             <RevealFx
               fillWidth
@@ -66,40 +66,18 @@ export default function Home() {
             </RevealFx>
           )}
           <RevealFx translateY="8" fillWidth horizontal="center" paddingBottom="64">
-            <Heading wrap="balance" variant="display-strong-xl">
+            <Heading wrap="balance" variant="display-default-xl" style={{ lineHeight: "1.1", letterSpacing: "-2px" }}>
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="48">
-            <Text wrap="balance" onBackground="neutral-medium" variant="heading-default-xl">
+          <RevealFx translateY="8" fillWidth horizontal="center" paddingBottom="48">
+            <Text wrap="balance" variant="heading-default-xl" style={{ lineHeight: "1.5" }}>
               {home.subline}
             </Text>
           </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
-            <Button
-              id="about"
-              data-border="rounded"
-              href={about.path}
-              variant="secondary"
-              size="m"
-              weight="default"
-              arrowIcon
-            >
-              <Row gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && (
-                  <Avatar
-                    marginRight="8"
-                    style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
-              </Row>
-            </Button>
-          </RevealFx>
         </Column>
       </Column>
+      {/*
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
@@ -125,6 +103,7 @@ export default function Home() {
       )}
       <Projects range={[2]} />
       <Mailchimp />
+      */}
     </Column>
   );
 }

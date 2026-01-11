@@ -9,7 +9,7 @@ export const Footer = () => {
     <Row as="footer" fillWidth padding="8" horizontal="center" s={{ direction: "column" }}>
       <Row
         className={styles.mobile}
-        maxWidth="m"
+        maxWidth="l"
         paddingY="8"
         paddingX="16"
         gap="16"
@@ -22,11 +22,10 @@ export const Footer = () => {
         }}
       >
         <Text variant="body-default-s" onBackground="neutral-strong">
-          <Text onBackground="neutral-weak">© {currentYear} /</Text>
-          <Text paddingX="4">{person.name}</Text>
+          <Text onBackground="neutral-weak">© {currentYear}. {person.name}. Powered by Vercel. </Text>
           <Text onBackground="neutral-weak">
             {/* Usage of this template requires attribution. Please don't remove the link to Once UI unless you have a Pro license. */}
-            / Built with{" "}
+            Built with{" "}
             <SmartLink href="https://once-ui.com/products/magic-portfolio">Once UI</SmartLink>
           </Text>
         </Text>
@@ -39,7 +38,7 @@ export const Footer = () => {
                   href={item.link}
                   icon={item.icon}
                   tooltip={item.name}
-                  size="s"
+                  size="m"
                   variant="ghost"
                 />
               ),

@@ -4,12 +4,12 @@ import { Line, Row, Text } from "@once-ui-system/core";
 const person: Person = {
   firstName: "Nathaniel",
   lastName: "Chan",
-  name: `Nathaniel`,
-  role: "Software Engineer & Sports Photographer",
+  name: `Nathaniel Chan`,
+  role: "Software Engineer & Photographer",
   avatar: "/images/avatar.jpg",
   email: "nathaniel@outlook.com.au",
   location: "Australia/Brisbane", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English"], // optional: Leave the array empty if you don't want to display languages
+  languages: [], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
@@ -32,6 +32,12 @@ const social: Social = [
     name: "GitHub",
     icon: "github",
     link: "https://github.com/radiusxt",
+    essential: true,
+  },
+  {
+    name: "Pic-Time",
+    icon: "grid",
+    link: "https://hyperdrivemedia.pic-time.com/portfolio",
     essential: true,
   },
   {
@@ -69,35 +75,28 @@ const home: Home = {
   },
   subline:
     <>
-      I'm Nathaniel, a graduate software engineer & sports/wildlife photographer. 
-      After hours, I build my own projects like this website you're viewing now!
+      Hi, I'm Nathaniel, a software engineer & photographer with a passion for building projects like this website you're viewing!
     </>,
 };
 
 const about: About = {
   path: "/about",
   label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  title: `About Me`,
+  description: `${person.name}, ${person.role} based in ${person.location}.`,
   tableOfContent: {
     display: true,
-    subItems: false,
+    subItems: true,
   },
   avatar: {
     display: true,
-  },
-  calendar: {
-    display: true,
-    link: "https://cal.com",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I'm a software engineer and photographer with a passion for building clean, innovative solutions and capturing inspirational images. Through a seamless blend of technical background with creative perspective, I focus on clarity, precision, and impact when writing code and creating images.
       </>
     ),
   },
@@ -106,17 +105,18 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Enable Startup",
+        timeframe: "Nov '24 - Dec '24",
+        role: "Software Engineer Intern",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Implemented facial recognition for an attendance system running on a Raspberry Pi 4 while using 20% less resources than reference solution.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Reduced overall system latency by 15% and maintained {">"}95% uptime.
+          </>,
+          <>
+            Interacted 40+ times by employees for daily attendance & recording lunch breaks.
           </>,
         ],
         images: [
@@ -130,17 +130,21 @@ const about: About = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "ifm efector",
+        timeframe: "Dec '22 - May '23",
+        role: "L2 Sales Support Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Provided support on a variety of industrial grade sensors for several industries.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Discussed with clients to engineer innovative solutions for their applications.
+          </>,
+          <>
+            Improved lead conversion rates by 3.5% through timely communication.
+          </>,
+          <>
+            Reduced average customer waiting times by {">"}15%.
           </>,
         ],
         images: [],
@@ -149,15 +153,11 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "University of Queensland",
+        description: <>Studied software engineering & specialised in machine learning.</>,
       },
     ],
   },
@@ -236,7 +236,7 @@ const blog: Blog = {
 
 const work: Work = {
   path: "/work",
-  label: "Work",
+  label: "Software",
   title: `Projects – ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
@@ -245,10 +245,9 @@ const work: Work = {
 
 const gallery: Gallery = {
   path: "/gallery",
-  label: "Gallery",
+  label: "Photography",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
   // These are placeholder images, replace with your own
   images: [
     {
