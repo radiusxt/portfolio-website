@@ -2,38 +2,52 @@
 
 ## Header Component
 
-- &check; Country/City
-- Home | About, Software, Photography | Light/Dark Mode
-- &check; Time Zone
+- &check; Left: Country/City
+- &check; Centre: Home Icon | About, Software, Photography | Appearance Icon
+- &check; Right: Time Zone
 
 ## Footer Component
 
-- &check; Copyright, Attributions to Vercel & Once UI
-- &check; Email, GitHub, Pic-Time, LinkedIn
+- &check; Left: Copyright, Attributions to Vercel & Once UI
+- &check; Right: Email, GitHub, Pic-Time, LinkedIn
 
 ## 'Home' Page
 
 - &check; Attention grabbing headline and subline.
-- Featured Projects
+- Featured Project
+  - Image
+  - Description
 - Featured Photos
-- Contact form to send emails to me with a title and description.
+  - 2x3 grid of my best photos
+    - A photo can take multiple spaces.
+- Contact form to send an email to me with their email addr, a title and a description.
 
 ## 'About' Page
 
-- Clean headshot of myself
-- First + Last name &check;
-- Occupation &check;
-- Contact Links &check;
-- Experience
-- Education
+- &check; Table of Contents
+- &check; Headshot
+- &check; Location
+- &check; Languages
+- &check; Full Name
+- &check; Occupation
+- &check; Links
+- &check; Description
+- &check; Experience
+- &check; Education
 - Technical Skills
+  - Type (Front-end, Back-end, AI/ML, Data & Infra)
+  - Skill: Description
 
-## 'Work' >> 'Software' Page
+## 'Software' Page
 
-- List of projects.
+- List of Projects
+  - Description
+  - Image (if applicable)
+  - Results
+  - GitHub Repository Link
 
-## 'Gallery' >> 'Photography' Page
+## 'Photography' Page
 
-- Add Hyperdrive Media logo.
-- Integrate my Pic-Time portfolio page.
-- 
+- 'Hyperdrive Media' Logo
+- Description
+- Pic-Time Portfolio

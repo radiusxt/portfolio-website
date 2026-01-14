@@ -9,14 +9,14 @@ const person: Person = {
   avatar: "/images/avatar.jpg",
   email: "nathaniel@outlook.com.au",
   location: "Australia/Brisbane", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: [], // optional: Leave the array empty if you don't want to display languages
+  languages: ["English", "Cantonese"], // optional: Leave the array empty if you don't want to display languages
 };
 
-const newsletter: Newsletter = {
+/*const newsletter: Newsletter = {
   display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
-};
+};*/
 
 const social: Social = [
   // Links are automatically displayed.
@@ -36,7 +36,7 @@ const social: Social = [
   },
   {
     name: "Pic-Time",
-    icon: "grid",
+    icon: "gallery",
     link: "https://hyperdrivemedia.pic-time.com/portfolio",
     essential: true,
   },
@@ -52,15 +52,15 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
+  title: `${person.firstName}'s Portfolio`,
+  description: `Portfolio website showcasing my work and experience as a ${person.role}.`,
   headline:
     <>
       Building software that scales.
       <br />
       Capturing photos that inspire.
     </>,
-  featured: {
+  /*featured: {
     display: false,
     title: (
       <Row gap="12" vertical="center">
@@ -72,7 +72,7 @@ const home: Home = {
       </Row>
     ),
     href: "/work/building-once-ui-a-customizable-design-system",
-  },
+  },*/
   subline:
     <>
       Hi, I'm Nathaniel, a software engineer & photographer with a passion for building projects like this website you're viewing!
@@ -96,13 +96,13 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        I'm a software engineer and photographer with a passion for building clean, innovative solutions and capturing inspirational images. Through a seamless blend of technical background with creative perspective, I focus on clarity, precision, and impact when writing code and creating images.
+        I'm a software engineer and photographer with a passion for building clean, innovative solutions and capturing inspirational images. Through a seamless blend of technical background with creative perspective, I focus on clarity, precision and impact.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Experience",
     experiences: [
       {
         company: "Enable Startup",
@@ -119,15 +119,7 @@ const about: About = {
             Interacted 40+ times by employees for daily attendance & recording lunch breaks.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
         company: "ifm efector",
@@ -149,6 +141,20 @@ const about: About = {
         ],
         images: [],
       },
+      {
+        company: "PTC Phone Tech & Comm",
+        timeframe: "Feb '22 - Nov '22",
+        role: "Sales & Technician Specialist",
+        achievements: [
+          <>
+            Provided excellent customer service & applied knowledge to consumer electronics while increasing store sales by {">"}10% via strategic upselling.
+          </>,
+          <>
+            Repaired phones & tablets for customers in a timely manner.
+          </>,
+        ],
+        images: [],
+      },
     ],
   },
   studies: {
@@ -157,7 +163,15 @@ const about: About = {
     institutions: [
       {
         name: "University of Queensland",
-        description: <>Studied software engineering & specialised in machine learning.</>,
+        timeframe: "Feb '21 - Nov '25",
+        description: [
+          <>
+            Software Engineering
+          </>,
+          <>
+            Machine Learning
+          </>,
+        ],
       },
     ],
   },
@@ -225,19 +239,19 @@ const about: About = {
   },
 };
 
-const blog: Blog = {
+/*const blog: Blog = {
   path: "/blog",
   label: "Blog",
   title: "Writing about design and tech...",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
-};
+};*/
 
 const work: Work = {
   path: "/work",
   label: "Software",
-  title: `Projects – ${person.name}`,
+  title: `Projects`,
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
@@ -293,4 +307,4 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, home, about, work, gallery };

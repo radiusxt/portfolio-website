@@ -15,37 +15,30 @@ export const Footer = () => {
         gap="16"
         horizontal="between"
         vertical="center"
-        s={{
-          direction: "column",
-          horizontal: "center",
-          align: "center",
-        }}
+        s={{ direction: "column", horizontal: "center", align: "center" }}
       >
-        <Text variant="body-default-s" onBackground="neutral-strong">
-          <Text onBackground="neutral-weak">© {currentYear}. {person.name}. Powered by Vercel. </Text>
-          <Text onBackground="neutral-weak">
-            {/* Usage of this template requires attribution. Please don't remove the link to Once UI unless you have a Pro license. */}
-            Built with{" "}
-            <SmartLink href="https://once-ui.com/products/magic-portfolio">Once UI</SmartLink>
+        <Text variant="body-default-s" onBackground="neutral-weak">
+          <Text>© {currentYear}. {person.name}. Powered by Vercel. </Text>
+          <Text>
+            Built with{" "}<SmartLink href="https://once-ui.com/products/magic-portfolio">Once UI</SmartLink>
           </Text>
         </Text>
         <Row gap="16">
-          {social.map(
-            (item) =>
-              item.link && (
-                <IconButton
-                  key={item.name}
-                  href={item.link}
-                  icon={item.icon}
-                  tooltip={item.name}
-                  size="m"
-                  variant="ghost"
-                />
-              ),
+          {social.map((item) =>
+            item.link && (
+              <IconButton
+                key={item.name}
+                href={item.link}
+                icon={item.icon}
+                tooltip={item.name}
+                size="m"
+                variant="ghost"
+              />
+            ),
           )}
         </Row>
       </Row>
-      <Row height="80" hide s={{ hide: false }} />
+      <Row height="80" hide s={{ hide: true }} />
     </Row>
   );
 };

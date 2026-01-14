@@ -12,9 +12,8 @@ import {
   Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
+import { ContactForm } from "@/components/ContactForm";
 import { Projects } from "@/components/work/Projects";
-import { Posts } from "@/components/blog/Posts";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -44,7 +43,7 @@ export default function Home() {
       />
       <Column fillWidth horizontal="center" gap="l">
         <Column maxWidth="l" horizontal="center" align="center">
-          {home.featured.display && (
+          {/*home.featured.display && (
             <RevealFx
               fillWidth
               horizontal="center"
@@ -64,24 +63,23 @@ export default function Home() {
                 <Row paddingY="2">{home.featured.title}</Row>
               </Badge>
             </RevealFx>
-          )}
-          <RevealFx translateY="8" fillWidth horizontal="center" paddingBottom="64">
-            <Heading wrap="balance" variant="display-default-xl" style={{ lineHeight: "1.1", letterSpacing: "-2px" }}>
+          )*/}
+          <RevealFx translateY="8" fillWidth horizontal="center" paddingBottom="128">
+            <Heading wrap="balance" variant="display-default-xl" style={{ lineHeight: "1.2", letterSpacing: "-2px" }}>
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="8" fillWidth horizontal="center" paddingBottom="48">
+          <RevealFx translateY="8" fillWidth horizontal="center" paddingBottom="64">
             <Text wrap="balance" variant="heading-default-xl" style={{ lineHeight: "1.5" }}>
               {home.subline}
             </Text>
           </RevealFx>
         </Column>
       </Column>
-      {/*
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
-      {routes["/blog"] && (
+      {/*routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">
           <Row fillWidth paddingRight="64">
             <Line maxWidth={48} />
@@ -102,8 +100,10 @@ export default function Home() {
         </Column>
       )}
       <Projects range={[2]} />
-      <Mailchimp />
       */}
+      <Column fillWidth horizontal="center" gap="l">
+        <ContactForm />
+      </Column>
     </Column>
   );
 }

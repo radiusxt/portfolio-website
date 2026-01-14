@@ -18,7 +18,7 @@ interface TableOfContentsProps {
   };
 }
 
-const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) => {
+export const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) => {
   const scrollTo = (id: string, offset: number) => {
     const element = document.getElementById(id);
     if (element) {
@@ -37,15 +37,11 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
   return (
     <Column
       left="0"
-      style={{
-        top: "50%",
-        transform: "translateY(-50%)",
-        whiteSpace: "nowrap",
-      }}
       position="fixed"
-      paddingLeft="24"
+      paddingLeft="20"
       gap="32"
       m={{ hide: true }}
+      style={{ top: "50%", transform: "translateY(-50%)", whiteSpace: "nowrap" }}
     >
       {structure
         .filter((section) => section.display)
@@ -58,32 +54,11 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
               vertical="center"
               onClick={() => scrollTo(section.title, 80)}
             >
-              <Flex height="1" minWidth="16" background="neutral-strong"></Flex>
-              <Text>{section.title}</Text>
+              <Flex height="2" minWidth="20" background="brand-strong"></Flex>
+              <Text variant="body-default-xl">{section.title}</Text>
             </Flex>
-            {about.tableOfContent.subItems && (
-              <>
-                {section.items.map((item, itemIndex) => (
-                  <Flex
-                    l={{ hide: true }}
-                    key={itemIndex}
-                    style={{ cursor: "pointer" }}
-                    className={styles.hover}
-                    gap="12"
-                    paddingLeft="24"
-                    vertical="center"
-                    onClick={() => scrollTo(item, 80)}
-                  >
-                    <Flex height="1" minWidth="8" background="neutral-strong"></Flex>
-                    <Text>{item}</Text>
-                  </Flex>
-                ))}
-              </>
-            )}
           </Column>
         ))}
     </Column>
   );
 };
-
-export default TableOfContents;

@@ -94,11 +94,11 @@ export interface Home extends BasePageConfig {
   /** The headline of the home page */
   headline: React.ReactNode;
   /** Featured badge, which appears above the headline */
-  featured: {
+  /*featured: {
     display: boolean;
     title: React.ReactNode;
     href: string;
-  };
+  };*/
   /** The sub text which appears below the headline */
   subline: React.ReactNode;
 }
@@ -169,8 +169,10 @@ export interface About extends BasePageConfig {
     institutions: Array<{
       /** Institution name */
       name: string;
+      /** Timeframe at institution */
+      timeframe: string;
       /** Description of studies */
-      description: React.ReactNode;
+      description: React.ReactNode[];
     }>;
   };
   /** Technical skills section */

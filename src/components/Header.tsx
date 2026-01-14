@@ -5,13 +5,13 @@ import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, person, about, blog, work, gallery } from "@/resources";
+import { routes, display, person, about, work, gallery } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
 type TimeDisplayProps = {
   timeZone: string;
-  locale?: string; // Optionally allow locale, defaulting to 'en-GB'
+  locale?: string;
 };
 
 const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
@@ -72,7 +72,7 @@ export const Header = () => {
           position: "fixed",
         }}
       >
-        <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
+        <Row paddingLeft="16" fillWidth vertical="center" textVariant="body-default-m" style={{ letterSpacing: "0.01em" }}>
           {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
         </Row>
         <Row fillWidth horizontal="center">
@@ -87,9 +87,9 @@ export const Header = () => {
           >
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+                <ToggleButton prefixIcon="home" href="/" size="l" selected={pathname === "/"} />
               )}
-              <Line background="neutral-alpha-medium" vert maxHeight="24" />
+              <Line background="neutral-alpha-strong" vert maxHeight="24" />
               {routes["/about"] && (
                 <>
                   <Row s={{ hide: true }}>
@@ -97,6 +97,7 @@ export const Header = () => {
                       prefixIcon="person"
                       href="/about"
                       label={about.label}
+                      size="l"
                       selected={pathname === "/about"}
                     />
                   </Row>
@@ -104,6 +105,7 @@ export const Header = () => {
                     <ToggleButton
                       prefixIcon="person"
                       href="/about"
+                      size="l"
                       selected={pathname === "/about"}
                     />
                   </Row>
@@ -113,36 +115,19 @@ export const Header = () => {
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
-                      prefixIcon="grid"
+                      prefixIcon="code"
                       href="/work"
                       label={work.label}
+                      size="l"
                       selected={pathname.startsWith("/work")}
                     />
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
-                      prefixIcon="grid"
+                      prefixIcon="code"
                       href="/work"
+                      size="l"
                       selected={pathname.startsWith("/work")}
-                    />
-                  </Row>
-                </>
-              )}
-              {routes["/blog"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="book"
-                      href="/blog"
-                      label={blog.label}
-                      selected={pathname.startsWith("/blog")}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="book"
-                      href="/blog"
-                      selected={pathname.startsWith("/blog")}
                     />
                   </Row>
                 </>
@@ -154,6 +139,7 @@ export const Header = () => {
                       prefixIcon="gallery"
                       href="/gallery"
                       label={gallery.label}
+                      size="l"
                       selected={pathname.startsWith("/gallery")}
                     />
                   </Row>
@@ -161,6 +147,7 @@ export const Header = () => {
                     <ToggleButton
                       prefixIcon="gallery"
                       href="/gallery"
+                      size="l"
                       selected={pathname.startsWith("/gallery")}
                     />
                   </Row>
@@ -168,7 +155,7 @@ export const Header = () => {
               )}
               {display.themeSwitcher && (
                 <>
-                  <Line background="neutral-alpha-medium" vert maxHeight="24" />
+                  <Line background="neutral-alpha-strong" vert maxHeight="24" />
                   <ThemeToggle />
                 </>
               )}
@@ -177,13 +164,14 @@ export const Header = () => {
         </Row>
         <Flex fillWidth horizontal="end" vertical="center">
           <Flex
-            paddingRight="12"
+            paddingRight="16"
             horizontal="end"
             vertical="center"
-            textVariant="body-default-s"
+            textVariant="body-default-m"
             gap="20"
+            style={{ letterSpacing: "0.01em" }}
           >
-            <Flex s={{ hide: true }}>
+            <Flex s={{ hide: true }} >
               {display.time && <TimeDisplay timeZone={person.location} />}
             </Flex>
           </Flex>

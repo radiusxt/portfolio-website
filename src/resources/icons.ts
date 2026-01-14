@@ -1,4 +1,5 @@
 import { IconType } from "react-icons";
+import { FaCode } from "react-icons/fa";
 
 import {
   HiArrowUpRight,
@@ -46,6 +47,7 @@ export const iconLibrary: Record<string, IconType> = {
   discord: FaDiscord,
   eye: HiOutlineEye,
   eyeOff: HiOutlineEyeSlash,
+  code: FaCode,
   github: FaGithub,
   linkedin: FaLinkedin,
   x: FaX,
