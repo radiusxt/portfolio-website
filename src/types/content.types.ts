@@ -192,17 +192,6 @@ export interface About extends BasePageConfig {
         name: string;
         icon?: string;
       }>;
-      /** Images related to the skill */
-      images?: Array<{
-        /** Image source path */
-        src: string;
-        /** Image alt text */
-        alt: string;
-        /** Image width ratio */
-        width: number;
-        /** Image height ratio */
-        height: number;
-      }>;
     }>;
   };
 }

@@ -12,8 +12,9 @@ import {
   Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import { ContactForm } from "@/components/ContactForm";
 import { Projects } from "@/components/work/Projects";
+import GalleryView from "@/components/gallery/GalleryView";
+import { ContactForm } from "@/components/ContactForm";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -69,38 +70,19 @@ export default function Home() {
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="8" fillWidth horizontal="center" paddingBottom="64">
+          <RevealFx translateY="8" fillWidth horizontal="center" paddingBottom="64" delay={0.4}>
             <Text wrap="balance" variant="heading-default-xl" style={{ lineHeight: "1.5" }}>
               {home.subline}
             </Text>
           </RevealFx>
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.6}>
+      <RevealFx translateY="16" delay={0.8}>
         <Projects range={[1, 1]} />
       </RevealFx>
-      {/*routes["/blog"] && (
-        <Column fillWidth gap="24" marginBottom="l">
-          <Row fillWidth paddingRight="64">
-            <Line maxWidth={48} />
-          </Row>
-          <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
-            <Row flex={1} paddingLeft="l" paddingTop="24">
-              <Heading as="h2" variant="display-strong-xs" wrap="balance">
-                Latest from the blog
-              </Heading>
-            </Row>
-            <Row flex={3} paddingX="20">
-              <Posts range={[1, 2]} columns="2" />
-            </Row>
-          </Row>
-          <Row fillWidth paddingLeft="64" horizontal="end">
-            <Line maxWidth={48} />
-          </Row>
-        </Column>
-      )}
-      <Projects range={[2]} />
-      */}
+      <RevealFx translateY="16" delay={1.2} horizontal="center">
+        Watch this space. {/*Featured Photos go in here.*/}
+      </RevealFx>
       <Column fillWidth horizontal="center" gap="l">
         <ContactForm />
       </Column>
