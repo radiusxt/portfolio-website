@@ -1,31 +1,37 @@
 # Design Document for Portfolio Website
 
-## Header Component
+## General Design Features
+
+- &check; Clicking a header component will scroll to the top and page transition if a different page is selected.
+- Custom Colour Theme
+- &check; Favicon
+
+## Header
 
 - &check; Left: Country/City
-- &check; Centre: Home Icon | About, Software, Photography | Appearance Icon
-- &check; Right: Time Zone
+- &check; Centre: {Home} | {Person} About, {Code} Software, {Image} Photography | {Sun/Moon} Appearance
+- &check; Right: Time in 'Country/City' Timezone
 
-## Footer Component
+## Footer
 
 - &check; Left: Copyright, Attributions to Vercel & Once UI
 - &check; Right: Email, GitHub, Pic-Time, LinkedIn
 
 ## 'Home' Page
 
-- &check; Attention grabbing headline and subline.
+- &check; Attention grabbing headline and subline
 - Featured Project
   - Image
   - Description
 - Featured Photos
-  - 2x3 grid of my best photos
-    - A photo can take multiple spaces.
-- Contact form to send an email to me with their email addr, a title and a description.
+  - Grid of my best photos
+- Contact form to send emails with name, email address and message
+  - Error checking (syntax, semantics)
 
 ## 'About' Page
 
-- &check; Table of Contents
-- &check; Headshot
+- &check; Contents Sidebar
+- Headshot
 - &check; Location
 - &check; Languages
 - &check; Full Name
@@ -34,15 +40,17 @@
 - &check; Description
 - &check; Experience
 - &check; Education
+  - &check; Degree
+  - &check; Areas of Expertise
 - Technical Skills
-  - Type (Front-end, Back-end, AI/ML, Data & Infra)
-  - Skill: Description
+  - Type (Front-end, Back-end, AI/ML, Data, Infra/DevOps)
+  - [Language/Framework/Dev Tool] Description
 
 ## 'Software' Page
 
 - List of Projects
   - Description
-  - Image (if applicable)
+  - Image
   - Results
   - GitHub Repository Link
 

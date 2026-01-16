@@ -1,5 +1,5 @@
 import { About, Gallery, Home, Person, Social, Work } from "@/types";
-import { Line, Row, Text } from "@once-ui-system/core";
+import { Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
   firstName: "Nathaniel",
@@ -8,20 +8,11 @@ const person: Person = {
   role: "Software Engineer & Photographer",
   avatar: "/images/avatar.jpg",
   email: "nathaniel@outlook.com.au",
-  location: "Australia/Brisbane", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Cantonese"], // optional: Leave the array empty if you don't want to display languages
+  location: "Australia/Brisbane",
+  languages: ["English", "Cantonese"],
 };
 
-/*const newsletter: Newsletter = {
-  display: false,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
-};*/
-
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "Email",
     icon: "email",
@@ -52,27 +43,25 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.firstName}'s Portfolio`,
-  description: `Portfolio website showcasing my work and experience as a ${person.role}.`,
+  title: `Hyperdrive Media`,
+  description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}.`,
   headline:
     <>
       Building software that scales.
       <br />
       Capturing photos that inspire.
     </>,
-  /*featured: {
-    display: false,
+  featured: {
+    display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
+        <Text onBackground="brand-medium" variant="body-default-xl">
           Featured Work
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
-  },*/
+    href: "",
+  },
   subline:
     <>
       Hi, I'm Nathaniel, a software engineer & photographer with a passion for building projects like this website you're viewing!
@@ -83,7 +72,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About Me`,
-  description: `${person.name}, ${person.role} based in ${person.location}.`,
+  description: `${person.name}, a ${person.role.toLowerCase} based in ${person.location}.`,
   tableOfContent: {
     display: true,
     subItems: true,
@@ -96,12 +85,12 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        I'm a software engineer and photographer with a passion for building clean, innovative solutions and capturing inspirational images. Through a seamless blend of technical background with creative perspective, I focus on clarity, precision and impact.
+        I'm a software engineer and photographer with a passion for building clean, innovative solutions & capturing inspirational images. Through a seamless blend of technical background with creative perspective, I focus on clarity, precision & impact.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Experience",
     experiences: [
       {
@@ -158,12 +147,13 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Education",
     institutions: [
       {
         name: "University of Queensland",
         timeframe: "Feb '21 - Nov '25",
+        degree: "Bachelor of Engineering (Honours)",
         description: [
           <>
             Software Engineering
@@ -176,8 +166,8 @@ const about: About = {
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Technical Skills",
     skills: [
       {
         title: "Front-End Development",
@@ -202,6 +192,10 @@ const about: About = {
         ),
         tags: [
           {
+            name: "Python",
+            icon: "python",
+          },
+          {
             name: "JavaScript",
             icon: "javascript",
           },
@@ -214,8 +208,8 @@ const about: About = {
             icon: "nextjs",
           },
           {
-            name: "Once UI",
-            icon: "onceui",
+            name: "Java",
+            icon: "java",
           },
         ],
       },
@@ -227,7 +221,7 @@ const work: Work = {
   path: "/work",
   label: "Software",
   title: `Projects`,
-  description: `Design and dev projects by ${person.name}`,
+  description: `Design and development projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/work/projects
   // Top project will appear in /home
 };
@@ -235,9 +229,8 @@ const work: Work = {
 const gallery: Gallery = {
   path: "/gallery",
   label: "Photography",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // These are placeholder images, replace with your own
+  title: `Portfolio`,
+  description: `Photo galleries by ${person.name}`,
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",

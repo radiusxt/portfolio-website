@@ -10,6 +10,7 @@ import {
   Meta,
   Schema,
   Row,
+  LetterFx,
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import { TableOfContents } from "@/components/about/TableOfContents";
@@ -92,7 +93,7 @@ export default function About() {
             flex={3}
             horizontal="center"
           >
-            <Avatar src={person.avatar} size={18} />
+            <Avatar src={person.avatar} size={15} />
             <Row gap="8" vertical="center">
               <Icon onBackground="brand-weak" size="l" name="globe" />
               <Text variant="body-default-xl">{person.location}</Text>
@@ -101,7 +102,7 @@ export default function About() {
               <Row wrap gap="12">
                 {person.languages.map((language, index) => (
                   <Tag variant="accent" key={index} size="l">
-                    {language}
+                    <Text variant="label-default-l">{language}</Text>
                   </Tag>
                 ))}
               </Row>
@@ -119,11 +120,7 @@ export default function About() {
             <Heading className={styles.textAlign} variant="display-default-xl" paddingBottom="16" style={{ letterSpacing: "-1px" }}>
               {person.name}
             </Heading>
-            <Text
-              className={styles.textAlign}
-              variant="display-default-s"
-              onBackground="neutral-weak"
-            >
+            <Text className={styles.textAlign} variant="display-default-s" onBackground="neutral-weak">
               {person.role}
             </Text>
             {social.length > 0 && (
@@ -171,7 +168,9 @@ export default function About() {
           </Column>
           {about.intro.display && (
             <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="l" style={{ lineHeight: "1.5"}}>
-              {about.intro.description}
+              <LetterFx speed="fast" trigger="instant" charset={"~!@#$%^&*()-=+[]{}\|;:'<>/?".split("")}>
+                {about.intro.description}
+              </LetterFx>
             </Column>
           )}
           {about.work.display && (
@@ -218,8 +217,8 @@ export default function About() {
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
                 {about.studies.institutions.map((institution, index) => (
-                  <Column key={`${institution.name}-${index}`} fillWidth gap="8">
-                    <Row fillWidth horizontal="between" vertical="center" marginBottom="8">
+                  <Column key={`${institution.name}-${index}`} fillWidth>
+                    <Row fillWidth horizontal="between" vertical="center" marginBottom="4">
                       <Text id={institution.name} variant="heading-strong-xl">
                         {institution.name}
                       </Text>
@@ -227,6 +226,9 @@ export default function About() {
                         {institution.timeframe}
                       </Text>
                     </Row>
+                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
+                      {institution.degree}
+                    </Text>
                     <Column as="ul" gap="16">
                       {institution.description.map((line: React.ReactNode, lineIndex: number) => (
                         <Text
@@ -246,32 +248,29 @@ export default function About() {
           )}
           {about.technical.display && (
             <>
-              <Heading
-                as="h2"
-                id={about.technical.title}
-                variant="display-strong-s"
-                marginBottom="m"
-              >
+              <Heading as="h2" id={about.technical.title} variant="display-strong-s" marginBottom="m">
                 {about.technical.title}
               </Heading>
               <Column fillWidth gap="l">
                 {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="8">
+                  <Column key={`${skill.title}-${index}`} fillWidth gap="m">
                     <Text id={skill.title} variant="heading-strong-xl" marginBottom="8">
                       {skill.title}
                     </Text>
-                    <Text variant="body-default-l" onBackground="neutral-strong">
-                      {skill.description}
-                    </Text>
-                    {skill.tags && skill.tags.length > 0 && (
-                      <Row wrap gap="12" paddingTop="8">
-                        {skill.tags.map((tag, tagIndex) => (
-                          <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon} gap="8">
-                            {tag.name}
+                    <Column fillWidth gap="8">
+                      {skill.tags?.map((tag, tagIndex) => (
+                        <Row key={`${skill.title}-${tagIndex}`} fillWidth vertical="center" gap="16">
+                          <Tag key={index} prefixIcon={tag.icon} size="l" gap="8">
+                            <Text variant="label-default-m">{tag.name}</Text>
                           </Tag>
-                        ))}
-                      </Row>
-                    )}
+                          <Column>
+                            <Text variant="label-default-m" onBackground="neutral-strong">
+                              {"placeholder"}
+                            </Text>
+                          </Column>
+                        </Row>
+                      ))}
+                    </Column>
                   </Column>
                 ))}
               </Column>

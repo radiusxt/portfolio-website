@@ -1,7 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { ReactNode, useEffect } from "react";
+
+export function Scroll({ children }: { children: ReactNode }) {
+  const handleClick = () => {
+    document
+      .getElementById("featured_project")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  return <div onClick={handleClick} style={{ cursor: "pointer" }}>{children}</div>;
+}
 
 export function ScrollToHash() {
   const router = useRouter();

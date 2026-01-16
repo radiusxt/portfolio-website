@@ -3,9 +3,8 @@ import { zones } from "tzdata";
 
 /**
  * IANA time zone string (e.g., 'Asia/Calcutta', 'Europe/Vienna').
- * See: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
  */
-export type IANATimeZone = Extract<keyof typeof zones, string>; // Narrow to string keys for React usage
+export type IANATimeZone = Extract<keyof typeof zones, string>;
 
 /**
  * Represents a person featured in the portfolio.
@@ -94,11 +93,11 @@ export interface Home extends BasePageConfig {
   /** The headline of the home page */
   headline: React.ReactNode;
   /** Featured badge, which appears above the headline */
-  /*featured: {
+  featured: {
     display: boolean;
     title: React.ReactNode;
     href: string;
-  };*/
+  };
   /** The sub text which appears below the headline */
   subline: React.ReactNode;
 }
@@ -171,6 +170,8 @@ export interface About extends BasePageConfig {
       name: string;
       /** Timeframe at institution */
       timeframe: string;
+      /** Degree name */
+      degree: string;
       /** Description of studies */
       description: React.ReactNode[];
     }>;
@@ -195,12 +196,6 @@ export interface About extends BasePageConfig {
     }>;
   };
 }
-
-/**
- * Blog page configuration.
- * @description Configuration for the Blog page, including metadata and navigation label.
- */
-export interface Blog extends BasePageConfig {}
 
 /**
  * Work/projects page configuration.

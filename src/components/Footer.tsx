@@ -17,11 +17,12 @@ export const Footer = () => {
         vertical="center"
         s={{ direction: "column", horizontal: "center", align: "center" }}
       >
-        <Text variant="body-default-s" onBackground="neutral-weak">
-          <Text>© {currentYear}. {person.name}. Powered by Vercel. </Text>
-          <Text>
-            Built with{" "}<SmartLink href="https://once-ui.com/products/magic-portfolio">Once UI</SmartLink>
-          </Text>
+        <Text variant="body-default-s" onBackground="neutral-weak" style={{ letterSpacing: "0.2px"}}>
+          © {currentYear}. {person.name}. Built with
+          <SmartLink href="https://once-ui.com/products/magic-portfolio">Once UI</SmartLink>
+          . Powered by
+          <SmartLink href="https://vercel.com/">Vercel</SmartLink>
+          .
         </Text>
         <Row gap="16">
           {social.map((item) =>
