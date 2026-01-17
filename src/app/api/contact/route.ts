@@ -1,16 +1,34 @@
 import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
-    try {
-        const { name, email, description } = await req.json();
+  if (!process.env.RESEND_API_KEY) {
+    return NextResponse.json({ message: "Missing API key" }, { status: 500 });
+  }
 
-        // Log to console for testing
-        console.log("User Request:", { name, email, description });
+  try {
+    const { name, email, description } = await req.json();
 
-        // NOTE: Integrate Resend or SendGrid here
-        
-        return NextResponse.json({ message: "Success" }, { status: 200 });
-    } catch (error) {
-        return NextResponse.json({ message: "Error" }, { status: 500 });
+    if (!name || !email || !description) {
+      return NextResponse.json({ message: "All fields are required" }, { status: 400 });
     }
+
+    const { data, error } = await resend.emails.send({
+      from: 'Hyperdrive Media <hello@hyperdrivemedia.co>', 
+      to: ['nathaniel@outlook.com.au'],
+      replyTo: email,
+      subject: `New Message from ${name}`,
+      text: `Name: ${name}\n\nEmail: ${email}\n\nMessage:\n\n${description}`,
+    });
+
+    if (error) {
+      return NextResponse.json({ message: error }, { status: 400 });
+    }
+    
+    return NextResponse.json({ message: "Email Successfully Sent" }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json({ message: "Internal Server Error" }, { status: 500 });
+  }
 }

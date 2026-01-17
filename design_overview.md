@@ -3,7 +3,7 @@
 ## General Design Features &check;
 
 - &check; Clicking a header component will scroll to the top and page transition if a different page is selected.
-- &check; 'Matrix Background' Theme
+- &check; Dot Matrix Background Theme
 - &check; Favicon
 
 ## Header &check;
@@ -20,13 +20,15 @@
 ## 'Home' Page
 
 - &check; Attention grabbing headline and subline
+- &check; Staggered Animation Timings
 - Featured Project
   - Image
   - Description
 - Featured Photos
   - Grid of my best photos
-- Contact form to send emails with name, email address and message
+- &check; Contact form to send emails with name, email address and message
   - &check; Semantic Error Checking
+  - Email Existence Check
 
 ## 'About' Page
 
@@ -57,5 +59,8 @@
 ## 'Photography' Page
 
 - 'Hyperdrive Media' Logo
+  - Subtle Glowing Effect
+  - Dark/Light Mode Switch
 - Description
-- Pic-Time Portfolio
+- Featured Images with GalleryView Component
+- Pic-Time Portfolio Website Integration

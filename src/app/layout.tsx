@@ -113,7 +113,7 @@ export default async function RootLayout({
           padding="0"
           horizontal="center"
         >
-          <div style={{
+          <Flex style={{
             position: "absolute",
             inset: 0,
             height: "100%",
@@ -129,6 +129,7 @@ export default async function RootLayout({
                 spacing={6}
                 size={2.5}
                 flicker
+                revealFrom="top"
                 colors={[
                   "brand-on-background-medium", "accent-on-background-medium", "neutral-on-background-strong"
                 ]}
@@ -175,7 +176,7 @@ export default async function RootLayout({
                 />
               </MatrixFx>
             </RevealFx>
-          </div>
+          </Flex>
           <Flex fillWidth minHeight="8" s={{ hide: true }} />
           <Header />
           <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>

@@ -12,8 +12,8 @@ export function GalleryView() {
           priority={index < 10}
           sizes="(max-width: 560px) 100vw, 50vw"
           key={index}
-          radius="m"
-          aspectRatio={image.orientation === "horizontal" ? "16 / 9" : "3 / 4"}
+          radius="l"
+          aspectRatio={image.orientation === "horizontal" ? "3 / 2" : "2 / 3"}
           src={image.src}
           alt={image.alt}
         />

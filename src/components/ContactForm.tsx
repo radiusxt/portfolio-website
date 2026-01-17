@@ -1,25 +1,28 @@
 "use client";
 
+import {
+  Flex,
+  Button,
+  Input,
+  Textarea,
+  Heading,
+  Text,
+  Column,
+  IconButton,
+  ShineFx
+} from "@once-ui-system/core";
 import React, { useState } from "react";
-import { Flex, Button, Input, Textarea, Heading, Text, Column, IconButton, ShineFx } from "@once-ui-system/core";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({name: "", email: "", description: ""});
-  const [touched, setTouched] = useState({email: false});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const MAX_LENGTH: number = 500
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ 
-      ...prev, 
-      [name]: value
-    }));
-  };
-
-  const handleTouch = (e: React.FocusEvent<HTMLInputElement>) => {
-    setTouched(prev => ({
       ...prev,
-      [e.target.name]: true
+      [name]: value
     }));
   };
 
@@ -27,12 +30,14 @@ export const ContactForm = () => {
     setFormData(prev => ({ ...prev, [field]: "" }));
   };
 
+  const handleEmail = formData.email.length > 0 && 
+    !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.email.includes("@")) {
-      return setStatus("error"); 
-    }
+    if (status === "loading") return;
+    if (!formData.email.includes("@")) return setStatus("error"); 
 
     setStatus("loading");
 
@@ -67,19 +72,17 @@ export const ContactForm = () => {
             id="name"
             name="name"
             value={formData.name}
-            required
             onChange={handleChange}
-            hasSuffix={
-              formData.name.length > 0 ? (
-                <IconButton 
-                  variant="ghost" 
-                  icon="close" 
-                  size="s" 
-                  onClick={() => handleClear("name")}
-                  aria-label="Clear"
-                />
-              ) : null
-            }
+            required
+            hasSuffix={formData.name.length > 0 && (
+              <IconButton 
+                variant="ghost" 
+                icon="close" 
+                size="s" 
+                onClick={() => handleClear("name")}
+                aria-label="Clear"
+              />
+            )}
           />
           <Input
             label="Email*"
@@ -87,27 +90,29 @@ export const ContactForm = () => {
             name="email"
             type="email"
             value={formData.email}
-            required
             onChange={handleChange}
-            onBlur={handleTouch}
-            error={touched.email && (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email))}
-            hasSuffix={
-              formData.email.length > 0 ? (
-                <IconButton 
-                  variant="ghost" 
-                  icon="close" 
-                  size="s" 
-                  onClick={() => handleClear("email")}
-                  aria-label="Clear"
-                />
-              ) : null
-            }
+            error={handleEmail}
+            required
+            hasSuffix={formData.email.length > 0 && (
+              <IconButton 
+                variant="ghost" 
+                icon="close" 
+                size="s" 
+                onClick={() => handleClear("email")}
+                aria-label="Clear"
+              />
+            )}
           />
           <Textarea
             label="Message*"
             id="description"
+            name="description"
             value={formData.description}
-            onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+            lines={12}
+            onChange={handleChange}
+            maxLength={MAX_LENGTH}
+            resize="none"
+            characterCount
             required
           />
           <Button 
@@ -121,8 +126,13 @@ export const ContactForm = () => {
             </ShineFx>
           </Button>
           {status === "success" && (
-            <Text variant="heading-default-s" align="center" onBackground="success-strong" marginTop="4">
+            <Text variant="heading-default-s" align="center" color="success-strong" marginTop="4">
               Message Received! I will get in touch with you shortly.
+            </Text>
+          )}
+          {status === "error" && (
+            <Text variant="body-default-s" align="center" color="danger-strong" marginTop="4">
+              Something went wrong. Please try again.
             </Text>
           )}
         </Flex>

@@ -272,7 +272,7 @@ const work: Work = {
   path: "/work",
   label: "Software",
   title: `Projects`,
-  description: `Design and development projects by ${person.name}`,
+  description: `Software development projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/work/projects
   // Top project will appear in /home
 };
