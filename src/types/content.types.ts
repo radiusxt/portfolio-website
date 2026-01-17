@@ -29,19 +29,6 @@ export type Person = {
 };
 
 /**
- * Newsletter Section
- * @description The below information will be displayed on the Home page in Newsletter block
- */
-export type Newsletter = {
-  /** Whether to display the newsletter section */
-  display: boolean;
-  /** Title of the newsletter   */
-  title: React.ReactNode;
-  /** Description of the newsletter */
-  description: React.ReactNode;
-};
-
-/**
  * Social link configuration.
  */
 export type Social = Array<{
@@ -127,7 +114,7 @@ export interface About extends BasePageConfig {
     /** Title of the introduction section */
     title: string;
     /** Description of the introduction section */
-    description: React.ReactNode;
+    description: string;
   };
   /** Work experience section */
   work: {
@@ -190,7 +177,11 @@ export interface About extends BasePageConfig {
       description?: React.ReactNode;
       /** Skill tags */
       tags?: Array<{
+        /** Skill name */
         name: string;
+        /** Skill description */
+        description: string;
+        /** Skill icon */
         icon?: string;
       }>;
     }>;

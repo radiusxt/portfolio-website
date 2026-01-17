@@ -1,5 +1,6 @@
 import { IconType } from "react-icons";
 import { FaCode } from "react-icons/fa";
+import { VscVscode } from "react-icons/vsc";
 
 import {
   HiArrowUpRight,
@@ -42,6 +43,7 @@ import {
   SiPytorch,
   SiReact,
   SiJupyter,
+  SiAnaconda,
 } from "react-icons/si";
 
 import {
@@ -76,6 +78,7 @@ export const iconLibrary: Record<string, IconType> = {
   eye: HiOutlineEye,
   eyeOff: HiOutlineEyeSlash,
   code: FaCode,
+  vscode: VscVscode,
   github: FaGithub,
   linkedin: FaLinkedin,
   x: FaX,
@@ -103,6 +106,7 @@ export const iconLibrary: Record<string, IconType> = {
   pytorch: SiPytorch,
   react: SiReact,
   jupyter: SiJupyter,
+  conda: SiAnaconda,
   facebook: FaFacebook,
   pinterest: FaPinterest,
   whatsapp: FaWhatsapp,

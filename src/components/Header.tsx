@@ -71,7 +71,7 @@ export const Header = () => {
         data-border="rounded"
         s={{ position: "fixed" }}
       >
-        <Row paddingLeft="16" fillWidth vertical="center" textVariant="body-default-l" style={{ letterSpacing: "0.01em" }}>
+        <Row paddingLeft="16" fillWidth vertical="center" textVariant="label-default-m" style={{ letterSpacing: "0.01em" }}>
           {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
         </Row>
         <Row fillWidth horizontal="center">
@@ -178,7 +178,7 @@ export const Header = () => {
             paddingRight="16"
             horizontal="end"
             vertical="center"
-            textVariant="code-default-xl"
+            textVariant="code-default-m"
             gap="20"
           >
             <Flex s={{ hide: true }} >

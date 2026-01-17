@@ -10,7 +10,7 @@ import {
   Meta,
   Schema,
   Row,
-  LetterFx,
+  TypeFx,
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import { TableOfContents } from "@/components/about/TableOfContents";
@@ -101,7 +101,7 @@ export default function About() {
             {person.languages && person.languages.length > 0 && (
               <Row wrap gap="12">
                 {person.languages.map((language, index) => (
-                  <Tag variant="accent" key={index} size="l">
+                  <Tag variant="brand" key={index} size="l">
                     <Text variant="label-default-l">{language}</Text>
                   </Tag>
                 ))}
@@ -109,7 +109,7 @@ export default function About() {
             )}
           </Column>
         )}
-        <Column className={styles.blockAlign} flex={9} maxWidth={40}>
+        <Column className={styles.blockAlign} flex={9} maxWidth={60}>
           <Column
             id={about.intro.title}
             fillWidth
@@ -120,23 +120,20 @@ export default function About() {
             <Heading className={styles.textAlign} variant="display-default-xl" paddingBottom="16" style={{ letterSpacing: "-1px" }}>
               {person.name}
             </Heading>
-            <Text className={styles.textAlign} variant="display-default-s" onBackground="neutral-weak">
+            <Text className={styles.textAlign} variant="display-default-s">
               {person.role}
             </Text>
             {social.length > 0 && (
               <Row
                 className={styles.blockAlign}
-                paddingTop="20"
-                gap="8"
-                wrap
-                horizontal="center"
-                fitWidth
                 data-border="rounded"
+                horizontal="center"
+                paddingTop="20"
+                gap="12"
+                wrap
+                fitWidth
               >
-                {social
-                      .filter((item) => item.essential)
-                      .map(
-                  (item) =>
+                {social.filter((item) => item.essential).map((item) =>
                     item.link && (
                       <React.Fragment key={item.name}>
                         <Row s={{ hide: true }}>
@@ -147,7 +144,7 @@ export default function About() {
                             label={item.name}
                             size="m"
                             weight="default"
-                            variant="secondary"
+                            variant="primary"
                             style={{ gap: "8px", letterSpacing: "0.2px" }}
                           />
                         </Row>
@@ -157,7 +154,7 @@ export default function About() {
                             key={`${item.name}-icon`}
                             href={item.link}
                             icon={item.icon}
-                            variant="secondary"
+                            variant="primary"
                           />
                         </Row>
                       </React.Fragment>
@@ -167,10 +164,8 @@ export default function About() {
             )}
           </Column>
           {about.intro.display && (
-            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="l" style={{ lineHeight: "1.5"}}>
-              <LetterFx speed="fast" trigger="instant" charset={"~!@#$%^&*()-=+[]{}\|;:'<>/?".split("")}>
-                {about.intro.description}
-              </LetterFx>
+            <Column textVariant="body-default-xl" fillWidth gap="m" align="justify" marginBottom="l" style={{ lineHeight: "1.5"}}>
+              <TypeFx words={about.intro.description} speed={15} trigger="instant" />
             </Column>
           )}
           {about.work.display && (
@@ -182,7 +177,7 @@ export default function About() {
                 {about.work.experiences.map((experience, index) => (
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
                     <Row fillWidth horizontal="between" vertical="center" marginBottom="4">
-                      <Text id={experience.company} variant="heading-strong-xl">
+                      <Text id={experience.company} variant="heading-default-xl">
                         {experience.company}
                       </Text>
                       <Text variant="heading-default-xs" onBackground="neutral-weak">
@@ -219,7 +214,7 @@ export default function About() {
                 {about.studies.institutions.map((institution, index) => (
                   <Column key={`${institution.name}-${index}`} fillWidth>
                     <Row fillWidth horizontal="between" vertical="center" marginBottom="4">
-                      <Text id={institution.name} variant="heading-strong-xl">
+                      <Text id={institution.name} variant="heading-default-xl">
                         {institution.name}
                       </Text>
                       <Text variant="heading-default-xs" onBackground="neutral-weak">
@@ -254,18 +249,21 @@ export default function About() {
               <Column fillWidth gap="l">
                 {about.technical.skills.map((skill, index) => (
                   <Column key={`${skill.title}-${index}`} fillWidth gap="m">
-                    <Text id={skill.title} variant="heading-strong-xl" marginBottom="8">
+                    <Text id={skill.title} variant="heading-default-xl" marginBottom="8">
                       {skill.title}
                     </Text>
-                    <Column fillWidth gap="8">
+                    <Text variant="body-default-l" onBackground="neutral-strong">
+                      {skill.description}
+                    </Text>
+                    <Column fillWidth gap="20">
                       {skill.tags?.map((tag, tagIndex) => (
-                        <Row key={`${skill.title}-${tagIndex}`} fillWidth vertical="center" gap="16">
-                          <Tag key={index} prefixIcon={tag.icon} size="l" gap="8">
-                            <Text variant="label-default-m">{tag.name}</Text>
+                        <Row key={`${skill.title}-${tagIndex}`} fillWidth vertical="center" gap="12">
+                          <Tag key={index} prefixIcon={tag.icon} gap="8" variant="brand" style={{ width: "112px", height: "35px" }}>
+                            <Text variant="label-default-s">{tag.name}</Text>
                           </Tag>
                           <Column>
-                            <Text variant="label-default-m" onBackground="neutral-strong">
-                              {"placeholder"}
+                            <Text variant="label-default-l" onBackground="neutral-strong">
+                              {tag.description}
                             </Text>
                           </Column>
                         </Row>

@@ -1,18 +1,18 @@
-# Design Document for Portfolio Website
+# Design Document
 
-## General Design Features
+## General Design Features &check;
 
 - &check; Clicking a header component will scroll to the top and page transition if a different page is selected.
-- Custom Colour Theme
+- &check; 'Matrix Background' Theme
 - &check; Favicon
 
-## Header
+## Header &check;
 
 - &check; Left: Country/City
 - &check; Centre: {Home} | {Person} About, {Code} Software, {Image} Photography | {Sun/Moon} Appearance
 - &check; Right: Time in 'Country/City' Timezone
 
-## Footer
+## Footer &check;
 
 - &check; Left: Copyright, Attributions to Vercel & Once UI
 - &check; Right: Email, GitHub, Pic-Time, LinkedIn
@@ -26,7 +26,7 @@
 - Featured Photos
   - Grid of my best photos
 - Contact form to send emails with name, email address and message
-  - Error checking (syntax, semantics)
+  - &check; Semantic Error Checking
 
 ## 'About' Page
 
@@ -42,9 +42,9 @@
 - &check; Education
   - &check; Degree
   - &check; Areas of Expertise
-- Technical Skills
-  - Type (Front-end, Back-end, AI/ML, Data, Infra/DevOps)
-  - [Language/Framework/Dev Tool] Description
+- &check; Technical Skills
+  - &check; Type (i.e. Languages, Dev Tools, Frameworks)
+  - &check; Icon + Description
 
 ## 'Software' Page
 

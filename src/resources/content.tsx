@@ -14,12 +14,6 @@ const person: Person = {
 
 const social: Social = [
   {
-    name: "Email",
-    icon: "email",
-    link: `mailto:${person.email}`,
-    essential: true,
-  },
-  {
     name: "GitHub",
     icon: "github",
     link: "https://github.com/radiusxt",
@@ -83,11 +77,9 @@ const about: About = {
   intro: {
     display: true,
     title: "Introduction",
-    description: (
-      <>
-        I'm a software engineer and photographer with a passion for building clean, innovative solutions & capturing inspirational images. Through a seamless blend of technical background with creative perspective, I focus on clarity, precision & impact.
-      </>
-    ),
+    description: 
+      "I'm a software engineer and photographer with a passion for building clean, innovative solutions and capturing inspirational images. Through a seamless blend of technical background with creative perspective, I focus on clarity, precision and impact."
+    ,
   },
   work: {
     display: true,
@@ -170,46 +162,105 @@ const about: About = {
     title: "Technical Skills",
     skills: [
       {
-        title: "Front-End Development",
+        title: "Languages",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Building full-stack applications with AI/ML integrations.</>
         ),
         tags: [
           {
+            name: "Python",
+            description: "Built AI/ML applications for computer vision and RAG tasks.",
+            icon: "python",
+          },
+          {
+            name: "JavaScript",
+            description: "Integrated RESTful APIs for React-based websites and apps.",
+            icon: "javascript",
+          },
+          {
+            name: "TypeScript",
+            description: "Deployed a website to showcase my work and experience with Vercel.",
+            icon: "typescript",
+          },
+          {
             name: "HTML",
+            description: "Created semantic, accessible pages with optimised loading times.",
             icon: "html",
           },
           {
             name: "CSS",
+            description: "Styled responsive layouts with modern CSS/SCSS.",
             icon: "css",
           },
         ],
       },
       {
-        title: "Back-End Development",
+        title: "Development Tools",
         description: (
-          <>Building modern websites and apps.</>
+          <>
+            Packaging and deploying software efficiently with reproducible environments for scalable applications used in production.
+          </>
         ),
         tags: [
           {
-            name: "Python",
-            icon: "python",
+            name: "VS Code",
+            description: "My IDE of choice for most tasks.",
+            icon: "vscode",
           },
           {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "GitHub",
+            description: "Managed multi-branch codebases, handled code reviews & PRs.",
+            icon: "github",
           },
           {
-            name: "TypeScript",
-            icon: "typescript",
+            name: "Anaconda",
+            description: "Isolated production environments for Jupyter-based workflows.",
+            icon: "conda",
+          },
+          {
+            name: "Docker",
+            description: "Containerised a scalable application using a microservices architecture.",
+            icon: "docker",
+          },
+        ],
+      },
+      {
+        title: "Frameworks",
+        description: (
+          <>
+            Developing data-driven applications with ML, scalable backends, modern web interfaces and reliable databases.
+          </>
+        ),
+        tags: [
+          {
+            name: "Pytorch",
+            description: "Trained small & large models for computer vision & speech recognition.",
+            icon: "pytorch",
+          },
+          {
+            name: "Jupyter",
+            description: "Preprocessed data and executed experiments to produce visualisations.",
+            icon: "jupyter",
           },
           {
             name: "Next.js",
+            description: "Implemented optimised, SEO-friendly websites with modern routing.",
             icon: "nextjs",
           },
           {
-            name: "Java",
-            icon: "java",
+            name: "React",
+            description: "Designed modular, interactive components & managed client-side state.",
+            icon: "react",
+          },
+          {
+            name: "PostgreSQL",
+            description: "Engineered database schemas and efficient relational queries.",
+            icon: "postgresql",
+          },
+          {
+            name: "Flask",
+            description: "Developed a lightweight API for a backend microservice.",
+            icon: "flask",
           },
         ],
       },

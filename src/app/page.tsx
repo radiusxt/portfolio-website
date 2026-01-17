@@ -43,15 +43,15 @@ export default function Home() {
       <Column fillWidth horizontal="center" gap="l">
         <Column maxWidth="l" horizontal="center" align="center">
           {home.featured.display && (
-            <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="48" delay={1}>
+            <RevealFx translateY="16" fillWidth horizontal="center" paddingTop="32" paddingBottom="48" delay={1}>
               <Scroll>
                 <Badge
-                  background="brand-alpha-weak"
+                  textVariant="label-default-s"
+                  background="brand-strong"
                   paddingX="20"
                   paddingY="8"
-                  onBackground="neutral-strong"
-                  textVariant="label-default-s"
                   arrow={false}
+                  style={{ boxShadow: "0 0 32px var(--accent-solid-strong)" }}
                 >
                   <Row paddingY="2">{home.featured.title}</Row>
                 </Badge>
@@ -63,14 +63,14 @@ export default function Home() {
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="8" delay={0.5}>
+          <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="48" delay={0.5}>
             <Heading variant="heading-default-xl" style={{ lineHeight: "1.5", letterSpacing: "0.1px"}}>
               {home.subline}
             </Heading>
           </RevealFx>
         </Column>
       </Column>
-      <RevealFx translateY="16" fillWidth horizontal="center" delay={0.5}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={0.5}>
         <Line background="accent-alpha-strong" maxWidth={50} height={0.1} />
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" delay={1}>
