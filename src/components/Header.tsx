@@ -49,27 +49,27 @@ export const Header = () => {
 
   return (
     <>
-      <Fade s={{ hide: true }} fillWidth position="fixed" height="80" zIndex={9} />
+      {/*<Fade s={{ hide: true }} fillWidth position="fixed" height="80" zIndex={9} />
       <Fade
         hide
         s={{ hide: false }}
         fillWidth
-        position="fixed"
+        //position="fixed"
         to="top"
         height="80"
         zIndex={9}
-      />
+      />*/}
       <Row
-        fitHeight
+        as="header"
         className={styles.position}
         position="sticky"
-        as="header"
         zIndex={10}
         fillWidth
+        fitHeight
         padding="4"
         horizontal="center"
         data-border="rounded"
-        s={{ position: "fixed" }}
+        //s={{ position: "fixed" }}
       >
         <Row paddingLeft="16" fillWidth vertical="center" textVariant="label-default-m" style={{ letterSpacing: "0.01em" }}>
           {display.location && <Row s={{ hide: true }}>{person.location}</Row>}

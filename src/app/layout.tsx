@@ -176,7 +176,7 @@ export default async function RootLayout({
               </MatrixFx>
             </RevealFx>
           </Flex>
-          {/*<Flex fillWidth minHeight="8" s={{ hide: true }} />*/}
+          <Flex fillWidth minHeight="8" s={{ hide: true }} />
           <Header />
           <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
             <Flex horizontal="center" fillWidth minHeight="0">
