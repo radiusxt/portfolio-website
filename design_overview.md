@@ -4,6 +4,7 @@
 
 - &check; Clicking a header component will scroll to the top and page transition if a different page is selected.
 - &check; Dot Matrix Background Theme
+- &check; Light/Dark Mode Toggle
 - &check; Favicon
 
 ## Header &check;

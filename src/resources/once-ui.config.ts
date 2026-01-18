@@ -102,13 +102,13 @@ const effects: EffectsConfig = {
   },
   gradient: {
     display: true,
-    opacity: 100,
+    opacity: 80,
     x: 50,
-    y: 15,
+    y: 0,
     width: 100,
-    height: 50,
-    tilt: 0,
-    colorStart: "accent-background-strong",
+    height: 25,
+    tilt: 180,
+    colorStart: "brand-background-strong",
     colorEnd: "page-background-weak",
   },
   dots: {

@@ -75,10 +75,10 @@ export const ContactForm = () => {
             onChange={handleChange}
             required
             hasSuffix={formData.name.length > 0 && (
-              <IconButton 
-                variant="ghost" 
-                icon="close" 
-                size="s" 
+              <IconButton
+                variant="ghost"
+                icon="close"
+                size="s"
                 onClick={() => handleClear("name")}
                 aria-label="Clear"
               />
@@ -94,10 +94,10 @@ export const ContactForm = () => {
             error={handleEmail}
             required
             hasSuffix={formData.email.length > 0 && (
-              <IconButton 
-                variant="ghost" 
-                icon="close" 
-                size="s" 
+              <IconButton
+                variant="ghost"
+                icon="close"
+                size="s"
                 onClick={() => handleClear("email")}
                 aria-label="Clear"
               />
@@ -115,12 +115,7 @@ export const ContactForm = () => {
             characterCount
             required
           />
-          <Button 
-            fillWidth 
-            variant="primary" 
-            type="submit"
-            loading={status === "loading"}
-          >
+          <Button fillWidth variant="primary" type="submit" loading={status === "loading"}>
             <ShineFx speed={2} opacity={1} inverse>
                 Send
             </ShineFx>
