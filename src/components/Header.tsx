@@ -49,8 +49,8 @@ export const Header = () => {
 
   return (
     <>
-      {/*<Fade s={{ hide: true }} fillWidth position="fixed" height="80" zIndex={9} />
-      <Fade
+      <Fade fillWidth position="fixed" height="32" s={{ hide: true }} />
+      {/*<Fade
         hide
         s={{ hide: false }}
         fillWidth
@@ -69,7 +69,6 @@ export const Header = () => {
         padding="4"
         horizontal="center"
         data-border="rounded"
-        //s={{ position: "fixed" }}
       >
         <Row paddingLeft="16" fillWidth vertical="center" textVariant="label-default-m" style={{ letterSpacing: "0.01em" }}>
           {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
