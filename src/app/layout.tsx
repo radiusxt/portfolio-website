@@ -108,7 +108,7 @@ export default async function RootLayout({
           as="body"
           background="page"
           fillWidth
-          style={{ minHeight: "100vh" }}
+          style={{ minHeight: "100dvh", position: "relative" }}
           margin="0"
           padding="0"
           horizontal="center"
@@ -119,6 +119,7 @@ export default async function RootLayout({
             height: "100%",
             maxHeight: "900px",
             pointerEvents: "none",
+            paddingTop: "env(safe-area-inset-top)", // ADD THIS
             maskImage: "radial-gradient(circle at 50% 0%, black 30%, transparent 60%)",
             WebkitMaskImage: "radial-gradient(circle at 50% 0%, black 30%, transparent 60%)",
           }}>
