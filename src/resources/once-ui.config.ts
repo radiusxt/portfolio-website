@@ -101,7 +101,7 @@ const effects: EffectsConfig = {
     radius: 19,
   },
   gradient: {
-    display: true,
+    display: false,
     opacity: 80,
     x: 50,
     y: 0,

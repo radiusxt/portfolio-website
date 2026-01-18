@@ -198,7 +198,7 @@ const about: About = {
         title: "Development Tools",
         description: (
           <>
-            Packaging and deploying software efficiently with reproducible environments for scalable applications used in production.
+            Packaging and deploying production software efficiently with reproducible environments for scalable applications.
           </>
         ),
         tags: [
