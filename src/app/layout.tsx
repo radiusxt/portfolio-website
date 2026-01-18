@@ -108,10 +108,9 @@ export default async function RootLayout({
           as="body"
           background="page"
           fillWidth
-          style={{ minHeight: "100dvh", position: "relative" }}
           margin="0"
           padding="0"
-          horizontal="center"
+          style={{ minHeight: "100dvh", position: "relative", overflow: "hidden" }}
         >
           <Flex style={{
             position: "absolute",
@@ -123,7 +122,7 @@ export default async function RootLayout({
             maskImage: "radial-gradient(circle at 50% 0%, black 30%, transparent 60%)",
             WebkitMaskImage: "radial-gradient(circle at 50% 0%, black 30%, transparent 60%)",
           }}>
-            <RevealFx fill position="absolute">
+            {/*<RevealFx fill position="absolute">
               <MatrixFx
                 fill
                 speed={4}
@@ -176,7 +175,7 @@ export default async function RootLayout({
                   }}
                 />
               </MatrixFx>
-            </RevealFx>
+            </RevealFx>*/}
           </Flex>
           <Flex fillWidth minHeight="8" s={{ hide: true }} />
           <Header />
