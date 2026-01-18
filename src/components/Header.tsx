@@ -49,16 +49,7 @@ export const Header = () => {
 
   return (
     <>
-      <Fade fillWidth position="fixed" height="32" s={{ hide: true }} />
-      {/*<Fade
-        hide
-        s={{ hide: false }}
-        fillWidth
-        //position="fixed"
-        to="top"
-        height="80"
-        zIndex={9}
-      />*/}
+      <Fade fillWidth position="fixed" height="64" s={{ hide: true }} />
       <Row
         as="header"
         className={styles.position}
