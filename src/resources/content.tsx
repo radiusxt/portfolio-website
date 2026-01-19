@@ -40,7 +40,7 @@ const home: Home = {
   description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}.`,
   headline:
     <>
-      Building software that scales.
+      Buidling software that scales.
       <br />
       Capturing photos that inspire.
     </>,

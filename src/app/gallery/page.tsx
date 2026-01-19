@@ -16,7 +16,7 @@ export async function generateMetadata() {
 
 export default function Gallery() {
   return (
-    <Flex direction="column" maxWidth="l">
+    <Flex fillWidth direction="column" maxWidth="l">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -44,7 +44,7 @@ export default function Gallery() {
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="24" delay={0.4}>
         <Heading variant="heading-default-xl" style={{ letterSpacing: "0.2px" }}>
-          My images specialise on sport, wildlife & travel to capture split-second moments in motion.
+          My images specialise in sport, wildlife & travel to capture split-second moments in motion.
         </Heading>
       </RevealFx>
       <Icon name="chevronDown" size="xl" style={{ margin: "0 auto" }}  />

@@ -61,7 +61,8 @@
 
 - &check;'Hyperdrive Media' Logo
   - &check; Dark/Light Mode Switch
-- &check; Page Title
+- &check; Title
 - Featured Images
-- Description
+- &check; Subtitle
+- &check; Description
 - Pic-Time Portfolio Website Integration
