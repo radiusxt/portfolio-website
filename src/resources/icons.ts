@@ -9,6 +9,7 @@ import {
   HiEnvelope,
   HiCalendarDays,
   HiArrowRight,
+  HiArrowDown,
   HiOutlineEye,
   HiOutlineEyeSlash,
   HiOutlineDocument,
@@ -65,6 +66,7 @@ import {
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
   arrowRight: HiArrowRight,
+  arrowDown: HiArrowDown,
   email: HiEnvelope,
   globe: HiOutlineGlobeAsiaAustralia,
   person: PiUserCircleDuotone,

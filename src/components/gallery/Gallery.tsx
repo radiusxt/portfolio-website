@@ -5,17 +5,18 @@ import { gallery } from "@/resources";
 
 export function GalleryView() {
   return (
-    <MasonryGrid columns={2} s={{ columns: 1 }}>
+    <MasonryGrid columns={3} s={{ columns: 1 }}>
       {gallery.images.map((image, index) => (
         <Media
-          enlarge
-          priority={index < 10}
-          sizes="(max-width: 560px) 100vw, 50vw"
           key={index}
-          radius="l"
+          priority={index < 30}
+          sizes="(max-width: 560px) 100vw, 70vw"
           aspectRatio={image.orientation === "horizontal" ? "3 / 2" : "2 / 3"}
+          border="neutral-alpha-weak"
           src={image.src}
           alt={image.alt}
+          radius="s"
+          enlarge
         />
       ))}
     </MasonryGrid>

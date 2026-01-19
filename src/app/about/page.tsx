@@ -11,6 +11,7 @@ import {
   Schema,
   Row,
   TypeFx,
+  RevealFx,
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import { TableOfContents } from "@/components/about/TableOfContents";
@@ -59,12 +60,9 @@ export default function About() {
         description={about.description}
         path={about.path}
         image={`/api/og/generate?title=${encodeURIComponent(about.title)}`}
-        author={{
-          name: person.name,
-          url: `${baseURL}${about.path}`,
-          image: `${baseURL}${person.avatar}`,
-        }}
+        author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
+      
       {about.tableOfContent.display && (
         <Column
           left="8"
@@ -77,6 +75,7 @@ export default function About() {
           <TableOfContents structure={structure} about={about} />
         </Column>
       )}
+      <RevealFx delay={0.4}>
       <Row fillWidth s={{ direction: "column"}} horizontal="center">
         {about.avatar.display && (
           <Column
@@ -165,7 +164,7 @@ export default function About() {
           </Column>
           {about.intro.display && (
             <Column textVariant="body-default-xl" fillWidth gap="m" align="justify" marginBottom="l" style={{ lineHeight: "1.5"}}>
-              <TypeFx words={about.intro.description} speed={15} trigger="instant" />
+              <TypeFx words={about.intro.description} speed={15} delay={0.4} />
             </Column>
           )}
           {about.work.display && (
@@ -276,6 +275,7 @@ export default function About() {
           )}
         </Column>
       </Row>
+      </RevealFx>
     </Column>
   );
 }

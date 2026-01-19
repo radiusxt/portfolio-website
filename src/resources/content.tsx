@@ -35,7 +35,6 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
   label: "Home",
   title: `Hyperdrive Media`,
   description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}.`,
@@ -280,8 +279,8 @@ const work: Work = {
 const gallery: Gallery = {
   path: "/gallery",
   label: "Photography",
-  title: `Portfolio`,
-  description: `Photo galleries by ${person.name}`,
+  title: `Gallery Highlights`,
+  description: `Photos by ${person.name}`,
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",

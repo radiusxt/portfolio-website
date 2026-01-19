@@ -3,33 +3,33 @@
 ## General Design Features &check;
 
 - &check; Clicking a header component will scroll to the top and page transition if a different page is selected.
-- &check; Dot Matrix Background Theme
+- &check; Dot matrix background theme
 - &check; Light/Dark Mode Toggle
 - &check; Favicon
 
 ## Header &check;
 
-- &check; Left: Country/City
+- &check; Left: Location
 - &check; Centre: {Home} | {Person} About, {Code} Software, {Image} Photography | {Sun/Moon} Appearance
-- &check; Right: Time in 'Country/City' Timezone
+- &check; Right: Time in location's timezone
 
 ## Footer &check;
 
-- &check; Left: Copyright, Attributions to Vercel & Once UI
+- &check; Left: Copyright, Author, Attributions to Once UI & Vercel
 - &check; Right: Email, GitHub, Pic-Time, LinkedIn
 
 ## 'Home' Page
 
 - &check; Attention grabbing headline and subline
-- &check; Staggered Animation Timings
+- &check; Staggered animations
 - Featured Project
   - Image
   - Description
 - Featured Photos
   - Grid of my best photos
 - &check; Contact form to send emails with name, email address and message
-  - &check; Semantic Error Checking
-  - Email Existence Check
+  - &check; Semantic error checking
+  - Email existence check
 
 ## 'About' Page
 
@@ -44,9 +44,9 @@
 - &check; Experience
 - &check; Education
   - &check; Degree
-  - &check; Areas of Expertise
+  - &check; Expertise
 - &check; Technical Skills
-  - &check; Type (i.e. Languages, Dev Tools, Frameworks)
+  - &check; Type
   - &check; Icon + Description
 
 ## 'Software' Page
@@ -59,9 +59,9 @@
 
 ## 'Photography' Page
 
-- 'Hyperdrive Media' Logo
-  - Subtle Glowing Effect
-  - Dark/Light Mode Switch
+- &check; Page Title
+- &check;'Hyperdrive Media' Logo
+  - &check; Dark/Light Mode Switch
 - Description
-- Featured Images with GalleryView Component
+- Featured Images
 - Pic-Time Portfolio Website Integration

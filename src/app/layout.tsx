@@ -26,11 +26,7 @@ export async function generateMetadata() {
   });
 }
 
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default async function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
     <Flex
       suppressHydrationWarning
@@ -118,8 +114,8 @@ export default async function RootLayout({
             height: "100%",
             maxHeight: "900px",
             pointerEvents: "none",
-            maskImage: "radial-gradient(circle at 50% 0%, black 30%, transparent 60%)",
-            WebkitMaskImage: "radial-gradient(circle at 50% 0%, black 30%, transparent 60%)",
+            maskImage: "radial-gradient(circle at 50% 2%, black 7%, transparent 60%)",
+            WebkitMaskImage: "radial-gradient(circle at 50% 2%, black 7%, transparent 60%)",
           }}>
             <RevealFx fill position="absolute">
               <MatrixFx
@@ -132,7 +128,7 @@ export default async function RootLayout({
                 colors={[
                   "brand-on-background-medium", "accent-on-background-medium", "neutral-on-background-strong"
                 ]}
-                >
+              >
                 <Background
                   mask={{
                     x: effects.mask.x,
