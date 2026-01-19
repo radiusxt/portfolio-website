@@ -25,8 +25,8 @@ export const Logo: React.FC<LogoSize> = ({ width = 18, height, className }) => {
   }
 
   const logoSrc = currentTheme === "dark" 
-    ? "/images/brand/Logo (light).png"
-    : "/images/brand/logo (dark).png";
+    ? "/images/brand/Logo-light.png"
+    : "/images/brand/logo-dark.png";
 
   return (
     <Media src={logoSrc} alt="Logo" width={width} height={height} />

@@ -43,7 +43,7 @@ export default function Gallery() {
         </Heading>
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="24" delay={0.4}>
-        <Heading variant="heading-default-xl" style={{ letterSpacing: "0px" }}>
+        <Heading variant="heading-default-xl" style={{ letterSpacing: "0.2px" }}>
           My work focuses on sport, travel and wildlife to capture moments in motion.
         </Heading>
       </RevealFx>
