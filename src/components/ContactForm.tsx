@@ -61,8 +61,10 @@ export const ContactForm = () => {
 
   return (
     <Column fillWidth horizontal="center" gap="l" maxWidth="s">
-      <Heading variant="display-default-s">Get in Touch</Heading>
-      <Text variant="heading-default-s" align="center" style={{ lineHeight: "1.5" }}>
+      <Heading variant="display-default-s" paddingBottom="16" style={{ letterSpacing: "0px" }}>
+        Get in Touch
+      </Heading>
+      <Text variant="heading-default-s" align="center" paddingBottom="12">
         For work opportunities, collaborations or other inquiries, please complete the form below.
       </Text>
       <form onSubmit={handleSubmit} style={{ width: "100%" }}>

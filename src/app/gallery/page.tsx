@@ -30,16 +30,21 @@ export default function Gallery() {
           <Logo />
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={0.2}>
-        <Heading variant="display-default-m" style={{ letterSpacing: "-1px" }}>
+        <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
           {gallery.title}
         </Heading>
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128" delay={0.2}>
         <GalleryView />
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={0.6}>
-        <Heading variant="display-default-m" style={{ letterSpacing: "-1px" }}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={0.4}>
+        <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
           Discover the Full Gallery
+        </Heading>
+      </RevealFx>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="24" delay={0.4}>
+        <Heading variant="heading-default-xl" style={{ letterSpacing: "0px" }}>
+          My work focuses on sport, travel and wildlife to capture moments in motion.
         </Heading>
       </RevealFx>
       <Icon name="chevronDown" size="xl" style={{ margin: "0 auto" }}  />

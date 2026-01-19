@@ -9,7 +9,7 @@ interface LogoSize {
   className?: string;
 }
 
-export const Logo: React.FC<LogoSize> = ({ width = 16, height, className }) => {
+export const Logo: React.FC<LogoSize> = ({ width = 18, height, className }) => {
   const { theme } = useTheme();
   const [mount, setMount] = useState(false);
   const [currentTheme, setCurrentTheme] = useState<string>("light");

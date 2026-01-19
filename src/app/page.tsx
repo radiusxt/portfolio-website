@@ -38,7 +38,15 @@ export default function Home() {
       <Column fillWidth horizontal="center" gap="l">
         <Column maxWidth="l" horizontal="center" align="center">
           {home.featured.display && (
-            <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="48" marginTop="32" delay={0.8}>
+            <RevealFx
+              translateY="16"
+              fillWidth
+              horizontal="center"
+              paddingBottom="48"
+              paddingTop="32"
+              delay={0.8}
+              style={{ marginTop: "-18px"}}
+            >
               <Scroll>
                 <Badge
                   textVariant="label-default-s"
@@ -54,22 +62,22 @@ export default function Home() {
             </RevealFx>
           )}
           <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128">
-            <Heading variant="display-default-xl" style={{ lineHeight: "1.2", letterSpacing: "-2px" }}>
+            <Heading variant="display-default-xl" style={{ lineHeight: "1.2", letterSpacing: "-1.5px" }}>
               {home.headline}
             </Heading>
           </RevealFx>
           <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="48" delay={0.4}>
-            <Heading variant="heading-default-xl" style={{ lineHeight: "1.5", letterSpacing: "0.1px"}}>
+            <Heading variant="heading-default-xl" style={{ lineHeight: "1.5", letterSpacing: "0.2px"}}>
               {home.subline}
             </Heading>
           </RevealFx>
         </Column>
       </Column>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={0.4}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="48" delay={0.4}>
         <Line background="accent-alpha-strong" maxWidth={50} height={0.2} radius="m" />
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8}>
-        <Heading id="featured_project" variant="display-default-m" style={{ letterSpacing: "-1px", scrollMarginTop: "70px" }}>
+        <Heading id="featured_project" variant="display-default-m" style={{ letterSpacing: "0px", scrollMarginTop: "70px" }}>
           Software Project
         </Heading>
       </RevealFx>
@@ -77,17 +85,17 @@ export default function Home() {
         <Projects range={[1, 1]} />
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8} >
-        <Heading variant="display-default-m" style={{ letterSpacing: "-1px" }}>
+        <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
           Gallery Highlights
         </Heading>
       </RevealFx>
       <RevealFx translateY="16" fillWidth paddingBottom="40" delay={0.8}>
         <GalleryView />
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="20" delay={0.8}>
         <Line background="accent-alpha-strong" maxWidth={60} height={0.2} radius="m" />
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" gap="l" delay={1.2}>
+      <RevealFx translateY="16" fillWidth horizontal="center" delay={1.2}>
         <ContactForm />
       </RevealFx>
     </Column>

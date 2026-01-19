@@ -25,8 +25,8 @@
 - Featured Project
   - Image
   - Description
-- Featured Photos
-  - Grid of my best photos
+- Featured Images
+  - &check; Masonry Grid Layout
 - &check; Contact form to send emails with name, email address and message
   - &check; Semantic error checking
   - Email existence check
@@ -59,9 +59,9 @@
 
 ## 'Photography' Page
 
-- &check; Page Title
 - &check;'Hyperdrive Media' Logo
   - &check; Dark/Light Mode Switch
-- Description
+- &check; Page Title
 - Featured Images
+- Description
 - Pic-Time Portfolio Website Integration
