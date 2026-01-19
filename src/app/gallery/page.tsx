@@ -44,7 +44,7 @@ export default function Gallery() {
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="24" delay={0.4}>
         <Heading variant="heading-default-xl" style={{ letterSpacing: "0.2px" }}>
-          My images focuses on sport, travel & wildlife to capture moments in motion.
+          My images focus on sport, travel & wildlife to capture moments in motion. 
         </Heading>
       </RevealFx>
       <Icon name="chevronDown" size="xl" style={{ margin: "0 auto" }}  />
