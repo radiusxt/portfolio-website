@@ -38,12 +38,12 @@ export default function Gallery() {
         <GalleryView />
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={0.4}>
-        <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
+        <Heading variant="display-default-m" style={{ letterSpacing: "0px", textAlign: "center" }}>
           Discover the Full Gallery
         </Heading>
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="24" delay={0.4}>
-        <Heading variant="heading-default-xl" style={{ letterSpacing: "0.2px" }}>
+        <Heading variant="heading-default-xl" style={{ letterSpacing: "0.2px", textAlign: "center" }}>
           My images specialise in sport, wildlife & travel to capture split-second moments in motion.
         </Heading>
       </RevealFx>
