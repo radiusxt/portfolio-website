@@ -280,27 +280,47 @@ const gallery: Gallery = {
   path: "/gallery",
   label: "Photography",
   title: `Gallery Highlights`,
-  description: `Photos by ${person.name}`,
+  description: `Images by ${person.name}`,
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
+      src: "/images/gallery/DSC01001.jpg",
+      alt: "\#888 Kelso Electrical Team MPC, Audi R8 LMS GT3 EVO II",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
+      src: "/images/gallery/DSC08736.jpg",
+      alt: "#1 Volante Rosso Motorsport, Aston Martin Vantage AMR GT3",
+      orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
+      src: "/images/gallery/DSC04971.jpg",
+      alt: "#24 McElrea Racing, Porsche 911 GT3 Cup",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC07600.jpg",
+      alt: "#20 AR Nineteen Motorsport, Mercedes AMG GT4, #17 Love Racing, Mercedes AMG GT4",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/vertical-1.jpg",
       alt: "image",
       orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/vertical-2.jpg",
+      alt: "image",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/horizontal-2.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/horizontal-4.jpg",
+      alt: "image",
+      orientation: "horizontal",
     },
     {
       src: "/images/gallery/vertical-2.jpg",

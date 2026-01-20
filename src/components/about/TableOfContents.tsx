@@ -52,7 +52,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, abo
               className={styles.hover}
               gap="8"
               vertical="center"
-              onClick={() => scrollTo(section.title, 80)}
+              onClick={() => scrollTo(section.title, 75)}
             >
               <Flex height="2" minWidth="20" background="brand-strong"></Flex>
               <Text variant="body-default-xl">{section.title}</Text>

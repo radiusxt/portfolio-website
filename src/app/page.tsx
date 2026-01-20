@@ -42,12 +42,12 @@ export default function Home() {
               translateY="16"
               fillWidth
               horizontal="center"
-              paddingBottom="48"
+              paddingBottom="64"
               paddingTop="32"
               delay={0.8}
               style={{ marginTop: "-18px"}}
             >
-              <Scroll>
+              <Scroll target={"featured_project"}>
                 <Badge
                   textVariant="label-default-s"
                   background="brand-strong"
@@ -61,7 +61,7 @@ export default function Home() {
               </Scroll>
             </RevealFx>
           )}
-          <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128">
+          <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="80" marginBottom="24">
             <Heading variant="display-default-xl" style={{ lineHeight: "1.2", letterSpacing: "-1.5px" }}>
               {home.headline}
             </Heading>
@@ -77,7 +77,7 @@ export default function Home() {
         <Line background="accent-alpha-strong" maxWidth={50} height={0.2} radius="m" />
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8}>
-        <Heading id="featured_project" variant="display-default-m" style={{ letterSpacing: "0px", scrollMarginTop: "70px" }}>
+        <Heading id="featured_project" variant="display-default-m" style={{ letterSpacing: "0px", scrollMarginTop: "60px" }}>
           Software Project
         </Heading>
       </RevealFx>

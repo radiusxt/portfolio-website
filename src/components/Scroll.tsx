@@ -3,11 +3,18 @@
 import { useRouter } from "next/navigation";
 import { ReactNode, useEffect } from "react";
 
-export function Scroll({ children }: { children: ReactNode }) {
+interface ScrollProps {
+  children: ReactNode;
+  target: string;
+}
+
+export function Scroll({ children, target }: ScrollProps) {
   const handleClick = () => {
-    document
-      .getElementById("featured_project")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const element = document.getElementById(target)
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return <div onClick={handleClick} style={{ cursor: "pointer" }}>{children}</div>;

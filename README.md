@@ -1,6 +1,6 @@
 # Portfolio Website
 
-My personal portfolio website showcasing my work in software development and photography. This portfolio website was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+My personal portfolio website showcasing work in software development and photography. This portfolio website was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
 
 ## Running Locally
 

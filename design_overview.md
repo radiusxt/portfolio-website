@@ -20,6 +20,7 @@
 
 ## 'Home' Page
 
+- &check; Featured Work button scrolls down to featured project.
 - &check; Attention grabbing headline and subline
 - &check; Staggered animations
 - Featured Project
@@ -29,12 +30,13 @@
   - &check; Masonry Grid Layout
 - &check; Contact form to send emails with name, email address and message
   - &check; Semantic error checking
+  - &check; Resend API
   - Email existence check
 
-## 'About' Page
+## 'About' Page &check;
 
 - &check; Contents Sidebar
-- Headshot
+- &check; Headshot
 - &check; Location
 - &check; Languages
 - &check; Full Name
@@ -60,9 +62,12 @@
 ## 'Photography' Page
 
 - &check;'Hyperdrive Media' Logo
-  - &check; Dark/Light Mode Switch
+  - &check; Light/Dark Mode Switch
+  - &check; Logo acts as a button to scroll down to full portfolio.
 - &check; Title
 - Featured Images
+  - &check; Carousel
+  - 10 Images each from Sport, Wildlife & Travel
 - &check; Subtitle
 - &check; Description
-- Pic-Time Portfolio Website Integration
+- &check; Pic-Time Website Integration
