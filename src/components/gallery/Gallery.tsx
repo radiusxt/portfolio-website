@@ -9,20 +9,20 @@ export function GalleryView() {
       aspectRatio="3 / 2"
       indicator="thumbnail"
       controls={false}
-      radius="xl"
+      radius="l"
       border="transparent"
       play={{ auto: true, interval: 5000, controls: true }}
       items={gallery.images.map((image) => ({
         slide: (
           <Flex fillWidth fillHeight horizontal="center" vertical="center">
             {image.orientation === "horizontal" &&
-              <Flex radius="xl" overflow="hidden" style={{ width: "100%", height: "fit-content" }}>
-                <Media src={image.src} alt={image.alt} objectFit="contain" />
+              <Flex radius="l" overflow="hidden" style={{ width: "100%", height: "fit-content" }}>
+                <Media src={image.src} alt={image.alt} objectFit="contain" radius="l" />
               </Flex>
             }
             {image.orientation === "vertical" &&
-              <Flex radius="xl" overflow="hidden" style={{ width: "fit-content", height: "100%" }}>
-                <Media src={image.src} alt={image.alt} objectFit="contain" />
+              <Flex radius="l" overflow="hidden" style={{ width: "auto", height: "100%" }}>
+                <Media src={image.src} alt={image.alt} objectFit="contain" radius="l" />
               </Flex>
             }
           </Flex>
