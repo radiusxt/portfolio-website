@@ -123,16 +123,28 @@ export const ContactForm = () => {
                 Send
             </ShineFx>
           </Button>
-          {status === "success" && ( // needs feedback element
-            <Text variant="heading-default-s" align="center" color="success-strong" marginTop="4"> 
-              Message Received! I will get in touch with you shortly.
-            </Text>
-          )}
-          {status === "error" && ( // needs feedback element
-            <Text variant="body-default-s" align="center" color="danger-strong" marginTop="4">
-              Something went wrong. Please try again.
-            </Text>
-          )}
+          {status === "success" && 
+            <Flex marginTop="4" style={{ letterSpacing: "0.65px" }}>
+              <Feedback
+                variant="success"
+                paddingLeft="160"
+                paddingTop="4"
+                paddingBottom="4"
+                title="Success! I will get in touch with you shortly."
+              />
+            </Flex>
+          }
+          {status === "error" && 
+            <Flex marginTop="4" style={{ letterSpacing: "0.65px" }}>
+              <Feedback
+                variant="danger"
+                paddingLeft="160"
+                paddingTop="4"
+                paddingBottom="4"
+                title="Error! Something went wrong. Please try again."
+              />
+            </Flex>
+          }
         </Flex>
       </form>
     </Column>

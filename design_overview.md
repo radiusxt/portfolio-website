@@ -31,8 +31,8 @@
 - &check; Contact form to send emails with name, email address and message
   - &check; Semantic error checking
   - &check; Resend API
-  - Feedback on Success/Failure
-  - Email existence check
+  - &check; Feedback on Success/Failure
+  - Email Address Security using Cloudflare
 
 ## 'About' Page &check;
 
