@@ -21,7 +21,7 @@ export function GalleryView() {
               </Flex>
             }
             {image.orientation === "vertical" &&
-              <Flex radius="xl" overflow="hidden" flex={1} style={{ flex: 1, width: "fit-content", height: "100%", display: "flex" }}>
+              <Flex radius="xl" overflow="hidden" style={{ width: "fit-content", height: "100%" }}>
                 <Media src={image.src} alt={image.alt} objectFit="contain" />
               </Flex>
             }
