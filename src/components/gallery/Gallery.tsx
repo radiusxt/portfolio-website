@@ -1,6 +1,6 @@
 "use client";
 
-import { Carousel, Media, Flex } from "@once-ui-system/core";
+import { Flex, Carousel, Media } from "@once-ui-system/core";
 import { gallery } from "@/resources";
 
 export function GalleryView() {
@@ -29,6 +29,5 @@ export function GalleryView() {
         )
       }))}
     />
-    // insert Progress bar here
   );
 }

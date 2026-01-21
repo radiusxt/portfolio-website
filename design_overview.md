@@ -60,7 +60,7 @@
   - Results
   - GitHub Repository Link
 
-## 'Photography' Page
+## 'Photography' Page &check;
 
 - &check;'Hyperdrive Media' Logo
   - &check; Light/Dark Mode Switch
@@ -69,7 +69,6 @@
 - &check; Featured Images
   - &check; Carousel
   - &check; 8 Images/Category
-  - Progress Bar
 - &check; Subtitle
 - &check; Description
 - &check; Pic-Time Website Integration
