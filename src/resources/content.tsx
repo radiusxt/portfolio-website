@@ -41,7 +41,6 @@ const home: Home = {
   headline:
     <>
       Buidling software that scales.
-      <br />
       Capturing photos that inspire.
     </>,
   featured: {

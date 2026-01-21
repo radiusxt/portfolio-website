@@ -67,7 +67,7 @@
 - &check; Title
 - Featured Images
   - &check; Carousel
-  - 10 Images each from Sport, Wildlife & Travel
+  - 10 Images/Category
 - &check; Subtitle
 - &check; Description
 - &check; Pic-Time Website Integration

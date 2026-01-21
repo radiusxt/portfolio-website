@@ -16,12 +16,12 @@ export function GalleryView() {
         slide: (
           <Flex fillWidth fillHeight horizontal="center" vertical="center">
             {image.orientation === "horizontal" &&
-              <Flex radius="xl" overflow="hidden" style={{ width: '100%', height: 'fit-content' }}>
+              <Flex radius="xl" overflow="hidden" style={{ width: "100%", height: "fit-content" }}>
                 <Media src={image.src} alt={image.alt} objectFit="contain" />
               </Flex>
             }
             {image.orientation === "vertical" &&
-              <Flex radius="xl" overflow="hidden" style={{ width: 'fit-content', height: '100%' }}>
+              <Flex radius="xl" overflow="hidden" style={{ width: "fit-content", height: "100%" }}>
                 <Media src={image.src} alt={image.alt} objectFit="contain" />
               </Flex>
             }

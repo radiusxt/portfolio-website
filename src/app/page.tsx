@@ -47,7 +47,7 @@ export default function Home() {
               delay={0.8}
               style={{ marginTop: "-18px"}}
             >
-              <Scroll target={"featured_project"}>
+              <Scroll target={"featured"}>
                 <Badge
                   textVariant="label-default-s"
                   background="brand-strong"
@@ -73,11 +73,11 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="48" delay={0.4}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="56" delay={0.4}>
         <Line background="accent-alpha-strong" maxWidth={50} height={0.2} radius="m" />
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8}>
-        <Heading id="featured_project" variant="display-default-m" style={{ letterSpacing: "0px", scrollMarginTop: "60px" }}>
+        <Heading id="featured" variant="display-default-m" style={{ letterSpacing: "0px", scrollMarginTop: "60px" }}>
           Software Project
         </Heading>
       </RevealFx>
@@ -89,7 +89,7 @@ export default function Home() {
           Gallery Highlights
         </Heading>
       </RevealFx>
-      <RevealFx translateY="16" fillWidth paddingBottom="40" delay={0.8}>
+      <RevealFx translateY="16" fillWidth delay={0.8}>
         <GalleryView />
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="20" delay={0.8}>
