@@ -67,7 +67,7 @@
 - &check; Title
 - &check; Featured Images
   - &check; Carousel
-  - 10 Images/Category
+  - 6 Images/Category
 - &check; Subtitle
 - &check; Description
 - &check; Pic-Time Website Integration

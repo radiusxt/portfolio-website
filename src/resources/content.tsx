@@ -272,7 +272,6 @@ const work: Work = {
   title: `Projects`,
   description: `Software development projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/work/projects
-  // Top project will appear in /home
 };
 
 const gallery: Gallery = {
@@ -282,11 +281,6 @@ const gallery: Gallery = {
   description: `Images by ${person.name}`,
   images: [
     /* Sport */
-    {
-      src: "/images/gallery/DSC00599.jpg",
-      alt: "2025, GT World Challenge Australia, Queensland Raceway",
-      orientation: "horizontal",
-    },
     {
       src: "/images/gallery/DSC01001.jpg",
       alt: "2025, GT World Challenge Australia, Queensland Raceway, \#888 Kelso Electrical Team MPC, Audi R8 LMS GT3 EVO II",
@@ -313,19 +307,9 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/DSC09786.jpg",
-      alt: "2025, Monochrome GT4 Australia, Queensland Raceway, #19 AR Nineteen Motorsport, Mercedes AMG GT4",
-      orientation: "horizontal",
-    },
-    {
       src: "/images/gallery/DSC04971.jpg",
       alt: "2025, Porsche Michelin Sprint Challenge Australia, Queensland Raceway, #24 McElrea Racing, Porsche 911 GT3 Cup",
       orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC07781.jpg",
-      alt: "2025, Porsche Michelin Sprint Challenge Australia, Queensland Raceway, #69 Jones M'sport, Porsche 911 GT3 Cup",
-      orientation: "vertical",
     },
     {
       src: "/images/gallery/DSC00456.jpg",
@@ -333,11 +317,6 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     /* Wildlife */
-    {
-      src: "/images/gallery/DSC02605.jpg",
-      alt: "Taronga Zoo, Giraffe",
-      orientation: "vertical",
-    },
     {
       src: "/images/gallery/DSC02719.jpg",
       alt: "Taronga Zoo, Meerkat",
@@ -347,11 +326,6 @@ const gallery: Gallery = {
       src: "/images/gallery/DSC03415.jpg",
       alt: "Taronga Zoo, Red Panda",
       orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/DSC03491.jpg",
-      alt: "Taronga Zoo",
-      orientation: "horizontal",
     },
     {
       src: "/images/gallery/DSC03567.jpg",
@@ -369,11 +343,6 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/DSC06403.jpg",
-      alt: "Chimelong Ocean Kingdom, Dolphin",
-      orientation: "horizontal",
-    },
-    {
       src: "/images/gallery/DSC07218.jpg",
       alt: "Chimelong Ocean Kingdom, Dolphin",
       orientation: "horizontal",
@@ -384,6 +353,36 @@ const gallery: Gallery = {
       orientation: "vertical",
     },
     /* Travel */
+    {
+      src: "/images/gallery/DSC07218.jpg",
+      alt: "Chimelong Ocean Kingdom, Dolphin",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC07218.jpg",
+      alt: "Chimelong Ocean Kingdom, Dolphin",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC07218.jpg",
+      alt: "Chimelong Ocean Kingdom, Dolphin",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC07218.jpg",
+      alt: "Chimelong Ocean Kingdom, Dolphin",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC07218.jpg",
+      alt: "Chimelong Ocean Kingdom, Dolphin",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC07218.jpg",
+      alt: "Chimelong Ocean Kingdom, Dolphin",
+      orientation: "horizontal",
+    },
   ],
 };
 
