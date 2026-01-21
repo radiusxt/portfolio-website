@@ -307,6 +307,11 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
+      src: "/images/gallery/DSC09786.jpg",
+      alt: "2025, Monochrome GT4 Australia, Queensland Raceway, #19 AR Nineteen Motorsport, Mercedes AMG GT4",
+      orientation: "horizontal",
+    },
+    {
       src: "/images/gallery/DSC04971.jpg",
       alt: "2025, Porsche Michelin Sprint Challenge Australia, Queensland Raceway, #24 McElrea Racing, Porsche 911 GT3 Cup",
       orientation: "horizontal",
@@ -317,6 +322,7 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     /* Wildlife */
+    
     {
       src: "/images/gallery/DSC02719.jpg",
       alt: "Taronga Zoo, Meerkat",
@@ -338,51 +344,26 @@ const gallery: Gallery = {
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/DSC06587.jpg",
-      alt: "Chimelong Ocean Kingdom, Sea Lion",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC07218.jpg",
-      alt: "Chimelong Ocean Kingdom, Dolphin",
-      orientation: "horizontal",
-    },
-    {
       src: "/images/gallery/DSC06996.jpg",
       alt: "Chimelong Ocean Kingdom, Dolphin",
       orientation: "vertical",
     },
+    {
+      src: "/images/gallery/DSC07218.jpg",
+      alt: "Chimelong Ocean Kingdom, Dolphin",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC06403.jpg",
+      alt: "Chimelong Ocean Kingdom, Dolphin",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC06587.jpg",
+      alt: "Chimelong Ocean Kingdom, Sea Lion",
+      orientation: "horizontal",
+    },
     /* Travel */
-    {
-      src: "/images/gallery/DSC07218.jpg",
-      alt: "Chimelong Ocean Kingdom, Dolphin",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC07218.jpg",
-      alt: "Chimelong Ocean Kingdom, Dolphin",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC07218.jpg",
-      alt: "Chimelong Ocean Kingdom, Dolphin",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC07218.jpg",
-      alt: "Chimelong Ocean Kingdom, Dolphin",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC07218.jpg",
-      alt: "Chimelong Ocean Kingdom, Dolphin",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC07218.jpg",
-      alt: "Chimelong Ocean Kingdom, Dolphin",
-      orientation: "horizontal",
-    },
   ],
 };
 

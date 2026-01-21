@@ -9,10 +9,8 @@ const withMDX = mdx({
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
-  experimental: {
-    outputFileTracingExcludes: {
-      '*': ['public/images/gallery/**/*'],
-    },
+  outputFileTracingExcludes: {
+    '*': ['public/images/gallery/**/*'],
   },
   images: {
     remotePatterns: [
