@@ -32,7 +32,7 @@ export default function Gallery() {
           <Logo />
         </Scroll>
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={0.4}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="48" delay={0.4}>
         <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
           {gallery.title}
         </Heading>

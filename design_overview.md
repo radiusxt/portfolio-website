@@ -65,7 +65,7 @@
   - &check; Light/Dark Mode Switch
   - &check; Logo acts as a button to scroll down to full portfolio.
 - &check; Title
-- Featured Images
+- &check; Featured Images
   - &check; Carousel
   - 10 Images/Category
 - &check; Subtitle

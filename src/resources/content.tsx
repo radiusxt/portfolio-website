@@ -6,7 +6,7 @@ const person: Person = {
   lastName: "Chan",
   name: `Nathaniel Chan`,
   role: "Software Engineer & Photographer",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/brand/avatar.jpg",
   email: "nathaniel@outlook.com.au",
   location: "Australia/Brisbane",
   languages: ["English", "Cantonese"],
@@ -334,10 +334,56 @@ const gallery: Gallery = {
     },
     /* Wildlife */
     {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
+      src: "/images/gallery/DSC02605.jpg",
+      alt: "Taronga Zoo, Giraffe",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/DSC02719.jpg",
+      alt: "Taronga Zoo, Meerkat",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/DSC03415.jpg",
+      alt: "Taronga Zoo, Red Panda",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/DSC03491.jpg",
+      alt: "Taronga Zoo",
       orientation: "horizontal",
     },
+    {
+      src: "/images/gallery/DSC03567.jpg",
+      alt: "Taronga Zoo",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/DSC03741.jpg",
+      alt: "Taronga Zoo",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/DSC06587.jpg",
+      alt: "Chimelong Ocean Kingdom, Sea Lion",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC06403.jpg",
+      alt: "Chimelong Ocean Kingdom, Dolphin",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC07218.jpg",
+      alt: "Chimelong Ocean Kingdom, Dolphin",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC06996.jpg",
+      alt: "Chimelong Ocean Kingdom, Dolphin",
+      orientation: "vertical",
+    },
+    /* Travel */
   ],
 };
 

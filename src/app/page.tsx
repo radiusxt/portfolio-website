@@ -81,7 +81,7 @@ export default function Home() {
           Software Project
         </Heading>
       </RevealFx>
-      <RevealFx translateY="16" fillWidth paddingBottom="40" delay={0.8}>
+      <RevealFx translateY="16" fillWidth paddingBottom="32" delay={0.8}>
         <Projects range={[1, 1]} />
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8} >
