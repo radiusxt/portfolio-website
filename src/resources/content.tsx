@@ -281,65 +281,62 @@ const gallery: Gallery = {
   title: `Gallery Highlights`,
   description: `Images by ${person.name}`,
   images: [
+    /* Sport */
+    {
+      src: "/images/gallery/DSC00599.jpg",
+      alt: "2025, GT World Challenge Australia, Queensland Raceway",
+      orientation: "horizontal",
+    },
     {
       src: "/images/gallery/DSC01001.jpg",
-      alt: "\#888 Kelso Electrical Team MPC, Audi R8 LMS GT3 EVO II",
+      alt: "2025, GT World Challenge Australia, Queensland Raceway, \#888 Kelso Electrical Team MPC, Audi R8 LMS GT3 EVO II",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC00878.jpg",
+      alt: "2025, GT World Challenge Australia, Queensland Raceway, \#268 Team BRM/ACM Finance, Audi R8 LMS GT3 EVO II",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/DSC08736.jpg",
-      alt: "#1 Volante Rosso Motorsport, Aston Martin Vantage AMR GT3",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC04971.jpg",
-      alt: "#24 McElrea Racing, Porsche 911 GT3 Cup",
+      alt: "2025, GT World Challenge Australia, Queensland Raceway, #1 Volante Rosso Motorsport, Aston Martin AMR GT3",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/DSC07600.jpg",
-      alt: "#20 AR Nineteen Motorsport, Mercedes AMG GT4, #17 Love Racing, Mercedes AMG GT4",
+      alt: "2025, Monochrome GT4 Australia, Queensland Raceway, #20 AR Nineteen Motorsport, Mercedes AMG GT4, #17 Love Motorsport TSM, Mercedes AMG GT4",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
+      src: "/images/gallery/DSC07690.jpg",
+      alt: "2025, Monochrome GT4 Australia, Queensland Raceway, #62 Wallis Motorsport, Ford Mustang GT4",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC09786.jpg",
+      alt: "2025, Monochrome GT4 Australia, Queensland Raceway, #19 AR Nineteen Motorsport, Mercedes AMG GT4",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC04971.jpg",
+      alt: "2025, Porsche Michelin Sprint Challenge Australia, Queensland Raceway, #24 McElrea Racing, Porsche 911 GT3 Cup",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC07781.jpg",
+      alt: "2025, Porsche Michelin Sprint Challenge Australia, Queensland Raceway, #69 Jones M'sport, Porsche 911 GT3 Cup",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
+      src: "/images/gallery/DSC00456.jpg",
+      alt: "2025, Radical Cup Australia, Queensland Raceway, #28 Arise Racing, Radical SR3 XXR",
       orientation: "horizontal",
     },
+    /* Wildlife */
     {
-      src: "/images/gallery/horizontal-4.jpg",
+      src: "/images/gallery/horizontal-1.jpg",
       alt: "image",
       orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
     },
   ],
 };

@@ -108,15 +108,17 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           padding="0"
           style={{ minHeight: "100dvh" }}
         >
-          <Flex style={{
-            position: "absolute",
-            inset: 0,
-            height: "100%",
-            maxHeight: "900px",
-            pointerEvents: "none",
-            maskImage: "radial-gradient(circle at 50% 2%, black 10%, transparent 60%)",
-            WebkitMaskImage: "radial-gradient(circle at 50% 2%, black 10%, transparent 60%)",
-          }}>
+          <Flex
+            style={{
+              position: "absolute",
+              inset: 0,
+              height: "100%",
+              maxHeight: "900px",
+              pointerEvents: "none",
+              maskImage: "radial-gradient(circle at 50% 2%, black 10%, transparent 60%)",
+              WebkitMaskImage: "radial-gradient(circle at 50% 2%, black 10%, transparent 60%)",
+            }}
+          >
             <RevealFx fill position="absolute">
               <MatrixFx
                 fill

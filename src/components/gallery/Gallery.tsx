@@ -16,28 +16,15 @@ export function GalleryView() {
         slide: (
           <Flex fillWidth fillHeight horizontal="center" vertical="center">
             {image.orientation === "horizontal" &&
-              <Flex radius="l" overflow="hidden" style={{ width: "100%", height: "fit-content" }}>
-                <Media src={image.src} alt={image.alt} objectFit="contain" radius="l" />
+              <Flex radius="l" overflow="hidden" style={{ height: "fit-content", width: "100%" }}>
+                <Media src={image.src} alt={image.alt} objectFit="contain" />
               </Flex>
             }
-            {/*image.orientation === "vertical" &&
-              <Flex radius="l" overflow="hidden" style={{ width: "fit-content", height: "100%" }}>
-                <Media src={image.src} alt={image.alt} objectFit="contain" radius="l" />
-              </Flex>
-            */}
             {image.orientation === "vertical" && 
-            <Media 
-              src={image.src} 
-              alt={image.alt} 
-              objectFit="contain"
-              radius="l" // Apply radius directly here
-              style={{ 
-                height: "100%", 
-                width: "auto", // Better than fit-content for mobile stability
-                maxWidth: "100%" 
-              }} 
-            />
-          }
+              <Flex radius="l" overflow="hidden" style={{ height: "100%", aspectRatio: "2 / 3" }}>
+                <Media src={image.src} alt={image.alt} objectFit="cover" />
+              </Flex>
+            }
           </Flex>
         )
       }))}

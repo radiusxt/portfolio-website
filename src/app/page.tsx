@@ -8,7 +8,7 @@ import {
   Line,
   RevealFx,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes } from "@/resources";
+import { home, about, person, baseURL } from "@/resources";
 import { Scroll } from "@/components/Scroll";
 import { Projects } from "@/components/work/Projects";
 import { GalleryView } from "@/components/gallery/Gallery";
