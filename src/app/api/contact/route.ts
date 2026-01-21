@@ -4,8 +4,8 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
-  if (!process.env.RESEND_API_KEY) {
-    return NextResponse.json({ message: "Missing API key" }, { status: 500 });
+  if (!process.env.EMAIL_ADDRESS || !process.env.RESEND_API_KEY) {
+    return NextResponse.json({ message: "Missing email address or API key" }, { status: 500 });
   }
 
   try {
@@ -17,7 +17,7 @@ export async function POST(req: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'Hyperdrive Media <hello@hyperdrivemedia.co>', 
-      to: ['nathaniel@outlook.com.au'],
+      to: [process.env.EMAIL_ADDRESS],
       replyTo: email,
       subject: `New Message from ${name}`,
       text: `Name: ${name}\n\nEmail: ${email}\n\nMessage:\n\n${description}`,
