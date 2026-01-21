@@ -9,6 +9,7 @@ import {
   Text,
   Column,
   IconButton,
+  Feedback,
   ShineFx
 } from "@once-ui-system/core";
 import React, { useState } from "react";
@@ -122,12 +123,12 @@ export const ContactForm = () => {
                 Send
             </ShineFx>
           </Button>
-          {status === "success" && (
-            <Text variant="heading-default-s" align="center" color="success-strong" marginTop="4">
+          {status === "success" && ( // needs feedback element
+            <Text variant="heading-default-s" align="center" color="success-strong" marginTop="4"> 
               Message Received! I will get in touch with you shortly.
             </Text>
           )}
-          {status === "error" && (
+          {status === "error" && ( // needs feedback element
             <Text variant="body-default-s" align="center" color="danger-strong" marginTop="4">
               Something went wrong. Please try again.
             </Text>

@@ -322,7 +322,6 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     /* Wildlife */
-    
     {
       src: "/images/gallery/DSC02719.jpg",
       alt: "Taronga Zoo, Meerkat",
@@ -364,6 +363,46 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     /* Travel */
+    {
+      src: "/images/gallery/DSC03850.jpg",
+      alt: "West Lake, Wuzhen",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/DSC04421.jpg",
+      alt: "West Lake, Hangzhou",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC05095.jpg",
+      alt: "Eyes of the GBA Bookstore, Shenzhen",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/DSC05126.jpg",
+      alt: "Gangxia North Metro Station, Shenzhen",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC05128.jpg",
+      alt: "Gangxia North Metro Station, Shenzhen",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC03395.jpg",
+      alt: "Shanghai City at Night, Shanghai",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC07429.jpg",
+      alt: "Hong Kong City at Night, Hong Kong SAR",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC07433.jpg",
+      alt: "Hong Kong City at Night, Hong Kong SAR",
+      orientation: "horizontal",
+    },
   ],
 };
 

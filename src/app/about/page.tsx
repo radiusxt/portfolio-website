@@ -76,7 +76,7 @@ export default function About() {
           </RevealFx>
         </Column>
       )}
-      <RevealFx delay={0.4}>
+      <RevealFx delay={0.2}>
         <Row fillWidth s={{ direction: "column"}} horizontal="center">
           {about.avatar.display && (
             <Column

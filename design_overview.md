@@ -26,11 +26,12 @@
 - Featured Project
   - Image
   - Description
-- Featured Images
-  - &check; Masonry Grid Layout
+- &check; Featured Images
+  - &check; Carousel
 - &check; Contact form to send emails with name, email address and message
   - &check; Semantic error checking
   - &check; Resend API
+  - Feedback on Success/Failure
   - Email existence check
 
 ## 'About' Page &check;
@@ -67,7 +68,8 @@
 - &check; Title
 - &check; Featured Images
   - &check; Carousel
-  - 8 Images/Category
+  - &check; 8 Images/Category
+  - Progress Bar
 - &check; Subtitle
 - &check; Description
 - &check; Pic-Time Website Integration

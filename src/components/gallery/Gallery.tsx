@@ -12,7 +12,7 @@ export function GalleryView() {
       radius="l"
       border="transparent"
       play={{ auto: true, interval: 5000, controls: true }}
-      items={gallery.images.map((image) => ({
+      items={gallery.images.map((image, index) => ({
         slide: (
           <Flex fillWidth fillHeight horizontal="center" vertical="center">
             {image.orientation === "horizontal" &&
@@ -29,5 +29,6 @@ export function GalleryView() {
         )
       }))}
     />
+    // insert Progress bar here
   );
 }
