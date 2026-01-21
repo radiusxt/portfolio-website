@@ -53,7 +53,7 @@ export default function Gallery() {
       <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8}>
         <Icon name="chevronDown" size="xl" />
       </RevealFx>
-      <RevealFx id="portfolio" translateY="16" fillWidth horizontal="center" delay={1} style={{ scrollMarginTop: "-15px" }}>
+      <RevealFx id="portfolio" translateY="16" fillWidth horizontal="center" delay={1} style={{ marginBottom: "-25px", scrollMarginTop: "-15px" }}>
         <PicTimeIntegration />
       </RevealFx>
     </Flex>

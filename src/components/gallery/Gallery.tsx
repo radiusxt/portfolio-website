@@ -20,11 +20,24 @@ export function GalleryView() {
                 <Media src={image.src} alt={image.alt} objectFit="contain" radius="l" />
               </Flex>
             }
-            {image.orientation === "vertical" &&
-              <Flex radius="l" overflow="hidden" style={{ width: "auto", height: "100%" }}>
+            {/*image.orientation === "vertical" &&
+              <Flex radius="l" overflow="hidden" style={{ width: "fit-content", height: "100%" }}>
                 <Media src={image.src} alt={image.alt} objectFit="contain" radius="l" />
               </Flex>
-            }
+            */}
+            {image.orientation === "vertical" && 
+            <Media 
+              src={image.src} 
+              alt={image.alt} 
+              objectFit="contain"
+              radius="l" // Apply radius directly here
+              style={{ 
+                height: "100%", 
+                width: "auto", // Better than fit-content for mobile stability
+                maxWidth: "100%" 
+              }} 
+            />
+          }
           </Flex>
         )
       }))}
