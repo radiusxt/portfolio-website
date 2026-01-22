@@ -8,12 +8,14 @@ export function GalleryView() {
     <Carousel
       aspectRatio="3 / 2"
       indicator="thumbnail"
+      thumbnail={{height: 7}}
       controls={false}
       radius="l"
+      translateY={2}
       border="transparent"
       play={{ auto: true, interval: 5000, controls: true }}
-      items={gallery.images.map((image, index) => ({
-        slide: (
+      items={gallery.images.map((image) => ({
+        slide: 
           <Flex fillWidth fillHeight horizontal="center" vertical="center">
             {image.orientation === "horizontal" &&
               <Flex radius="l" overflow="hidden" style={{ height: "fit-content", width: "100%" }}>
@@ -26,7 +28,8 @@ export function GalleryView() {
               </Flex>
             }
           </Flex>
-        )
+        ,
+        alt: image.alt
       }))}
     />
   );

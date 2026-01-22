@@ -106,10 +106,10 @@ const about: About = {
         role: "L2 Sales Support Engineer",
         achievements: [
           <>
-            Provided support on a variety of industrial grade sensors for several industries.
+            Provided support on a large variety of industrial grade sensors for several industries.
           </>,
           <>
-            Discussed with clients to engineer innovative solutions for their applications.
+            Collaborated with clients to engineer solutions for their applications.
           </>,
           <>
             Improved lead conversion rates by 3.5% through timely communication.
@@ -270,8 +270,7 @@ const work: Work = {
   path: "/work",
   label: "Software",
   title: `Projects`,
-  description: `Software development projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/work/projects
+  description: `Software projects by ${person.name}`,
 };
 
 const gallery: Gallery = {

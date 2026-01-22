@@ -6,7 +6,6 @@ import {
   Input,
   Textarea,
   Heading,
-  Text,
   Column,
   IconButton,
   Feedback,
@@ -21,10 +20,7 @@ export const ContactForm = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ 
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleClear = (field: 'name' | 'email') => {
@@ -65,9 +61,9 @@ export const ContactForm = () => {
       <Heading variant="display-default-s" paddingBottom="16" style={{ letterSpacing: "0px" }}>
         Get in Touch
       </Heading>
-      <Text variant="heading-default-s" align="center" paddingBottom="12">
+      <Heading variant="heading-default-s" align="center" paddingBottom="12">
         For work opportunities, collaborations or other inquiries, please complete the form below.
-      </Text>
+      </Heading>
       <form onSubmit={handleSubmit} style={{ width: "100%" }}>
         <Flex direction="column" gap="20">
           <Input
@@ -124,26 +120,22 @@ export const ContactForm = () => {
             </ShineFx>
           </Button>
           {status === "success" && 
-            <Flex marginTop="4" style={{ letterSpacing: "0.65px" }}>
-              <Feedback
-                variant="success"
-                paddingLeft="160"
-                paddingTop="4"
-                paddingBottom="4"
-                title="Success! I will get in touch with you shortly."
-              />
-            </Flex>
+            <Feedback variant="success">
+              <Flex direction="column" align="center" padding="2" style={{ letterSpacing: "0.4px" }}>
+                <Heading variant="heading-default-s">
+                  Message Received! I will get in touch with you shortly.
+                </Heading>
+              </Flex>
+            </Feedback>
           }
           {status === "error" && 
-            <Flex marginTop="4" style={{ letterSpacing: "0.65px" }}>
-              <Feedback
-                variant="danger"
-                paddingLeft="160"
-                paddingTop="4"
-                paddingBottom="4"
-                title="Error! Something went wrong. Please try again."
-              />
-            </Flex>
+            <Feedback variant="danger">
+              <Flex direction="column" align="center" padding="2" style={{ letterSpacing: "0.4px" }}>
+                <Heading variant="heading-default-s">
+                  Error! Something went wrong. Please try again.
+                </Heading>
+              </Flex>
+            </Feedback>
           }
         </Flex>
       </form>

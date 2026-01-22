@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Column, Flex, Text } from "@once-ui-system/core";
+import { Column, Flex, Heading } from "@once-ui-system/core";
 import { Scroll } from "@/components/Scroll";
 import styles from "./about.module.scss";
 
@@ -34,7 +34,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, abo
           <Scroll target={section.title}>
             <Flex cursor="interactive" className={styles.hover} vertical="center" gap="8">
               <Flex height="2" minWidth="20" background="brand-strong"></Flex>
-              <Text variant="body-default-xl">{section.title}</Text>
+              <Heading variant="body-default-xl">{section.title}</Heading>
             </Flex>
           </Scroll>
         </Column>
