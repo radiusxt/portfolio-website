@@ -1,4 +1,4 @@
-# Design Document
+# Design Overview
 
 ## General Design Features &check;
 
@@ -34,8 +34,8 @@
   - &check; Sending Emails
     - &check; Resend API
   - &check; Feedback on Success/Failure
-  - Email Security Check
-    - Emailable API
+  - &check; Email Security Check
+    - &check; Emailable API
 
 ## 'About' Page &check;
 
