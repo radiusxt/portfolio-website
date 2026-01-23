@@ -48,6 +48,7 @@ export const ContactForm = () => {
       if (response.ok) {
         setStatus("success");
         setFormData({ name: "", email: "", description: "" });
+
       } else {
         setStatus("error");
       }

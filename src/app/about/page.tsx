@@ -115,7 +115,12 @@ export default function About() {
               vertical="center"
               marginBottom="32"
             >
-              <Heading className={styles.textAlign} variant="display-default-xl" paddingBottom="16" style={{ letterSpacing: "-1px" }}>
+              <Heading
+                className={styles.textAlign}
+                variant="display-default-xl"
+                paddingBottom="16"
+                style={{ letterSpacing: "-1px" }}
+              >
                 {person.name}
               </Heading>
               <Heading className={styles.textAlign} variant="display-default-s">
@@ -194,7 +199,7 @@ export default function About() {
                             key={`${experience.company}-${index}`}
                             variant="body-default-l"
                             align="justify"
-                            style={{ textWrap: "wrap" }}
+                            wrap="wrap"
                           >
                             {achievement}
                           </Heading>
@@ -252,13 +257,18 @@ export default function About() {
                       <Heading id={skill.title} variant="heading-default-xl" marginBottom="8">
                         {skill.title}
                       </Heading>
-                      <Heading variant="body-default-l" onBackground="neutral-strong">
+                      <Heading variant="body-default-l" onBackground="neutral-strong" wrap="wrap">
                         {skill.description}
                       </Heading>
                       <Column fillWidth gap="20">
                         {skill.tags?.map((tag, tagIndex) => (
                           <Row key={`${skill.title}-${tagIndex}`} fillWidth vertical="center" gap="12">
-                            <Tag key={index} prefixIcon={tag.icon} gap="8" variant="brand" style={{ width: "112px", height: "35px" }}>
+                            <Tag
+                              key={index}
+                              prefixIcon={tag.icon}
+                              gap="8" variant="brand"
+                              style={{ width: "112px", height: "35px" }}
+                            >
                               <Heading variant="label-default-s">{tag.name}</Heading>
                             </Tag>
                             <Column>

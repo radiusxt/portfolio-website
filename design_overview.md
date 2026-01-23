@@ -2,8 +2,8 @@
 
 ## General Design Features &check;
 
-- &check; Clicking a header component will scroll to the top and page transition if a different page is selected.
-- &check; Dot matrix background theme
+- &check; Clicking on a page in the header component will scroll to the top.
+- &check; Dot Matrix Background Theme
 - &check; Light/Dark Mode Toggle
 - &check; Favicon
 
@@ -11,7 +11,7 @@
 
 - &check; Left: Location
 - &check; Centre: {Home} | {Person} About, {Code} Software, {Image} Photography | {Sun/Moon} Appearance
-- &check; Right: Time in location's timezone
+- &check; Right: Time in Location's Timezone
 
 ## Footer &check;
 
@@ -28,16 +28,19 @@
   - Description
 - &check; Featured Images
   - &check; Carousel
-- &check; Contact form to send emails with name, email address and message
-  - &check; Semantic error checking
-  - &check; Resend API
+- &check; Contact Form
+  - &check; Name, Email, Message Fields
+  - &check; Semantic Error Checking
+  - &check; Sending Emails
+    - &check; Resend API
   - &check; Feedback on Success/Failure
-  - Email Address Security using Cloudflare
+  - Email Security Check
+    - Emailable API
 
 ## 'About' Page &check;
 
 - &check; Contents Sidebar
-- &check; Headshot
+- &check; Avatar
 - &check; Location
 - &check; Languages
 - &check; Full Name

@@ -4,8 +4,8 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
-  if (!process.env.EMAIL_ADDRESS || !process.env.RESEND_API_KEY) {
-    return NextResponse.json({ message: "Missing email address or API key" }, { status: 500 });
+  if (!process.env.EMAIL_ADDRESS || !process.env.RESEND_API_KEY || !process.env.EMAILABLE_API_KEY) {
+    return NextResponse.json({ message: "Missing email address or API key(s)." }, { status: 500 });
   }
 
   try {
@@ -13,6 +13,17 @@ export async function POST(req: Request) {
 
     if (!name || !email || !description) {
       return NextResponse.json({ message: "All fields are required" }, { status: 400 });
+    }
+    
+    try {
+      const emailableRes = await fetch(`https://api.emailable.com/v1/verify?email=${email}&api_key=${process.env.EMAILABLE_API_KEY}`);
+      const emailableData = await emailableRes.json();
+
+      if (emailableData.state === 'undeliverable') {
+        return NextResponse.json({ message: "The email address provided does not exist." }, { status: 400 });
+      }
+    } catch (error) {
+      return NextResponse.json({ message: error }, { status: 400 });
     }
 
     const { data, error } = await resend.emails.send({

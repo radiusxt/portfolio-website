@@ -84,7 +84,7 @@ export default function Home() {
       <RevealFx translateY="16" fillWidth paddingBottom="32" delay={0.8}>
         <Projects range={[1, 1]} />
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8} >
+      <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8} style={{ marginBottom: "-32px" }}>
         <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
           Gallery Highlights
         </Heading>
