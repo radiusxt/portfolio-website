@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Media,
-  Column,
-  Flex,
-  Heading,
-  SmartLink,
-  Text,
-  Line,
-} from "@once-ui-system/core";
+import { Media, Column, Flex, Heading, SmartLink, Line } from "@once-ui-system/core";
 
 interface ProjectCardProps {
   href: string;
@@ -20,45 +12,32 @@ interface ProjectCardProps {
   link: string;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({
-  href,
-  image,
-  title,
-  content,
-  description,
-  link,
-}) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ href, image, title, description }) => {
   return (
-    <Column fillWidth gap="s">
+    <Column fillWidth horizontal="center" gap="xs">
       <SmartLink href={href} style={{ display: 'contents' }}>
         <Media src={image} alt={title} border="transparent" radius="l" />
       </SmartLink>
-      <Line height={0.2} radius="m" style={{background: "white"}} />
-      <Flex
-        fillWidth
-        paddingX="xs"
-        paddingBottom="32"
-        s={{ direction: "column" }}
-      >
+      <Line maxWidth={74} height={0.2} radius="m" marginBottom="2" style={{ background: "var(--neutral-on-background-strong)" }} /> 
+      <Flex fillWidth paddingX="xs" paddingBottom="0" s={{ direction: "column" }}>
         {title && 
-          <Flex flex={5}>
-            <Heading as="h2" wrap="stable" variant="heading-default-xl">
+          <Flex flex={4}>
+            <Heading as="h2" wrap="stable" variant="heading-default-xl" style={{ letterSpacing: "0.2px" }}>
               {title}
             </Heading>
           </Flex>
         }
         {description.trim() && 
           <Column flex={7} gap="16">
-            {description?.trim() && 
-              <Heading
-                variant="body-default-l"
-                wrap="balance"
-                onBackground="neutral-weak"
-                align="right"
-              >
-                {description}
-              </Heading>
-            }
+            <Heading
+              variant="body-default-l"
+              onBackground="brand-weak"
+              wrap="balance"
+              align="right"
+              style={{ lineHeight: "1.4", letterSpacing: "0.1px" }}
+            >
+              {description}
+            </Heading>
           </Column>
         }
       </Flex>

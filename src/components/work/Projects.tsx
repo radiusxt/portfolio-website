@@ -28,8 +28,8 @@ export function Projects({ range, exclude }: ProjectsProps) {
           priority={index < 8}
           key={post.slug}
           href={`/work/${post.slug}`}
-          image={post.metadata.image}
           title={post.metadata.title}
+          image={post.metadata.image}
           description={post.metadata.summary}
           content={post.content}
           link={post.metadata.link || ""}

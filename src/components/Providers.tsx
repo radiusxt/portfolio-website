@@ -38,9 +38,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           variant={dataStyle.variant as ChartVariant}
           mode={dataStyle.mode as ChartMode}
           height={dataStyle.height}
-          axis={{
-            stroke: dataStyle.axis.stroke,
-          }}
+          axis={{ stroke: dataStyle.axis.stroke }}
           tick={{
             fill: dataStyle.tick.fill,
             fontSize: dataStyle.tick.fontSize,
