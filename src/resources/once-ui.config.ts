@@ -9,6 +9,7 @@ import {
   SchemaConfig,
   StyleConfig,
 } from "@/types";
+import { Rubik, Geist_Mono } from "next/font/google";
 import { home } from "./index";
 
 const baseURL: string = "https://hyperdrivemedia.co/";
@@ -26,25 +27,21 @@ const display: DisplayConfig = {
   themeSwitcher: true,
 };
 
-const protectedRoutes: ProtectedRoutesConfig = {
-};
+const protectedRoutes: ProtectedRoutesConfig = {};
 
-import { Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
-
-const heading = Geist({
+const heading = Rubik({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
 });
 
-const body = Geist({
+const body = Rubik({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
 });
 
-const label = Geist({
+const label = Rubik({
   variable: "--font-label",
   subsets: ["latin"],
   display: "swap",

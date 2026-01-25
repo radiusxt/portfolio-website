@@ -78,13 +78,13 @@ export default function Home() {
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8}>
         <Heading id="featured" variant="display-default-m" style={{ letterSpacing: "0px", scrollMarginTop: "60px" }}>
-          Software Project
+          ISIC Challenge Dataset
         </Heading>
       </RevealFx>
       <RevealFx translateY="16" fillWidth paddingBottom="32" delay={0.8}>
         <Projects range={[1, 1]} />
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8} style={{ marginBottom: "-32px" }}>
+      <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8} style={{ marginBottom: "-24px" }}>
         <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
           Gallery Highlights
         </Heading>

@@ -16,10 +16,10 @@ export async function POST(req: Request) {
     }
     
     try {
-      const emailableRes = await fetch(`https://api.emailable.com/v1/verify?email=${email}&api_key=${process.env.EMAILABLE_API_KEY}`);
-      const emailableData = await emailableRes.json();
+      const result = await fetch(`https://api.emailable.com/v1/verify?email=${email}&api_key=${process.env.EMAILABLE_API_KEY}`);
+      const emailableData = await result.json();
 
-      if (emailableData.state === 'undeliverable') {
+      if (emailableData.state === "undeliverable") {
         return NextResponse.json({ message: "The email address provided does not exist." }, { status: 400 });
       }
     } catch (error) {

@@ -97,7 +97,7 @@ export default function About() {
                 <Heading variant="body-default-xl">{person.location}</Heading>
               </Row>
               {person.languages && person.languages.length > 0 && (
-                <Row wrap gap="12">
+                <Row gap="12">
                   {person.languages.map((language, index) => (
                     <Tag variant="brand" key={index} size="l">
                       <Heading variant="label-default-l">{language}</Heading>
@@ -118,12 +118,12 @@ export default function About() {
               <Heading
                 className={styles.textAlign}
                 variant="display-default-xl"
-                paddingBottom="16"
+                paddingBottom="24"
                 style={{ letterSpacing: "-1px" }}
               >
                 {person.name}
               </Heading>
-              <Heading className={styles.textAlign} variant="display-default-s">
+              <Heading className={styles.textAlign} variant="display-default-s" paddingBottom="32">
                 {person.role}
               </Heading>
               {social.length > 0 && (
@@ -131,7 +131,6 @@ export default function About() {
                   className={styles.blockAlign}
                   data-border="rounded"
                   horizontal="center"
-                  paddingTop="20"
                   gap="12"
                   wrap
                   fitWidth
@@ -175,7 +174,7 @@ export default function About() {
             }
             {about.work.display && 
               <>
-                <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
+                <Heading as="h2" id={about.work.title} variant="display-default-s" marginBottom="m">
                   {about.work.title}
                 </Heading>
                 <Column fillWidth gap="l" marginBottom="40">
@@ -185,11 +184,11 @@ export default function About() {
                         <Heading id={experience.company} variant="heading-default-xl">
                           {experience.company}
                         </Heading>
-                        <Heading variant="heading-default-xs" onBackground="neutral-weak">
+                        <Heading variant="heading-default-s" onBackground="neutral-weak">
                           {experience.timeframe}
                         </Heading>
                       </Row>
-                      <Heading variant="body-default-s" onBackground="brand-weak" marginBottom="m">
+                      <Heading variant="body-default-m" onBackground="brand-weak" marginBottom="m">
                         {experience.role}
                       </Heading>
                       <Column as="ul" gap="16" >
@@ -212,7 +211,7 @@ export default function About() {
             }
             {about.studies.display && 
               <>
-                <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
+                <Heading as="h2" id={about.studies.title} variant="display-default-s" marginBottom="m">
                   {about.studies.title}
                 </Heading>
                 <Column fillWidth gap="l" marginBottom="40">
@@ -222,11 +221,11 @@ export default function About() {
                         <Heading id={institution.name} variant="heading-default-xl">
                           {institution.name}
                         </Heading>
-                        <Heading variant="heading-default-xs" onBackground="neutral-weak">
+                        <Heading variant="heading-default-s" onBackground="neutral-weak">
                           {institution.timeframe}
                         </Heading>
                       </Row>
-                      <Heading variant="body-default-s" onBackground="brand-weak" marginBottom="m">
+                      <Heading variant="body-default-m" onBackground="brand-weak" marginBottom="m">
                         {institution.degree}
                       </Heading>
                       <Column as="ul" gap="16">
@@ -248,7 +247,7 @@ export default function About() {
             }
             {about.technical.display && 
               <>
-                <Heading as="h2" id={about.technical.title} variant="display-strong-s" marginBottom="m">
+                <Heading as="h2" id={about.technical.title} variant="display-default-s" marginBottom="m">
                   {about.technical.title}
                 </Heading>
                 <Column fillWidth gap="l">
@@ -267,7 +266,7 @@ export default function About() {
                               key={index}
                               prefixIcon={tag.icon}
                               gap="8" variant="brand"
-                              style={{ width: "112px", height: "35px" }}
+                              style={{ width: "110px", height: "35px" }}
                             >
                               <Heading variant="label-default-s">{tag.name}</Heading>
                             </Tag>

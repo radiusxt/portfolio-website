@@ -27,6 +27,7 @@ export const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en
         second: "2-digit",
         hour12: false,
       };
+
       const timeString = new Intl.DateTimeFormat(locale, options).format(now);
       setCurrentTime(timeString);
     };
@@ -43,9 +44,7 @@ export const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en
 export const Header = () => {
   const pathname = usePathname() ?? "";
 
-  const scrollToTop = (href: string) => (e: React.MouseEvent) => {
-    window.scrollTo({ top: 0, left: 0});
-  };
+  const scrollToTop = () => { window.scrollTo({ top: 0, left: 0}); };
 
   return (
     <>
@@ -62,7 +61,9 @@ export const Header = () => {
         data-border="rounded"
       >
         <Row paddingLeft="16" fillWidth vertical="center" textVariant="label-default-m" style={{ letterSpacing: "0.01em" }}>
-          {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
+          {display.location &&
+            <Row s={{ hide: true }}>{person.location}</Row>
+          }
         </Row>
         <Row fillWidth horizontal="center">
           <Row
@@ -81,7 +82,7 @@ export const Header = () => {
                   href="/"
                   size="l"
                   selected={pathname === "/"}
-                  onClickCapture={scrollToTop("/")}
+                  onClickCapture={scrollToTop}
                 />
               )}
               <Line background="neutral-alpha-strong" vert maxHeight="24" />
@@ -94,7 +95,7 @@ export const Header = () => {
                       label={about.label}
                       size="l"
                       selected={pathname === "/about"}
-                      onClickCapture={scrollToTop("/about")}
+                      onClickCapture={scrollToTop}
                     />
                   </Row>
                   <Row hide s={{ hide: false }}>
@@ -103,7 +104,7 @@ export const Header = () => {
                       href="/about"
                       size="l"
                       selected={pathname === "/about"}
-                      onClickCapture={scrollToTop("/about")}
+                      onClickCapture={scrollToTop}
                     />
                   </Row>
                 </>
@@ -117,7 +118,7 @@ export const Header = () => {
                       label={work.label}
                       size="l"
                       selected={pathname.startsWith("/work")}
-                      onClickCapture={scrollToTop("/work")}
+                      onClickCapture={scrollToTop}
                     />
                   </Row>
                   <Row hide s={{ hide: false }}>
@@ -126,7 +127,7 @@ export const Header = () => {
                       href="/work"
                       size="l"
                       selected={pathname.startsWith("/work")}
-                      onClickCapture={scrollToTop("/work")}
+                      onClickCapture={scrollToTop}
                     />
                   </Row>
                 </>
@@ -140,7 +141,7 @@ export const Header = () => {
                       label={gallery.label}
                       size="l"
                       selected={pathname.startsWith("/gallery")}
-                      onClickCapture={scrollToTop("/gallery")}
+                      onClickCapture={scrollToTop}
                     />
                   </Row>
                   <Row hide s={{ hide: false }}>
@@ -149,7 +150,7 @@ export const Header = () => {
                       href="/gallery"
                       size="l"
                       selected={pathname.startsWith("/gallery")}
-                      onClickCapture={scrollToTop("/gallery")}
+                      onClickCapture={scrollToTop}
                     />
                   </Row>
                 </>

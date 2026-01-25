@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Nathaniel",
   lastName: "Chan",
   name: `Nathaniel Chan`,
-  role: "Software Engineer & Photographer",
+  role: "Software Engineer, Photographer",
   avatar: "/images/brand/avatar.jpg",
   email: "nathaniel@outlook.com.au",
   location: "Australia/Brisbane",
@@ -40,7 +40,7 @@ const home: Home = {
   description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}.`,
   headline:
     <>
-      Buidling software that scales.
+      Building software that scales.
       Capturing photos that inspire.
     </>,
   featured: {
@@ -76,7 +76,7 @@ const about: About = {
     display: true,
     title: "Introduction",
     description: 
-      "I'm a software engineer and photographer with a passion for building clean, innovative solutions and capturing inspirational images. Through a seamless blend of technical background with creative perspective, I focus on clarity, precision and impact."
+      "I'm a software engineer and photographer with a huge passion for building thoughtful, innovative solutions and capturing inspirational images. Through a seamless blend of technical background with creative perspective, I focus on clarity, precision and impact."
     ,
   },
   work: {
@@ -186,7 +186,7 @@ const about: About = {
             icon: "html",
           },
           {
-            name: "CSS",
+            name: "CSS/SCSS",
             description: "Styled responsive layouts with modern CSS/SCSS.",
             icon: "css",
           },
@@ -202,7 +202,7 @@ const about: About = {
         tags: [
           {
             name: "VS Code",
-            description: "My IDE of choice for most tasks.",
+            description: "My IDE of choice for most coding tasks.",
             icon: "vscode",
           },
           {
@@ -217,7 +217,7 @@ const about: About = {
           },
           {
             name: "Docker",
-            description: "Containerised a scalable application using a microservices architecture.",
+            description: "Containerised a scalable application with a microservices architecture.",
             icon: "docker",
           },
         ],
@@ -237,7 +237,7 @@ const about: About = {
           },
           {
             name: "Jupyter",
-            description: "Preprocessed data and executed experiments to produce visualisations.",
+            description: "Preprocessed data & executed experiments to produce visualisations.",
             icon: "jupyter",
           },
           {
@@ -247,7 +247,7 @@ const about: About = {
           },
           {
             name: "React",
-            description: "Designed modular, interactive components & managed client-side state.",
+            description: "Designed modular, interactive & responsive client-side components.",
             icon: "react",
           },
           {

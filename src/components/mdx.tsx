@@ -1,5 +1,5 @@
-import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import React, { ReactNode } from "react";
+import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import { slugify as transliterate } from "transliteration";
 
 import {
@@ -79,17 +79,13 @@ function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
 
 function slugify(str: string): string {
   const strWithAnd = str.replace(/&/g, " and "); // Replace & with 'and'
-  return transliterate(strWithAnd, {
-    lowercase: true,
-    separator: "-", // Replace spaces with -
-  }).replace(/\-\-+/g, "-"); // Replace multiple - with single -
+  return transliterate(strWithAnd, { lowercase: true, separator: "-" }).replace(/\-\-+/g, "-");
 }
 
 function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
-  const CustomHeading = ({
-    children,
-    ...props
-  }: Omit<React.ComponentProps<typeof HeadingLink>, "as" | "id">) => {
+  const CustomHeading = ({ children, ...props}:
+      Omit<React.ComponentProps<typeof HeadingLink>, "as" | "id">) => {
+
     const slug = slugify(children as string);
     return (
       <HeadingLink marginTop="24" marginBottom="12" as={as} id={slug} {...props}>
@@ -99,7 +95,6 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
   };
 
   CustomHeading.displayName = `${as}`;
-
   return CustomHeading;
 }
 
@@ -125,7 +120,6 @@ function createCodeBlock(props: any) {
   // For pre tags that contain code blocks
   if (props.children && props.children.props && props.children.props.className) {
     const { className, children } = props.children.props;
-
     // Extract language from className (format: language-xxx)
     const language = className.replace("language-", "");
     const label = language.charAt(0).toUpperCase() + language.slice(1);
@@ -134,13 +128,11 @@ function createCodeBlock(props: any) {
       <CodeBlock
         marginTop="8"
         marginBottom="16"
-        codes={[
-          {
-            code: children,
-            language,
-            label,
-          },
-        ]}
+        codes={[{
+          code: children,
+          language,
+          label,
+        }]}
         copyButton={true}
       />
     );
@@ -204,9 +196,7 @@ const components = {
   SmartLink,
 };
 
-type CustomMDXProps = MDXRemoteProps & {
-  components?: typeof components;
-};
+type CustomMDXProps = MDXRemoteProps & { components?: typeof components; };
 
 export function CustomMDX(props: CustomMDXProps) {
   return <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />;

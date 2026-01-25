@@ -27,39 +27,51 @@ export default function Gallery() {
         image={`/api/og/generate?title=${encodeURIComponent(gallery.title)}`}
         author={{ name: person.name, url: `${baseURL}${gallery.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="32" delay={0.4} style={{ marginTop: "-30px" }}>
+      <RevealFx
+        translateY="16"
+        fillWidth
+        horizontal="center"
+        paddingBottom="32"
+        delay={0.4}
+        style={{ marginTop: "-24px" }}
+      >
         <Scroll target="portfolio">
           <Logo />
         </Scroll>
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="48" delay={0.4}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="48" delay={0.8}>
         <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
           {gallery.title}
         </Heading>
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128" delay={0.4}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128" delay={0.8}>
         <GalleryView />
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={0.8}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={1.2}>
         <Heading variant="display-default-m" style={{ letterSpacing: "0px", textAlign: "center" }}>
           Discover the Full Gallery
         </Heading>
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="40" delay={0.8}>
+      <RevealFx translateY="16" fillWidth horizontal="center" delay={1.2}>
         <Heading variant="heading-default-xl" style={{ letterSpacing: "0.2px", textAlign: "center" }}>
           My images specialise in sport, wildlife & travel to capture moments in motion.
         </Heading>
-      </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8}>
-        <Icon name="chevronDown" size="xl" />
       </RevealFx>
       <RevealFx
         id="portfolio"
         translateY="16"
         fillWidth
         horizontal="center"
-        delay={1}
-        style={{ marginBottom: "-25px", scrollMarginTop: "-15px" }}
+        delay={1.2}
+        width="xl"
+        style={{
+          marginBottom: "-25px",
+          scrollMarginTop: "-15px",
+          position: "relative",
+          width: "100vw",
+          left: "50%",
+          transform: "translateX(-50%)"
+        }}
       >
         <PicTimeIntegration />
       </RevealFx>

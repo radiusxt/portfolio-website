@@ -1,89 +1,66 @@
 "use client";
 
 import {
-  AvatarGroup,
-  Carousel,
+  Media,
   Column,
   Flex,
   Heading,
   SmartLink,
   Text,
+  Line,
 } from "@once-ui-system/core";
 
 interface ProjectCardProps {
   href: string;
   priority?: boolean;
-  images: string[];
+  image: string;
   title: string;
   content: string;
   description: string;
-  avatars: { src: string }[];
   link: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   href,
-  images = [],
+  image,
   title,
   content,
   description,
-  avatars,
   link,
 }) => {
   return (
-    <Column fillWidth gap="m">
-      <Carousel
-        sizes="(max-width: 960px) 100vw, 960px"
-        items={images.map((image) => ({
-          slide: image,
-          alt: title,
-        }))}
-      />
+    <Column fillWidth gap="s">
+      <SmartLink href={href} style={{ display: 'contents' }}>
+        <Media src={image} alt={title} border="transparent" radius="l" />
+      </SmartLink>
+      <Line height={0.2} radius="m" style={{background: "white"}} />
       <Flex
-        s={{ direction: "column" }}
         fillWidth
-        paddingX="s"
-        paddingTop="12"
-        paddingBottom="24"
-        gap="l"
+        paddingX="xs"
+        paddingBottom="32"
+        s={{ direction: "column" }}
       >
-        {title && (
+        {title && 
           <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
+            <Heading as="h2" wrap="stable" variant="heading-default-xl">
               {title}
             </Heading>
           </Flex>
-        )}
-        {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
+        }
+        {description.trim() && 
           <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
-            {description?.trim() && (
-              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
+            {description?.trim() && 
+              <Heading
+                variant="body-default-l"
+                wrap="balance"
+                onBackground="neutral-weak"
+                align="right"
+              >
                 {description}
-              </Text>
-            )}
-            <Flex gap="24" wrap>
-              {content?.trim() && (
-                <SmartLink
-                  suffixIcon="arrowRight"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={href}
-                >
-                  <Text variant="body-default-s">Read case study</Text>
-                </SmartLink>
-              )}
-              {link && (
-                <SmartLink
-                  suffixIcon="arrowUpRightFromSquare"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={link}
-                >
-                  <Text variant="body-default-s">View project</Text>
-                </SmartLink>
-              )}
-            </Flex>
+              </Heading>
+            }
           </Column>
-        )}
+        }
       </Flex>
     </Column>
   );

@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { getPosts } from "@/utils/utils";
 import {
   Meta,
   Schema,
@@ -12,14 +11,14 @@ import {
   Text,
   SmartLink,
   Row,
-  Avatar,
   Line,
 } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
-import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
-import { Metadata } from "next";
 import { Projects } from "@/components/work/Projects";
+import { formatDate } from "@/utils/formatDate";
+import { getPosts } from "@/utils/utils";
+import { Metadata } from "next";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
@@ -118,9 +117,9 @@ export default async function Project({
           </Text>
         </Row>
       </Row>
-      {post.metadata.images.length > 0 && (
+      {/*post.metadata.images.length > 0 && (
         <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
-      )}
+      )*/}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />
       </Column>

@@ -4,6 +4,7 @@
 
 - &check; Clicking on a page in the header component will scroll to the top.
 - &check; Dot Matrix Background Theme
+- &check; Custom Fonts
 - &check; Light/Dark Mode Toggle
 - &check; Favicon
 
@@ -18,13 +19,14 @@
 - &check; Left: Copyright, Author, Attributions to Once UI & Vercel
 - &check; Right: Email, GitHub, Pic-Time, LinkedIn
 
-## 'Home' Page
+## Home
 
 - &check; Featured Work button scrolls down to featured project.
 - &check; Attention grabbing headline and subline
 - &check; Staggered animations
 - Featured Project
-  - Image
+  - Hero Image
+  - Title
   - Description
 - &check; Featured Images
   - &check; Carousel
@@ -37,7 +39,7 @@
   - &check; Email Security Check
     - &check; Emailable API
 
-## 'About' Page &check;
+## About &check;
 
 - &check; Contents Sidebar
 - &check; Avatar
@@ -48,6 +50,8 @@
 - &check; Links
 - &check; Description
 - &check; Experience
+  - &check; Company Details
+  - &check; Timeframe
 - &check; Education
   - &check; Degree
   - &check; Expertise
@@ -55,15 +59,24 @@
   - &check; Type
   - &check; Icon + Description
 
-## 'Software' Page
+## Software
 
-- List of Projects
-  - Description
-  - Image
-  - Results
+- &check; List of Projects
+  - Hero Image
+  - &check; Title
+  - &check; Description
+
+### Software/Project
+  - Title
+  - Date
+  - Hero Image
+  - Overview
+  - Features & Objectives
+  - Tech Stack
+  - Challenges & Insights
   - GitHub Repository Link
 
-## 'Photography' Page &check;
+## Photography &check;
 
 - &check;'Hyperdrive Media' Logo
   - &check; Light/Dark Mode Switch

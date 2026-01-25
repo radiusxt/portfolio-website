@@ -1,6 +1,5 @@
 import "@once-ui-system/core/css/styles.css";
 import "@once-ui-system/core/css/tokens.css";
-
 import classNames from "classnames";
 
 import {
@@ -123,8 +122,8 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               <MatrixFx
                 fill
                 speed={4}
-                spacing={4.5}
-                size={2.5}
+                spacing={8}
+                size={2}
                 flicker
                 revealFrom="top"
                 colors={[
