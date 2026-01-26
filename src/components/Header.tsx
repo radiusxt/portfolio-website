@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
-import { routes, display, person, home, about, work, gallery, style } from "@/resources";
+import { routes, display, person, home, about, work, gallery } from "@/resources";
 import { Scroll } from "@/components/Scroll";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";

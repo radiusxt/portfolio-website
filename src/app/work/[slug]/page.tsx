@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import {
   Meta,
   Schema,
-  AvatarGroup,
   Button,
   Column,
   Flex,
@@ -27,7 +26,9 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string | string[] }> }): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string | string[] }> }
+): Promise<Metadata> {
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug)
     ? routeParams.slug.join("/") : routeParams.slug || "";

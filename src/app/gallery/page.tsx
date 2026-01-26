@@ -1,8 +1,7 @@
-import { Flex, Meta, Schema, Heading, RevealFx } from "@once-ui-system/core";
+import { Flex, Meta, Schema, Heading, Row, Logo, RevealFx } from "@once-ui-system/core";
 import { GalleryView } from "@/components/gallery/Gallery";
 import { PicTimeIntegration } from "@/components/gallery/PicTime";
 import { baseURL, gallery, person } from "@/resources";
-import { Logo } from "@/components/gallery/Logo";
 import { Scroll } from "@/components/Scroll";
 
 export async function generateMetadata() {
@@ -31,11 +30,17 @@ export default function Gallery() {
         translateY="16"
         fillWidth
         horizontal="center"
-        paddingBottom="24"
+        paddingTop="40"
+        paddingBottom="80"
         delay={0.4}
       >
-        <Scroll target="portfolio">
-          <Logo />
+        <Scroll target="portfolio" >
+          <Row dark>
+            <Logo wordmark="/images/brand/logo-light.png" style={{ transform: "scale(5)" }}/>
+          </Row>
+          <Row light>
+            <Logo wordmark="/images/brand/logo-dark.png" style={{ transform: "scale(5)" }} />
+          </Row>
         </Scroll>
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="48" delay={0.8}>
