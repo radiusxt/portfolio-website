@@ -49,6 +49,7 @@ export default function About() {
       items: about.technical.skills.map((skill) => skill.title),
     },
   ];
+
   return (
     <Column maxWidth="m">
       <Schema
@@ -109,17 +110,17 @@ export default function About() {
           }
           <Column className={styles.blockAlign} flex={9} maxWidth={60}>
             <Column
-              id={about.intro.title}
               fillWidth
               minHeight="160"
               vertical="center"
               marginBottom="32"
             >
               <Heading
+                id={about.intro.title}
                 className={styles.textAlign}
                 variant="display-default-xl"
                 paddingBottom="24"
-                style={{ letterSpacing: "-1px" }}
+                style={{ letterSpacing: "-1px", scrollMarginTop: "120px" }}
               >
                 {person.name}
               </Heading>

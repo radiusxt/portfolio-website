@@ -27,18 +27,17 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, abo
       paddingLeft="20"
       gap="32"
       m={{ hide: true }}
-      style={{ whiteSpace: "nowrap" }}
     >
-      {structure.filter((section) => section.display).map((section, sectionIndex) => (
+      {structure.filter((section) => section.display).map((section, sectionIndex) => 
         <Column key={sectionIndex} gap="12">
           <Scroll target={section.title}>
-            <Flex cursor="interactive" className={styles.hover} vertical="center" gap="8">
-              <Flex height="2" minWidth="20" background="brand-strong"></Flex>
+            <Flex cursor="interactive" className={styles.hover} vertical="center" gap="12">
+              <Flex background="brand-strong" minWidth="20" height="2" />
               <Heading variant="body-default-xl">{section.title}</Heading>
             </Flex>
           </Scroll>
         </Column>
-      ))}
+      )}
     </Column>
   );
 };

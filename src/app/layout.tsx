@@ -127,7 +127,9 @@ export default async function RootLayout({children}: Readonly<{children: React.R
                 flicker
                 revealFrom="top"
                 colors={[
-                  "brand-on-background-medium", "accent-on-background-medium", "neutral-on-background-strong"
+                  "brand-on-background-medium",
+                  "accent-on-background-medium",
+                  "neutral-on-background-strong",
                 ]}
               >
                 <Background

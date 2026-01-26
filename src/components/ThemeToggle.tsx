@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { ToggleButton, useTheme } from "@once-ui-system/core";
+import styles from "./ThemeToggle.module.scss";
 
 export const ThemeToggle: React.FC = () => {
   const { theme, setTheme } = useTheme();
@@ -17,15 +18,20 @@ export const ThemeToggle: React.FC = () => {
     setCurrentTheme(document.documentElement.getAttribute("data-theme") || "light");
   }, [theme]);
 
-  const icon = currentTheme === "dark" ? "light" : "dark";
+  const icon = currentTheme === "dark" ? "dark" : "light";
   const nextTheme = currentTheme === "light" ? "dark" : "light";
 
   return (
     <ToggleButton
+      className={styles.outline}
       prefixIcon={icon}
       onClick={() => setTheme(nextTheme)}
-      aria-label={`Switch to ${nextTheme} mode`}
+      aria-label={`Switch to ${nextTheme} mode.`}
       size="l"
+      onClickCapture={(e) => {
+        setTheme(nextTheme);
+        (e.currentTarget as HTMLButtonElement).blur();
+      }}
     />
   );
 };

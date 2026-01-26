@@ -1,4 +1,4 @@
-import { Flex, Meta, Schema, Heading, Icon, RevealFx } from "@once-ui-system/core";
+import { Flex, Meta, Schema, Heading, RevealFx } from "@once-ui-system/core";
 import { GalleryView } from "@/components/gallery/Gallery";
 import { PicTimeIntegration } from "@/components/gallery/PicTime";
 import { baseURL, gallery, person } from "@/resources";
@@ -17,7 +17,7 @@ export async function generateMetadata() {
 
 export default function Gallery() {
   return (
-    <Flex fillWidth direction="column" maxWidth="l">
+    <Flex id={gallery.title} fillWidth direction="column" maxWidth="l" style={{ scrollMarginTop: "120px"}}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -31,9 +31,8 @@ export default function Gallery() {
         translateY="16"
         fillWidth
         horizontal="center"
-        paddingBottom="32"
+        paddingBottom="24"
         delay={0.4}
-        style={{ marginTop: "-24px" }}
       >
         <Scroll target="portfolio">
           <Logo />

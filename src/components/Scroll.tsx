@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { ReactNode, useEffect } from "react";
+import { Flex } from "@once-ui-system/core";
 
 interface ScrollProps {
   children: ReactNode;
@@ -17,7 +18,7 @@ export function Scroll({ children, target }: ScrollProps) {
     }
   };
 
-  return <div onClick={handleClick} style={{ cursor: "pointer" }}>{children}</div>;
+  return <Flex onClick={handleClick} style={{ cursor: "pointer" }}>{children}</Flex>;
 }
 
 export function ScrollToHash() {

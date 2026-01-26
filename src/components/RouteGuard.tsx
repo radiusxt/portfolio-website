@@ -6,11 +6,9 @@ import { routes, protectedRoutes } from "@/resources";
 import { Flex, Spinner, Button, Heading, Column, PasswordInput } from "@once-ui-system/core";
 import NotFound from "@/app/not-found";
 
-interface RouteGuardProps {
-  children: React.ReactNode;
-}
+interface RouteGuardProps { children: React.ReactNode }
 
-const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
+export const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
   const pathname = usePathname();
   const [isRouteEnabled, setIsRouteEnabled] = useState(false);
   const [isPasswordRequired, setIsPasswordRequired] = useState(false);
@@ -92,7 +90,7 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
     return (
       <Column paddingY="128" maxWidth={24} gap="24" center>
         <Heading align="center" wrap="balance">
-          This page is password protected
+          This page is password protected.
         </Heading>
         <Column fillWidth gap="8" horizontal="center">
           <PasswordInput
@@ -110,5 +108,3 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
 
   return <>{children}</>;
 };
-
-export { RouteGuard };

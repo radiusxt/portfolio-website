@@ -37,15 +37,16 @@ export default function Home() {
       />
       <Column fillWidth horizontal="center" gap="l">
         <Column maxWidth="l" horizontal="center" align="center">
-          {home.featured.display && (
+          {home.featured.display && 
             <RevealFx
+              id={home.title}
               translateY="16"
               fillWidth
               horizontal="center"
               paddingBottom="64"
               paddingTop="32"
               delay={0.8}
-              style={{ marginTop: "-18px"}}
+              style={{ marginTop: "-18px", scrollMarginTop: "120px" }}
             >
               <Scroll target={"featured"}>
                 <Badge
@@ -60,7 +61,7 @@ export default function Home() {
                 </Badge>
               </Scroll>
             </RevealFx>
-          )}
+          }
           <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="80" marginBottom="24">
             <Heading variant="display-default-xl" style={{ lineHeight: "1.2", letterSpacing: "-1.5px" }}>
               {home.headline}

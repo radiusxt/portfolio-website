@@ -2,10 +2,9 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
-
-import { routes, display, person, about, work, gallery } from "@/resources";
+import { routes, display, person, home, about, work, gallery, style } from "@/resources";
+import { Scroll } from "@/components/Scroll";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
@@ -28,8 +27,7 @@ export const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en
         hour12: false,
       };
 
-      const timeString = new Intl.DateTimeFormat(locale, options).format(now);
-      setCurrentTime(timeString);
+      setCurrentTime(new Intl.DateTimeFormat(locale, options).format(now));
     };
 
     updateTime();
@@ -43,8 +41,6 @@ export const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
-
-  const scrollToTop = () => { window.scrollTo({ top: 0, left: 0}); };
 
   return (
     <>
@@ -60,7 +56,13 @@ export const Header = () => {
         horizontal="center"
         data-border="rounded"
       >
-        <Row paddingLeft="16" fillWidth vertical="center" textVariant="label-default-m" style={{ letterSpacing: "0.01em" }}>
+        <Row
+          paddingLeft="16"
+          fillWidth
+          vertical="center"
+          textVariant="label-default-m"
+          style={{ letterSpacing: "0.01em" }}
+        >
           {display.location &&
             <Row s={{ hide: true }}>{person.location}</Row>
           }
@@ -76,91 +78,98 @@ export const Header = () => {
             zIndex={1}
           >
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
-              {routes["/"] && (
-                <ToggleButton
-                  prefixIcon="home"
-                  href="/"
-                  size="l"
-                  selected={pathname === "/"}
-                  onClickCapture={scrollToTop}
-                />
-              )}
+              {routes["/"] && 
+                <Scroll target={home.title}>
+                  <ToggleButton
+                    prefixIcon="home"
+                    href="/"
+                    size="l"
+                    selected={pathname === "/"}
+                  />
+                </Scroll>
+              }
               <Line background="neutral-alpha-strong" vert maxHeight="24" />
-              {routes["/about"] && (
+              {routes["/about"] && 
                 <>
                   <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="person"
-                      href="/about"
-                      label={about.label}
-                      size="l"
-                      selected={pathname === "/about"}
-                      onClickCapture={scrollToTop}
-                    />
+                    <Scroll target={about.intro.title}>
+                      <ToggleButton
+                        prefixIcon="person"
+                        href="/about"
+                        label={about.label}
+                        size="l"
+                        selected={pathname === "/about"}
+                      />
+                    </Scroll>
                   </Row>
                   <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="person"
-                      href="/about"
-                      size="l"
-                      selected={pathname === "/about"}
-                      onClickCapture={scrollToTop}
-                    />
+                    <Scroll target={about.intro.title}>
+                      <ToggleButton
+                        prefixIcon="person"
+                        href="/about"
+                        size="l"
+                        selected={pathname === "/about"}
+                      />
+                    </Scroll>
                   </Row>
                 </>
-              )}
-              {routes["/work"] && (
+              }
+              {routes["/work"] && 
                 <>
                   <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="code"
-                      href="/work"
-                      label={work.label}
-                      size="l"
-                      selected={pathname.startsWith("/work")}
-                      onClickCapture={scrollToTop}
-                    />
+                    <Scroll target={work.title}>
+                      <ToggleButton
+                        prefixIcon="code"
+                        href="/work"
+                        label={work.label}
+                        size="l"
+                        selected={pathname.startsWith("/work")}
+                      />
+                    </Scroll>
                   </Row>
                   <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="code"
-                      href="/work"
-                      size="l"
-                      selected={pathname.startsWith("/work")}
-                      onClickCapture={scrollToTop}
-                    />
+                    <Scroll target={work.title}>
+                      <ToggleButton
+                        prefixIcon="code"
+                        href="/work"
+                        size="l"
+                        selected={pathname.startsWith("/work")}
+                      />
+                    </Scroll>
                   </Row>
                 </>
-              )}
-              {routes["/gallery"] && (
+              }
+              {routes["/gallery"] && 
                 <>
                   <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="gallery"
-                      href="/gallery"
-                      label={gallery.label}
-                      size="l"
-                      selected={pathname.startsWith("/gallery")}
-                      onClickCapture={scrollToTop}
-                    />
+                    <Scroll target={gallery.title}>
+                      <ToggleButton
+                        prefixIcon="gallery"
+                        href="/gallery"
+                        label={gallery.label}
+                        size="l"
+                        selected={pathname.startsWith("/gallery")}
+                      />
+                    </Scroll>
                   </Row>
                   <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="gallery"
-                      href="/gallery"
-                      size="l"
-                      selected={pathname.startsWith("/gallery")}
-                      onClickCapture={scrollToTop}
-                    />
+                    <Scroll target={gallery.title}>
+                      <ToggleButton
+                        prefixIcon="gallery"
+                        href="/gallery"
+                        size="l"
+                        selected={pathname.startsWith("/gallery")}
+                      />
+                    </Scroll>
                   </Row>
                 </>
-              )}
-              {display.themeSwitcher && (
+              }
+              {display.themeSwitcher && 
                 <>
                   <Line background="neutral-alpha-strong" vert maxHeight="24" />
                   <ThemeToggle />
                 </>
-              )}
+              }
             </Row>
           </Row>
         </Row>

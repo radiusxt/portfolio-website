@@ -9,7 +9,7 @@ interface LogoSize {
   className?: string;
 }
 
-export const Logo: React.FC<LogoSize> = ({ width = 18, height, className }) => {
+export const Logo: React.FC<LogoSize> = ({ width = 18, height }) => {
   const { theme } = useTheme();
   const [mount, setMount] = useState(false);
   const [currentTheme, setCurrentTheme] = useState<string>("light");
@@ -28,7 +28,5 @@ export const Logo: React.FC<LogoSize> = ({ width = 18, height, className }) => {
     ? "/images/brand/logo-light.png"
     : "/images/brand/logo-dark.png";
 
-  return (
-    <Media src={logoSrc} alt="Logo" width={width} height={height} />
-  );
+  return <Media src={logoSrc} alt="Logo" width={width} height={height} />;
 };

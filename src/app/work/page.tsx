@@ -25,7 +25,11 @@ export default function Work() {
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="48" delay={0.4}>
-        <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
+        <Heading
+          id={work.title}
+          variant="display-default-m"
+          style={{ letterSpacing: "0px", scrollMarginTop: "130px" }}
+        >
           {work.title}
         </Heading>
       </RevealFx>

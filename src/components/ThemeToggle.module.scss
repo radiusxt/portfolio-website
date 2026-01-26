@@ -1,10 +1,15 @@
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  svg {
-    width: 1em;
-    height: 1em;
+.outline {
+  -webkit-tap-highlight-color: transparent;
+
+  &:focus, 
+  &:focus-visible,
+  &:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  &:hover {
+    border-color: transparent !important;
+    background: transparent !important;
   }
 }
