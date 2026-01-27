@@ -23,11 +23,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, abo
   if (!about.tableOfContent.display) { return null; }
 
   return (
-    <Column
-      paddingLeft="20"
-      gap="32"
-      m={{ hide: true }}
-    >
+    <Column paddingLeft="20" gap="32" m={{ hide: true }}>
       {structure.filter((section) => section.display).map((section, sectionIndex) => 
         <Column key={sectionIndex} gap="12">
           <Scroll target={section.title}>

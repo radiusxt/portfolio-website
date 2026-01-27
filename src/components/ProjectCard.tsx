@@ -2,6 +2,7 @@
 
 import { Media, Column, Flex, Heading, SmartLink, Line } from "@once-ui-system/core";
 import { Team } from "@/utils/utils";
+import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
   href: string;
@@ -15,7 +16,7 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, description, image, team }) => {
   return (
-    <Column fillWidth horizontal="center" gap="xs">
+    <Column fillWidth gap="xs">
       <SmartLink href={href} style={{ display: 'contents' }}>
         <Media src={image} alt={title} border="transparent" radius="l" />
       </SmartLink>
@@ -26,31 +27,40 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, descripti
         marginBottom="2"
         style={{ background: "var(--neutral-on-background-strong)" }}
       /> 
-      <Flex fillWidth paddingX="xs">
+      <Flex
+        className={styles.mobile}
+        fillWidth
+        paddingX="xs"
+        s={{ direction: "column", horizontal: "center", align: "center" }}
+      >
         {title && 
-          <Flex fillWidth flex={6} s={{ direction: "column", horizontal: "center", align: "center", textAlign: "center" }} m={{direction: "column", horizontal: "center", align: "left", textAlign: "left"}}>
+          <Flex flex={8}>
             <Heading
               variant="heading-default-xl"
               wrap="pretty"
-              style={{ letterSpacing: "0.2px", textAlign: "inherit" }}
+              style={{ letterSpacing: "0.2px" }}
             >
               {title}
             </Heading>
           </Flex>
         }
         {description.trim() && team && 
-          <Column flex={7} s={{ hide: true }}>
+          <Column flex={8} s={{ hide: true }}>
             <Heading
               variant="body-default-l"
               onBackground="brand-weak"
-              wrap="balance"
+              wrap="pretty"
               align="right"
               paddingBottom="12"
               style={{ lineHeight: "1.4", letterSpacing: "0.15px" }}
             >
               {description}
             </Heading>
-            <Heading variant="body-default-xs" onBackground="neutral-weak" align="right" wrap="pretty">
+            <Heading
+              variant="body-default-xs"
+              onBackground="neutral-weak"
+              align="right"
+            >
               {team.map((member) => member.name).join(" | ")}
             </Heading>
           </Column>

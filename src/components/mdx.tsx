@@ -4,7 +4,6 @@ import { slugify as transliterate } from "transliteration";
 
 import {
   Heading,
-  HeadingLink,
   Text,
   InlineCode,
   CodeBlock,
@@ -84,7 +83,7 @@ function slugify(str: string): string {
 
 function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
   const CustomHeading = (
-    { children, ...props}: Omit<React.ComponentProps<typeof Heading>, "as" | "id">
+    { children }: Omit<React.ComponentProps<typeof Heading>, "as" | "id">
   ) => {
     const slug = slugify(children as string);
     
