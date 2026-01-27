@@ -39,7 +39,7 @@
   - &check; Email Security Check
     - &check; Emailable API
 
-## About &check;
+## About
 
 - &check; Contents Sidebar
 - &check; Avatar
@@ -50,6 +50,7 @@
 - &check; Links
 - &check; Description
 - &check; Experience
+  - Timeline (left side)
   - &check; Company Details
   - &check; Timeframe
 - &check; Education
@@ -61,15 +62,15 @@
 
 ## Software
 
-- &check; List of Projects
-  - Hero Image
+- &check; Column of Projects
+  - &check; Hero Image
   - &check; Title
   - &check; Description
 
 ### Software/Project
   - Title
   - Date
-  - Hero Image
+  - Icons for Tech Stack
   - Overview
   - Features & Objectives
   - Tech Stack

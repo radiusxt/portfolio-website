@@ -117,6 +117,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               maskImage: "radial-gradient(circle at 50% 2%, black 10%, transparent 61%)",
               WebkitMaskImage: "radial-gradient(circle at 50% 2%, black 10%, transparent 61%)",
             }}
+            s={{ style: { maxHeight: "2000px" } }}
           >
             <RevealFx fill position="absolute">
               <MatrixFx

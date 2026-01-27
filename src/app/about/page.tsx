@@ -12,7 +12,7 @@ import {
   RevealFx,
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
-import { TableOfContents } from "@/components/about/TableOfContents";
+import { TableOfContents } from "@/components/about/Contents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
 
@@ -63,8 +63,8 @@ export default function About() {
       />
       {about.tableOfContent.display && 
         <Column
-          left="8"
           position="fixed"
+          left="8"
           paddingLeft="24"
           gap="48"
           style={{ top: "50%", transform: "translateY(-50%)", zIndex: 50 }}
@@ -127,52 +127,50 @@ export default function About() {
               <Heading className={styles.textAlign} variant="display-default-s" paddingBottom="32">
                 {person.role}
               </Heading>
-              {social.length > 0 && (
+              {about.intro.display && 
+                <Column fillWidth gap="m" marginBottom="l">
+                  <Heading variant="body-default-xl" align="justify" style={{ lineHeight: "1.5" }}>
+                    {about.intro.description}
+                  </Heading>
+                </Column>
+              }
+              {social.length > 0 && 
                 <Row
                   className={styles.blockAlign}
                   data-border="rounded"
                   horizontal="center"
-                  gap="12"
+                  gap="16"
                   wrap
                   fitWidth
                 >
-                  {social.filter((item) => item.essential).map((item) =>
-                    item.link && (
-                      <React.Fragment key={item.name}>
-                        <Row s={{ hide: true }}>
-                          <Button
-                            key={item.name}
-                            href={item.link}
-                            prefixIcon={item.icon}
-                            label={item.name}
-                            size="m"
-                            weight="default"
-                            variant="primary"
-                            style={{ gap: "8px", letterSpacing: "0.2px" }}
-                          />
-                        </Row>
-                        <Row hide s={{ hide: false }}>
-                          <IconButton
-                            size="m"
-                            key={`${item.name}-icon`}
-                            href={item.link}
-                            icon={item.icon}
-                            variant="primary"
-                          />
-                        </Row>
-                      </React.Fragment>
-                    ),
+                  {social.filter((item) => item.essential).map((item) => item.link && 
+                    <React.Fragment key={item.name}>
+                      <Row s={{ hide: true }}>
+                        <Button
+                          key={item.name}
+                          href={item.link}
+                          prefixIcon={item.icon}
+                          label={item.name}
+                          size="m"
+                          weight="default"
+                          variant="tertiary"
+                          style={{ gap: "8px", letterSpacing: "0.2px" }}
+                        />
+                      </Row>
+                      <Row hide s={{ hide: false }}>
+                        <IconButton
+                          size="m"
+                          key={`${item.name}-icon`}
+                          href={item.link}
+                          icon={item.icon}
+                          variant="tertiary"
+                        />
+                      </Row>
+                    </React.Fragment>
                   )}
                 </Row>
-              )}
+              }
             </Column>
-            {about.intro.display && 
-              <Column fillWidth gap="m" marginBottom="l">
-                <Heading variant="body-default-xl" align="justify" style={{ lineHeight: "1.5" }}>
-                  {about.intro.description}
-                </Heading>
-              </Column>
-            }
             {about.work.display && 
               <>
                 <Heading as="h2" id={about.work.title} variant="display-default-s" marginBottom="m">

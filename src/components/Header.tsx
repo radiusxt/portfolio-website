@@ -63,8 +63,10 @@ export const Header = () => {
           textVariant="label-default-m"
           style={{ letterSpacing: "0.01em" }}
         >
-          {display.location &&
-            <Row s={{ hide: true }}>{person.location}</Row>
+          {display.location && 
+            <Row s={{ hide: true }}>
+              {person.location}
+            </Row>
           }
         </Row>
         <Row fillWidth horizontal="center">

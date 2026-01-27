@@ -1,29 +1,14 @@
 import { notFound } from "next/navigation";
-import {
-  Meta,
-  Schema,
-  Button,
-  Column,
-  Flex,
-  Heading,
-  Media,
-  Text,
-  SmartLink,
-  Row,
-  Line,
-} from "@once-ui-system/core";
+import { Meta, Schema, Column, Heading, Line, RevealFx } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
-import { ScrollToHash, CustomMDX } from "@/components";
-import { Projects } from "@/components/work/Projects";
+import { CustomMDX } from "@/components";
 import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
 import { Metadata } from "next";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata(
@@ -49,17 +34,15 @@ export async function generateMetadata(
 
 export default async function Project({ params }: { params: Promise<{ slug: string | string[] }> }) {
   const routeParams = await params;
-  const slugPath = Array.isArray(routeParams.slug)
-    ? routeParams.slug.join("/") : routeParams.slug || "";
-
-  let post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slugPath);
+  const slugPath = Array.isArray(routeParams.slug) ? routeParams.slug.join("/") : routeParams.slug || "";
+  const post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slugPath);
 
   if (!post) notFound();
 
   return (
-    <Column as="section" maxWidth="m" horizontal="center" gap="l">
+    <Column maxWidth="l" horizontal="center" gap="l">
       <Schema
-        as="blogPosting"
+        as="article"
         baseURL={baseURL}
         path={`${work.path}/${post.slug}`}
         title={post.metadata.title}
@@ -69,42 +52,25 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
         image={post.metadata.image || `/api/og/generate?title=${encodeURIComponent(post.metadata.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <Column maxWidth="s" gap="16" horizontal="center" align="center">
-        <SmartLink href="/work">
-          <Text variant="label-strong-m">Projects</Text>
-        </SmartLink>
-        <Heading variant="display-strong-m">{post.metadata.title}</Heading>
-        <Text variant="body-default-xs" onBackground="neutral-weak" marginBottom="12">
-          {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
-        </Text>
-      </Column>
-      <Row marginBottom="32" horizontal="center">
-        <Row gap="16" vertical="center">
-          <Text variant="label-default-m" onBackground="brand-weak">
-            {post.metadata.team?.map((member, idx) => (
-              <span key={idx}>
-                {idx > 0 && (
-                  <Text as="span" onBackground="neutral-weak">
-                    ,{" "}
-                  </Text>
-                )}
-                <SmartLink href={member.linkedIn}>{member.name}</SmartLink>
-              </span>
-            ))}
-          </Text>
-        </Row>
-      </Row>
-      <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
-        <CustomMDX source={post.content} />
-      </Column>
-      <Column fillWidth gap="40" horizontal="center" marginTop="40">
-        <Line maxWidth="40" />
-        <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
-          Related projects
-        </Heading>
-        <Projects exclude={[post.slug]} range={[2]} />
-      </Column>
-      <ScrollToHash />
+      <RevealFx translateY="16" fillWidth delay={0.2} style={{ flexDirection: "column", alignItems: "center" }}>
+        <Column fillWidth maxWidth="xl" gap="16" horizontal="center" align="center">
+          <Heading variant="display-default-l" paddingBottom="48" style={{ lineHeight: "1.4" }}>
+            {post.metadata.title}
+          </Heading>
+          <Heading variant="heading-default-l" paddingBottom="32" onBackground="neutral-weak">
+            {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
+          </Heading>
+          <Heading variant="heading-default-xs" paddingBottom="32" onBackground="brand-medium">
+            {post.metadata.team.map((member) => member.name).join(" | ")}
+          </Heading>
+        </Column>
+      </RevealFx>
+      <RevealFx translateY="16" fillWidth delay={0.6}>
+        <Column as="article" maxWidth="s" align="justify" style={{ margin: "auto" }}>
+          <CustomMDX source={post.content} />
+          <Line maxWidth={50} height={0.2} radius="m" marginTop="40" marginBottom="4" />
+        </Column>
+      </RevealFx>
     </Column>
   );
 }

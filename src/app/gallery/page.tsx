@@ -1,7 +1,7 @@
 import { Flex, Meta, Schema, Heading, Row, Logo, RevealFx } from "@once-ui-system/core";
+import { baseURL, gallery, person } from "@/resources";
 import { GalleryView } from "@/components/gallery/Gallery";
 import { PicTimeIntegration } from "@/components/gallery/PicTime";
-import { baseURL, gallery, person } from "@/resources";
 import { Scroll } from "@/components/Scroll";
 
 export async function generateMetadata() {
@@ -30,33 +30,33 @@ export default function Gallery() {
         translateY="16"
         fillWidth
         horizontal="center"
-        paddingTop="40"
+        paddingTop="64"
         paddingBottom="80"
         delay={0.4}
       >
-        <Scroll target="portfolio" >
+        <Scroll target="portfolio">
           <Row dark>
-            <Logo wordmark="/images/brand/logo-light.png" style={{ transform: "scale(5)" }}/>
+            <Logo wordmark="/images/brand/logo-light.png" style={{ transform: "scale(5)" }} />
           </Row>
           <Row light>
             <Logo wordmark="/images/brand/logo-dark.png" style={{ transform: "scale(5)" }} />
           </Row>
         </Scroll>
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="48" delay={0.8}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="80" delay={0.2}>
         <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
           {gallery.title}
         </Heading>
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128" delay={0.8}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128" delay={0.2}>
         <GalleryView />
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={1.2}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={0.8}>
         <Heading variant="display-default-m" style={{ letterSpacing: "0px", textAlign: "center" }}>
           Discover the Full Gallery
         </Heading>
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" delay={1.2}>
+      <RevealFx translateY="16" fillWidth horizontal="center" delay={1}>
         <Heading variant="heading-default-xl" style={{ letterSpacing: "0.2px", textAlign: "center" }}>
           My images specialise in sport, wildlife & travel to capture moments in motion.
         </Heading>
@@ -66,7 +66,7 @@ export default function Gallery() {
         translateY="16"
         fillWidth
         horizontal="center"
-        delay={1.2}
+        delay={1}
         width="xl"
         style={{
           marginBottom: "-25px",

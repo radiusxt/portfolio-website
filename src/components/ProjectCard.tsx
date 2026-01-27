@@ -26,31 +26,35 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, descripti
         marginBottom="2"
         style={{ background: "var(--neutral-on-background-strong)" }}
       /> 
-      <Flex fillWidth paddingX="xs" paddingBottom="0" s={{ direction: "column" }}>
+      <Flex fillWidth paddingX="xs">
         {title && 
-          <Flex flex={4}>
-            <Heading wrap="stable" variant="heading-default-xl" style={{ letterSpacing: "0.2px" }}>
+          <Flex fillWidth flex={6} s={{ direction: "column", horizontal: "center", align: "center", textAlign: "center" }} m={{direction: "column", horizontal: "center", align: "left", textAlign: "left"}}>
+            <Heading
+              variant="heading-default-xl"
+              wrap="pretty"
+              style={{ letterSpacing: "0.2px", textAlign: "inherit" }}
+            >
               {title}
             </Heading>
           </Flex>
         }
-        {description.trim() && 
-          <Column flex={7} gap="16">
+        {description.trim() && team && 
+          <Column flex={7} s={{ hide: true }}>
             <Heading
               variant="body-default-l"
               onBackground="brand-weak"
               wrap="balance"
               align="right"
-              style={{ lineHeight: "1.4", letterSpacing: "0.1px" }}
+              paddingBottom="12"
+              style={{ lineHeight: "1.4", letterSpacing: "0.15px" }}
             >
               {description}
             </Heading>
+            <Heading variant="body-default-xs" onBackground="neutral-weak" align="right" wrap="pretty">
+              {team.map((member) => member.name).join(" | ")}
+            </Heading>
           </Column>
         }
-        {/*team && 
-
-
-        */}
       </Flex>
     </Column>
   );

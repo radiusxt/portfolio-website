@@ -43,10 +43,10 @@ export default function Home() {
               translateY="16"
               fillWidth
               horizontal="center"
-              paddingBottom="64"
-              paddingTop="32"
+              paddingBottom="80"
+              paddingTop="40"
               delay={0.8}
-              style={{ marginTop: "-18px", scrollMarginTop: "120px" }}
+              style={{ marginTop: "0px", scrollMarginTop: "160px" }}
             >
               <Scroll target={"featured"}>
                 <Badge
@@ -62,7 +62,7 @@ export default function Home() {
               </Scroll>
             </RevealFx>
           }
-          <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="80" marginBottom="24">
+          <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128" delay={0.1}>
             <Heading variant="display-default-xl" style={{ lineHeight: "1.2", letterSpacing: "-1.5px" }}>
               {home.headline}
             </Heading>
@@ -77,24 +77,23 @@ export default function Home() {
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="56" delay={0.4}>
         <Line background="accent-alpha-strong" maxWidth={50} height={0.2} radius="m" />
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8}>
-        <Heading id="featured" variant="display-default-m" style={{ letterSpacing: "0px", scrollMarginTop: "60px" }}>
-          ISIC Challenge Dataset
-        </Heading>
-      </RevealFx>
-      <RevealFx translateY="16" fillWidth paddingBottom="32" delay={0.8}>
-        <Projects range={[1, 1]} />
-      </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8} style={{ marginBottom: "-24px" }}>
-        <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
-          Gallery Highlights
-        </Heading>
-      </RevealFx>
       <RevealFx translateY="16" fillWidth delay={0.8}>
-        <GalleryView />
-      </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="20" delay={0.8}>
-        <Line background="accent-alpha-strong" maxWidth={60} height={0.2} radius="m" />
+        <Column fillWidth maxWidth="xl" gap="16" horizontal="center">
+          <Heading
+            id="featured"
+            variant="display-default-m"
+            paddingBottom="64"
+            style={{ letterSpacing: "0px", scrollMarginTop: "60px" }}
+          >
+            ISIC Challenge Dataset
+          </Heading>
+          <Projects range={[1, 1]} />
+          <Heading variant="display-default-m" paddingTop="128" paddingBottom="64" style={{ letterSpacing: "0px" }}>
+            Gallery Highlights
+          </Heading>
+          <GalleryView />
+          <Line background="accent-alpha-strong" marginTop="80" maxWidth={60} height={0.2} radius="m" />
+        </Column>
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" delay={1.2}>
         <ContactForm />
