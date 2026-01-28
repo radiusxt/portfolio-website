@@ -9,10 +9,9 @@ import {
   RevealFx,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL } from "@/resources";
-import { Scroll } from "@/components/Scroll";
+import { ContactForm, Scroll } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { GalleryView } from "@/components/gallery/Gallery";
-import { ContactForm } from "@/components/ContactForm";
 
 export async function generateMetadata() {
   return Meta.generate({

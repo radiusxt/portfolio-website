@@ -1,9 +1,10 @@
 export { Header } from "@/components/Header";
 export { Footer } from "@/components/Footer";
+export { ContactForm } from "@/components/ContactForm";
 export { ProjectCard } from "@/components/ProjectCard";
 export { HeadingLink } from "@/components/HeadingLink";
 export { RouteGuard } from "@/components/RouteGuard";
 export { Providers } from "@/components/Providers";
-export { ScrollToHash } from "@/components/Scroll";
+export { Scroll } from "@/components/Scroll";
 export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";

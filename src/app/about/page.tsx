@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Avatar,
   Button,
@@ -14,7 +15,6 @@ import {
 import { baseURL, about, person, social } from "@/resources";
 import { TableOfContents } from "@/components/about/Contents";
 import styles from "@/components/about/about.module.scss";
-import React from "react";
 
 export async function generateMetadata() {
   return Meta.generate({

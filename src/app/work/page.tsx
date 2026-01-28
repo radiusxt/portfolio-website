@@ -29,14 +29,14 @@ export default function Work() {
         fillWidth
         horizontal="center"
         paddingTop="32"
-        delay={0.4}
+        delay={0.2}
       >
         <Column fillWidth maxWidth="xl" gap="16" horizontal="center">
           <Heading
             id={work.title}
             variant="display-default-m"
             paddingBottom="80"
-            style={{ letterSpacing: "0px", scrollMarginTop: "180px" }}
+            style={{ letterSpacing: "0px", scrollMarginTop: "160px" }}
           >
             {work.title}
           </Heading>

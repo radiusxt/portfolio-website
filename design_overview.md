@@ -28,6 +28,7 @@
   - Hero Image
   - Title
   - Description
+  - Team
 - &check; Featured Images
   - &check; Carousel
 - &check; Contact Form
@@ -66,10 +67,12 @@
   - &check; Hero Image
   - &check; Title
   - &check; Description
+  - &check; Team
 
 ### Software/Project
   - Title
   - Date
+  - Team
   - Icons for Tech Stack
   - Overview
   - Features & Objectives

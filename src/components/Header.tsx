@@ -4,8 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 import { routes, display, person, home, about, work, gallery } from "@/resources";
-import { Scroll } from "@/components/Scroll";
-import { ThemeToggle } from "./ThemeToggle";
+import { Scroll, ThemeToggle } from "@/components";
 import styles from "./Header.module.scss";
 
 type TimeDisplayProps = {
@@ -183,7 +182,7 @@ export const Header = () => {
             textVariant="code-default-m"
             gap="20"
           >
-            <Flex s={{ hide: true }} >
+            <Flex s={{ hide: true }}>
               {display.time && <TimeDisplay timeZone={person.location} />}
             </Flex>
           </Flex>

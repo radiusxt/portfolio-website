@@ -17,7 +17,7 @@ interface ProjectCardProps {
 export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, description, image, team }) => {
   return (
     <Column fillWidth gap="xs">
-      <SmartLink href={href} style={{ display: 'contents' }}>
+      <SmartLink href={href} style={{ display: "contents" }}>
         <Media src={image} alt={title} border="transparent" radius="l" />
       </SmartLink>
       <Line
@@ -35,11 +35,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, descripti
       >
         {title && 
           <Flex flex={8}>
-            <Heading
-              variant="heading-default-xl"
-              wrap="pretty"
-              style={{ letterSpacing: "0.2px" }}
-            >
+            <Heading variant="heading-default-xl" wrap="pretty" style={{ letterSpacing: "0.2px" }}>
               {title}
             </Heading>
           </Flex>
