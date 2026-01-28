@@ -14,7 +14,7 @@ export async function generateMetadata() {
 
 export default function Work() {
   return (
-    <Column maxWidth="l">
+    <Column maxWidth="l" style={{ minHeight: "200vh" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -28,7 +28,7 @@ export default function Work() {
         translateY="16"
         fillWidth
         horizontal="center"
-        paddingTop="32"
+        paddingTop="24"
         delay={0.2}
       >
         <Column fillWidth maxWidth="xl" gap="16" horizontal="center">
@@ -36,7 +36,7 @@ export default function Work() {
             id={work.title}
             variant="display-default-m"
             paddingBottom="80"
-            style={{ letterSpacing: "0px", scrollMarginTop: "160px" }}
+            style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
           >
             {work.title}
           </Heading>

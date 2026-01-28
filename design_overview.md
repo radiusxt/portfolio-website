@@ -2,7 +2,7 @@
 
 ## General Design Features &check;
 
-- &check; Clicking on a page in the header component will scroll to the top.
+- &check; Clicking on header will scroll to the top.
 - &check; Dot Matrix Background Theme
 - &check; Custom Fonts
 - &check; Light/Dark Mode Toggle
@@ -11,7 +11,7 @@
 ## Header &check;
 
 - &check; Left: Location
-- &check; Centre: {Home} | {Person} About, {Code} Software, {Image} Photography | {Sun/Moon} Appearance
+- &check; Centre: {Home} | {Person} About, {Code} Software, {Image} Photography | {Sun/Moon}
 - &check; Right: Time in Location's Timezone
 
 ## Footer &check;
@@ -19,16 +19,17 @@
 - &check; Left: Copyright, Author, Attributions to Once UI & Vercel
 - &check; Right: Email, GitHub, Pic-Time, LinkedIn
 
-## Home
+## Home &check;
 
 - &check; Featured Work button scrolls down to featured project.
 - &check; Attention grabbing headline and subline
 - &check; Staggered animations
-- Featured Project
-  - Hero Image
-  - Title
-  - Description
-  - Team
+- &check; Featured Project
+  - &check; Hero Image
+  - &check; Title
+  - &check; Description
+  - &check; Team
+  - &check; Adaptive Text on Orientation
 - &check; Featured Images
   - &check; Carousel
 - &check; Contact Form
@@ -51,7 +52,7 @@
 - &check; Links
 - &check; Description
 - &check; Experience
-  - Timeline (left side)
+  - Timeline (if possible)
   - &check; Company Details
   - &check; Timeframe
 - &check; Education
@@ -70,25 +71,25 @@
   - &check; Team
 
 ### Software/Project
-  - Title
-  - Date
-  - Team
-  - Icons for Tech Stack
-  - Overview
-  - Features & Objectives
-  - Tech Stack
-  - Challenges & Insights
-  - GitHub Repository Link
+  - &check; Title
+  - &check; Date
+  - &check; Team
+  - &check; GitHub Repository Link (opt)
+  - &check; Overview
+  - &check; Key Objectives
+  - &check; Tech Stack
+  - &check; Challenges & Insights
+  - &check; Outcomes
 
 ## Photography &check;
 
 - &check;'Hyperdrive Media' Logo
   - &check; Light/Dark Mode Switch
-  - &check; Logo acts as a button to scroll down to full portfolio.
+  - &check; Button scrolls down to full portfolio.
 - &check; Title
 - &check; Featured Images
   - &check; Carousel
-  - &check; 8 Images/Category
+  - &check; 24 Images for Sports/Wildlife/Travel
 - &check; Subtitle
 - &check; Description
 - &check; Pic-Time Website Integration

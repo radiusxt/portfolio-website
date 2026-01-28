@@ -9,6 +9,7 @@ const withMDX = mdx({
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
+  allowedDevOrigins: ["192.168.4.34"],
   outputFileTracingExcludes: {
     '*': ['public/images/gallery/**/*'],
   },

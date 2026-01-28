@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Meta, Schema, Column, Heading, Line, RevealFx } from "@once-ui-system/core";
+import { Meta, Schema, Column, Heading, Line, RevealFx, SmartLink } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { CustomMDX } from "@/components";
 import { formatDate } from "@/utils/formatDate";
@@ -58,18 +58,21 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
           <Heading variant="display-default-l" paddingBottom="48" style={{ lineHeight: "1.4" }}>
             {post.metadata.title}
           </Heading>
-          <Heading variant="heading-default-l" paddingBottom="32" onBackground="neutral-weak">
+          <Heading variant="heading-default-l" paddingBottom="24" onBackground="neutral-weak">
             {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
           </Heading>
-          <Heading variant="heading-default-xs" paddingBottom="32" onBackground="brand-medium">
+          <Heading variant="heading-default-xs" paddingBottom="16" onBackground="brand-medium">
             {post.metadata.team.map((member) => member.name).join(" | ")}
           </Heading>
+          {post.metadata.link && 
+            <SmartLink href={post.metadata.link} unstyled>GitHub Repository</SmartLink>
+          }
         </Column>
       </RevealFx>
       <RevealFx translateY="16" fillWidth delay={0.6}>
-        <Column as="article" maxWidth="s" align="justify" style={{ margin: "auto" }}>
+        <Column as="article" maxWidth="s" gap="s" align="justify" style={{ margin: "auto" }}>
           <CustomMDX source={post.content} />
-          <Line maxWidth={50} height={0.2} radius="m" marginTop="40" marginBottom="4" />
+          <Line maxWidth={50} height={0.1} radius="m" marginTop="40" marginBottom="4" />
         </Column>
       </RevealFx>
     </Column>

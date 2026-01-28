@@ -88,7 +88,7 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
     const slug = slugify(children as string);
     
     return (
-      <Heading as={as} id={slug} align="center" marginTop="24" marginBottom="12" >
+      <Heading as={as} id={slug} align="center" marginTop="12" marginBottom="12" variant="display-default-s">
         {children}
       </Heading>
     );
@@ -103,7 +103,6 @@ function createParagraph({ children }: TextProps) {
     <Text
       style={{ lineHeight: "175%" }}
       variant="body-default-m"
-      onBackground="neutral-medium"
       marginTop="8"
       marginBottom="12"
     >

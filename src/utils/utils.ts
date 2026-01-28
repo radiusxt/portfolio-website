@@ -6,8 +6,7 @@ import { notFound } from "next/navigation";
 
 export type Team = {
   name: string;
-  role: string;
-  linkedIn: string;
+  linkedIn?: string;
 };
 
 type Metadata = {
