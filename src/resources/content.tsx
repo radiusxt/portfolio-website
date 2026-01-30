@@ -232,7 +232,7 @@ const about: About = {
         tags: [
           {
             name: "Pytorch",
-            description: "Trained small & large models for computer vision & speech recognition.",
+            description: "Trained & tuned models for computer vision & speech recognition.",
             icon: "pytorch",
           },
           {

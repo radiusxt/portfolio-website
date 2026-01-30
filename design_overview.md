@@ -17,7 +17,7 @@
 ## Footer &check;
 
 - &check; Left: Copyright, Author, Attributions to Once UI & Vercel
-- &check; Right: Email, GitHub, Pic-Time, LinkedIn
+- &check; Right: GitHub, Pic-Time, LinkedIn
 
 ## Home &check;
 
@@ -25,13 +25,7 @@
 - &check; Attention grabbing headline and subline
 - &check; Staggered animations
 - &check; Featured Project
-  - &check; Hero Image
-  - &check; Title
-  - &check; Description
-  - &check; Team
-  - &check; Adaptive Text on Orientation
 - &check; Featured Images
-  - &check; Carousel
 - &check; Contact Form
   - &check; Name, Email, Message Fields
   - &check; Semantic Error Checking
@@ -69,21 +63,23 @@
   - &check; Title
   - &check; Description
   - &check; Team
+  - &check; Adaptive Text on Orientation Change
 
-### Software/Project
-  - &check; Title
-  - &check; Date
-  - &check; Team
-  - &check; GitHub Repository Link (opt)
-  - &check; Overview
-  - &check; Key Objectives
-  - &check; Tech Stack
-  - &check; Challenges & Insights
-  - &check; Outcomes
+  ### Software/Project
+    - &check; Title
+    - &check; Date
+    - &check; Team
+    - &check; GitHub Repository Link
+    - &check; Overview
+    - &check; Key Objectives
+    - &check; Tech Stack
+    - &check; Challenges & Insights
+    - &check; Outcomes
+    - &check; References
 
 ## Photography &check;
 
-- &check;'Hyperdrive Media' Logo
+- &check; 'Hyperdrive Media' Logo
   - &check; Light/Dark Mode Switch
   - &check; Button scrolls down to full portfolio.
 - &check; Title

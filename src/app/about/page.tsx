@@ -51,7 +51,7 @@ export default function About() {
   ];
 
   return (
-    <Column maxWidth="m">
+    <Column maxWidth="m" direction="column">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -269,12 +269,10 @@ export default function About() {
                             >
                               <Heading variant="label-default-s">{tag.name}</Heading>
                             </Tag>
-                            <Column>
-                              <Heading variant="label-default-l" onBackground="neutral-strong">
-                                {tag.description}
-                              </Heading>
-                            </Column>
-                          </Row>
+                            <Heading variant="label-default-l" onBackground="neutral-strong" wrap="wrap">
+                              {tag.description}
+                            </Heading>
+                        </Row>
                         ))}
                       </Column>
                     </Column>

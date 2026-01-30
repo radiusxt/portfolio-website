@@ -1,11 +1,10 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Meta, Schema, Column, Heading, Line, RevealFx, SmartLink } from "@once-ui-system/core";
+import { Meta, Schema, Column, Heading, Line, RevealFx, SmartLink, Icon } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { CustomMDX } from "@/components";
 import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
-
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
@@ -41,7 +40,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
   if (!post) notFound();
 
   return (
-    <Column maxWidth="l" horizontal="center" gap="l">
+    <Column maxWidth="l" direction="column" horizontal="center" gap="l">
       <Schema
         as="article"
         baseURL={baseURL}
@@ -53,26 +52,29 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
         image={post.metadata.image || `/api/og/generate?title=${encodeURIComponent(post.metadata.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <RevealFx translateY="16" fillWidth delay={0.2} style={{ flexDirection: "column", alignItems: "center" }}>
+      <RevealFx translateY="16" fillWidth delay={0.2} paddingBottom="48">
         <Column fillWidth maxWidth="xl" gap="16" horizontal="center" align="center">
           <Heading variant="display-default-l" paddingBottom="48" style={{ lineHeight: "1.4" }}>
             {post.metadata.title}
           </Heading>
-          <Heading variant="heading-default-l" paddingBottom="24" onBackground="neutral-weak">
+          <Heading variant="heading-default-xl" paddingBottom="24" onBackground="neutral-weak">
             {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
           </Heading>
-          <Heading variant="heading-default-xs" paddingBottom="16" onBackground="brand-medium">
+          <Heading variant="heading-default-m" paddingBottom="24" onBackground="brand-medium">
             {post.metadata.team.map((member) => member.name).join(" | ")}
           </Heading>
           {post.metadata.link && 
-            <SmartLink href={post.metadata.link} unstyled>GitHub Repository</SmartLink>
+            <SmartLink href={post.metadata.link} unstyled>
+              GitHub Repository<Icon name="arrowUpRightFromSquare" size="s" />
+            </SmartLink>
           }
+          <Line maxWidth={12} height={0.2} radius="m" marginTop="64" />
         </Column>
       </RevealFx>
       <RevealFx translateY="16" fillWidth delay={0.6}>
-        <Column as="article" maxWidth="s" gap="s" align="justify" style={{ margin: "auto" }}>
+        <Column as="article" maxWidth="s" gap="s" style={{ margin: "auto" }}>
           <CustomMDX source={post.content} />
-          <Line maxWidth={50} height={0.1} radius="m" marginTop="40" marginBottom="4" />
+          <Line maxWidth={50} height={0.2} radius="m" marginTop="40" marginBottom="4" />
         </Column>
       </RevealFx>
     </Column>

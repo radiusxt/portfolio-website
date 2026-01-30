@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import { slugify as transliterate } from "transliteration";
-
 import {
   Heading,
   Text,
@@ -77,18 +76,24 @@ function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
 }
 
 function slugify(str: string): string {
-  const strWithAnd = str.replace(/&/g, " and "); // Replace & with 'and'
+  // Replace & with 'and'
+  const strWithAnd = str.replace(/&/g, " and ");
   return transliterate(strWithAnd, { lowercase: true, separator: "-" }).replace(/\-\-+/g, "-");
 }
 
 function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
-  const CustomHeading = (
-    { children }: Omit<React.ComponentProps<typeof Heading>, "as" | "id">
-  ) => {
+  const CustomHeading = ({ children }: Omit<React.ComponentProps<typeof Heading>, "as" | "id">) => {
     const slug = slugify(children as string);
     
     return (
-      <Heading as={as} id={slug} align="center" marginTop="12" marginBottom="12" variant="display-default-s">
+      <Heading
+        as={as}
+        id={slug}
+        variant="display-default-s"
+        align="center"
+        marginTop="16"
+        marginBottom="20"
+      >
         {children}
       </Heading>
     );
@@ -100,14 +105,15 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
 
 function createParagraph({ children }: TextProps) {
   return (
-    <Text
-      style={{ lineHeight: "175%" }}
-      variant="body-default-m"
+    <Heading
+      variant="body-default-l"
+      wrap="wrap"
       marginTop="8"
       marginBottom="12"
+      style={{ lineHeight: "2" }}
     >
       {children}
-    </Text>
+    </Heading>
   );
 }
 
@@ -147,7 +153,12 @@ function createList({ children }: { children: ReactNode }) {
 
 function createListItem({ children }: { children: ReactNode }) {
   return (
-    <ListItem marginTop="4" marginBottom="8" style={{ lineHeight: "175%" }}>
+    <ListItem
+      variant="body-default-l"
+      marginTop="4"
+      marginBottom="8"
+      style={{ lineHeight: "2" }}
+    >
       {children}
     </ListItem>
   );

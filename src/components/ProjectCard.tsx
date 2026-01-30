@@ -1,5 +1,3 @@
-"use client";
-
 import { Media, Column, Flex, Heading, SmartLink, Line } from "@once-ui-system/core";
 import { Team } from "@/utils/utils";
 import styles from "./ProjectCard.module.scss";
@@ -16,7 +14,7 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, description, image, team }) => {
   return (
-    <Column fillWidth gap="xs">
+    <Column fillWidth gap="xs" horizontal="center">
       <SmartLink href={href} style={{ display: "contents" }}>
         <Media src={image} alt={title} border="transparent" radius="l" />
       </SmartLink>

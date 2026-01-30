@@ -66,18 +66,18 @@ export default function Home() {
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="48" delay={0.4}>
+          <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="104" delay={0.4}>
             <Heading variant="heading-default-xl" style={{ lineHeight: "1.5", letterSpacing: "0.2px"}}>
               {home.subline}
             </Heading>
           </RevealFx>
         </Column>
       </Column>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="56" delay={0.4}>
-        <Line background="accent-alpha-strong" maxWidth={50} height={0.2} radius="m" />
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="80" delay={0.4}>
+        <Line background="accent-alpha-strong" maxWidth={40} height={0.2} radius="m" />
       </RevealFx>
       <RevealFx translateY="16" fillWidth delay={0.8}>
-        <Column fillWidth maxWidth="xl" gap="16" horizontal="center">
+        <Column fillWidth maxWidth="xl" gap="16" paddingBottom="16" horizontal="center">
           <Heading
             id="featured"
             variant="display-default-m"
@@ -86,12 +86,12 @@ export default function Home() {
           >
             ISIC Challenge Dataset
           </Heading>
-          <Projects range={[1, 1]} />
+          <Projects range={[2, 2]} />
           <Heading variant="display-default-m" paddingTop="128" paddingBottom="64" style={{ letterSpacing: "0px" }}>
             Gallery Highlights
           </Heading>
           <GalleryView />
-          <Line background="accent-alpha-strong" marginTop="80" maxWidth={60} height={0.2} radius="m" />
+          <Line background="accent-alpha-strong" maxWidth={60} height={0.2} radius="m" marginTop="104" />
         </Column>
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" delay={1.2}>

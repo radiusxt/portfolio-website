@@ -14,7 +14,7 @@ export async function generateMetadata() {
 
 export default function Work() {
   return (
-    <Column maxWidth="l" style={{ minHeight: "200vh" }}>
+    <Column maxWidth="l" direction="column" style={{ minHeight: "100dvh" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}

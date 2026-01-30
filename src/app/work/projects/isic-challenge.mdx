@@ -1,0 +1,55 @@
+---
+title: "ISIC Challenge Dataset (2020)"
+publishedAt: "2025-10-23"
+summary: "A machine learning task working with Siamese Neural Networks to classify melanoma cases from a ISIC dataset as malignant or benign."
+image: "/trademarks/kaggle.png"
+team:
+  - name: "Nathaniel Chan"
+    linkedIn: "https://www.linkedin.com/in/nathaniel-chan-/"
+link: "https://github.com/radiusxt/PatternAnalysis-2025"
+---
+
+# Overview
+
+Skin cancer is the most prevalent type of cancer. Melanoma, specifically, is responsible for 75% of skin cancer deaths, despite being the least common skin cancer. The American Cancer Society estimates over 100,000 new melanoma cases will be diagnosed in 2020. Based on estimates, almost 7,000 people will die from the disease. As with other cancers, early and accurate detection, potentially aided by data science, can make treatment more effective. Melanoma is a deadly disease, but if caught early, most melanomas can be cured with minor surgery. Image analysis tools automate the diagnosis of melanoma will improve dermatologists' diagnostic accuracy. Better detection of melanoma has the opportunity to positively impact millions of people.
+
+# Key Objectives
+
+- Siamese Neural Network (SNN)
+  - Built a SNN to detect lesions, comparing 2 images and determining their similarity.
+  - Achieved a total accuracy of >80%.
+- Documentation
+  - Compiled a detailed report documenting dataset characteristics, algorithm architecture, model structure, results and evaluation suite.
+  - Generated graphs and figures to support raw findings.
+
+# Tech Stack
+
+- Python
+  - Preprocessing data and assembling dataloaders.
+  - Tuning ResNet on the melanoma dataset with over 10,000 images.
+  - Tracking training progress with tqdm.
+- Bash
+  - Batching ML tasks and storing the results in an output log file.
+- Pytorch
+  - Building a SNN sequentially with convolution, pooling, dropout & activation layers.
+  - Running the training loop with a training set and model validation.
+  - Evaluating the best trained model with a testing set.
+- Anaconda
+  - Dependency management and environment reproucability.
+  - Avoids any dependency mismatch throughout development.
+- GitHub
+  - Version control for managing project structure.
+  - Pull request for merging fork into upstream.
+
+# Challenges and Insights
+
+A key challenge in this project was the strong class imbalance of benign to malignant cases, making it difficult for the SNN to learn robust similarity representations without bias toward benign lesions. Designing effective image pairs was non-trivial as poor sampling strategies led to substantial overfitting on training data. This overfitting manifested as high training performance with limited generalisation to unseen samples required careful regularisation and dataset augmentation. In SNNs, a common loss function is contrastive loss, enforcing separation between similar and dissimilar pairs. It was preferred over triplet loss for its simpler pair-based formulation and more stable training behaviour under severe class imbalances. The project highlighted the importance of thoughtful pair construction (due to the significant class imbalance), loss function selection and data balancing when applying metric-learning approaches to medical imaging, taking into account the trade-offs between model complexity and interpretability in high-stakes diagnostic imaging.
+
+# Outcomes
+
+The SNN performed reasonably well with a total accuracy of 81% and provided applicable experience in batched training tasks on a GPU cluster. This project taught me how to deal with model overfitting which is very common with CNNs in early training.
+
+# References
+
+- [Kaggle](https://www.kaggle.com/datasets/sumaiyabinteshahid/isic-challenge-dataset-2020)  
+- [All ISIC Datasets](https://challenge.isic-archive.com/data/)

@@ -19,9 +19,7 @@ npm install
 npm run dev
 ```
 
-## Demo
-
-View the demo [portfolio](https://demo.magic-portfolio.com).
+Set up your own ```.env.local``` with your email address and API keys.
 
 ## Documentation
 
