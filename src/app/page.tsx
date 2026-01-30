@@ -82,12 +82,12 @@ export default function Home() {
             id="featured"
             variant="display-default-m"
             paddingBottom="64"
-            style={{ letterSpacing: "0px", scrollMarginTop: "60px" }}
+            style={{ letterSpacing: "0px", scrollMarginTop: "80px" }}
           >
             ISIC Challenge Dataset
           </Heading>
-          <Projects range={[2, 2]} />
-          <Heading variant="display-default-m" paddingTop="128" paddingBottom="64" style={{ letterSpacing: "0px" }}>
+          <Projects range={[3, 3]} />
+          <Heading variant="display-default-m" paddingTop="128" paddingBottom="48" style={{ letterSpacing: "0px" }}>
             Gallery Highlights
           </Heading>
           <GalleryView />

@@ -39,7 +39,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, descripti
           </Flex>
         }
         {description.trim() && team && 
-          <Column flex={8} s={{ hide: true }}>
+          <Column flex={9} s={{ hide: true }}>
             <Heading
               variant="body-default-l"
               onBackground="brand-weak"
