@@ -6,11 +6,12 @@ import {
   Heading,
   Icon,
   IconButton,
-  Tag,
   Meta,
   Schema,
+  Tag,
   Row,
   RevealFx,
+  Timeline
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import { TableOfContents } from "@/components/about/Contents";
@@ -265,7 +266,7 @@ export default function About() {
                               key={index}
                               prefixIcon={tag.icon}
                               gap="8" variant="brand"
-                              style={{ width: "110px", height: "35px" }}
+                              style={{ width: "105px", height: "35px" }}
                             >
                               <Heading variant="label-default-s">{tag.name}</Heading>
                             </Tag>

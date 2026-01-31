@@ -156,7 +156,7 @@ function createListItem({ children }: { children: ReactNode }) {
     <ListItem
       variant="body-default-l"
       marginTop="4"
-      marginBottom="8"
+      marginBottom="4"
       style={{ lineHeight: "2" }}
     >
       {children}

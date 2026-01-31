@@ -171,6 +171,11 @@ const about: About = {
             icon: "python",
           },
           {
+            name: "Bash",
+            description: "Streamlined workflows and environments through automated scripts.",
+            icon: "bash",
+          },
+          {
             name: "JavaScript",
             description: "Integrated RESTful APIs for React-based websites and apps.",
             icon: "javascript",
@@ -195,9 +200,7 @@ const about: About = {
       {
         title: "Development Tools",
         description: (
-          <>
-            Packaging and deploying production software efficiently with reproducible environments for scalable applications.
-          </>
+          <>Packaging and deploying production software efficiently with reproducible environments for scalable applications.</>
         ),
         tags: [
           {
@@ -216,6 +219,16 @@ const about: About = {
             icon: "conda",
           },
           {
+            name: "Vercel",
+            description: "Deployed a website with fast loading times and dynamic content.",
+            icon: "vercel",
+          },
+          {
+            name: "AWS",
+            description: "",
+            icon: "aws",
+          },
+          {
             name: "Docker",
             description: "Containerised a scalable application with a microservices architecture.",
             icon: "docker",
@@ -225,9 +238,7 @@ const about: About = {
       {
         title: "Frameworks",
         description: (
-          <>
-            Developing data-driven applications with ML, scalable backends, modern web interfaces and reliable databases.
-          </>
+          <>Developing data-driven applications with ML, scalable backends, modern web interfaces and reliable databases.</>
         ),
         tags: [
           {
@@ -251,7 +262,7 @@ const about: About = {
             icon: "react",
           },
           {
-            name: "PostgreSQL",
+            name: "Postgres",
             description: "Engineered database schemas and efficient relational queries.",
             icon: "postgresql",
           },

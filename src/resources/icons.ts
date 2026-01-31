@@ -1,5 +1,5 @@
 import { IconType } from "react-icons";
-import { FaCode } from "react-icons/fa";
+import { FaCode, FaAws, FaTerminal } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 
 import {
@@ -45,6 +45,7 @@ import {
   SiReact,
   SiJupyter,
   SiAnaconda,
+  SiVercel,
 } from "react-icons/si";
 
 import {
@@ -99,8 +100,10 @@ export const iconLibrary: Record<string, IconType> = {
   r: SiR,
   java: FaJava,
   c: SiC,
+  bash: FaTerminal,
   figma: SiFigma,
   supabase: SiSupabase,
+  aws: FaAws,
   sql: SiMysql,
   postgresql: SiPostgresql,
   docker: SiDocker,
@@ -109,6 +112,7 @@ export const iconLibrary: Record<string, IconType> = {
   react: SiReact,
   jupyter: SiJupyter,
   conda: SiAnaconda,
+  vercel: SiVercel,
   facebook: FaFacebook,
   pinterest: FaPinterest,
   whatsapp: FaWhatsapp,

@@ -1,6 +1,6 @@
 ---
 title: "Optimisation Strategies for BERT"
-publishedAt: "2025-10-27"
+publishedAt: "2025-11-10"
 summary: "Research project on optimisation strategies and hyperparameter variations for BERT."
 image: "/images/projects/bert/huggingface.svg"
 team:
@@ -11,29 +11,43 @@ link: "https://github.com/radiusxt/BERT-Optimisation"
 
 # Overview
 
-Development of a flexible and highly customizable design system using Next.js for front-end and Figma for design collaboration.
+The topic of Natural Language Processing (NLP) is a highly investigated subfield of machine learning bordering between both statistics and linguistics. The training and fine-tuning of large language models (LLMs) remains a critical segment in achieving strong downstream language performance in NLPs. BERT (Bidirectional Encoder Representations from Transformers), is a natural language processing model designed to understand the context of a word by simultaneously analyzing the text that precedes and succeeds it to capture deeper meaning.
 
 # Key Objectives
 
-- **Component Library**: Built a set of modular, reusable UI components using React and styled-components in Next.js, focusing on accessibility and responsiveness.
-- **Theming and Customization**: Integrated a theming system that allows easy switching and customization of color palettes, typography, and layout styles using CSS variables and Figma tokens.
-- **Figma Integration**: Collaborated closely with designers by setting up a shared design library in Figma. This library was synchronized with the codebase, ensuring design handoffs were seamless and that design tokens remained consistent across both platforms.
-- **Documentation and Usage Guidelines**: Developed comprehensive documentation with Storybook to showcase components, usage patterns, and best practices, ensuring the design system is easy to adopt by other teams.
+- Transformers (BERT)
+  - Built a modular training suite for a wide variety of input parameters to support hyperparameter optimisation across datasets for sentiment analysis tasks.
+  - Observed differences in early training performance and convergence rates with standard and noisy data.
+- Documentation
+  - Compiled a detailed research paper documenting dataset characteristics, algorithm architecture, model structure, results and evaluation suite.
+  - Generated several graphs and figures to support raw findings with error margins.
 
 # Tech Stack
 
-- **Next.js**: For fast, server-rendered React applications.
-- **Figma**: For creating and managing design assets and prototypes.
-- **Styled-Components**: For styling React components with a modular, themable approach.
-- **Storybook**: For building an interactive, documented component library.
+- Python
+  - Partitioning data, generating normal and noisy datasets and tokenising phrases.
+  - Tuning BERT on a variety of optimisers and a range of hyperparameter settings.
+  - Tracking training progress with tqdm.
+- Jupyter
+  - Producing results via cell-based execution for several experiemnts without reloading the full dataset each time.
+- Pytorch
+  - Running the training loop with a selected training set for several iterations.
+  - Evaluating the best trained model with a testing set.
+- AWS
+  - Model training on large datasets is a compute intensive task. Initially, staging was done locally before training more extensively on a compute cluster.
+- Anaconda
+  - Dependency management and environment reproucability.
+  - Avoids any version incompatibility throughout development.
+- GitHub
+  - Version control for managing project structure.
 
 # Challenges and Insights
 
-One key challenge was balancing the need for flexibility with the desire to maintain design consistency. The solution involved creating well-defined design tokens and establishing clear guidelines for when and how components could be customized. Additionally, setting up effective collaboration workflows between designers and developers using Figma and Git was a learning experience that greatly improved the process.
+Tuning BERT for sentiment analysis revealed the model's ability to analyze text demands significant compute resources, ultimately necessitating the use of an AWS GPU instance to manage the quadratic memory complexity of the transformer architecture. This computational requirement was further exacerbated by the high-precision batching to prevent insufficient memory errors during the optimiser process. A technical insight gained was the model's high sensitivity to data integrity. The introduction of noise created significant performance drawdowns as it disrupted tokenization and misled the bidirectional attention mechanism.
 
 # Outcomes
 
-The design system is now actively used across multiple projects, leading to faster development cycles, fewer design inconsistencies, and improved collaboration between design and development teams. It has become a foundation for scaling our products efficiently while ensuring a cohesive user experience.
+The overall performance on the fine tuned BERT model sustained 85% accuracy with the AdamW optimiser where it yielded high stability in early training without forgetting its pretrained knowledge. This research project enhanced my knowledge and practical experience in pytorch, transformers and model training using real GPU compute.
 
 # References
 
