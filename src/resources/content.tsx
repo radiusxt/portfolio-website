@@ -225,7 +225,7 @@ const about: About = {
           },
           {
             name: "AWS",
-            description: "",
+            description: "Architected containerized microservices with ECS, EC2, RDS and SQS.",
             icon: "aws",
           },
           {

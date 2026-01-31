@@ -256,7 +256,7 @@ export default function About() {
                       <Heading id={skill.title} variant="heading-default-xl" marginBottom="8">
                         {skill.title}
                       </Heading>
-                      <Heading variant="body-default-l" onBackground="neutral-strong" wrap="wrap">
+                      <Heading variant="body-default-l" onBackground="neutral-strong" wrap="wrap" style={{ lineHeight: "1.6" }}>
                         {skill.description}
                       </Heading>
                       <Column fillWidth gap="20">
