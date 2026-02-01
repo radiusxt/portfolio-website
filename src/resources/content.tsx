@@ -106,7 +106,7 @@ const about: About = {
         role: "L2 Sales Support Engineer",
         achievements: [
           <>
-            Provided support on a large variety of industrial grade sensors for several industries.
+            Provided support on industrial grade sensors for several industries.
           </>,
           <>
             Collaborated with clients to engineer solutions for their applications.
