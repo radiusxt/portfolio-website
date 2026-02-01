@@ -255,7 +255,8 @@ export default function About() {
                             as="li"
                             variant="body-default-l" 
                             onBackground="neutral-strong"
-                            key={`${institution.name}-line-${lineIndex}`} 
+                            key={`${institution.name}-line-${lineIndex}`}
+                            style={{ marginLeft: "-20px" }}
                           >
                             {line}
                           </Heading>
