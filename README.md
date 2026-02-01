@@ -19,7 +19,7 @@ npm install
 npm run dev
 ```
 
-Set up your own ```.env.local``` with your email address and API keys.
+Set up your own ```.env.local``` with your email address and Resend/Emailable API keys.
 
 ## Documentation
 

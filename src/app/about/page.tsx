@@ -7,10 +7,10 @@ import {
   Icon,
   IconButton,
   Meta,
+  RevealFx,
+  Row,
   Schema,
   Tag,
-  Row,
-  RevealFx,
   Timeline
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
@@ -174,38 +174,59 @@ export default function About() {
             </Column>
             {about.work.display && 
               <>
-                <Heading as="h2" id={about.work.title} variant="display-default-s" marginBottom="m">
+                <Heading as="h2" id={about.work.title} variant="display-default-s" marginBottom="32">
                   {about.work.title}
                 </Heading>
-                <Column fillWidth gap="l" marginBottom="40">
-                  {about.work.experiences.map((experience, index) => (
-                    <Column fillWidth key={`${experience.company}-${experience.role}-${index}`}>
-                      <Row fillWidth horizontal="between" vertical="center" marginBottom="4">
-                        <Heading id={experience.company} variant="heading-default-xl">
-                          {experience.company}
-                        </Heading>
-                        <Heading variant="heading-default-s" onBackground="neutral-weak">
-                          {experience.timeframe}
-                        </Heading>
-                      </Row>
-                      <Heading variant="body-default-m" onBackground="brand-weak" marginBottom="m">
-                        {experience.role}
-                      </Heading>
-                      <Column as="ul" gap="16" >
-                        {experience.achievements.map((achievement, index) => (
-                          <Heading
-                            as="li"
-                            key={`${experience.company}-${index}`}
-                            variant="body-default-l"
-                            align="justify"
-                            wrap="wrap"
+                <Column fillWidth>
+                  <Timeline
+                    size="xs"
+                    style={{
+                      marginLeft: "-26px",
+                      WebkitMaskImage: "linear-gradient(to bottom, black 92%, transparent 96%)",
+                      maskImage: "linear-gradient(to bottom, black 92%, transparent 96%)"
+                     }}
+                    items={[
+                      ...about.work.experiences.map((experience, index) => ({
+                        label: (
+                          <Column
+                            fillWidth
+                            key={`${experience.company}-${experience.role}-${index}`}
+                            style={ index !== 0 ? { marginTop: "-16px" } : { marginTop: "-8px" }}
                           >
-                            {achievement}
-                          </Heading>
-                        ))}
-                      </Column>
-                    </Column>
-                  ))}
+                            <Row fillWidth horizontal="between" vertical="center" marginBottom="4">
+                              <Heading id={experience.company} variant="heading-default-xl">
+                                {experience.company}
+                              </Heading>
+                              <Heading variant="heading-default-s" onBackground="neutral-weak">
+                                {experience.timeframe}
+                              </Heading>
+                            </Row>
+                            <Heading variant="body-default-m" onBackground="brand-weak" paddingBottom="20">
+                              {experience.role}
+                            </Heading>
+                          </Column>
+                        ),
+                        description: (
+                          <Column as="ul" marginBottom="16" gap="16">
+                            {experience.achievements.map((achievement, index) => (
+                              <Heading
+                                as="li"
+                                key={`${experience.company}-${index}`}
+                                variant="body-default-l"
+                                wrap="wrap"
+                                style={{ marginLeft: "-24px" }}
+                              >
+                                {achievement}
+                              </Heading>
+                            ))}
+                          </Column>
+                        ),
+                        state: "active" as const
+                      })),
+                      // Null object for disappearing marker effect.
+                      { description: <></>, marker: <></> }
+                    ]}
+                  />
                 </Column>
               </>
             }
@@ -256,7 +277,12 @@ export default function About() {
                       <Heading id={skill.title} variant="heading-default-xl" marginBottom="8">
                         {skill.title}
                       </Heading>
-                      <Heading variant="body-default-l" onBackground="neutral-strong" wrap="wrap" style={{ lineHeight: "1.6" }}>
+                      <Heading
+                        variant="body-default-l"
+                        onBackground="neutral-strong"
+                        wrap="wrap"
+                        style={{ lineHeight: "1.6" }}
+                      >
                         {skill.description}
                       </Heading>
                       <Column fillWidth gap="20">
