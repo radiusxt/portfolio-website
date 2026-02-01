@@ -19,7 +19,27 @@ npm install
 npm run dev
 ```
 
-Set up your own ```.env.local``` with your email address and Resend/Emailable API keys.
+Set up your own ```.env.local``` with your dedicated email address and Resend/Emailable API keys.
+
+## Tech Stack
+
+### Frontend
+
+- Next.js
+- React
+
+### Backend
+
+- TypeScript
+- Resend
+- Emailable
+
+### Deployment
+
+- Vercel
+- GitHub
+
+To find how these technologies were used, click [here](https://hyperdrivemedia.co/work/portfolio-website).
 
 ## Documentation
 
