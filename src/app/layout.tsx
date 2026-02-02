@@ -14,6 +14,7 @@ import {
 } from "@once-ui-system/core";
 import { Footer, Header, RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
+import { Analytics } from "@vercel/analytics/next"
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -186,6 +187,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           </Flex>
           <Footer />
         </Column>
+        <Analytics />
       </Providers>
     </Flex>
   );
