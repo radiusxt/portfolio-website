@@ -205,7 +205,7 @@ const about: About = {
         tags: [
           {
             name: "VS Code",
-            description: "My IDE of choice for most coding tasks.",
+            description: "My IDE of choice for most programming tasks.",
             icon: "vscode",
           },
           {
@@ -232,6 +232,16 @@ const about: About = {
             name: "Docker",
             description: "Containerised a scalable application with a microservices architecture.",
             icon: "docker",
+          },
+          {
+            name: "Claude",
+            description: "Applied Claude for AI-assisted coding and technical problem solving.",
+            icon: "claude",
+          },
+          {
+            name: "Gemini",
+            description: "Utilised Gemini for AI reasoning, workflow assistance and smaller tasks.",
+            icon: "gemini",
           },
         ],
       },

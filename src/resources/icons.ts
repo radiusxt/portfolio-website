@@ -46,6 +46,9 @@ import {
   SiJupyter,
   SiAnaconda,
   SiVercel,
+  SiClaude,
+  SiGooglegemini,
+  SiGoogle,
 } from "react-icons/si";
 
 import {
@@ -113,6 +116,8 @@ export const iconLibrary: Record<string, IconType> = {
   jupyter: SiJupyter,
   conda: SiAnaconda,
   vercel: SiVercel,
+  claude: SiClaude,
+  gemini: SiGooglegemini,
   facebook: FaFacebook,
   pinterest: FaPinterest,
   whatsapp: FaWhatsapp,
