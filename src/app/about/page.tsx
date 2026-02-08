@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import {
   Avatar,
   Button,
@@ -93,7 +93,9 @@ export default function About() {
               flex={3}
               horizontal="center"
             >
-              <Avatar src={person.avatar} size={15} />
+              <Suspense fallback={<Avatar size={15} loading />}>
+                <Avatar src={person.avatar} size={15} />
+              </Suspense>
               <Row gap="8" vertical="center">
                 <Icon onBackground="brand-weak" size="l" name="globe" />
                 <Heading variant="body-default-xl">{person.location}</Heading>
