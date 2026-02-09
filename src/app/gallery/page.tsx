@@ -48,16 +48,8 @@ export default function Gallery() {
           {gallery.title}
         </Heading>
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="4" delay={0.2}>
-        <GalleryView />
-      </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128" delay={0.2}>
-        <Line
-          maxWidth={74}
-          height={0.2}
-          radius="m"
-          style={{ background: "var(--neutral-on-background-weak)" }}
-        />
+        <GalleryView />
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={0.8}>
         <Heading variant="display-default-m" style={{ letterSpacing: "0px", textAlign: "center" }}>
