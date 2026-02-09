@@ -51,13 +51,14 @@ export default function Gallery() {
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="4" delay={0.2}>
         <GalleryView />
       </RevealFx>
-      <Line
-        maxWidth={74}
-        height={0.2}
-        radius="m"
-        marginBottom="128"
-        style={{ marginLeft: "auto", marginRight: "auto", background: "var(--neutral-on-background-weak)" }}
-      /> 
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128" delay={0.2}>
+        <Line
+          maxWidth={74}
+          height={0.2}
+          radius="m"
+          style={{ background: "var(--neutral-on-background-weak)" }}
+        />
+      </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={0.8}>
         <Heading variant="display-default-m" style={{ letterSpacing: "0px", textAlign: "center" }}>
           Discover the Full Gallery
