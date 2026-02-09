@@ -2,7 +2,7 @@ import { IconName } from "@/resources/icons";
 import { zones } from "tzdata";
 
 /**
- * IANA time zone string (e.g., 'Asia/Calcutta', 'Europe/Vienna').
+ * IANA time zone string.
  */
 export type IANATimeZone = Extract<keyof typeof zones, string>;
 
@@ -78,7 +78,6 @@ export interface Home extends BasePageConfig {
   featured: {
     display: boolean;
     title: React.ReactNode;
-    href: string;
   };
   /** The sub text which appears below the headline */
   subline: React.ReactNode;

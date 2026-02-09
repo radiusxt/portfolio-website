@@ -36,7 +36,7 @@ const social: Social = [
 const home: Home = {
   path: "/",
   label: "Home",
-  title: `Hyperdrive Media`,
+  title: "Hyperdrive Media",
   description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}.`,
   headline:
     <>
@@ -52,18 +52,17 @@ const home: Home = {
         </Text>
       </Row>
     ),
-    href: "",
   },
   subline:
     <>
       I'm Nathaniel, a software engineer & photographer in Australia with a passion for building software & capturing action.
-    </>,
+    </>
 };
 
 const about: About = {
   path: "/about",
   label: "About",
-  title: `About Me`,
+  title: "About Me",
   description: `${person.name}, a ${person.role.toLowerCase} based in ${person.location}.`,
   tableOfContent: {
     display: true,
@@ -290,14 +289,14 @@ const about: About = {
 const work: Work = {
   path: "/work",
   label: "Software",
-  title: `Projects`,
+  title: "Projects",
   description: `Software projects by ${person.name}`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Photography",
-  title: `Gallery Highlights`,
+  title: "Gallery Highlights",
   description: `Images by ${person.name}`,
   images: [
     /* Sport */
