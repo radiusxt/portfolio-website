@@ -1,4 +1,4 @@
-import { Flex, Meta, Schema, Heading, Row, Logo, RevealFx } from "@once-ui-system/core";
+import { Flex, Meta, Schema, Heading, Row, Line, Logo, RevealFx, Column } from "@once-ui-system/core";
 import { baseURL, gallery, person } from "@/resources";
 import { Scroll } from "@/components";
 import { GalleryView } from "@/components/gallery/Gallery";
@@ -48,9 +48,16 @@ export default function Gallery() {
           {gallery.title}
         </Heading>
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128" delay={0.2}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="4" delay={0.2}>
         <GalleryView />
       </RevealFx>
+      <Line
+        maxWidth={74}
+        height={0.2}
+        radius="m"
+        marginBottom="128"
+        style={{ marginLeft: "auto", marginRight: "auto", background: "var(--neutral-on-background-weak)" }}
+      /> 
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={0.8}>
         <Heading variant="display-default-m" style={{ letterSpacing: "0px", textAlign: "center" }}>
           Discover the Full Gallery

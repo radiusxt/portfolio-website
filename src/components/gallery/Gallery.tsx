@@ -1,6 +1,6 @@
 "use client";
 
-import { Flex, Carousel, Media } from "@once-ui-system/core";
+import { Carousel, Flex, Media } from "@once-ui-system/core";
 import { gallery } from "@/resources";
 
 export function GalleryView() {
@@ -8,7 +8,7 @@ export function GalleryView() {
     <Carousel
       aspectRatio="3 / 2"
       indicator="thumbnail"
-      thumbnail={{height: 7}}
+      thumbnail={{ height: 8 }}
       controls={false}
       radius="l"
       translateY={2}

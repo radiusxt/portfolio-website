@@ -67,7 +67,7 @@ export default function Home() {
             </Heading>
           </RevealFx>
           <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="104" delay={0.4}>
-            <Heading variant="heading-default-xl" style={{ lineHeight: "1.5", letterSpacing: "0.2px"}}>
+            <Heading variant="heading-default-xl" style={{ lineHeight: "1.6", letterSpacing: "0.3px"}}>
               {home.subline}
             </Heading>
           </RevealFx>

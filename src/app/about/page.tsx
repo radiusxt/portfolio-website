@@ -132,7 +132,7 @@ export default function About() {
               </Heading>
               {about.intro.display && 
                 <Column fillWidth gap="m" marginBottom="l">
-                  <Heading variant="body-default-xl" align="justify" style={{ lineHeight: "1.5" }}>
+                  <Heading variant="body-default-xl" style={{ lineHeight: "1.7", letterSpacing: "0.4px" }}>
                     {about.intro.description}
                   </Heading>
                 </Column>

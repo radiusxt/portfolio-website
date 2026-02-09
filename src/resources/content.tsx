@@ -4,7 +4,7 @@ import { Row, Text } from "@once-ui-system/core";
 const person: Person = {
   firstName: "Nathaniel",
   lastName: "Chan",
-  name: `Nathaniel Chan`,
+  name: "Nathaniel Chan",
   role: "Software Engineer, Photographer",
   avatar: "/images/brand/avatar.jpg",
   email: "nathaniel@outlook.com.au",
@@ -76,7 +76,7 @@ const about: About = {
     display: true,
     title: "Introduction",
     description: 
-      "I'm a software engineer and photographer with a huge passion for building thoughtful, innovative solutions and capturing inspirational images. Through a seamless blend of technical background with creative perspective, I focus on clarity, precision and impact."
+      "I'm a software engineer and photographer with a strong passion for building thoughtful, innovative solutions and capturing inspirational images. Bridging a strong technical background and a creative perspective, I produce results defined by clarity, precision and meaningful impact."
     ,
   },
   work: {
