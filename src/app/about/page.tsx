@@ -6,6 +6,7 @@ import {
   Heading,
   Icon,
   IconButton,
+  Line,
   Meta,
   RevealFx,
   Row,
@@ -298,40 +299,51 @@ export default function About() {
                 <Heading as="h2" id={about.technical.title} variant="display-default-s" marginBottom="m">
                   {about.technical.title}
                 </Heading>
-                <Column fillWidth gap="l">
-                  {about.technical.skills.map((skill, index) => (
-                    <Column key={`${skill.title}-${index}`} fillWidth gap="m">
-                      <Heading id={skill.title} variant="heading-default-xl" marginBottom="8">
-                        {skill.title}
-                      </Heading>
-                      <Heading
-                        variant="body-default-l"
-                        onBackground="neutral-strong"
-                        wrap="wrap"
-                        style={{ lineHeight: "1.6" }}
-                      >
-                        {skill.description}
-                      </Heading>
-                      <Column fillWidth gap="20">
-                        {skill.tags?.map((tag, tagIndex) => (
-                          <Row key={`${skill.title}-${tagIndex}`} fillWidth vertical="center" gap="12">
-                            <Tag
-                              key={index}
-                              prefixIcon={tag.icon}
-                              gap="8" variant="brand"
-                              style={{ width: "105px", height: "35px" }}
-                            >
-                              <Heading variant="label-default-s">{tag.name}</Heading>
-                            </Tag>
-                            <Heading variant="label-default-l" onBackground="neutral-strong" wrap="wrap">
-                              {tag.description}
-                            </Heading>
-                        </Row>
-                        ))}
+                <Row fillWidth gap="20" vertical="center" style={{ marginLeft: "-22px" }}>
+                  <Line
+                    height={96}
+                    vert
+                    style={{
+                      background: "var(--neutral-on-background-strong)",
+                      WebkitMaskImage: "linear-gradient(to bottom, transparent 1%, black 10%, black 90%, transparent 100%)",
+                      maskImage: "linear-gradient(to bottom, transparent 1%, black 10%, black 90%, transparent 100%)"
+                    }}
+                  />
+                  <Column fillWidth gap="l" style={{ marginRight: "-18px" }}>
+                    {about.technical.skills.map((skill, index) => (
+                      <Column key={`${skill.title}-${index}`} fillWidth gap="m">
+                        <Heading id={skill.title} variant="heading-default-xl" marginBottom="8">
+                          {skill.title}
+                        </Heading>
+                        <Heading
+                          variant="body-default-l"
+                          onBackground="neutral-strong"
+                          wrap="wrap"
+                          style={{ lineHeight: "1.6" }}
+                        >
+                          {skill.description}
+                        </Heading>
+                        <Column fillWidth gap="20">
+                          {skill.tags?.map((tag, tagIndex) => (
+                            <Row key={`${skill.title}-${tagIndex}`} fillWidth vertical="center" gap="12">
+                              <Tag
+                                key={index}
+                                prefixIcon={tag.icon}
+                                gap="8" variant="brand"
+                                style={{ width: "105px", height: "35px" }}
+                              >
+                                <Heading variant="label-default-s">{tag.name}</Heading>
+                              </Tag>
+                              <Heading variant="label-default-l" onBackground="neutral-strong" wrap="wrap">
+                                {tag.description}
+                              </Heading>
+                          </Row>
+                          ))}
+                        </Column>
                       </Column>
-                    </Column>
-                  ))}
-                </Column>
+                    ))}
+                  </Column>
+                </Row>
               </>
             }
           </Column>
