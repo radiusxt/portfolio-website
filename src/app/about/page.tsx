@@ -184,6 +184,7 @@ export default function About() {
                     size="xs"
                     style={{
                       marginLeft: "-26px",
+                      marginRight: "-18px",
                       WebkitMaskImage: "linear-gradient(to bottom, black 92%, transparent 96%)",
                       maskImage: "linear-gradient(to bottom, black 92%, transparent 96%)"
                      }}
@@ -203,7 +204,7 @@ export default function About() {
                                 {experience.timeframe}
                               </Heading>
                             </Row>
-                            <Heading variant="body-default-m" onBackground="brand-weak" paddingBottom="20">
+                            <Heading variant="body-default-m" onBackground="brand-weak" marginBottom="m">
                               {experience.role}
                             </Heading>
                           </Column>
@@ -239,7 +240,7 @@ export default function About() {
                 </Heading>
                 <Column fillWidth gap="l" marginBottom="40">
                   {about.studies.institutions.map((institution, index) => (
-                    <Column key={`${institution.name}-${index}`} fillWidth>
+                    <Column fillWidth key={`${institution.name}-${index}`}>
                       <Row fillWidth horizontal="between" vertical="center" marginBottom="4">
                         <Heading id={institution.name} variant="heading-default-xl">
                           {institution.name}
