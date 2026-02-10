@@ -131,7 +131,7 @@ export default function About() {
                 {person.role}
               </Heading>
               {about.intro.display && 
-                <Column fillWidth gap="m" marginBottom="l">
+                <Column fillWidth marginBottom="l">
                   <Heading variant="body-default-xl" style={{ lineHeight: "1.7", letterSpacing: "0.4px" }}>
                     {about.intro.description}
                   </Heading>
@@ -187,7 +187,7 @@ export default function About() {
                       marginRight: "-18px",
                       WebkitMaskImage: "linear-gradient(to bottom, black 92%, transparent 96%)",
                       maskImage: "linear-gradient(to bottom, black 92%, transparent 96%)"
-                     }}
+                    }}
                     items={[
                       ...about.work.experiences.map((experience, index) => ({
                         label: (
@@ -235,38 +235,61 @@ export default function About() {
             }
             {about.studies.display && 
               <>
-                <Heading as="h2" id={about.studies.title} variant="display-default-s" marginBottom="m">
+                <Heading as="h2" id={about.studies.title} variant="display-default-s" marginBottom="32">
                   {about.studies.title}
                 </Heading>
-                <Column fillWidth gap="l" marginBottom="40">
-                  {about.studies.institutions.map((institution, index) => (
-                    <Column fillWidth key={`${institution.name}-${index}`}>
-                      <Row fillWidth horizontal="between" vertical="center" marginBottom="4">
-                        <Heading id={institution.name} variant="heading-default-xl">
-                          {institution.name}
-                        </Heading>
-                        <Heading variant="heading-default-s" onBackground="neutral-weak">
-                          {institution.timeframe}
-                        </Heading>
-                      </Row>
-                      <Heading variant="body-default-m" onBackground="brand-weak" marginBottom="m">
-                        {institution.degree}
-                      </Heading>
-                      <Column as="ul" gap="16">
-                        {institution.description.map((line: React.ReactNode, lineIndex: number) => (
-                          <Heading
-                            as="li"
-                            variant="body-default-l" 
-                            onBackground="neutral-strong"
-                            key={`${institution.name}-line-${lineIndex}`}
-                            style={{ marginLeft: "-20px" }}
+                <Column fillWidth>
+                  <Timeline
+                    size="xs"
+                    style={{
+                      marginLeft: "-26px",
+                      marginRight: "-18px",
+                      WebkitMaskImage: "linear-gradient(to bottom, black 75%, transparent 88%)",
+                      maskImage: "linear-gradient(to bottom, black 75%, transparent 88%)"
+                    }}
+                    items={[
+                      ...about.studies.institutions.map((institution, index) => ({
+                        label: (
+                          <Column
+                            fillWidth
+                            key={`${institution.name}-${index}`}
+                            style={index !== 0 ? { marginTop: "-16px" } : { marginTop: "-8px" }}
                           >
-                            {line}
-                          </Heading>
-                        ))}
-                      </Column>
-                    </Column>
-                  ))}
+                            <Row fillWidth horizontal="between" vertical="center" marginBottom="4">
+                              <Heading id={institution.name} variant="heading-default-xl">
+                                {institution.name}
+                              </Heading>
+                              <Heading variant="heading-default-s" onBackground="neutral-weak">
+                                {institution.timeframe}
+                              </Heading>
+                            </Row>
+                            <Heading variant="body-default-m" onBackground="brand-weak" marginBottom="m">
+                              {institution.degree}
+                            </Heading>
+                          </Column>
+                        ),
+                        description: (
+                          <Column as="ul" marginBottom="16" gap="16">
+                            {institution.description.map((line: React.ReactNode, lineIndex: number) => (
+                              <Heading
+                                as="li"
+                                key={`${institution.name}-line-${lineIndex}`}
+                                variant="body-default-l"
+                                onBackground="neutral-strong"
+                                wrap="wrap"
+                                style={{ marginLeft: "-24px" }}
+                              >
+                                {line}
+                              </Heading>
+                            ))}
+                          </Column>
+                        ),
+                        state: "active" as const
+                      })),
+                      // Final null object to create the disappearing marker/line fade effect
+                      { description: <></>, marker: <></> }
+                    ]}
+                  />
                 </Column>
               </>
             }
