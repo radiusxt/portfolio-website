@@ -321,7 +321,7 @@ export default function About() {
                         </Heading>
                         <Column>
                           <Fade zIndex={1} to="right" fillHeight width="128" position="absolute" left="0" top="0" />
-                          <AutoScroll maxWidth="s" speed="slow" paddingTop="48" paddingBottom="32" reverse>
+                          <AutoScroll maxWidth="s" speed="slow" paddingTop="64" paddingBottom="40" reverse>
                             {skill.tags.map((tag, index) => 
                               <Column key={`${skill.title}-${index}`} paddingX="32">
                                 <HoverCard
