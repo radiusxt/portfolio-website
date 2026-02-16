@@ -36,7 +36,7 @@ export function GalleryView() {
       />
       <Line
         maxWidth={74}
-        height={0.2}
+        height={0.12}
         radius="m"
         style={{ background: "var(--neutral-on-background-weak)" }}
       />

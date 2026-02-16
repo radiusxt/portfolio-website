@@ -1,4 +1,4 @@
-import { Flex, Meta, Schema, Heading, Row, Line, Logo, RevealFx, Column } from "@once-ui-system/core";
+import { Flex, Heading, Logo, Meta, RevealFx, Row, Schema } from "@once-ui-system/core";
 import { baseURL, gallery, person } from "@/resources";
 import { Scroll } from "@/components";
 import { GalleryView } from "@/components/gallery/Gallery";
@@ -16,7 +16,7 @@ export async function generateMetadata() {
 
 export default function Gallery() {
   return (
-    <Flex id={gallery.title} fillWidth direction="column" maxWidth="l" style={{ scrollMarginTop: "120px"}}>
+    <Flex id={gallery.title} fillWidth direction="column" maxWidth="l" style={{ scrollMarginTop: "120px" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}

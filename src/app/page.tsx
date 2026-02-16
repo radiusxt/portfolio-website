@@ -1,12 +1,12 @@
 import {
-  Heading,
-  Column,
   Badge,
-  Row,
-  Schema,
-  Meta,
+  Column,
+  Heading,
   Line,
+  Meta,
   RevealFx,
+  Row,
+  Schema
 } from "@once-ui-system/core";
 import { home, about, person, baseURL } from "@/resources";
 import { ContactForm, Scroll } from "@/components";
@@ -43,7 +43,7 @@ export default function Home() {
               fillWidth
               horizontal="center"
               paddingBottom="80"
-              paddingTop="40"
+              paddingTop="32"
               delay={0.8}
               style={{ marginTop: "0px", scrollMarginTop: "160px" }}
             >
@@ -53,7 +53,6 @@ export default function Home() {
                   background="brand-strong"
                   paddingX="20"
                   paddingY="8"
-                  arrow={false}
                   style={{ boxShadow: "0 0 32px var(--accent-solid-strong)" }}
                 >
                   <Row paddingY="2">{home.featured.title}</Row>
@@ -74,7 +73,7 @@ export default function Home() {
         </Column>
       </Column>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="80" delay={0.4}>
-        <Line background="accent-alpha-strong" maxWidth={40} height={0.2} radius="m" />
+        <Line background="accent-alpha-strong" maxWidth={40} height={0.15} radius="m" />
       </RevealFx>
       <RevealFx translateY="16" fillWidth delay={0.8}>
         <Column fillWidth maxWidth="xl" gap="16" paddingBottom="16" horizontal="center">
@@ -91,7 +90,7 @@ export default function Home() {
             Gallery Highlights
           </Heading>
           <GalleryView />
-          <Line background="accent-alpha-strong" maxWidth={60} height={0.2} radius="m" marginTop="104" />
+          <Line background="accent-alpha-strong" maxWidth={55} height={0.15} radius="m" marginTop="128" />
         </Column>
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" delay={1.2}>

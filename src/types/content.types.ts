@@ -170,7 +170,7 @@ export interface About extends BasePageConfig {
       /** Skill description */
       description?: React.ReactNode;
       /** Skill tags */
-      tags?: Array<{
+      tags: Array<{
         /** Skill name */
         name: string;
         /** Skill description */

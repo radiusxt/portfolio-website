@@ -1,6 +1,16 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Meta, Schema, Column, Heading, Line, RevealFx, SmartLink, Media, Icon } from "@once-ui-system/core";
+import {
+  Column,
+  Heading,
+  Icon,
+  Line,
+  Media,
+  Meta,
+  RevealFx,
+  Schema,
+  SmartLink
+} from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { CustomMDX } from "@/components";
 import { formatDate } from "@/utils/formatDate";
@@ -77,13 +87,13 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
             marginTop="80"
             marginBottom="80"
           />
-          <Line maxWidth={24} height={0.2} radius="m" />
+          <Line maxWidth={24} height={0.15} radius="m" />
         </Column>
       </RevealFx>
       <RevealFx translateY="16" fillWidth delay={0.6}>
         <Column as="article" maxWidth="s" gap="s" style={{ margin: "auto" }}>
           <CustomMDX source={post.content} />
-          <Line maxWidth={50} height={0.2} radius="m" marginTop="40" marginBottom="4" />
+          <Line maxWidth={50} height={0.15} radius="m" marginTop="40" marginBottom="4" />
         </Column>
       </RevealFx>
     </Column>

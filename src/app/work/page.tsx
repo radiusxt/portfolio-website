@@ -1,4 +1,4 @@
-import { Column, Heading, Meta, Schema, RevealFx } from "@once-ui-system/core";
+import { Column, Heading, Meta, RevealFx, Schema } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 

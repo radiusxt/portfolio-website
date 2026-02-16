@@ -1,9 +1,12 @@
 import React, { Suspense } from "react";
 import {
   Avatar,
+  AutoScroll,
   Button,
   Column,
+  Fade,
   Heading,
+  HoverCard,
   Icon,
   IconButton,
   Line,
@@ -94,8 +97,8 @@ export default function About() {
               flex={3}
               horizontal="center"
             >
-              <Suspense fallback={<Avatar size={15} loading />}>
-                <Avatar src={person.avatar} size={15} />
+              <Suspense fallback={<Avatar size={15} border="neutral-alpha-weak" loading />}>
+                <Avatar src={person.avatar} size={15} border="neutral-alpha-weak" />
               </Suspense>
               <Row gap="8" vertical="center">
                 <Icon onBackground="brand-weak" size="l" name="globe" />
@@ -287,7 +290,7 @@ export default function About() {
                         ),
                         state: "active" as const
                       })),
-                      // Final null object to create the disappearing marker/line fade effect
+                      // Null object for disappearing marker effect.
                       { description: <></>, marker: <></> }
                     ]}
                   />
@@ -301,7 +304,7 @@ export default function About() {
                 </Heading>
                 <Row fillWidth gap="20" vertical="center" style={{ marginLeft: "-22px" }}>
                   <Line
-                    height={96}
+                    fillHeight
                     vert
                     style={{
                       background: "var(--neutral-on-background-strong)",
@@ -315,32 +318,35 @@ export default function About() {
                         <Heading id={skill.title} variant="heading-default-xl" marginBottom="8">
                           {skill.title}
                         </Heading>
-                        <Heading
-                          variant="body-default-l"
-                          onBackground="neutral-strong"
-                          wrap="wrap"
-                          style={{ lineHeight: "1.6" }}
-                        >
+                        <Heading variant="body-default-l" onBackground="neutral-strong" style={{ lineHeight: "1.6" }}>
                           {skill.description}
                         </Heading>
-                        <Column fillWidth gap="20">
-                          {skill.tags?.map((tag, tagIndex) => (
-                            <Row key={`${skill.title}-${tagIndex}`} fillWidth vertical="center" gap="12">
-                              <Tag
-                                key={index}
-                                prefixIcon={tag.icon}
-                                variant="brand"
-                                gap="8"
-                                radius="m"
-                                style={{ width: "110px", height: "35px" }}
-                              >
-                                <Heading variant="label-default-s">{tag.name}</Heading>
-                              </Tag>
-                              <Heading variant="label-default-l" onBackground="neutral-strong" wrap="wrap">
-                                {tag.description}
-                              </Heading>
-                          </Row>
-                          ))}
+                        <Column>
+                          <Fade zIndex={1} to="right" fillHeight width="128" position="absolute" left="0" top="0" />
+                          <AutoScroll maxWidth="s" speed="slow" paddingTop="48" paddingBottom="32" reverse>
+                            {skill.tags.map((tag, index) => (
+                              <Column key={`${skill.title}-${index}`} paddingX="32">
+                                <HoverCard
+                                  placement="top"
+                                  trigger={
+                                    <Row vertical="center" margin="4" gap="16">
+                                      <Icon name={tag.icon as string} onBackground="brand-weak" size="l" />
+                                      <Heading variant="label-default-l" wrap="nowrap">
+                                        {tag.name}
+                                      </Heading>
+                                    </Row>
+                                  }
+                                >
+                                  <Column maxWidth={16} fillWidth paddingY="4">
+                                    <Heading variant="label-default-m" align="center">
+                                      {tag.description}
+                                    </Heading>
+                                  </Column>
+                                </HoverCard>
+                              </Column>
+                            ))}
+                          </AutoScroll>
+                          <Fade zIndex={1} to="left" fillHeight width="64" position="absolute" right="0" top="0" />
                         </Column>
                       </Column>
                     ))}

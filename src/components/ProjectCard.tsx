@@ -20,7 +20,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, descripti
       </SmartLink>
       <Line
         maxWidth={74}
-        height={0.2}
+        height={0.15}
         radius="m"
         marginBottom="2"
         style={{ background: "var(--neutral-on-background-weak)" }}
