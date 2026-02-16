@@ -53,7 +53,7 @@ export default function About() {
   ];
 
   return (
-    <Column maxWidth="m" direction="column">
+    <Column maxWidth="l" direction="column">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -329,8 +329,10 @@ export default function About() {
                               <Tag
                                 key={index}
                                 prefixIcon={tag.icon}
-                                gap="8" variant="brand"
-                                style={{ width: "105px", height: "35px" }}
+                                variant="brand"
+                                gap="8"
+                                radius="m"
+                                style={{ width: "110px", height: "35px" }}
                               >
                                 <Heading variant="label-default-s">{tag.name}</Heading>
                               </Tag>

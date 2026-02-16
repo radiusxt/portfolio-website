@@ -55,7 +55,7 @@ const home: Home = {
   },
   subline:
     <>
-      I'm Nathaniel, a software engineer & photographer in Australia with a passion for building software & capturing action.
+      I'm Nathaniel, a software engineer and photographer in Australia with a passion for building software and capturing action.
     </>
 };
 
@@ -75,8 +75,7 @@ const about: About = {
     display: true,
     title: "Introduction",
     description: 
-      "I'm a software engineer and photographer with a strong passion for building thoughtful, innovative solutions and capturing inspirational images. Bridging a strong technical background and a creative perspective, I produce results defined by clarity, precision and meaningful impact."
-    ,
+      "I'm a software engineer and photographer with a strong passion for building thoughtful, innovative solutions and capturing inspirational images. My strong technical background merges with a creative perspective to tackle complex challenges. The final result? Clarity, precision, and meaningful impact."
   },
   work: {
     display: true,
@@ -141,7 +140,7 @@ const about: About = {
     institutions: [
       {
         name: "University of Queensland",
-        timeframe: "Feb '21 - Nov '25",
+        timeframe: "H1 '21 - H2 '25",
         degree: "Bachelor of Engineering (Honours)",
         description: [
           <>
@@ -166,7 +165,7 @@ const about: About = {
         tags: [
           {
             name: "Python",
-            description: "Built AI/ML applications for computer vision and RAG tasks.",
+            description: "Built AI/ML applications for computer vision and RAG solutions.",
             icon: "python",
           },
           {
@@ -191,7 +190,7 @@ const about: About = {
           },
           {
             name: "CSS/SCSS",
-            description: "Styled responsive layouts with modern CSS/SCSS.",
+            description: "Styled responsive layouts with modern CSS/SCSS to enhance user experience.",
             icon: "css",
           },
         ],
@@ -199,7 +198,7 @@ const about: About = {
       {
         title: "Development Tools",
         description: (
-          <>Packaging and deploying production software efficiently with reproducible environments for scalable applications.</>
+          <>Deploying production software efficiently for modern, scalable applications.</>
         ),
         tags: [
           {
@@ -209,7 +208,7 @@ const about: About = {
           },
           {
             name: "GitHub",
-            description: "Managed multi-branch codebases, handled code reviews & PRs.",
+            description: "Managed multi-branch codebases, handled code reviews and PRs.",
             icon: "github",
           },
           {
@@ -247,17 +246,17 @@ const about: About = {
       {
         title: "Frameworks",
         description: (
-          <>Developing data-driven applications with ML, scalable backends, modern web interfaces and reliable databases.</>
+          <>Developing ML applications, scalable backends and modern web interfaces.</>
         ),
         tags: [
           {
             name: "Pytorch",
-            description: "Trained & tuned models for computer vision & speech recognition.",
+            description: "Trained and tuned models for computer vision and speech recognition.",
             icon: "pytorch",
           },
           {
             name: "Jupyter",
-            description: "Preprocessed data & executed experiments to produce visualisations.",
+            description: "Preprocessed data and executed experiments to produce visualisations.",
             icon: "jupyter",
           },
           {
@@ -267,7 +266,7 @@ const about: About = {
           },
           {
             name: "React",
-            description: "Designed modular, interactive & responsive client-side components.",
+            description: "Designed modular, interactive and responsive client-side components.",
             icon: "react",
           },
           {

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Meta, Schema, Column, Heading, Line, RevealFx, SmartLink, Icon } from "@once-ui-system/core";
+import { Meta, Schema, Column, Heading, Line, RevealFx, SmartLink, Media, Icon } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { CustomMDX } from "@/components";
 import { formatDate } from "@/utils/formatDate";
@@ -53,7 +53,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
       <RevealFx translateY="16" fillWidth delay={0.2} paddingBottom="48">
-        <Column fillWidth maxWidth="xl" gap="16" horizontal="center" align="center">
+        <Column fillWidth maxWidth="l" gap="16" horizontal="center" align="center">
           <Heading variant="display-default-l" paddingBottom="48" style={{ lineHeight: "1.4" }}>
             {post.metadata.title}
           </Heading>
@@ -68,7 +68,16 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
               GitHub Repository<Icon name="arrowUpRightFromSquare" size="s" />
             </SmartLink>
           }
-          <Line maxWidth={12} height={0.2} radius="m" marginTop="64" />
+          <Media
+            src={post.metadata.image}
+            alt={post.metadata.title}
+            maxWidth="m"
+            radius="l"
+            border="transparent"
+            marginTop="80"
+            marginBottom="80"
+          />
+          <Line maxWidth={24} height={0.2} radius="m" />
         </Column>
       </RevealFx>
       <RevealFx translateY="16" fillWidth delay={0.6}>

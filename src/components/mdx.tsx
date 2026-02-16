@@ -153,14 +153,17 @@ function createList({ children }: { children: ReactNode }) {
 
 function createListItem({ children }: { children: ReactNode }) {
   return (
-    <ListItem
+    <Heading
       variant="body-default-l"
       marginTop="4"
       marginBottom="4"
       style={{ lineHeight: "2" }}
+      wrap="wrap"
     >
-      {children}
-    </ListItem>
+      <ListItem>
+        {children}
+      </ListItem>
+    </Heading>
   );
 }
 

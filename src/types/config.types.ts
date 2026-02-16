@@ -135,6 +135,7 @@ export type SchemaConfig = {
  */
 export type SameAsConfig = {
   github: string;
+  pictime: string;
   linkedin: string;
 };
 

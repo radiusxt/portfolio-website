@@ -23,8 +23,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, descripti
         height={0.2}
         radius="m"
         marginBottom="2"
-        style={{ background: "var(--neutral-on-background-strong)" }}
-      /> 
+        style={{ background: "var(--neutral-on-background-weak)" }}
+      />
       <Flex
         className={styles.mobile}
         fillWidth
