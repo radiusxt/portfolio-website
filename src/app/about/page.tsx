@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import {
   Avatar,
   AutoScroll,
@@ -97,20 +97,18 @@ export default function About() {
               flex={3}
               horizontal="center"
             >
-              <Suspense fallback={<Avatar size={15} border="neutral-alpha-weak" loading />}>
-                <Avatar src={person.avatar} size={15} border="neutral-alpha-weak" />
-              </Suspense>
+              <Avatar src={person.avatar} size={15} border="neutral-alpha-weak" />
               <Row gap="8" vertical="center">
                 <Icon onBackground="brand-weak" size="l" name="globe" />
                 <Heading variant="body-default-xl">{person.location}</Heading>
               </Row>
               {person.languages && person.languages.length > 0 && (
                 <Row gap="12">
-                  {person.languages.map((language, index) => (
+                  {person.languages.map((language, index) => 
                     <Tag variant="brand" key={index} size="l">
                       <Heading variant="label-default-l">{language}</Heading>
                     </Tag>
-                  ))}
+                  )}
                 </Row>
               )}
             </Column>
@@ -313,7 +311,7 @@ export default function About() {
                     }}
                   />
                   <Column fillWidth gap="l" style={{ marginRight: "-18px" }}>
-                    {about.technical.skills.map((skill, index) => (
+                    {about.technical.skills.map((skill, index) => 
                       <Column key={`${skill.title}-${index}`} fillWidth gap="m">
                         <Heading id={skill.title} variant="heading-default-xl" marginBottom="8">
                           {skill.title}
@@ -324,7 +322,7 @@ export default function About() {
                         <Column>
                           <Fade zIndex={1} to="right" fillHeight width="128" position="absolute" left="0" top="0" />
                           <AutoScroll maxWidth="s" speed="slow" paddingTop="48" paddingBottom="32" reverse>
-                            {skill.tags.map((tag, index) => (
+                            {skill.tags.map((tag, index) => 
                               <Column key={`${skill.title}-${index}`} paddingX="32">
                                 <HoverCard
                                   placement="top"
@@ -344,12 +342,12 @@ export default function About() {
                                   </Column>
                                 </HoverCard>
                               </Column>
-                            ))}
+                            )}
                           </AutoScroll>
                           <Fade zIndex={1} to="left" fillHeight width="64" position="absolute" right="0" top="0" />
                         </Column>
                       </Column>
-                    ))}
+                    )}
                   </Column>
                 </Row>
               </>

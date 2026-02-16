@@ -5,6 +5,7 @@ export { ProjectCard } from "@/components/ProjectCard";
 export { HeadingLink } from "@/components/HeadingLink";
 export { RouteGuard } from "@/components/RouteGuard";
 export { Providers } from "@/components/Providers";
+export { Loading } from "@/components/Loading";
 export { Scroll } from "@/components/Scroll";
 export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";

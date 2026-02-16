@@ -1,5 +1,6 @@
 import { Media, Column, Flex, Heading, SmartLink, Line } from "@once-ui-system/core";
 import { Team } from "@/utils/utils";
+import { Loading } from "@/components/Loading";
 import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
@@ -16,7 +17,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, descripti
   return (
     <Column fillWidth gap="xs" horizontal="center">
       <SmartLink href={href} style={{ display: "contents" }}>
-        <Media src={image} alt={title} border="transparent" radius="l" />
+        <Loading fallback={<Media src="" border="transparent" radius="l" aspectRatio="16/9" loading />}>
+          <Media src={image} alt={title} border="transparent" radius="l" />
+        </Loading>
       </SmartLink>
       <Line
         maxWidth={74}
