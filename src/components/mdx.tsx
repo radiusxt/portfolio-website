@@ -2,27 +2,27 @@ import React, { ReactNode } from "react";
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import { slugify as transliterate } from "transliteration";
 import {
-  Heading,
-  Text,
-  InlineCode,
-  CodeBlock,
-  TextProps,
-  MediaProps,
   Accordion,
   AccordionGroup,
-  Table,
-  Feedback,
   Button,
   Card,
-  Grid,
-  Row,
+  CodeBlock,
   Column,
+  Feedback,
+  Grid,
+  Heading,
   Icon,
-  Media,
-  SmartLink,
+  InlineCode,
+  Line,
   List,
   ListItem,
-  Line,
+  Media,
+  MediaProps,
+  Row,
+  SmartLink,
+  Table,
+  Text,
+  TextProps
 } from "@once-ui-system/core";
 
 type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {

@@ -2,6 +2,7 @@
 
 import { Carousel, Column, Flex, Line, Media } from "@once-ui-system/core";
 import { gallery } from "@/resources";
+import { Loading } from "@/components";
 
 export function GalleryView() {
   return (
@@ -21,12 +22,16 @@ export function GalleryView() {
             <Flex fillWidth fillHeight horizontal="center" vertical="center">
               {image.orientation === "horizontal" &&
                 <Flex radius="l" overflow="hidden" style={{ height: "fit-content", width: "100%" }}>
-                  <Media src={image.src} alt={image.alt} objectFit="contain" />
+                  <Loading fallback={<Media src="" aspectRatio="3/2" loading />}>
+                    <Media src={image.src} alt={image.alt} objectFit="contain" />
+                  </Loading>
                 </Flex>
               }
               {image.orientation === "vertical" && 
-                <Flex radius="l" overflow="hidden" style={{ height: "100%", aspectRatio: "2 / 3" }}>
-                  <Media src={image.src} alt={image.alt} objectFit="cover" />
+                <Flex radius="l" overflow="hidden" style={{ height: "100%", aspectRatio: "2/3" }}>
+                  <Loading fallback={<Media src="" aspectRatio="2/3" loading />}>
+                    <Media src={image.src} alt={image.alt} objectFit="cover" />
+                  </Loading>
                 </Flex>
               }
             </Flex>

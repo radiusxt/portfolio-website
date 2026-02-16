@@ -1,17 +1,17 @@
 "use client";
 
-import {
-  Flex,
-  Button,
-  Input,
-  Textarea,
-  Heading,
-  Column,
-  IconButton,
-  Feedback,
-  ShineFx
-} from "@once-ui-system/core";
 import React, { useState } from "react";
+import {
+  Button,
+  Column,
+  Feedback,
+  Flex,
+  Heading,
+  IconButton,
+  Input,
+  ShineFx,
+  Textarea
+} from "@once-ui-system/core";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({name: "", email: "", description: ""});

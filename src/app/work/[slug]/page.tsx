@@ -12,7 +12,7 @@ import {
   SmartLink
 } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
-import { CustomMDX } from "@/components";
+import { CustomMDX, Loading } from "@/components";
 import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
 
@@ -78,15 +78,17 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
               GitHub Repository<Icon name="arrowUpRightFromSquare" size="s" />
             </SmartLink>
           }
-          <Media
-            src={post.metadata.image}
-            alt={post.metadata.title}
-            maxWidth="m"
-            radius="l"
-            border="transparent"
-            marginTop="80"
-            marginBottom="80"
-          />
+          <Loading fallback={<Media src="" maxWidth="m" radius="l" border="transparent" marginTop="80" marginBottom="80" aspectRatio="16/9" loading />}>
+            <Media
+              src={post.metadata.image}
+              alt={post.metadata.title}
+              maxWidth="m"
+              radius="l"
+              border="neutral-medium"
+              marginTop="80"
+              marginBottom="80"
+            />
+          </Loading>
           <Line maxWidth={24} height={0.15} radius="m" />
         </Column>
       </RevealFx>

@@ -35,19 +35,20 @@ export function Loading({ fallback, children }: LoadingProps) {
   }, []);
 
   return (
-    <Flex ref={containerRef} fillWidth style={{ display: "grid"/*, gridTemplateColumns: "100%"*/ }}>
+    <Flex ref={containerRef} fillWidth style={{ display: "grid" }}>
       {!loaded && 
-        <Flex fillWidth style={{ gridArea: "1 / 1" }}>
+        <Flex fillWidth horizontal="center" style={{ gridArea: "1 / 1" }}>
           {fallback}
         </Flex>
       }
       <Flex
         fillWidth
+        horizontal="center"
         style={{
           gridArea: "1 / 1",
           opacity: loaded ? 1 : 0,
           pointerEvents: loaded ? "auto" : "none",
-          transition: "opacity 0.4s ease-in-out",
+          transition: "opacity 0.4s ease-in-out"
         }}
       >
         {children}

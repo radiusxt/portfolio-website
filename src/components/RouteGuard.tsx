@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { Button, Column, Flex, Heading, PasswordInput, Spinner } from "@once-ui-system/core";
 import { routes, protectedRoutes } from "@/resources";
-import { Flex, Spinner, Button, Heading, Column, PasswordInput } from "@once-ui-system/core";
 import NotFound from "@/app/not-found";
 
 interface RouteGuardProps { children: React.ReactNode }

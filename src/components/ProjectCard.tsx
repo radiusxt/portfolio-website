@@ -1,6 +1,6 @@
-import { Media, Column, Flex, Heading, SmartLink, Line } from "@once-ui-system/core";
+import { Column, Flex, Heading, Line, Media, SmartLink } from "@once-ui-system/core";
+import { Loading } from "@/components";
 import { Team } from "@/utils/utils";
-import { Loading } from "@/components/Loading";
 import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
@@ -18,7 +18,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, descripti
     <Column fillWidth gap="xs" horizontal="center">
       <SmartLink href={href} style={{ display: "contents" }}>
         <Loading fallback={<Media src="" border="transparent" radius="l" aspectRatio="16/9" loading />}>
-          <Media src={image} alt={title} border="transparent" radius="l" />
+          <Media src={image} alt={title} border="neutral-medium" radius="l" />
         </Loading>
       </SmartLink>
       <Line
@@ -53,11 +53,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, descripti
             >
               {description}
             </Heading>
-            <Heading
-              variant="body-default-xs"
-              onBackground="neutral-weak"
-              align="right"
-            >
+            <Heading variant="body-default-xs" onBackground="neutral-weak" align="right">
               {team.map((member) => member.name).join(" | ")}
             </Heading>
           </Column>
