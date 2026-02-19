@@ -140,7 +140,7 @@ const about: About = {
     institutions: [
       {
         name: "University of Queensland",
-        timeframe: "H1 '21 - H2 '25",
+        timeframe: "2021 - 2025",
         degree: "Bachelor of Engineering (Honours)",
         description: [
           <>

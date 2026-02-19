@@ -16,7 +16,6 @@ import {
 export const ContactForm = () => {
   const [formData, setFormData] = useState({name: "", email: "", description: ""});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const MAX_LENGTH: number = 500
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -110,7 +109,7 @@ export const ContactForm = () => {
             value={formData.description}
             lines={12}
             onChange={handleChange}
-            maxLength={MAX_LENGTH}
+            maxLength={500}
             resize="none"
             characterCount
             required

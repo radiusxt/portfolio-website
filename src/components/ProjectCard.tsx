@@ -15,7 +15,7 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, description, image, team }) => {
   return (
-    <Column fillWidth gap="xs" horizontal="center">
+    <Column fillWidth gap="xs" horizontal="center" paddingBottom="32">
       <SmartLink href={href} style={{ display: "contents" }}>
         <Loading fallback={<Media src="" border="transparent" radius="l" aspectRatio="16/9" loading />}>
           <Media src={image} alt={title} border="neutral-medium" radius="l" />
@@ -26,7 +26,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, descripti
         height={0.15}
         radius="m"
         marginBottom="2"
-        style={{ background: "var(--neutral-on-background-weak)" }}
+        style={{ background: "var(--neutral-on-background-medium)" }}
       />
       <Flex
         className={styles.mobile}
