@@ -105,8 +105,10 @@ export default function About() {
               {person.languages && person.languages.length > 0 && (
                 <Row gap="12">
                   {person.languages.map((language, index) => 
-                    <Tag variant="brand" key={index} size="l">
-                      <Heading variant="label-default-l">{language}</Heading>
+                    <Tag variant="brand" key={index} size="l" radius="xl" >
+                      <Heading variant="label-default-l" padding="2">
+                        {language}
+                      </Heading>
                     </Tag>
                   )}
                 </Row>
