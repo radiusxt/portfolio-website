@@ -10,7 +10,7 @@ interface ProjectCardProps {
   description: string;
   image: string;
   team: Team[];
-  link: string;
+  link?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, description, image, team }) => {
