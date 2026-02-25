@@ -107,7 +107,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           fillWidth
           margin="0"
           padding="0"
-          style={{ minHeight: "100dvh" }}
+          style={{ minHeight: "105dvh" }}
         >
           <Flex
             style={{
