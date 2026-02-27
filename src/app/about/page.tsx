@@ -136,7 +136,11 @@ export default function About() {
               </Heading>
               {about.intro.display && 
                 <Column fillWidth marginBottom="l">
-                  <Heading variant="body-default-xl" style={{ lineHeight: "1.7", letterSpacing: "0.4px" }}>
+                  <Heading
+                    variant="body-default-xl"
+                    wrap="wrap"
+                    style={{ whiteSpace: "pre-line", lineHeight: "1.7", letterSpacing: "0.4px" }}
+                  >
                     {about.intro.description}
                   </Heading>
                 </Column>
@@ -322,22 +326,22 @@ export default function About() {
                           {skill.description}
                         </Heading>
                         <Column>
-                          <Fade zIndex={1} to="right" fillHeight width="128" position="absolute" left="0" top="0" />
-                          <AutoScroll maxWidth="s" speed="slow" paddingTop="64" paddingBottom="48" reverse>
+                          <Fade zIndex={1} to="right" fillHeight width="104" position="absolute" left="0" top="0" />
+                          <AutoScroll maxWidth="s" speed="slow" paddingTop="64" paddingBottom="48" reverse={index % 2 == 0}>
                             {skill.tags.map((tag, index) => 
                               <Column key={`${skill.title}-${index}`} paddingX="32">
                                 <HoverCard
                                   placement="top"
                                   trigger={
                                     <Row vertical="center" margin="4" gap="16">
-                                      <Icon name={tag.icon as string} onBackground="brand-weak" size="l" />
+                                      <Icon name={tag.icon} onBackground="brand-weak" size="l" />
                                       <Heading variant="label-default-l" wrap="nowrap">
                                         {tag.name}
                                       </Heading>
                                     </Row>
                                   }
                                 >
-                                  <Column maxWidth={16} fillWidth paddingY="4">
+                                  <Column maxWidth={14} fillWidth paddingY="4" background="page" radius="xl">
                                     <Heading variant="label-default-m" align="center">
                                       {tag.description}
                                     </Heading>

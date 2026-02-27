@@ -176,7 +176,7 @@ export interface About extends BasePageConfig {
         /** Skill description */
         description: string;
         /** Skill icon */
-        icon?: string;
+        icon: string;
       }>;
     }>;
   };

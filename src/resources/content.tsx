@@ -55,7 +55,7 @@ const home: Home = {
   },
   subline:
     <>
-      I'm Nathaniel, a software engineer and photographer with a passion for building software and capturing action.
+      I'm Nathaniel and I consider myself as a
     </>
 };
 
@@ -74,8 +74,13 @@ const about: About = {
   intro: {
     display: true,
     title: "Introduction",
-    description: 
-      "I'm a software engineer and photographer with a strong passion for building thoughtful, innovative solutions and capturing inspirational images. My strong technical background merges with a creative perspective to tackle complex challenges. The final result? Clarity, precision, and meaningful impact."
+    description: [
+      "Hi, I'm Nathaniel, a recent software engineering graduate from the University of Queensland, working across software development and sports photography.\n",
+      "I'm currently seeking a new challenge as a full-stack engineer with a focus on AI/ML development. ",
+      "I enjoy tackling technical challenges to push myself and explore what's possible.\n\n",
+      "When I'm on the move, I'm experimenting with a range of photography genres: sports, travel, wildlife and anything else catches my eye. ",
+      "After more than a decade of following F1 and the WEC, I've ignited my passion to document motorsport through my own lens."
+    ].join("")
   },
   work: {
     display: true,
@@ -140,7 +145,7 @@ const about: About = {
     institutions: [
       {
         name: "University of Queensland",
-        timeframe: "2021 - 2025",
+        timeframe: "Feb '21 - Nov '25",
         degree: "Bachelor of Engineering (Honours)",
         description: [
           <>

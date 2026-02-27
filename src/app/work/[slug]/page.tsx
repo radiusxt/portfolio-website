@@ -73,9 +73,17 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
             <Row paddingBottom="32" gap="16" s={{ horizontal: "center" }}>
               {post.metadata.tags.map((tag) => 
                 <Tag key={tag} border="neutral-alpha-weak">
-                  <Heading variant="label-default-l" onBackground="neutral-weak" padding="2">
-                    {tag}
-                  </Heading>
+                  <Row vertical="center" gap="8">
+                    <Icon
+                      name={tag.toLowerCase().replace(/\./g, "")}
+                      onBackground="neutral-weak"
+                      size="s"
+                      padding="2"
+                    />
+                    <Heading variant="label-default-l" onBackground="neutral-weak" padding="2">
+                      {tag}
+                    </Heading>
+                  </Row>
                 </Tag>
               )}
             </Row>
@@ -91,7 +99,20 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
               GitHub Repository<Icon name="arrowUpRightFromSquare" size="s" />
             </SmartLink>
           }
-          <Loading fallback={<Media src="" maxWidth="m" radius="l" border="transparent" marginTop="80" marginBottom="80" aspectRatio="16/9" loading />}>
+          <Loading
+            fallback={
+              <Media
+                src=""
+                maxWidth="m"
+                radius="l"
+                border="transparent"
+                marginTop="80"
+                marginBottom="80"
+                aspectRatio="16/9"
+                loading
+              />
+            }
+          >
             <Media
               src={post.metadata.image}
               alt={post.metadata.title}

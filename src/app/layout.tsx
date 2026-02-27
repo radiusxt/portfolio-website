@@ -107,7 +107,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           fillWidth
           margin="0"
           padding="0"
-          style={{ minHeight: "105dvh" }}
+          style={{ minHeight: "104dvh" }}
         >
           <Flex
             style={{
@@ -120,7 +120,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               WebkitMaskImage: "radial-gradient(circle at 50% 2%, black 10%, transparent 62%)",
             }}
             s={{ style: { maxHeight: "2000px" } }}
-            m={{ style: { maxHeight: "700px" } }}
+            m={{ style: { maxHeight: "1500px" } }}
           >
             <RevealFx fill position="absolute">
               <MatrixFx
