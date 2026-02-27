@@ -29,7 +29,9 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, abo
           <Scroll target={section.title}>
             <Flex cursor="interactive" className={styles.hover} vertical="center" gap="12">
               <Flex background="brand-strong" minWidth="20" height="2" />
-              <Heading variant="body-default-xl">{section.title}</Heading>
+              <Heading variant="body-default-xl">
+                {section.title}
+              </Heading>
             </Flex>
           </Scroll>
         </Column>

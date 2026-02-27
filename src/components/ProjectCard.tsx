@@ -27,7 +27,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, descripti
           radius="m"
           marginBottom="2"
           style={{ background: "var(--neutral-on-background-medium)" }}
-          s={{ style: { maxWidth: "2" }}}
+          xs={{ style: { maxWidth: "28rem" }}}
+          m={{ style: { maxWidth: "50rem" }}}
         />
         <Flex
           className={styles.mobile}
@@ -36,7 +37,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, descripti
           s={{ direction: "column", horizontal: "center", align: "center" }}
         >
           <Column flex={8}>
-            <Heading variant="heading-default-xl" wrap="pretty" paddingBottom="16" style={{ letterSpacing: "0.2px" }}>
+            <Heading
+              variant="heading-default-xl"
+              wrap="pretty"
+              paddingBottom="16"
+              style={{ letterSpacing: "0.2px" }}
+            >
               {title}
             </Heading>
             {tags && tags.length > 0 && 

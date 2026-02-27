@@ -26,7 +26,7 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="l" gap="xl" paddingY="24" horizontal="center">
+    <Column maxWidth="l" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -67,22 +67,38 @@ export default function Home() {
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="16" fillWidth horizontal="center" delay={0.4} style={{ paddingBottom: "0dvh" }}>
+          <RevealFx translateY="16" fillWidth horizontal="center" delay={0.4}>
             <Row gap="8" horizontal="center" vertical="center" wrap>
               <Heading variant="heading-default-xl" style={{ lineHeight: "1.6", letterSpacing: "0.3px" }}>
                 {/* Hand Waving Emoji + 2x Whitespace */}
                 {`\u{1F44B}\u00A0\u00A0`}{home.subline}
               </Heading>
-              <TypeFx
-                words={["Software Engineer.", "Sports Photographer.", "Machine Learning Engineer.", "Travel Photographer."]}
-                variant="heading-default-xl"
-                speed={50}
-                style={{ lineHeight: "1.6", letterSpacing: "0.3px" }}
-              />
+              <Heading>
+                <TypeFx
+                  words={[
+                    "Software Engineer.",
+                    "Sports Photographer.",
+                    "Machine Learning Engineer.",
+                    "Travel Photographer.",
+                    "Hardware Enthusiast."
+                  ]}
+                  variant="heading-default-xl"
+                  speed={50}
+                  hold={2500}
+                  delay={0.4}
+                  style={{ lineHeight: "1.6", letterSpacing: "0.3px" }}
+                />
+              </Heading>
             </Row>
           </RevealFx>
         </Column>
-        <RevealFx translateY="16" fillWidth horizontal="center" delay={0.4} style={{ position: "absolute", bottom: "14dvh" }}>
+        <RevealFx
+          translateY="16"
+          fillWidth
+          horizontal="center"
+          delay={0.4}
+          style={{ position: "absolute", bottom: "12dvh" }}
+        >
           <Icon name="chevronDown" size="xl" />
         </RevealFx>
       </Column>
@@ -97,11 +113,25 @@ export default function Home() {
             ISIC Challenge Dataset
           </Heading>
           <Projects range={[3, 3]} />
-          <Heading variant="display-default-m" paddingTop="160" paddingBottom="48" style={{ letterSpacing: "0px" }}>
+          <Heading
+            variant="display-default-m"
+            paddingTop="160"
+            paddingBottom="48"
+            style={{ letterSpacing: "0px" }}
+          >
             Gallery Highlights
           </Heading>
           <GalleryView />
-          <Line background="accent-alpha-strong" maxWidth={55} height={0.15} radius="m" marginTop="128" />
+          <Line
+            maxWidth={55}
+            height={0.15}
+            background="accent-alpha-strong"
+            radius="m"
+            marginTop="128"
+            marginBottom="104"
+            xs={{ style: { maxWidth: "20rem" }}}
+            m={{ style: { maxWidth: "32rem" }}}
+          />
         </Column>
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" delay={1.2}>
