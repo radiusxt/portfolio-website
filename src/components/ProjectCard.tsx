@@ -1,4 +1,4 @@
-import { Column, Flex, Heading, Line, Media, SmartLink } from "@once-ui-system/core";
+import { Column, Flex, Heading, Line, Media, Row, SmartLink, Tag } from "@once-ui-system/core";
 import { Loading } from "@/components";
 import { Team } from "@/utils/utils";
 import styles from "./ProjectCard.module.scss";
@@ -11,9 +11,10 @@ interface ProjectCardProps {
   image: string;
   team: Team[];
   link?: string;
+  tags?: string[];
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, description, image, team }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, description, image, team, tags }) => {
   return (
     <Column fillWidth gap="xs" horizontal="center" paddingBottom="32">
       <SmartLink href={href} style={{ display: "contents" }}>
@@ -35,11 +36,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, descripti
         s={{ direction: "column", horizontal: "center", align: "center" }}
       >
         {title && 
-          <Flex flex={8}>
-            <Heading variant="heading-default-xl" wrap="pretty" style={{ letterSpacing: "0.2px" }}>
+          <Column flex={8}>
+            <Heading variant="heading-default-xl" wrap="pretty" paddingBottom="16" style={{ letterSpacing: "0.2px" }}>
               {title}
             </Heading>
-          </Flex>
+            {tags && tags.length > 0 && 
+              <Row gap="8" s={{ horizontal: "center" }}>
+                {tags.map((tag) => 
+                  <Tag key={tag} border="neutral-alpha-weak">
+                    <Heading variant="label-default-s" onBackground="neutral-weak" padding="1">
+                      {tag}
+                    </Heading>
+                  </Tag>
+                )}
+              </Row>
+            }
+          </Column>
         }
         {description.trim() && team && 
           <Column flex={9} s={{ hide: true }}>

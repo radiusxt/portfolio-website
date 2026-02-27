@@ -8,8 +8,10 @@ import {
   Media,
   Meta,
   RevealFx,
+  Row,
   Schema,
-  SmartLink
+  SmartLink,
+  Tag
 } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { CustomMDX, Loading } from "@/components";
@@ -64,9 +66,20 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
       />
       <RevealFx translateY="16" fillWidth delay={0.2} paddingBottom="48">
         <Column fillWidth maxWidth="l" gap="16" horizontal="center" align="center">
-          <Heading variant="display-default-l" paddingBottom="48" style={{ lineHeight: "1.4" }}>
+          <Heading variant="display-default-l" paddingBottom="32" style={{ lineHeight: "1.4" }}>
             {post.metadata.title}
           </Heading>
+          {post.metadata.tags && post.metadata.tags.length > 0 && 
+            <Row paddingBottom="32" gap="16" s={{ horizontal: "center" }}>
+              {post.metadata.tags.map((tag) => 
+                <Tag key={tag} border="neutral-alpha-weak">
+                  <Heading variant="label-default-l" onBackground="neutral-weak" padding="2">
+                    {tag}
+                  </Heading>
+                </Tag>
+              )}
+            </Row>
+          }
           <Heading variant="heading-default-xl" paddingBottom="24" onBackground="neutral-weak">
             {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
           </Heading>

@@ -33,6 +33,7 @@ export function Projects({ range, exclude }: ProjectsProps) {
           image={post.metadata.image}
           team={post.metadata.team}
           link={post.metadata.link || ""}
+          tags={post.metadata.tags || []}
         />
       )}
     </Column>

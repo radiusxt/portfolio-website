@@ -55,7 +55,7 @@ const home: Home = {
   },
   subline:
     <>
-      I'm Nathaniel, a software engineer and photographer in Australia with a passion for building software and capturing action.
+      I'm Nathaniel, a software engineer and photographer with a passion for building software and capturing action.
     </>
 };
 
