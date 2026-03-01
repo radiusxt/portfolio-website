@@ -103,7 +103,7 @@ export default function Home() {
         </RevealFx>
       </Column>
       <Reveal translateY="16" fillWidth>
-        <Column fillWidth maxWidth="xl" gap="16" marginBottom="160" horizontal="center">
+        <Column fillWidth maxWidth="xl" gap="16" marginBottom="104" horizontal="center">
           <Heading
             id="featured"
             variant="display-default-m"
@@ -119,23 +119,12 @@ export default function Home() {
         <Column fillWidth maxWidth="xl" gap="16" marginBottom="104" marginTop="64" horizontal="center">
           <Heading
             variant="display-default-m"
-            //paddingTop="160"
             paddingBottom="48"
             style={{ letterSpacing: "0px" }}
           >
             Gallery Highlights
           </Heading>
           <GalleryView />
-          <Line
-            maxWidth={55}
-            height={0.15}
-            background="accent-alpha-strong"
-            radius="m"
-            marginTop="128"
-            //marginBottom="104"
-            xs={{ style: { maxWidth: "20rem" }}}
-            m={{ style: { maxWidth: "32rem" }}}
-          />
         </Column>
       </Reveal>
       <Reveal translateY="16" fillWidth>

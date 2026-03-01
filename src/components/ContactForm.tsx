@@ -57,7 +57,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <Column fillWidth horizontal="center" gap="l" paddingBottom="80" maxWidth="s">
+    <Column fillWidth horizontal="center" gap="l" paddingBottom="32" maxWidth="s">
       <Heading variant="display-default-s" paddingBottom="16" style={{ letterSpacing: "0px" }}>
         Get in Touch
       </Heading>
@@ -107,7 +107,7 @@ export const ContactForm = () => {
             id="description"
             name="description"
             value={formData.description}
-            lines={12}
+            lines={10}
             onChange={handleChange}
             maxLength={500}
             resize="none"

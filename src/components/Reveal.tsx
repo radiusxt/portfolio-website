@@ -11,7 +11,7 @@ interface RevealProps {
 }
 
 export function Reveal({
-  children, translateY, fillWidth = false, horizontal = "center",
+  children, translateY, fillWidth = false, horizontal = "center"
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [triggered, setTriggered] = useState(false);
@@ -23,8 +23,7 @@ export function Reveal({
           setTriggered(true);
           observer.disconnect();
         }
-      },
-      { threshold: 0.4 }
+      }, { threshold: 0.3 }
     );
 
     if (ref.current) {
@@ -35,18 +34,14 @@ export function Reveal({
   }, []);
 
   return (
-    <Flex
-      ref={ref}
-      direction="column"
-      fillWidth={fillWidth}
-    >
+    <Flex ref={ref} direction="column" fillWidth={fillWidth}>
       <RevealFx
         translateY={translateY}
         fillWidth={fillWidth}
         horizontal={horizontal}
+        // Long delay until triggered
+        delay={99999}
         trigger={triggered}
-        // Infinite delay until triggered
-        delay={99999999999}
       >
         {children}
       </RevealFx>
