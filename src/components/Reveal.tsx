@@ -23,7 +23,8 @@ export function Reveal({
           setTriggered(true);
           observer.disconnect();
         }
-      }, { threshold: 0.3 }
+      },
+      { threshold: 0.3 }
     );
 
     if (ref.current) {

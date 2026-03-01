@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState, useRef, useEffect } from "react";
+import { ReactNode, useRef, useState, useEffect } from "react";
 import { Flex } from "@once-ui-system/core";
 
 interface LoadingProps {
@@ -23,7 +23,7 @@ export function Loading({ fallback, children }: LoadingProps) {
     }
 
     const handleLoad = (e: Event) => {
-      // We use event delegation to catch 'load' events from nested images
+      // Event delegation to catch 'load' events from nested images
       if ((e.target as HTMLElement).tagName === "IMG") {
         setLoaded(true);
       }

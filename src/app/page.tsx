@@ -3,7 +3,6 @@ import {
   Column,
   Heading,
   Icon,
-  Line,
   Meta,
   RevealFx,
   Row,
@@ -45,7 +44,12 @@ export default function Home() {
               fillWidth
               horizontal="center"
               delay={0.8}
-              style={{ marginTop: "0px", scrollMarginTop: "160px", paddingTop: "5dvh", paddingBottom: "9dvh" }}
+              style={{
+                marginTop: "0px",
+                scrollMarginTop: "160px",
+                paddingTop: "5dvh",
+                paddingBottom: "9dvh" 
+              }}
             >
               <Scroll target={"featured"}>
                 <Badge
@@ -62,7 +66,13 @@ export default function Home() {
               </Scroll>
             </RevealFx>
           }
-          <RevealFx translateY="16" fillWidth horizontal="center" delay={0.1} style={{ paddingBottom: "11dvh" }}>
+          <RevealFx
+            translateY="16"
+            fillWidth
+            horizontal="center"
+            delay={0.1}
+            style={{ paddingBottom: "11dvh" }}
+          >
             <Heading variant="display-default-xl" style={{ lineHeight: "1.2", letterSpacing: "-1.5px" }}>
               {home.headline}
             </Heading>
@@ -108,7 +118,7 @@ export default function Home() {
             id="featured"
             variant="display-default-m"
             paddingBottom="64"
-            style={{ letterSpacing: "0px", scrollMarginTop: "80px" }}
+            style={{ letterSpacing: "0px", scrollMarginTop: "100px" }}
           >
             ISIC Challenge Dataset
           </Heading>
@@ -116,7 +126,7 @@ export default function Home() {
         </Column>
       </Reveal>
       <Reveal translateY="16" fillWidth>
-        <Column fillWidth maxWidth="xl" gap="16" marginBottom="104" marginTop="64" horizontal="center">
+        <Column fillWidth maxWidth="xl" gap="16" marginBottom="160" marginTop="16" horizontal="center">
           <Heading
             variant="display-default-m"
             paddingBottom="48"

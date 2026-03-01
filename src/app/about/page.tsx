@@ -184,7 +184,13 @@ export default function About() {
             </Column>
             {about.work.display && 
               <>
-                <Heading as="h2" id={about.work.title} variant="display-default-s" marginBottom="32">
+                <Heading
+                  as="h2"
+                  id={about.work.title}
+                  variant="display-default-s"
+                  marginBottom="32"
+                  style={{ scrollMarginTop: "60px" }}
+                >
                   {about.work.title}
                 </Heading>
                 <Column fillWidth>
@@ -243,7 +249,13 @@ export default function About() {
             }
             {about.studies.display && 
               <>
-                <Heading as="h2" id={about.studies.title} variant="display-default-s" marginBottom="32">
+                <Heading
+                  as="h2"
+                  id={about.studies.title}
+                  variant="display-default-s"
+                  marginBottom="32"
+                  style={{ scrollMarginTop: "60px" }}
+                >
                   {about.studies.title}
                 </Heading>
                 <Column fillWidth>
@@ -278,7 +290,7 @@ export default function About() {
                         ),
                         description: (
                           <Column as="ul" marginBottom="16" gap="16">
-                            {institution.description.map((line: React.ReactNode, lineIndex: number) => (
+                            {institution.description.map((line, lineIndex) => (
                               <Heading
                                 as="li"
                                 key={`${institution.name}-line-${lineIndex}`}
@@ -303,7 +315,13 @@ export default function About() {
             }
             {about.technical.display && 
               <>
-                <Heading as="h2" id={about.technical.title} variant="display-default-s" marginBottom="m">
+                <Heading
+                  as="h2"
+                  id={about.technical.title}
+                  variant="display-default-s"
+                  marginBottom="32"
+                  style={{ scrollMarginTop: "60px" }}
+                >
                   {about.technical.title}
                 </Heading>
                 <Row fillWidth gap="20" vertical="center" style={{ marginLeft: "-22px" }}>
@@ -312,8 +330,12 @@ export default function About() {
                     vert
                     style={{
                       background: "var(--neutral-on-background-strong)",
-                      WebkitMaskImage: "linear-gradient(to bottom, transparent 1%, black 10%, black 90%, transparent 100%)",
-                      maskImage: "linear-gradient(to bottom, transparent 1%, black 10%, black 90%, transparent 100%)"
+                      WebkitMaskImage: `linear-gradient(
+                        to bottom, transparent 1%, black 10%, black 90%, transparent 100%
+                      )`,
+                      maskImage: `linear-gradient(
+                        to bottom, transparent 1%, black 10%, black 90%, transparent 100%
+                      )`
                     }}
                   />
                   <Column fillWidth gap="l" style={{ marginRight: "-18px" }}>
@@ -322,12 +344,30 @@ export default function About() {
                         <Heading id={skill.title} variant="heading-default-xl" marginBottom="8">
                           {skill.title}
                         </Heading>
-                        <Heading variant="body-default-l" onBackground="neutral-strong" style={{ lineHeight: "1.6" }}>
+                        <Heading
+                          variant="body-default-l"
+                          onBackground="neutral-strong"
+                          style={{ lineHeight: "1.6" }}
+                        >
                           {skill.description}
                         </Heading>
                         <Column>
-                          <Fade zIndex={1} to="right" fillHeight width="104" position="absolute" left="0" top="0" />
-                          <AutoScroll maxWidth="s" speed="slow" paddingTop="64" paddingBottom="40" reverse={index % 2 == 0}>
+                          <Fade
+                            zIndex={1}
+                            to="right"
+                            fillHeight
+                            width="104"
+                            position="absolute"
+                            left="0"
+                            top="0"
+                          />
+                          <AutoScroll
+                            maxWidth="s"
+                            speed="slow"
+                            paddingTop="64"
+                            paddingBottom="40"
+                            reverse={index % 2 == 0}
+                          >
                             {skill.tags.map((tag, index) => 
                               <Column key={`${skill.title}-${index}`} paddingX="32">
                                 <HoverCard
@@ -350,7 +390,15 @@ export default function About() {
                               </Column>
                             )}
                           </AutoScroll>
-                          <Fade zIndex={1} to="left" fillHeight width="64" position="absolute" right="0" top="0" />
+                          <Fade
+                            zIndex={1}
+                            to="left"
+                            fillHeight
+                            width="64"
+                            position="absolute"
+                            right="0"
+                            top="0"
+                          />
                         </Column>
                       </Column>
                     )}

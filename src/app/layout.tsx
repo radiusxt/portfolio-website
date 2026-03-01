@@ -181,9 +181,11 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           </Flex>
           <Flex fillWidth minHeight="8" s={{ hide: true }} />
           <Header />
-          <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
-            <Flex horizontal="center" fillWidth minHeight="0">
-              <RouteGuard>{children}</RouteGuard>
+          <Flex zIndex={0} flex={1} fillWidth horizontal="center" padding="l">
+            <Flex fillWidth horizontal="center" minHeight="0">
+              <RouteGuard>
+                {children}
+              </RouteGuard>
             </Flex>
           </Flex>
           <Reveal>

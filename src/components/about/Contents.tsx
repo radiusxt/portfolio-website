@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Column, Flex, Heading } from "@once-ui-system/core";
-import { Scroll } from "@/components/Scroll";
+import { Scroll } from "@/components";
 import styles from "./about.module.scss";
 
 interface TableOfContentsProps {
@@ -20,7 +20,9 @@ interface TableOfContentsProps {
 }
 
 export const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) => {
-  if (!about.tableOfContent.display) { return null; }
+  if (!about.tableOfContent.display) {
+    return null;
+  }
 
   return (
     <Column paddingLeft="20" gap="32" m={{ hide: true }}>

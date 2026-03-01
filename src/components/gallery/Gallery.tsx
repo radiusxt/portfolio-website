@@ -16,7 +16,7 @@ export function GalleryView() {
         play={{ auto: true, interval: 5000, controls: true }}
         paddingBottom="8"
         items={gallery.images.map((image) => ({
-          slide: 
+          slide:
             <Flex fillWidth fillHeight horizontal="center" vertical="center">
               {image.orientation === "horizontal" &&
                 <Flex radius="l" overflow="hidden" style={{ height: "fit-content", width: "100%" }}>
