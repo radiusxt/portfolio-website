@@ -1,4 +1,13 @@
-import { Column, Flex, Heading, Icon, Line, Media, Row, SmartLink, Tag } from "@once-ui-system/core";
+import {
+  Column,
+  Flex,
+  Heading,
+  Icon,
+  Line,
+  Media,
+  Row,
+  SmartLink,
+  Tag } from "@once-ui-system/core";
 import { Loading } from "@/components";
 import { Team } from "@/utils/utils";
 import styles from "./ProjectCard.module.scss";
@@ -14,9 +23,19 @@ interface ProjectCardProps {
   tags?: string[];
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, description, image, team, tags }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({
+  href, title, description, image, team, tags
+}) => {
   return (
-    <Column fillWidth gap="xs" horizontal="center" paddingBottom="32" border="neutral-medium" radius="l">
+    <Column
+      fillWidth
+      gap="xs"
+      horizontal="center"
+      marginBottom="80"
+      paddingBottom="32"
+      border="neutral-medium"
+      radius="l"
+    >
       <SmartLink href={href} style={{ display: "contents" }}>
         <Loading fallback={<Media src="" radius="l" aspectRatio="16/9" loading />}>
           <Media src={image} alt={title} radius="l" />
@@ -84,4 +103,4 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ href, title, descripti
       </SmartLink>
     </Column>
   );
-};
+}

@@ -11,7 +11,7 @@ import {
   TypeFx
 } from "@once-ui-system/core";
 import { home, about, person, baseURL } from "@/resources";
-import { ContactForm, Scroll } from "@/components";
+import { ContactForm, Reveal, Scroll } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { GalleryView } from "@/components/gallery/Gallery";
 
@@ -102,8 +102,8 @@ export default function Home() {
           <Icon name="chevronDown" size="xl" />
         </RevealFx>
       </Column>
-      <RevealFx translateY="16" fillWidth delay={0.8}>
-        <Column fillWidth maxWidth="xl" gap="16" paddingBottom="16" horizontal="center">
+      <Reveal translateY="16" fillWidth>
+        <Column fillWidth maxWidth="xl" gap="16" marginBottom="160" horizontal="center">
           <Heading
             id="featured"
             variant="display-default-m"
@@ -113,9 +113,13 @@ export default function Home() {
             ISIC Challenge Dataset
           </Heading>
           <Projects range={[3, 3]} />
+        </Column>
+      </Reveal>
+      <Reveal translateY="16" fillWidth>
+        <Column fillWidth maxWidth="xl" gap="16" marginBottom="104" marginTop="64" horizontal="center">
           <Heading
             variant="display-default-m"
-            paddingTop="160"
+            //paddingTop="160"
             paddingBottom="48"
             style={{ letterSpacing: "0px" }}
           >
@@ -128,15 +132,15 @@ export default function Home() {
             background="accent-alpha-strong"
             radius="m"
             marginTop="128"
-            marginBottom="104"
+            //marginBottom="104"
             xs={{ style: { maxWidth: "20rem" }}}
             m={{ style: { maxWidth: "32rem" }}}
           />
         </Column>
-      </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" delay={1.2}>
+      </Reveal>
+      <Reveal translateY="16" fillWidth>
         <ContactForm />
-      </RevealFx>
+      </Reveal>
     </Column>
   );
 }

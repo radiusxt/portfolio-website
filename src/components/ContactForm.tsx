@@ -57,15 +57,15 @@ export const ContactForm = () => {
   };
 
   return (
-    <Column fillWidth horizontal="center" gap="l" maxWidth="s">
+    <Column fillWidth horizontal="center" gap="l" paddingBottom="80" maxWidth="s">
       <Heading variant="display-default-s" paddingBottom="16" style={{ letterSpacing: "0px" }}>
         Get in Touch
       </Heading>
-      <Heading variant="heading-default-s" align="center" paddingBottom="12">
+      <Heading variant="heading-default-s" align="center" paddingBottom="16">
         For work opportunities, collaborations or other inquiries, please complete the form below.
       </Heading>
       <form onSubmit={handleSubmit} style={{ width: "100%" }}>
-        <Flex direction="column" gap="20">
+        <Flex direction="column" gap="24">
           <Input
             label="Name*"
             id="name"
@@ -114,7 +114,7 @@ export const ContactForm = () => {
             characterCount
             required
           />
-          <Button fillWidth variant="primary" type="submit" loading={status === "loading"}>
+          <Button fillWidth variant="primary" type="submit" loading={status === "loading"} size="l">
             <ShineFx speed={2} opacity={1} inverse>
                 Send
             </ShineFx>

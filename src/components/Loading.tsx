@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, ReactNode } from "react";
+import { ReactNode, useState, useRef, useEffect } from "react";
 import { Flex } from "@once-ui-system/core";
 
 interface LoadingProps {
