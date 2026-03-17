@@ -92,7 +92,8 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
             {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
           </Heading>
           <Heading variant="heading-default-m" paddingBottom="24" onBackground="brand-medium">
-            {post.metadata.team.map((member) => member.name).join(" | ")}
+            {/* Inserts 3 spaces before and after '|' */}
+            {post.metadata.team.map((member) => member.name).join("\u00A0\u00A0 | \u00A0\u00A0")}
           </Heading>
           {post.metadata.link && 
             <SmartLink href={post.metadata.link} unstyled>

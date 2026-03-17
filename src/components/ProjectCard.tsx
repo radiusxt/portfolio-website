@@ -98,7 +98,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 {description}
               </Heading>
               <Heading variant="body-default-xs" onBackground="neutral-weak" align="right">
-                {team.map((member) => member.name).join(" | ")}
+                {/* Inserts 2 spaces before and after '|' */}
+                {team.map((member) => member.name).join("\u00A0 | \u00A0")}
               </Heading>
             </Column>
           </Flex>

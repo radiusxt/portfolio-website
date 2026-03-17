@@ -1,0 +1,87 @@
+---
+title: "Chef de Cuisine"
+publishedAt: "2025-06-09"
+summary: "A team project building a modern recipe discovery and management platform to search and save recipes with a responsive and intuitive user experience."
+image: "/images/projects/chef-de-cuisine/home.png"
+team:
+  - name: "Nathaniel Chan"
+  - name: "Just Broch"
+  - name: "Praneet Dhoolia"
+  - name: "Mikki Li"
+  - name: "Chris Chudleigh"
+  - name: "Garati"
+link: "https://github.com/radiusxt/Chef-de-Cuisine"
+tags: ["TypeScript", "React", "Tailwind", "Flask", "PostgreSQL", "AWS", "Docker"]
+---
+
+# Overview
+
+Chef de Cuisine is an online recipe platform designed for students and young adults who often do not have enough time, cooking experience or a large budget for daily meals. The main idea of this platform is to embrace cooking as a enjoyable task rather than a mundane chore. The objective is to reduce the reliance on fast food and takeaway.
+
+# Key Objectives
+
+- Architecture
+  - Implemented a microservices architecture for its scalablility & redundancy benefits.
+  - Leveraged synchronous HTTP communication through RESTful APIs.
+  - Comprised of 3 independent services; search, filter and user management to handle required functionality.
+- Recipe Search
+  - Dynamic ingredient selection displays a marketplace-style ingredient picker with search and custom inputs.
+  - Multi-criteria filtering searches by cooking time, cuisine, taste and ingredients.
+  - Real-time search saves time from loading with partial and fuzzy search.
+  - Persistent URLs allows bookmarkable filter states and search results.
+- User Management
+  - JWT authentication and route protection secures login and registration details.
+  - User profiles incorporate a personal dashboard with personal information.
+  - Users can save and manage their favourite recipes.
+- Design
+  - Optimised the user experience for all platforms especially for mobile devices.
+  - Built a modern UI framework with an intuitive interface and smooth animations.
+  - Enhanced accessibility through ARIA support and keyboard navigation for desktop.
+  - Established consistent theming using an orange/amber gradient color scheme.
+  - Developed a component library with reusable UI components using Tailwind.
+  - Applied responsive typography with WCAG-compliant contrast to ensure readability.
+  - Incorporated interactive components like effects, transitions & loading states.
+
+# Tech Stack
+
+- TypeScript
+  - Enforcing strict type safety standards for components, data and functions to catch errors at build time rather than production.
+  - Refactoring unused components with better scalability for increased data.
+  - Robust architecture heavily prioritises a well-structured, maintainable codebase with organised filesystem-based routing.
+- React
+  - Managing state for client-side components on text fields, scrolling, clicking, etc.
+  - Handling client-side page routing with efficient rendering.
+- Tailwind
+  - 
+- Flask
+  - 
+- PostgreSQL
+  - 
+- AWS
+  - 
+- Docker
+  - 
+- GitHub
+  - Version control for managing project structure.
+  - Resolving merge conflicts to maintain a stable, structured codebase.
+  - Consistent team collaboration using dev and feature branches, task tickets and a Kanban board for organisation.
+
+# Architecture Design
+
+- 
+
+# Challenges & Insights
+
+A key lesson from this experience was the importance of coordination under tight constraints. With multiple services to develop, integrate and deploy, early uncertainty around architecture delayed our start and highlighted the need for clear communication and alignment. Initial friction around responsibilities and timelines was addressed by proactively checking in and documenting progress, reducing duplication and improving workflow. Deploying a container-based microservice on AWS introduced a steep learning curve from configuring load balancers and ECS tasks to debugging security groups and API endpoints. These constraints extended our timeline but reinforced the value of observability and the role of infrastructure-as-code (IaC). We discovered in-person collaboration was far more effective than remote check-ins, especially during critical phases like planning and deployment. While our microservices architecture supported modularity, it added additional complexity compared to a monolithic architecture, which was suboptimal for an MVP. On the positive side, it provided valuable exposure to practical system design challenges. Overall, the experience strengthened our technical capabilities and ability to collaborate under pressure with early checkpoints and demonstrations.
+
+# Outcomes
+
+This project was a valuable learning experience, both technically and collaborative teamwork. Over the course of building and deploying our 'Chef de Cuisine' application using a microservices architecture, we encountered a range of challenges and opportunities that shaped our understanding of modern software development practices, cloud deployment and team-oriented problem solving. Given another opportunity to approach this project, the first thing to change is to prioritise the most important aspects. Time is a real constraint so starting devops in parallel with backend development would have provided more time for quality assurance.
+
+# References
+
+- [React](https://react.dev/)
+- [Tailwind](https://tailwindcss.com/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [AWS](https://aws.amazon.com/free/?trk=06dd4e64-3ddf-405e-bec9-d2414185926c&sc_channel=ps&ef_id=Cj0KCQjw9-PNBhDfARIsABHN6-2NeRUk2pGNJlkyeMeqD7QtKV4t8JpSNb8SOLwYeJ2PJXxpEHxgN30aAl91EALw_wcB:G:s&s_kwcid=AL!4422!3!798628412789!e!!g!!aws!23606217014!196761071947&gad_campaignid=23606217014&gbraid=0AAAAADjHtp_84tT0bJGQcz9_oF0XlEbtr&gclid=Cj0KCQjw9-PNBhDfARIsABHN6-2NeRUk2pGNJlkyeMeqD7QtKV4t8JpSNb8SOLwYeJ2PJXxpEHxgN30aAl91EALw_wcB)
+- [Docker](https://www.docker.com/)

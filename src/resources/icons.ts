@@ -31,6 +31,7 @@ import {
   SiNextdotjs,
   SiCss3,
   SiHtml5,
+  SiTailwindcss,
   SiBootstrap,
   SiPython,
   SiR,
@@ -48,7 +49,6 @@ import {
   SiVercel,
   SiClaude,
   SiGooglegemini,
-  SiGoogle,
 } from "react-icons/si";
 
 import {
@@ -98,6 +98,7 @@ export const iconLibrary: Record<string, IconType> = {
   nextjs: SiNextdotjs,
   css: SiCss3,
   html: SiHtml5,
+  tailwind: SiTailwindcss,
   bootstrap: SiBootstrap,
   python: SiPython,
   r: SiR,
