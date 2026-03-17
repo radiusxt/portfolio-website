@@ -52,23 +52,35 @@ Chef de Cuisine is an online recipe platform designed for students and young adu
   - Managing state for client-side components on text fields, scrolling, clicking, etc.
   - Handling client-side page routing with efficient rendering.
 - Tailwind
-  - 
+  - Building responsive UI components for consistent styling across the application.
+  - Streamlining development with reusable design patterns.
 - Flask
-  - 
+  - Developing lightweight RESTful APIs to handle logic and service communication.
+  - Structuring backend routes and request handling for scalable microservices.
 - PostgreSQL
-  - 
+  - Designing relational database schemas to store and manage structured user data.
 - AWS
-  - 
+  - Deploying containerised services using ECS and managing images with ECR.
+  - Configuring load balancing, autoscaling and monitoring with CloudWatch.
 - Docker
-  - 
+  - Containerising each service to ensure consistent development and production environments.
 - GitHub
   - Version control for managing project structure.
   - Resolving merge conflicts to maintain a stable, structured codebase.
-  - Consistent team collaboration using dev and feature branches, task tickets and a Kanban board for organisation.
+  - Consistent team collaboration using dev and feature branches, task tickets and a Kanban board for organisation and progress tracking.
 
 # Architecture Design
 
-- 
+Services communicate synchronously via RESTful APIs over HTTP, supporting low to moderate load requests. The backend is built with Python (Flask), PostgreSQL and Docker, while the frontend uses TypeScript. Deployed on AWS ECS (Fargate) with ECR, each service runs as a container and scales independently via autoscaling behind an application load balancer (ALB). JWT authentication secures inter-service communication and AWS CloudWatch provides monitoring, logging and scaling alerts, with automatic restarts for unhealthy services. Two separate PostgreSQL databases (recipes and users) ensure data isolation and persistence to improve reliability and reducing the risk of data loss.
+
+<Row fillWidth direction="column" horizontal="center" align="center">
+  ![Architecture Diagram](/images/projects/chef-de-cuisine/architecture-diagram.png)
+  <Text variant="body-default-m" onBackground="neutral-medium">*Architecture Diagram*</Text>
+</Row>
+<Row fillWidth direction="column" horizontal="center" align="center">
+  ![Component Diagram](/images/projects/chef-de-cuisine/component-diagram.png)
+  <Text variant="body-default-m" onBackground="neutral-medium">*Component Diagram*</Text>
+</Row>
 
 # Challenges & Insights
 
@@ -82,6 +94,7 @@ This project was a valuable learning experience, both technically and collaborat
 
 - [React](https://react.dev/)
 - [Tailwind](https://tailwindcss.com/)
+- [Flask](https://flask.palletsprojects.com/en/stable/)
 - [PostgreSQL](https://www.postgresql.org/)
-- [AWS](https://aws.amazon.com/free/?trk=06dd4e64-3ddf-405e-bec9-d2414185926c&sc_channel=ps&ef_id=Cj0KCQjw9-PNBhDfARIsABHN6-2NeRUk2pGNJlkyeMeqD7QtKV4t8JpSNb8SOLwYeJ2PJXxpEHxgN30aAl91EALw_wcB:G:s&s_kwcid=AL!4422!3!798628412789!e!!g!!aws!23606217014!196761071947&gad_campaignid=23606217014&gbraid=0AAAAADjHtp_84tT0bJGQcz9_oF0XlEbtr&gclid=Cj0KCQjw9-PNBhDfARIsABHN6-2NeRUk2pGNJlkyeMeqD7QtKV4t8JpSNb8SOLwYeJ2PJXxpEHxgN30aAl91EALw_wcB)
+- [AWS](https://aws.amazon.com/free/)
 - [Docker](https://www.docker.com/)

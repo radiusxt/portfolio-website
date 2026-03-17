@@ -24,6 +24,7 @@ import {
   Text,
   TextProps
 } from "@once-ui-system/core";
+import { Loading } from "@/components";
 
 type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
@@ -61,17 +62,32 @@ function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
   }
 
   return (
-    <Media
-      marginTop="8"
-      marginBottom="16"
-      enlarge
-      radius="m"
-      border="neutral-alpha-medium"
-      sizes="(max-width: 960px) 100vw, 960px"
-      alt={alt}
-      src={src}
-      {...props}
-    />
+    <Loading
+      fallback={
+        <Media
+          src=""
+          maxWidth="m"
+          radius="l"
+          border="transparent"
+          marginTop="16"
+          marginBottom="4"
+          aspectRatio="16/9"
+          loading
+        />
+      }
+    >
+      <Media
+        src={src}
+        alt={alt}
+        maxWidth="m"
+        radius="l"
+        border="neutral-medium"
+        marginTop="16"
+        marginBottom="4"
+        enlarge
+        {...props}
+      />
+    </Loading>
   );
 }
 
@@ -108,7 +124,7 @@ function createParagraph({ children }: TextProps) {
     <Heading
       variant="body-default-l"
       wrap="wrap"
-      marginTop="8"
+      marginTop="12"
       marginBottom="12"
       style={{ lineHeight: "2" }}
     >
