@@ -300,7 +300,7 @@ const work: Work = {
 const gallery: Gallery = {
   path: "/gallery",
   label: "Photography",
-  title: "Gallery Highlights",
+  title: "Highlights",
   description: `Images by ${person.name}`,
   images: [
     /* Sport */

@@ -1,6 +1,5 @@
 import { Flex, Heading, Logo, Meta, RevealFx, Row, Schema } from "@once-ui-system/core";
 import { baseURL, gallery, person } from "@/resources";
-import { Scroll } from "@/components";
 import { GalleryView } from "@/components/gallery/Gallery";
 import { PicTimeIntegration } from "@/components/gallery/PicTime";
 
@@ -26,43 +25,28 @@ export default function Gallery() {
         image={`/api/og/generate?title=${encodeURIComponent(gallery.title)}`}
         author={{ name: person.name, url: `${baseURL}${gallery.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <RevealFx
-        translateY="16"
-        fillWidth
-        horizontal="center"
-        paddingTop="64"
-        paddingBottom="80"
-        delay={0.4}
-      >
-        <Scroll target="portfolio">
-          <Row dark>
-            <Logo wordmark="/images/brand/logo-light.png" style={{ transform: "scale(5)" }} />
-          </Row>
-          <Row light>
-            <Logo wordmark="/images/brand/logo-dark.png" style={{ transform: "scale(5)" }} />
-          </Row>
-        </Scroll>
-      </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="80" delay={0.2}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingTop="24" paddingBottom="80" delay={0.2}>
         <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
           {gallery.title}
         </Heading>
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128" delay={0.2}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="80" delay={0.2}>
         <GalleryView />
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="64" delay={0.8}>
-        <Heading variant="display-default-m" style={{ letterSpacing: "0px", textAlign: "center" }}>
-          Discover the Full Gallery
-        </Heading>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingTop="64" paddingBottom="80" delay={0.8}>
+        <Row dark>
+          <Logo wordmark="/images/brand/logo-light.png" style={{ transform: "scale(5)" }} />
+        </Row>
+        <Row light>
+          <Logo wordmark="/images/brand/logo-dark.png" style={{ transform: "scale(5)" }} />
+        </Row>
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" delay={1}>
-        <Heading variant="heading-default-xl" style={{ letterSpacing: "0.2px", textAlign: "center" }}>
+        <Heading variant="heading-default-l" style={{ letterSpacing: "0.2px", textAlign: "center" }}>
           My images specialise in sport, wildlife & travel to capture moments in motion.
         </Heading>
       </RevealFx>
       <RevealFx
-        id="portfolio"
         translateY="16"
         fillWidth
         horizontal="center"
