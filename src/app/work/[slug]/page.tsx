@@ -70,7 +70,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
             {post.metadata.title}
           </Heading>
           {post.metadata.tags && post.metadata.tags.length > 0 && 
-            <Row paddingBottom="32" gap="16" s={{ horizontal: "center" }}>
+            <Row paddingBottom="32" gap="16" horizontal="center" wrap>
               {post.metadata.tags.map((tag) => 
                 <Tag key={tag} border="neutral-alpha-weak">
                   <Row vertical="center" gap="8">
@@ -91,7 +91,13 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
           <Heading variant="heading-default-xl" paddingBottom="24" onBackground="neutral-weak">
             {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
           </Heading>
-          <Heading variant="heading-default-m" paddingBottom="24" onBackground="brand-medium">
+          <Heading
+            variant="heading-default-m"
+            paddingBottom="24"
+            onBackground="brand-medium"
+            wrap="balance"
+            style={{ lineHeight: "1.5" }}
+          >
             {/* Inserts 3 spaces before and after '|' */}
             {post.metadata.team.map((member) => member.name).join("\u00A0\u00A0 | \u00A0\u00A0")}
           </Heading>
