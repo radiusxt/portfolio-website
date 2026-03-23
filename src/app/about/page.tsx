@@ -218,9 +218,14 @@ export default function About() {
                                 {experience.timeframe}
                               </Heading>
                             </Row>
-                            <Heading variant="body-default-m" onBackground="brand-weak" marginBottom="m">
-                              {experience.role}
-                            </Heading>
+                            <Row fillWidth horizontal="between" vertical="center" marginBottom="16">
+                              <Heading variant="body-default-m" onBackground="brand-weak">
+                                {experience.role}
+                              </Heading>
+                              <Heading variant="body-default-m" onBackground="accent-weak">
+                                {experience.location}
+                              </Heading>
+                            </Row>
                           </Column>
                         ),
                         description: (

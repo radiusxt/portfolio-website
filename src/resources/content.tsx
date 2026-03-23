@@ -90,6 +90,7 @@ const about: About = {
         company: "Enable Startup",
         timeframe: "Nov '24 - Dec '24",
         role: "Software Engineer Intern",
+        location: "Da Nang, Vietnam",
         achievements: [
           <>
             Implemented facial recognition for an attendance system running on a Raspberry Pi 4 while using 20% less resources than reference solution.
@@ -107,6 +108,7 @@ const about: About = {
         company: "ifm efector",
         timeframe: "Dec '22 - May '23",
         role: "L2 Sales Support Engineer",
+        location: "Gold Coast, Australia",
         achievements: [
           <>
             Provided support on industrial grade sensors for several industries.
@@ -127,6 +129,7 @@ const about: About = {
         company: "PTC Phone Tech & Comm",
         timeframe: "Feb '22 - Nov '22",
         role: "Sales & Technician Specialist",
+        location: "Brisbane, Australia",
         achievements: [
           <>
             Provided excellent customer service & applied knowledge to consumer electronics while increasing store sales by {">"}10% via strategic upselling.
