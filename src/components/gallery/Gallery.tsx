@@ -1,6 +1,7 @@
 import { Carousel, Column, Flex, Line, Media } from "@once-ui-system/core";
 import { gallery } from "@/resources";
 import { Loading } from "@/components";
+import styles from "./Gallery.module.scss";
 
 export function GalleryView() {
   return (
@@ -17,7 +18,7 @@ export function GalleryView() {
         paddingBottom="8"
         items={gallery.images.map((image) => ({
           slide:
-            <Flex fillWidth fillHeight horizontal="center" vertical="center">
+            <Flex className={styles.hover} fillWidth fillHeight horizontal="center" vertical="center">
               {image.orientation === "horizontal" &&
                 <Flex radius="l" overflow="hidden" style={{ height: "fit-content", width: "100%" }}>
                   <Loading fallback={<Media src="" aspectRatio="3/2" loading />}>

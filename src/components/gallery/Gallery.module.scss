@@ -1,0 +1,8 @@
+/* styles.css */
+.hover {
+  transition: transform 0.3s ease;
+}
+
+.hover:hover {
+  transform: scale(1.04);
+}

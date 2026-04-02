@@ -3,7 +3,7 @@
 import React from "react";
 import { Column, Flex, Heading } from "@once-ui-system/core";
 import { Scroll } from "@/components";
-import styles from "./about.module.scss";
+import styles from "./Contents.module.scss";
 
 interface TableOfContentsProps {
   structure: {

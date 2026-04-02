@@ -1,6 +1,5 @@
 import {
   Column,
-  Fade,
   Flex,
   Heading,
   Hover,
@@ -33,17 +32,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     <Reveal translateY="16" fillWidth>
       <Column
         fillWidth
-        gap="xs"
         horizontal="center"
+        border="neutral-medium"
         marginBottom="80"
         paddingBottom="32"
-        border="neutral-medium"
+        gap="12"
         radius="l"
       >
         <SmartLink href={href} style={{ display: "contents" }}>
           <Hover
+            tabIndex={-1}
             fillWidth
-            hideDelay={100}
+            hideDelay={120}
             trigger={
               <Loading fallback={<Media src="" radius="l" aspectRatio="16/9" loading />}>
                 <Media src={image} alt={title} radius="l" />
@@ -59,7 +59,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 style={{
                   background: "var(--static-transparent)",
                   alignItems: "flex-end",
-                  paddingBottom: "16px",
+                  paddingBottom: "16px"
                 }}
               >
                 <Row

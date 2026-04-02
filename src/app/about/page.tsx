@@ -19,7 +19,7 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import { TableOfContents } from "@/components/about/Contents";
-import styles from "@/components/about/about.module.scss";
+import styles from "@/components/about/Contents.module.scss";
 
 export async function generateMetadata() {
   return Meta.generate({
