@@ -72,7 +72,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   border="neutral-medium"
                 >
                   <Heading variant="heading-default-m" onBackground="neutral-strong">
-                    Explore Project
+                    Explore Case Study
                   </Heading>
                   <Icon name="arrowUpRight" size="s" onBackground="neutral-strong" />
                 </Row>

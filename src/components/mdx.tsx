@@ -107,7 +107,7 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
         id={slug}
         variant="display-default-s"
         align="center"
-        marginTop="16"
+        marginTop="20"
         marginBottom="20"
       >
         {children}
@@ -147,7 +147,7 @@ function createCodeBlock(props: any) {
 
     return (
       <CodeBlock
-        marginTop="8"
+        marginTop="16"
         marginBottom="16"
         codes={[{
           code: children,
