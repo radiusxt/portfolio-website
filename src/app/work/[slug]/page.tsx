@@ -102,7 +102,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
             {post.metadata.team.map((member) => member.name).join("\u00A0\u00A0 | \u00A0\u00A0")}
           </Heading>
           {post.metadata.link && 
-            <SmartLink href={post.metadata.link} unstyled>
+            <SmartLink href={post.metadata.link}>
               GitHub Repository<Icon name="arrowUpRightFromSquare" size="s" />
             </SmartLink>
           }

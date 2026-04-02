@@ -1,7 +1,9 @@
 import {
   Column,
+  Fade,
   Flex,
   Heading,
+  Hover,
   Icon,
   Line,
   Media,
@@ -39,15 +41,50 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         radius="l"
       >
         <SmartLink href={href} style={{ display: "contents" }}>
-          <Loading fallback={<Media src="" radius="l" aspectRatio="16/9" loading />}>
-            <Media src={image} alt={title} radius="l" />
-          </Loading>
+          <Hover
+            fillWidth
+            hideDelay={100}
+            trigger={
+              <Loading fallback={<Media src="" radius="l" aspectRatio="16/9" loading />}>
+                <Media src={image} alt={title} radius="l" />
+              </Loading>
+            }
+            overlay={
+              <Flex
+                position="absolute"
+                fill
+                horizontal="center"
+                vertical="center"
+                radius="l"
+                style={{
+                  background: "var(--static-transparent)",
+                  alignItems: "flex-end",
+                  paddingBottom: "16px",
+                }}
+              >
+                <Row
+                  vertical="center"
+                  paddingX="20"
+                  paddingY="8"
+                  gap="8"
+                  radius="full"
+                  background="neutral-medium"
+                  border="neutral-medium"
+                >
+                  <Heading variant="heading-default-m" onBackground="neutral-strong">
+                    Explore Project
+                  </Heading>
+                  <Icon name="arrowUpRight" size="s" onBackground="neutral-strong" />
+                </Row>
+              </Flex>
+            }
+          />
           <Line
             maxWidth={74}
-            height={0.15}
+            height={0.13}
             radius="m"
             marginBottom="2"
-            style={{ background: "var(--neutral-on-background-medium)" }}
+            style={{ background: "var(--neutral-on-background-weak)" }}
             xs={{ style: { maxWidth: "28rem" }}}
             m={{ style: { maxWidth: "50rem" }}}
           />

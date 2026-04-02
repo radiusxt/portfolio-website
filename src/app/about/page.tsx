@@ -386,7 +386,7 @@ export default function About() {
                                     </Row>
                                   }
                                 >
-                                  <Column maxWidth={14} fillWidth paddingY="4" background="page" radius="xl">
+                                  <Column maxWidth={14} fillWidth background="page" radius="xl" paddingY="4">
                                     <Heading variant="label-default-m" align="center">
                                       {tag.description}
                                     </Heading>

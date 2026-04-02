@@ -30,7 +30,7 @@ export default function Gallery() {
           {gallery.title}
         </Heading>
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="80" delay={0.2}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128" delay={0.2}>
         <GalleryView />
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingTop="64" paddingBottom="80" delay={0.8}>
