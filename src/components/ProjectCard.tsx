@@ -69,7 +69,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   gap="8"
                   radius="full"
                   background="neutral-medium"
-                  border="neutral-medium"
+                  border="transparent"
+                  style={{ boxShadow: "0 0 24px var(--neutral-solid-strong)" }}
                 >
                   <Heading variant="heading-default-m" onBackground="neutral-strong">
                     Explore Case Study
