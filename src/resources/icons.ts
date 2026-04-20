@@ -49,6 +49,8 @@ import {
   SiVercel,
   SiClaude,
   SiGooglegemini,
+  SiTerraform,
+  SiJest,
 } from "react-icons/si";
 
 import {
@@ -65,6 +67,7 @@ import {
   FaWhatsapp,
   FaReddit,
   FaTelegram,
+  FaDatabase,
 } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
@@ -110,11 +113,14 @@ export const iconLibrary: Record<string, IconType> = {
   aws: FaAws,
   sql: SiMysql,
   postgresql: SiPostgresql,
+  database: FaDatabase,
   docker: SiDocker,
   flask: SiFlask,
   pytorch: SiPytorch,
   react: SiReact,
   jupyter: SiJupyter,
+  terraform: SiTerraform,
+  jest: SiJest,
   conda: SiAnaconda,
   vercel: SiVercel,
   claude: SiClaude,

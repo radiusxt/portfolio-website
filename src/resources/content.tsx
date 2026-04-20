@@ -177,11 +177,6 @@ const about: About = {
             icon: "python",
           },
           {
-            name: "Bash",
-            description: "Streamlined workflows and environments through automated scripts.",
-            icon: "bash",
-          },
-          {
             name: "JavaScript",
             description: "Integrated RESTful APIs for React-based websites and apps.",
             icon: "javascript",
@@ -197,9 +192,19 @@ const about: About = {
             icon: "html",
           },
           {
-            name: "CSS/SCSS",
+            name: "CSS",
             description: "Styled responsive layouts with modern CSS/SCSS to enhance user experience.",
             icon: "css",
+          },
+          {
+            name: "SQL",
+            description: "Optimised SQL queries for data analysis, reporting & backend data management.",
+            icon: "database",
+          },
+          {
+            name: "Bash",
+            description: "Streamlined workflows and environments through automated scripts.",
+            icon: "bash",
           },
         ],
       },
@@ -210,12 +215,22 @@ const about: About = {
         ),
         tags: [
           {
-            name: "VS Code",
-            description: "My IDE of choice for most programming tasks.",
-            icon: "vscode",
+            name: "AWS",
+            description: "Architected containerized microservices with ECS, EC2, RDS and SQS.",
+            icon: "aws",
           },
           {
-            name: "GitHub",
+            name: "Docker",
+            description: "Containerised a scalable application with a microservices architecture.",
+            icon: "docker",
+          },
+          {
+            name: "Terraform",
+            description: "Managed IaC to provision & scale resources for several microservices.",
+            icon: "terraform",
+          },
+          {
+            name: "Git",
             description: "Managed multi-branch codebases, handled code reviews and PRs.",
             icon: "github",
           },
@@ -230,24 +245,24 @@ const about: About = {
             icon: "vercel",
           },
           {
-            name: "AWS",
-            description: "Architected containerized microservices with ECS, EC2, RDS and SQS.",
-            icon: "aws",
-          },
-          {
-            name: "Docker",
-            description: "Containerised a scalable application with a microservices architecture.",
-            icon: "docker",
-          },
-          {
-            name: "Claude",
-            description: "Applied Claude for AI-assisted coding and technical problem solving.",
+            name: "Claude Code",
+            description: "Applied Claude Code for AI-assisted coding and agent orchestration.",
             icon: "claude",
           },
           {
             name: "Gemini",
             description: "Utilised Gemini for AI reasoning, workflow assistance and smaller tasks.",
             icon: "gemini",
+          },
+          {
+            name: "Jupyter",
+            description: "Preprocessed data and executed experiments to produce visualisations.",
+            icon: "jupyter",
+          },
+          {
+            name: "VS Code",
+            description: "My IDE of choice for most programming tasks.",
+            icon: "vscode",
           },
         ],
       },
@@ -258,14 +273,9 @@ const about: About = {
         ),
         tags: [
           {
-            name: "Pytorch",
+            name: "PyTorch",
             description: "Trained and tuned models for computer vision and speech recognition.",
             icon: "pytorch",
-          },
-          {
-            name: "Jupyter",
-            description: "Preprocessed data and executed experiments to produce visualisations.",
-            icon: "jupyter",
           },
           {
             name: "Next.js",
@@ -278,7 +288,12 @@ const about: About = {
             icon: "react",
           },
           {
-            name: "Postgres",
+            name: "React Native",
+            description: "Designed modular and reusable cross-platform mobile components.",
+            icon: "react",
+          },
+          {
+            name: "PostgreSQL",
             description: "Engineered database schemas and efficient relational queries.",
             icon: "postgresql",
           },
@@ -286,6 +301,11 @@ const about: About = {
             name: "Flask",
             description: "Developed a lightweight API for a backend microservice.",
             icon: "flask",
+          },
+          {
+            name: "Jest",
+            description: "Wrote unit & integration tests ensuring reliability across components.",
+            icon: "jest",
           },
         ],
       },
