@@ -87,6 +87,18 @@ const about: About = {
     title: "Experience",
     experiences: [
       {
+        company: "University of Queensland",
+        timeframe: "Feb '25 - Nov '25",
+        role: "Academic Tutor for STAT2203 & CSSE3010",
+        location: "Brisbane, Australia",
+        achievements: [
+          <>
+            Tutored students in probability, statistics and modelling, as well as embedded systems using C with microcontrollers, RTOS and hardware interfacing.
+          </>,
+        ],
+        images: [],
+      },
+      {
         company: "Enable Startup",
         timeframe: "Nov '24 - Dec '24",
         role: "Software Engineer Intern",
@@ -185,6 +197,11 @@ const about: About = {
             name: "TypeScript",
             description: "Deployed a website to showcase my work and experience with Vercel.",
             icon: "typescript",
+          },
+          {
+            name: "C",
+            description: "Tutored in embedded systems with mictrocontrollers, RTOS and hardware interfacing.",
+            icon: "c",
           },
           {
             name: "HTML",
