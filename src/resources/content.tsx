@@ -89,11 +89,11 @@ const about: About = {
       {
         company: "University of Queensland",
         timeframe: "Feb '25 - Nov '25",
-        role: "Academic Tutor for STAT2203 & CSSE3010",
+        role: "Academic Tutor",
         location: "Brisbane, Australia",
         achievements: [
           <>
-            Tutored students in probability, statistics and modelling, as well as embedded systems using C with microcontrollers, RTOS and hardware interfacing.
+            Tutored students in probability, statistics and modelling, as well as embedded systems using C with microcontrollers, RTOS and hardware interfacing in STAT2203 and CSSE3010.
           </>,
         ],
         images: [],

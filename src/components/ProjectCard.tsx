@@ -127,7 +127,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             <Column flex={9} s={{ hide: true }}>
               <Heading
                 variant="body-default-l"
-                onBackground="brand-weak"
+                onBackground="neutral-medium"
                 wrap="pretty"
                 align="right"
                 paddingBottom="12"
