@@ -51,6 +51,7 @@ import {
   SiGooglegemini,
   SiTerraform,
   SiJest,
+  SiHuggingface,
 } from "react-icons/si";
 
 import {
@@ -121,6 +122,7 @@ export const iconLibrary: Record<string, IconType> = {
   jupyter: SiJupyter,
   terraform: SiTerraform,
   jest: SiJest,
+  huggingface: SiHuggingface,
   conda: SiAnaconda,
   vercel: SiVercel,
   claude: SiClaude,
