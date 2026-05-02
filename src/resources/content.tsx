@@ -93,7 +93,10 @@ const about: About = {
         location: "Brisbane, Australia",
         achievements: [
           <>
-            Tutored students in probability, statistics and modelling, as well as embedded systems using C with microcontrollers, RTOS and hardware interfacing in STAT2203 and CSSE3010.
+            Tutored students in probability, statistics and modelling in STAT2203.
+          </>,
+          <>
+            Tutored students in embedded systems design using C with microcontrollers, RTOS and hardware interfacing in CSSE3010.
           </>,
         ],
         images: [],
