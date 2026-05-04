@@ -147,10 +147,10 @@ const about: About = {
         location: "Brisbane, Australia",
         achievements: [
           <>
-            Provided excellent customer service & applied knowledge to consumer electronics while increasing store sales by {">"}10% via strategic upselling.
+            Provided excellent customer service and applied knowledge to consumer electronics while increasing store sales by {">"}10% via strategic upselling.
           </>,
           <>
-            Repaired phones & tablets for customers in a timely manner.
+            Repaired phones and tablets for customers in a timely manner.
           </>,
         ],
         images: [],

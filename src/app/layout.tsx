@@ -126,7 +126,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               <MatrixFx
                 fill
                 speed={4}
-                spacing={7}
+                spacing={20}
                 size={2}
                 flicker
                 revealFrom="top"
