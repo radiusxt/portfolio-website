@@ -121,7 +121,7 @@ const about: About = {
       },
       {
         company: "ifm efector",
-        timeframe: "Dec '22 - May '23",
+        timeframe: "Dec '22 - Jun '23",
         role: "L2 Sales Support Engineer",
         location: "Gold Coast, Australia",
         achievements: [
@@ -142,7 +142,7 @@ const about: About = {
       },
       {
         company: "PTC Phone Tech & Comm",
-        timeframe: "Feb '22 - Nov '22",
+        timeframe: "Jan '22 - Nov '22",
         role: "Sales & Technician Specialist",
         location: "Brisbane, Australia",
         achievements: [
