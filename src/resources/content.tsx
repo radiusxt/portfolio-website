@@ -93,10 +93,10 @@ const about: About = {
         location: "Brisbane, Australia",
         achievements: [
           <>
-            Tutored students in probability, statistics and modelling in STAT2203.
+            Tutored in probability, statistics, modelling and hypothesis testing in STAT2203.
           </>,
           <>
-            Tutored students in embedded systems design using C with microcontrollers, RTOS and hardware interfacing in CSSE3010.
+            Tutored in embedded systems design using C with ARM microcontrollers, RTOS and hardware interfacing in CSSE3010.
           </>,
         ],
         images: [],
@@ -122,7 +122,7 @@ const about: About = {
       {
         company: "ifm efector",
         timeframe: "Dec '22 - Jun '23",
-        role: "L2 Sales Support Engineer",
+        role: "Sales Support Engineer",
         location: "Gold Coast, Australia",
         achievements: [
           <>

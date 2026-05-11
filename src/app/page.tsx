@@ -10,7 +10,7 @@ import {
   TypeFx
 } from "@once-ui-system/core";
 import { home, about, person, baseURL } from "@/resources";
-import { ContactForm, Reveal, Scroll } from "@/components";
+import { Bounce, ContactForm, Reveal, Scroll } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { GalleryView } from "@/components/gallery/Gallery";
 
@@ -106,10 +106,15 @@ export default function Home() {
           translateY="16"
           fillWidth
           horizontal="center"
-          delay={0.4}
+          delay={1.5}
           style={{ position: "absolute", bottom: "12dvh" }}
         >
-          <Icon name="chevronDown" size="xl" />
+          <Bounce distance={10} duration={2}>
+            <Column className="bounce-chevron" gap="-1">
+              <Icon name="chevronDown" size="xl" />
+              <Icon name="chevronDown" size="xl" />
+            </Column>
+          </Bounce>
         </RevealFx>
       </Column>
       <Reveal translateY="16" fillWidth>

@@ -116,8 +116,8 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               height: "100%",
               maxHeight: "100dvh",
               pointerEvents: "none",
-              maskImage: "radial-gradient(circle at 50% 2%, black 20%, transparent 64%)",
-              WebkitMaskImage: "radial-gradient(circle at 50% 2%, black 20%, transparent 64%)",
+              maskImage: "radial-gradient(circle at 50% 2%, black 18%, transparent 58%)",
+              WebkitMaskImage: "radial-gradient(circle at 50% 2%, black 18%, transparent 58%)",
             }}
             s={{ style: { maxHeight: "2000px" } }}
             m={{ style: { maxHeight: "1500px" } }}
