@@ -9,6 +9,7 @@ import {
   MatrixFx,
   Meta,
   opacity,
+  Particle,
   RevealFx,
   SpacingToken,
 } from "@once-ui-system/core";
@@ -73,7 +74,9 @@ export default async function RootLayout({children}: Readonly<{children: React.R
                   // Resolve theme
                   const resolveTheme = (themeValue) => {
                     if (!themeValue || themeValue === 'system') {
-                      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                      return window.matchMedia('(prefers-color-scheme: dark)').matches
+                        ? 'dark'
+                        : 'light';
                     }
                     return themeValue;
                   };
@@ -105,19 +108,18 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           as="body"
           background="page"
           fillWidth
-          margin="0"
-          padding="0"
-          style={{ minHeight: "100dvh" }}
+          style={{ position: "relative", minHeight: "100dvh" }}
         >
           <Flex
+            zIndex={0}
             style={{
               position: "absolute",
               inset: 0,
               height: "100%",
               maxHeight: "100dvh",
               pointerEvents: "none",
-              maskImage: "radial-gradient(circle at 50% 2%, black 18%, transparent 58%)",
-              WebkitMaskImage: "radial-gradient(circle at 50% 2%, black 18%, transparent 58%)",
+              maskImage: "radial-gradient(circle at 50% 0%, black 18%, transparent 58%)",
+              WebkitMaskImage: "radial-gradient(circle at 50% 0%, black 18%, transparent 58%)",
             }}
             s={{ style: { maxHeight: "2000px" } }}
             m={{ style: { maxHeight: "1500px" } }}
@@ -179,9 +181,24 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               </MatrixFx>
             </RevealFx>
           </Flex>
+          <Flex
+            zIndex={0}
+            style={{
+              position: "absolute",
+              inset: 0,
+              height: "100%",
+              pointerEvents: "none",
+              maskImage: "radial-gradient(circle at 50% 0%, transparent 20%, black 30%)",
+              WebkitMaskImage: "radial-gradient(circle at 50% 0%, transparent 20%, black 30%)",
+            }}
+          >
+            <RevealFx fill position="absolute" delay={1}>
+              <Particle fill speed={1.5} density={250} size="4" color="brand-background-strong" />
+            </RevealFx>
+          </Flex>
           <Flex fillWidth minHeight="8" s={{ hide: true }} />
           <Header />
-          <Flex zIndex={0} flex={1} fillWidth horizontal="center" padding="l">
+          <Flex zIndex={0} flex={1} fillWidth horizontal="center" padding="40">
             <Flex fillWidth horizontal="center" minHeight="0">
               <RouteGuard>
                 {children}

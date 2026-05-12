@@ -3,8 +3,8 @@ import { Flex } from "@once-ui-system/core"
 
 type BounceProps = {
   children: ReactNode;
-  distance?: number;
-  duration?: number;
+  distance: number;
+  duration: number;
 };
 
 export function Bounce({ children, distance, duration }: BounceProps) {

@@ -73,6 +73,7 @@ export const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
+            style={{ "--neutral-alpha-weak": "var(--neutral-background-medium)" } as React.CSSProperties}
             hasSuffix={formData.name.length > 0 && (
               <IconButton
                 variant="ghost"
@@ -92,6 +93,7 @@ export const ContactForm = () => {
             onChange={handleChange}
             error={handleEmail}
             required
+            style={{ "--neutral-alpha-weak": "var(--neutral-background-medium)" } as React.CSSProperties}
             hasSuffix={formData.email.length > 0 && (
               <IconButton
                 variant="ghost"
@@ -102,18 +104,20 @@ export const ContactForm = () => {
               />
             )}
           />
-          <Textarea
-            label="Message*"
-            id="description"
-            name="description"
-            value={formData.description}
-            lines={10}
-            onChange={handleChange}
-            maxLength={500}
-            resize="none"
-            characterCount
-            required
-          />
+          <Flex style={{ "--neutral-alpha-weak": "var(--neutral-background-medium)" } as React.CSSProperties}>
+            <Textarea
+              label="Message*"
+              id="description"
+              name="description"
+              value={formData.description}
+              lines={10}
+              onChange={handleChange}
+              maxLength={500}
+              resize="none"
+              characterCount
+              required
+            />
+          </Flex>
           <Button fillWidth variant="primary" type="submit" loading={status === "loading"} size="l">
             <ShineFx speed={2} opacity={1} inverse>
                 Send
