@@ -53,11 +53,12 @@ export default function Home() {
             >
               <Scroll target={"featured"}>
                 <Badge
+                  icon="book"
                   textVariant="label-default-s"
                   background="accent-alpha-weak"
                   paddingX="20"
                   paddingY="8"
-                  style={{ boxShadow: "0 0 48px var(--accent-alpha-strong)" }}
+                  style={{ boxShadow: "0 0 56px var(--accent-alpha-strong)" }}
                 >
                   <Row paddingY="2">
                     {home.featured.title}
