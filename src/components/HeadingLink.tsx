@@ -1,6 +1,6 @@
 "use client";
 
-import React, { JSX } from "react";
+import type { JSX } from "react";
 import { Flex, Heading, IconButton, useToast } from "@once-ui-system/core";
 
 import styles from "@/components/HeadingLink.module.scss";
@@ -53,7 +53,7 @@ export const HeadingLink: React.FC<HeadingLinkProps> = ({ id, level, children, s
       vertical="center"
       gap="4"
     >
-      <Heading className={styles.text} id={id} variant={variant} as={asTag}>
+    <Heading className={styles.text} id={id} variant={variant} as={asTag}>
         {children}
       </Heading>
       <IconButton

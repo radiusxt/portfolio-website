@@ -1,4 +1,4 @@
-import { About, Gallery, Home, Person, Social, Work } from "@/types";
+import type { About, Gallery, Home, Person, Social, Work } from "@/types";
 import { Row, Text } from "@once-ui-system/core";
 
 const person: Person = {

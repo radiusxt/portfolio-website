@@ -104,8 +104,8 @@ export default function About() {
               </Row>
               {person.languages && person.languages.length > 0 && (
                 <Row gap="12">
-                  {person.languages.map((language, index) => 
-                    <Tag variant="brand" key={index} size="l" radius="xl">
+                  {person.languages.map((language) => 
+                    <Tag variant="brand" key={language} size="l" radius="xl">
                       <Heading variant="label-default-l" padding="2">
                         {language}
                       </Heading>
@@ -371,7 +371,7 @@ export default function About() {
                             speed="slow"
                             paddingTop="64"
                             paddingBottom="40"
-                            reverse={index % 2 == 0}
+                            reverse={index % 2 === 0}
                           >
                             {skill.tags.map((tag, index) => 
                               <Column key={`${skill.title}-${index}`} paddingX="32">

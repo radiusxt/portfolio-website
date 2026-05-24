@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Flex } from "@once-ui-system/core"
 
 type BounceProps = {

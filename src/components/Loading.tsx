@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef, useState, useEffect } from "react";
+import { type ReactNode, useRef, useState, useEffect } from "react";
 import { Flex } from "@once-ui-system/core";
 
 interface LoadingProps {
@@ -18,7 +18,7 @@ export function Loading({ fallback, children }: LoadingProps) {
 
     // Check if image is already cached/loaded on mount
     const img = container.querySelector("img");
-    if (img && img.complete && img.naturalHeight !== 0) {
+    if (img?.complete && img.naturalHeight !== 0) {
       setLoaded(true);
     }
 

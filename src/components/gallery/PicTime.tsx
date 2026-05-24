@@ -11,6 +11,7 @@ export function PicTimeIntegration() {
         strategy="afterInteractive"
       />
       <iframe
+        title="pictimeGallery"
         id="pictimeIntegration"
         src={"https://hyperdrivemedia.pic-time.com/client?headless=true"}
         style={{ width: "100%", height: "100%", border: "0" }}

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import type React from "react";
 import { Column, Flex, Heading } from "@once-ui-system/core";
 import { Scroll } from "@/components";
 import styles from "./Contents.module.scss";
@@ -26,8 +26,8 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, abo
 
   return (
     <Column paddingLeft="20" gap="32" m={{ hide: true }}>
-      {structure.filter((section) => section.display).map((section, sectionIndex) => 
-        <Column key={sectionIndex} gap="12">
+      {structure.filter((section) => section.display).map((section) => 
+        <Column key={section.title} gap="12">
           <Scroll target={section.title}>
             <Flex cursor="interactive" className={styles.hover} vertical="center" gap="12">
               <Flex background="brand-strong" minWidth="20" height="2" />

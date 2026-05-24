@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ToggleButton, useTheme } from "@once-ui-system/core";
 import styles from "./ThemeToggle.module.scss";
 
-export const ThemeToggle: React.FC = () => {
+export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [_, setMounted] = useState(false);
   const [currentTheme, setCurrentTheme] = useState("light");
@@ -30,8 +30,8 @@ export const ThemeToggle: React.FC = () => {
       size="l"
       onClickCapture={(e) => {
         setTheme(nextTheme);
-        (e.currentTarget as HTMLButtonElement).blur();
+        (e.currentTarget).blur();
       }}
     />
   );
-};
+}

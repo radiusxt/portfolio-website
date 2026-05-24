@@ -8,10 +8,10 @@ import {
   Flex,
   MatrixFx,
   Meta,
-  opacity,
+  type opacity,
   Particle,
   RevealFx,
-  SpacingToken,
+  type SpacingToken,
 } from "@once-ui-system/core";
 import { Footer, Header, Reveal, RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
@@ -188,8 +188,8 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               inset: 0,
               height: "100%",
               pointerEvents: "none",
-              maskImage: "radial-gradient(circle at 50% 0%, transparent 20%, black 30%)",
-              WebkitMaskImage: "radial-gradient(circle at 50% 0%, transparent 20%, black 30%)",
+              maskImage: "radial-gradient(circle at 50% 0%, transparent 20%, black 45%)",
+              WebkitMaskImage: "radial-gradient(circle at 50% 0%, transparent 20%, black 45%)",
             }}
           >
             <RevealFx fill position="absolute" delay={1}>

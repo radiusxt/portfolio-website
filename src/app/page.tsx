@@ -80,8 +80,7 @@ export default function Home() {
           <RevealFx translateY="16" fillWidth horizontal="center" delay={0.4}>
             <Row gap="8" horizontal="center" vertical="center" wrap>
               <Heading variant="heading-default-xl" style={{ lineHeight: "1.6", letterSpacing: "0.3px" }}>
-                {/* Hand Waving Emoji + 2x Whitespace */}
-                {`\u{1F44B}\u00A0\u00A0`}{home.subline}
+                👋&nbsp;&nbsp;{home.subline}
               </Heading>
               <Heading>
                 <TypeFx

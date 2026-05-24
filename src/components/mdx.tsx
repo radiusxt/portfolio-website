@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+import type { ReactNode } from "react";
+import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 import { slugify as transliterate } from "transliteration";
 import {
   Accordion,
@@ -17,12 +17,12 @@ import {
   List,
   ListItem,
   Media,
-  MediaProps,
+  type MediaProps,
   Row,
   SmartLink,
   Table,
   Text,
-  TextProps
+  type TextProps
 } from "@once-ui-system/core";
 import { Loading } from "@/components";
 
@@ -139,7 +139,7 @@ function createInlineCode({ children }: { children: ReactNode }) {
 
 function createCodeBlock(props: any) {
   // For pre tags that contain code blocks
-  if (props.children && props.children.props && props.children.props.className) {
+  if (props.children?.props?.className) {
     const { className, children } = props.children.props;
     // Extract language from className (format: language-xxx)
     const language = className.replace("language-", "");

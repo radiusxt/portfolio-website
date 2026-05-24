@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Flex, RevealFx, SpacingToken } from "@once-ui-system/core";
+import { Flex, RevealFx, type SpacingToken } from "@once-ui-system/core";
 
 interface RevealProps {
   children: React.ReactNode;

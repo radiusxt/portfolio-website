@@ -1,4 +1,4 @@
-import { IconType } from "react-icons";
+import type { IconType } from "react-icons";
 import { FaCode, FaAws, FaTerminal } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 
