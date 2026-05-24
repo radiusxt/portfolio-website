@@ -110,6 +110,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           fillWidth
           style={{ position: "relative", minHeight: "100dvh" }}
         >
+          {/*Matrix Background Animation*/}
           <Flex
             zIndex={0}
             style={{
@@ -181,6 +182,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               </MatrixFx>
             </RevealFx>
           </Flex>
+          {/*Particle Background Animation*/}
           <Flex
             zIndex={0}
             style={{
@@ -188,8 +190,8 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               inset: 0,
               height: "100%",
               pointerEvents: "none",
-              maskImage: "radial-gradient(circle at 50% 0%, transparent 20%, black 45%)",
-              WebkitMaskImage: "radial-gradient(circle at 50% 0%, transparent 20%, black 45%)",
+              maskImage: "radial-gradient(circle at 50% 0%, transparent 20%, black 40%)",
+              WebkitMaskImage: "radial-gradient(circle at 50% 0%, transparent 20%, black 40%)",
             }}
           >
             <RevealFx fill position="absolute" delay={1}>

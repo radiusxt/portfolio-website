@@ -54,10 +54,10 @@ export default function Home() {
               <Scroll target={"featured"}>
                 <Badge
                   textVariant="label-default-s"
-                  background="brand-strong"
+                  background="accent-alpha-weak"
                   paddingX="20"
                   paddingY="8"
-                  style={{ boxShadow: "0 0 32px var(--accent-solid-strong)" }}
+                  style={{ boxShadow: "0 0 48px var(--accent-alpha-strong)" }}
                 >
                   <Row paddingY="2">
                     {home.featured.title}
@@ -108,7 +108,7 @@ export default function Home() {
           delay={1.5}
           style={{ position: "absolute", bottom: "12dvh" }}
         >
-          <Bounce distance={10} duration={2}>
+          <Bounce distance={12} duration={3}>
             <Column className="bounce-chevron" gap="-1">
               <Icon name="chevronDown" size="xl" />
               <Icon name="chevronDown" size="xl" />
