@@ -45,7 +45,6 @@ export default function Home() {
               horizontal="center"
               delay={1.2}
               style={{
-                marginTop: "0px",
                 scrollMarginTop: "160px",
                 paddingTop: "5dvh",
                 paddingBottom: "9dvh" 
@@ -58,7 +57,7 @@ export default function Home() {
                   background="accent-alpha-weak"
                   paddingX="20"
                   paddingY="8"
-                  style={{ boxShadow: "0 0 56px var(--accent-alpha-strong)" }}
+                  style={{ boxShadow: "0 0 52px var(--accent-alpha-strong)" }}
                 >
                   <Row paddingY="2">
                     {home.featured.title}

@@ -68,11 +68,12 @@ export default function About() {
       />
       {about.tableOfContent.display && 
         <Column
+          zIndex={4}
           position="fixed"
           left="8"
           paddingLeft="24"
           gap="48"
-          style={{ top: "50%", transform: "translateY(-50%)", zIndex: 50 }}
+          style={{ top: "50%", transform: "translateY(-50%)" }}
           s={{ hide: true }}
         >
           <RevealFx delay={1}>
@@ -91,7 +92,6 @@ export default function About() {
               position="sticky"
               s={{ position: "relative", style: { top: "auto" } }}
               xs={{ style: { top: "auto" } }}
-              minWidth="160"
               paddingX="xl"
               paddingBottom="xl"
               gap="l"
@@ -103,7 +103,7 @@ export default function About() {
                 <Icon onBackground="brand-weak" size="l" name="globe" />
                 <Heading variant="body-default-xl">{person.location}</Heading>
               </Row>
-              {person.languages && person.languages.length > 0 && (
+              {person.languages && person.languages.length > 0 &&
                 <Row gap="12">
                   {person.languages.map((language) => 
                     <Tag variant="brand" key={language} size="l" radius="xl">
@@ -113,16 +113,11 @@ export default function About() {
                     </Tag>
                   )}
                 </Row>
-              )}
+              }
             </Column>
           }
           {/* Introduction */}
-          <Column
-            className={styles.blockAlign}
-            flex={9}
-            s={{ style: { maxWidth: "85vw" }}}
-            m={{ style: { maxWidth: "55vw" }}}
-          >
+          <Column minWidth="0" flex={9}>
             <Column
               fillWidth
               minHeight="160"
