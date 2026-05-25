@@ -55,7 +55,7 @@ const home: Home = {
   },
   subline:
     <>
-      I'm Nathaniel and I consider myself as a
+      I'm Nathaniel and I consider myself a
     </>
 };
 

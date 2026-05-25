@@ -43,7 +43,7 @@ export default function Home() {
               translateY="16"
               fillWidth
               horizontal="center"
-              delay={0.8}
+              delay={1.2}
               style={{
                 marginTop: "0px",
                 scrollMarginTop: "160px",
@@ -71,14 +71,13 @@ export default function Home() {
             translateY="16"
             fillWidth
             horizontal="center"
-            delay={0.1}
             style={{ paddingBottom: "11dvh" }}
           >
             <Heading variant="display-default-xl" style={{ lineHeight: "1.2", letterSpacing: "-1.5px" }}>
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="16" fillWidth horizontal="center" delay={0.4}>
+          <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8}>
             <Row gap="8" horizontal="center" vertical="center" wrap>
               <Heading variant="heading-default-xl" style={{ lineHeight: "1.6", letterSpacing: "0.3px" }}>
                 👋&nbsp;&nbsp;{home.subline}
