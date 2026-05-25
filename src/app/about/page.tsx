@@ -80,6 +80,7 @@ export default function About() {
           </RevealFx>
         </Column>
       }
+      {/* Avatar */}
       <RevealFx delay={0.2}>
         <Row fillWidth s={{ direction: "column"}} horizontal="center">
           {about.avatar.display && 
@@ -115,6 +116,7 @@ export default function About() {
               )}
             </Column>
           }
+          {/* Introduction */}
           <Column className={styles.blockAlign} flex={9} maxWidth={60}>
             <Column
               fillWidth
@@ -182,6 +184,7 @@ export default function About() {
                 </Row>
               }
             </Column>
+            {/* Work Experience */}
             {about.work.display && 
               <>
                 <Heading
@@ -252,6 +255,7 @@ export default function About() {
                 </Column>
               </>
             }
+            {/* Education */}
             {about.studies.display && 
               <>
                 <Heading
@@ -318,6 +322,7 @@ export default function About() {
                 </Column>
               </>
             }
+            {/* Technical Skills */}
             {about.technical.display && 
               <>
                 <Heading

@@ -51,31 +51,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             }
             overlay={
               <Flex
+                background="overlay"
                 position="absolute"
-                fill
                 horizontal="center"
-                vertical="center"
+                vertical="start"
                 radius="l"
-                style={{
-                  background: "var(--static-transparent)",
-                  alignItems: "flex-end",
-                  paddingBottom: "16px"
-                }}
+                fill
+                paddingTop="48"
               >
-                <Row
-                  vertical="center"
-                  paddingX="20"
-                  paddingY="8"
-                  gap="8"
-                  radius="full"
-                  background="neutral-medium"
-                  border="transparent"
-                  style={{ boxShadow: "0 0 24px var(--neutral-solid-strong)" }}
-                >
-                  <Heading variant="heading-default-m" onBackground="neutral-strong">
+                <Row vertical="center" gap="2">
+                  <Heading variant="heading-default-xl">
                     Explore Case Study
                   </Heading>
-                  <Icon name="arrowUpRight" size="s" onBackground="neutral-strong" />
+                  <Icon name="arrowUpRight" size="m" />
                 </Row>
               </Flex>
             }

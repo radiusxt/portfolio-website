@@ -92,12 +92,8 @@ const about: About = {
         role: "Academic Tutor",
         location: "Brisbane, Australia",
         achievements: [
-          <>
-            Tutored in probability, statistics, modelling and hypothesis testing in STAT2203.
-          </>,
-          <>
-            Tutored in embedded systems design using C with ARM microcontrollers, RTOS and hardware interfacing in CSSE3010.
-          </>,
+          "Tutored in probability, statistics, modelling and hypothesis testing in STAT2203.",
+          "Tutored in embedded systems design using C with ARM microcontrollers, RTOS and hardware interfacing in CSSE3010."
         ],
         images: [],
       },
@@ -107,15 +103,9 @@ const about: About = {
         role: "Software Engineer Intern",
         location: "Da Nang, Vietnam",
         achievements: [
-          <>
-            Implemented facial recognition for an attendance system running on a Raspberry Pi 4 while using 20% less resources than reference solution.
-          </>,
-          <>
-            Reduced overall system latency by 15% and maintained {">"}95% uptime.
-          </>,
-          <>
-            Interacted 40+ times by employees for daily attendance & recording lunch breaks.
-          </>,
+          "Implemented facial recognition for an attendance system running on a Raspberry Pi 4 while using 20% less resources than reference solution.",
+          "Reduced overall system latency by 15% and maintained >95% uptime.",
+          "Interacted 40+ times by employees for daily attendance & recording lunch breaks."
         ],
         images: [],
       },
@@ -125,18 +115,10 @@ const about: About = {
         role: "Sales Support Engineer",
         location: "Gold Coast, Australia",
         achievements: [
-          <>
-            Provided support on industrial grade sensors for several industries.
-          </>,
-          <>
-            Collaborated with clients to engineer solutions for their applications.
-          </>,
-          <>
-            Improved lead conversion rates by 3.5% through timely communication.
-          </>,
-          <>
-            Reduced average customer waiting times by {">"}15%.
-          </>,
+          "Provided support on industrial grade sensors for several industries.",
+          "Collaborated with clients to engineer solutions for their applications.",
+          "Improved lead conversion rates by 3.5% through timely communication.",
+          "Reduced average customer waiting times by >15%."
         ],
         images: [],
       },
@@ -146,12 +128,8 @@ const about: About = {
         role: "Sales & Technician Specialist",
         location: "Brisbane, Australia",
         achievements: [
-          <>
-            Provided excellent customer service and applied knowledge to consumer electronics while increasing store sales by {">"}10% via strategic upselling.
-          </>,
-          <>
-            Repaired phones and tablets for customers in a timely manner.
-          </>,
+          "Provided excellent customer service and applied knowledge to consumer electronics while increasing store sales by >10% via strategic upselling.",
+          "Repaired phones and tablets for customers in a timely manner.",
         ],
         images: [],
       },
@@ -166,12 +144,8 @@ const about: About = {
         timeframe: "Feb '21 - Nov '25",
         degree: "Bachelor of Engineering (Honours)",
         description: [
-          <>
-            Software Engineering
-          </>,
-          <>
-            Machine Learning
-          </>,
+          "Software Engineering",
+          "Machine Learning"
         ],
       },
     ],
