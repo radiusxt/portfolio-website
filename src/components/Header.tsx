@@ -56,7 +56,7 @@ export const Header = () => {
         data-border="rounded"
       >
         <Row
-          paddingLeft="16"
+          paddingLeft="4"
           fillWidth
           vertical="center"
           textVariant="label-default-m"
@@ -176,7 +176,7 @@ export const Header = () => {
         </Row>
         <Flex fillWidth horizontal="end" vertical="center">
           <Flex
-            paddingRight="16"
+            paddingRight="4"
             horizontal="end"
             vertical="center"
             textVariant="code-default-m"

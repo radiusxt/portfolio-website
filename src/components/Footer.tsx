@@ -15,7 +15,7 @@ export const Footer = () => {
         gap="16"
         horizontal="between"
         vertical="center"
-        s={{ direction: "column", horizontal: "center", align: "center" }}
+        s={{ direction: "column", horizontal: "center" }}
       >
         <Text
           variant="body-default-s"

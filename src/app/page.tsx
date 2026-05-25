@@ -35,7 +35,7 @@ export default function Home() {
         image={`/api/og/generate?title=${encodeURIComponent(home.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <Column position="relative" fillWidth horizontal="center" gap="l" style={{ minHeight: "100dvh" }}>
+      <Column position="relative" fillWidth horizontal="center" gap="l" style={{ minHeight: "100vh" }}>
         <Column maxWidth="l" horizontal="center" align="center">
           {home.featured.display && 
             <RevealFx
@@ -77,9 +77,9 @@ export default function Home() {
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8}>
+          <RevealFx translateY="16" fillWidth horizontal="center" delay={0.6}>
             <Row gap="8" horizontal="center" vertical="center" wrap>
-              <Heading variant="heading-default-xl" style={{ lineHeight: "1.6", letterSpacing: "0.3px" }}>
+              <Heading variant="heading-default-xl" style={{ letterSpacing: "0.3px" }}>
                 👋&nbsp;&nbsp;{home.subline}
               </Heading>
               <Heading>
@@ -106,7 +106,8 @@ export default function Home() {
           fillWidth
           horizontal="center"
           delay={1.5}
-          style={{ position: "absolute", bottom: "12dvh" }}
+          style={{ position: "absolute", bottom: "15dvh" }}
+          s={{ style: { position: "absolute", bottom: "30vh" }}}
         >
           <Bounce distance={12} duration={3}>
             <Column className="bounce-chevron" gap="-1">

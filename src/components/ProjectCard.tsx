@@ -46,7 +46,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             hideDelay={120}
             trigger={
               <Loading fallback={<Media src="" radius="l" aspectRatio="16/9" loading />}>
-                <Media src={image} alt={title} radius="l" />
+                <Media src={image} alt={title} radius="l" priority />
               </Loading>
             }
             overlay={
@@ -81,7 +81,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             className={styles.mobile}
             fillWidth
             paddingX="xs"
-            s={{ direction: "column", horizontal: "center", align: "center" }}
+            s={{ direction: "column", horizontal: "center" }}
           >
             <Column flex={8}>
               <Heading

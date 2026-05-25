@@ -82,7 +82,7 @@ export default function About() {
       }
       {/* Avatar */}
       <RevealFx delay={0.2}>
-        <Row fillWidth s={{ direction: "column"}} horizontal="center">
+        <Row fillWidth horizontal="center" s={{ direction: "column" }}>
           {about.avatar.display && 
             <Column
               className={styles.avatar}
@@ -117,7 +117,12 @@ export default function About() {
             </Column>
           }
           {/* Introduction */}
-          <Column className={styles.blockAlign} flex={9} maxWidth={60}>
+          <Column
+            className={styles.blockAlign}
+            flex={9}
+            s={{ style: { maxWidth: "85vw" }}}
+            m={{ style: { maxWidth: "55vw" }}}
+          >
             <Column
               fillWidth
               minHeight="160"
