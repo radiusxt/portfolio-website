@@ -2,7 +2,17 @@ import { Column, Heading } from "@once-ui-system/core";
 
 export default function NotFound() {
   return (
-    <Column as="section" fill center paddingBottom="160">
+    <Column
+      fill
+      center
+      background="neutral-weak"
+      style={{ 
+        marginTop: "-8rem",
+        marginBottom: "-8rem",
+        minHeight: "100vh",
+        minWidth: "100vw"
+      }}
+    >
       <Heading marginBottom="m" variant="display-strong-xl">
         404
       </Heading>

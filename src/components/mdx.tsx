@@ -134,7 +134,11 @@ function createParagraph({ children }: TextProps) {
 }
 
 function createInlineCode({ children }: { children: ReactNode }) {
-  return <InlineCode>{children}</InlineCode>;
+  return (
+    <InlineCode>
+      {children}
+    </InlineCode>
+  );
 }
 
 function createCodeBlock(props: any) {

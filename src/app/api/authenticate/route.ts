@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import * as cookie from "cookie";
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
   const { password } = body;
-  const correctPassword = process.env.PAGE_ACCESS_PASSWORD;
+  const correctPassword = process.env.PASSWORD;
 
   if (!correctPassword) {
     console.error("PAGE_ACCESS_PASSWORD environment variable is not set");
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
         maxAge: 60 * 60,
         sameSite: "strict",
         path: "/",
-      }),
+      })
     );
 
     return response;

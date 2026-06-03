@@ -90,6 +90,7 @@ export const iconLibrary: Record<string, IconType> = {
   code: FaCode,
   vscode: VscVscode,
   github: FaGithub,
+  git: FaGithub,
   linkedin: FaLinkedin,
   x: FaX,
   twitter: FaXTwitter,

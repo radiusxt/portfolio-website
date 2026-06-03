@@ -226,7 +226,7 @@ const about: About = {
           {
             name: "Git",
             description: "Managed multi-branch codebases, handled code reviews and PRs.",
-            icon: "github",
+            icon: "git",
           },
           {
             name: "Anaconda",

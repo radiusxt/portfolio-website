@@ -14,6 +14,7 @@ export function ThemeToggle() {
     setCurrentTheme(document.documentElement.getAttribute("data-theme") || "light");
   }, []);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     setCurrentTheme(document.documentElement.getAttribute("data-theme") || "light");
   }, [theme]);

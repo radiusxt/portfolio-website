@@ -11,67 +11,16 @@ team:
   - name: "Chris Chudleigh"
   - name: "Garati"
 link: "https://github.com/radiusxt/Chef-de-Cuisine"
-tags: ["TypeScript", "React", "Tailwind", "Flask", "PostgreSQL", "AWS", "Docker", "Terraform"]
+tags: ["TypeScript", "React", "Tailwind", "Flask", "PostgreSQL", "AWS", "Docker", "Terraform", "Git"]
 ---
 
 # Overview
 
 Chef de Cuisine is an online recipe platform designed for students and young adults who often do not have enough time, cooking experience or a large budget for daily meals. The main idea of this platform is to embrace cooking as a enjoyable task rather than a mundane chore. The objective is to reduce the reliance on fast food and takeaway.
 
-# Objectives
-
-- Architecture
-  - Implemented a microservices architecture for its scalablility & redundancy benefits.
-  - Leveraged synchronous HTTP communication through RESTful APIs.
-  - Comprised of 3 independent services; search, filter and user management to handle required functionality.
-- Recipe Search
-  - Dynamic ingredient selection displays a marketplace-style ingredient picker with search and custom inputs.
-  - Multi-criteria filtering searches by cooking time, cuisine, taste and ingredients.
-  - Real-time search saves time from loading with partial and fuzzy search.
-  - Persistent URLs allows bookmarkable filter states and search results.
-- User Management
-  - JWT authentication and route protection secures login and registration details.
-  - User profiles incorporate a personal dashboard with personal information.
-  - Users can save and manage their favourite recipes.
-- Design
-  - Optimised the user experience for all platforms especially for mobile devices.
-  - Built a modern UI framework with an intuitive interface and smooth animations.
-  - Enhanced accessibility through ARIA support and keyboard navigation for desktop.
-  - Established consistent theming using an orange/amber gradient color scheme.
-  - Developed a component library with reusable UI components using Tailwind.
-  - Applied responsive typography with WCAG-compliant contrast to ensure readability.
-  - Incorporated interactive components like effects, transitions & loading states.
-
-# Tech Stack
-
-- TypeScript
-  - Enforcing strict type safety standards for components, data and functions to catch errors at build time rather than production.
-  - Refactoring unused components with better scalability for increased data.
-  - Robust architecture heavily prioritises a well-structured, maintainable codebase with organised filesystem-based routing.
-- React
-  - Managing state for client-side components on text fields, scrolling, clicking, etc.
-  - Handling client-side page routing with efficient rendering.
-- Tailwind
-  - Building responsive UI components for consistent styling across the application.
-  - Streamlining development with reusable design patterns.
-- Flask
-  - Developing lightweight RESTful APIs to handle logic and service communication.
-  - Structuring backend routes and request handling for scalable microservices.
-- PostgreSQL
-  - Designing relational database schemas to store and manage structured user data.
-- AWS
-  - Deploying containerised services using ECS and managing images with ECR.
-  - Configuring load balancing, autoscaling and monitoring with CloudWatch.
-- Docker
-  - Containerising each service to ensure consistent development and production environments.
-- GitHub
-  - Version control for managing project structure.
-  - Resolving merge conflicts to maintain a stable, structured codebase.
-  - Consistent team collaboration using dev and feature branches, task tickets and a Kanban board for organisation and progress tracking.
-
 # Architecture Design
 
-Services communicate synchronously via RESTful APIs over HTTP, supporting low to moderate load requests. The backend is built with Python (Flask), PostgreSQL and Docker, while the frontend uses TypeScript. Deployed on AWS ECS (Fargate) with ECR, each service runs as a container and scales independently via autoscaling behind an application load balancer (ALB). JWT authentication secures inter-service communication and AWS CloudWatch provides monitoring, logging and scaling alerts, with automatic restarts for unhealthy services. Two separate PostgreSQL databases (recipes and users) ensure data isolation and persistence to improve reliability and reducing the risk of data loss.
+The system follows a traditional microservices architecture, where services communicate synchronously through RESTful APIs over HTTP. This approach was chosen primarily for low-to-moderate request volumes and benefits from clear separation of responsibilities between domains. The backend services are implemented in Python using Flask with each service encapsulating its own business logic and data access layer. User management and recipe management are isolated into separate services, each backed by its own PostgreSQL database to enforce bounded contexts, reduced coupling and failure isolation preventing indirect impacts. Docker provides a consistent runtime environment across development, testing and production, while images are stored in Amazon ECR and deployed to AWS ECS (Fargate), removing the need to manage underlying servers. 
 
 <Row fillWidth direction="column" horizontal="center" align="center">
   ![Architecture Diagram](/images/projects/chef-de-cuisine/architecture-diagram.png)
@@ -82,6 +31,14 @@ Services communicate synchronously via RESTful APIs over HTTP, supporting low to
   <Text variant="body-default-m" onBackground="neutral-medium">*Component Diagram*</Text>
 </Row>
 
+An Application Load Balancer routes incoming traffic to the appropriate service containers and distributes requests across multiple running tasks to improve availability while ECS Auto Scaling adjusts the quantity of running containers based on CPU and memory utilisation, allowing the platform to respond to varying workloads while maintaining cost efficiency. Security is enforced through JWT-based authentication, where authenticated users receive a signed token that is validated by the backend. AWS CloudWatch aggregates application logs and infrastructure metrics, enabling proactive monitoring and alerting before failures reach Sev-2 or higher. Regular health checks automatically replace unhealthy containers, improving fault tolerance and reducing overall downtime.
+
+# Tradeoffs & Decisions
+
+A microservices architecture was selected over a monolith to prioritise modularity, scalability and maintainability as the system grows in capacity. In a monolithic design, all functionality would be deployed as a single instance, making it simpler to develop in the initial development phases. However, this would directly result in an increase in component coupling and full redeployment for minor changes. By separating the system into independent services, small development teams can develop features in isolation and selectively scale the services experiencing higher demand to optimise costs. Smaller teams can better take advantage of agile development will less project risk. However, this decision introduces additional complexity with Service-to-service communication over HTTP creates additional overhead and latency compared to in-process function calls within a monolith.
+
+Managing multiple deployments, container orchestration, databases and monitoring pipelines increases operational effort and management. Data consistency becomes more challenging because information is distributed across separate databases, requiring careful API design and coordination between services. The choice of synchronous communication simplified implementations and avoided race conditions outweighted the risk of cascading failures if a dependent service became unavailable. Asynchronous messaging systems could provide greater resilience at the cost of increased architectural complexity. Running services on ECS Fargate reduced infrastructure management overhead but generally incurred higher cloud costs than self-managed compute resources.
+
 # Challenges & Insights
 
 A key lesson from this experience was the importance of coordination under tight constraints. With multiple services to develop, integrate and deploy, early uncertainty around architecture delayed our start and highlighted the need for clear communication and alignment. Initial friction around responsibilities and timelines was addressed by proactively checking in and documenting progress, reducing duplication and improving workflow. Deploying a container-based microservice on AWS introduced a steep learning curve from configuring load balancers and ECS tasks to debugging security groups and API endpoints. These constraints extended our timeline but reinforced the value of observability and the role of infrastructure-as-code (IaC). We discovered in-person collaboration was far more effective than remote check-ins, especially during critical phases like planning and deployment. While our microservices architecture supported modularity, it added additional complexity compared to a monolithic architecture, which was suboptimal for an MVP. On the positive side, it provided valuable exposure to practical system design challenges. Overall, the experience strengthened our technical capabilities and ability to collaborate under pressure with early checkpoints and demonstrations.
@@ -89,12 +46,3 @@ A key lesson from this experience was the importance of coordination under tight
 # Outcomes
 
 This project was a valuable learning experience, both technically and collaborative teamwork. Over the course of building and deploying our 'Chef de Cuisine' application using a microservices architecture, we encountered a range of challenges and opportunities that shaped our understanding of modern software development practices, cloud deployment and team-oriented problem solving. Given another opportunity to approach this project, the first thing to change is to prioritise the most important aspects. Time is a real constraint so starting devops in parallel with backend development would have provided more time for quality assurance.
-
-# References
-
-- [React](https://react.dev/)
-- [Tailwind](https://tailwindcss.com/)
-- [Flask](https://flask.palletsprojects.com/en/stable/)
-- [PostgreSQL](https://www.postgresql.org/)
-- [AWS](https://aws.amazon.com/free/)
-- [Docker](https://www.docker.com/)

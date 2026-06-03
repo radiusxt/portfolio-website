@@ -27,7 +27,7 @@ export async function POST(req: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'Hyperdrive Media <hello@hyperdrivemedia.co>', 
+      from: 'Hyperdrive Media <hello@hyperdrivemedia.co>',
       to: [process.env.EMAIL_ADDRESS],
       replyTo: email,
       subject: `New Message from ${name}`,

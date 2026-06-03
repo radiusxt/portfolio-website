@@ -128,6 +128,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
               border="neutral-medium"
               marginTop="80"
               marginBottom="80"
+              priority
             />
           </Loading>
           <Line maxWidth={24} height={0.15} radius="m" />

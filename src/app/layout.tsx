@@ -45,6 +45,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
       <head>
         <script
           id="theme-init"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
           dangerouslySetInnerHTML={{
             __html: `
               (function() {

@@ -1,4 +1,5 @@
 import {
+  Arrow,
   Column,
   Flex,
   Heading,
@@ -59,11 +60,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 fill
                 paddingTop="48"
               >
-                <Row vertical="center" gap="2">
+                <Row vertical="center" gap="4">
                   <Heading variant="heading-default-xl">
                     Explore Case Study
                   </Heading>
-                  <Icon name="arrowUpRight" size="m" />
+                  <Icon name="chevronRight" size="m" />
                 </Row>
               </Flex>
             }

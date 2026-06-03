@@ -83,10 +83,7 @@ export async function GET(request: Request) {
     const html = await response.text();
     const metadata = await extractMetadata(html);
 
-    return NextResponse.json({
-      ...metadata,
-      url,
-    });
+    return NextResponse.json({ ...metadata, url });
   } catch (error) {
     console.error('Error fetching metadata:', error instanceof Error ? error.message : String(error));
     
