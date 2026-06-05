@@ -14,7 +14,7 @@ import {
   Tag
 } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
-import { CustomMDX, Loading } from "@/components";
+import { CustomMDX, Loading, Reveal } from "@/components";
 import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
 
@@ -134,12 +134,12 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
           <Line maxWidth={24} height={0.15} radius="m" />
         </Column>
       </RevealFx>
-      <RevealFx translateY="16" fillWidth delay={0.6}>
+      <Reveal translateY="16" fillWidth>
         <Column as="article" maxWidth="s" gap="s" style={{ margin: "auto" }}>
           <CustomMDX source={post.content} />
           <Line maxWidth={50} height={0.15} radius="m" marginTop="40" marginBottom="4" />
         </Column>
-      </RevealFx>
+      </Reveal>
     </Column>
   );
 }

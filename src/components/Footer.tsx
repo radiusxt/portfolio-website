@@ -10,7 +10,6 @@ export const Footer = () => {
       <Row
         className={styles.mobile}
         maxWidth="l"
-        paddingY="8"
         paddingX="16"
         gap="16"
         horizontal="between"

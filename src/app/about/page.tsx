@@ -202,8 +202,8 @@ export default function About() {
                     style={{
                       marginLeft: "-26px",
                       marginRight: "-18px",
-                      WebkitMaskImage: "linear-gradient(to bottom, black 92%, transparent 96%)",
-                      maskImage: "linear-gradient(to bottom, black 92%, transparent 96%)"
+                      WebkitMaskImage: "linear-gradient(to bottom, black 94%, transparent 98%)",
+                      maskImage: "linear-gradient(to bottom, black 94%, transparent 98%)"
                     }}
                     items={[
                       ...about.work.experiences.map((experience, index) => ({

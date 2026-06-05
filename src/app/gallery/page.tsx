@@ -33,7 +33,7 @@ export default function Gallery() {
       <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128" delay={0.2}>
         <GalleryView />
       </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingTop="64" paddingBottom="80" delay={0.8}>
+      <RevealFx translateY="16" fillWidth horizontal="center" paddingTop="64" paddingBottom="104" delay={0.8}>
         <Row dark>
           <Logo wordmark="/images/brand/logo-light.png" style={{ transform: "scale(5)" }} />
         </Row>
@@ -47,19 +47,18 @@ export default function Gallery() {
         </Heading>
       </RevealFx>
       <RevealFx
-        translateY="16"
         fillWidth
         horizontal="center"
-        delay={1}
-        width="xl"
+        delay={0.8}
         style={{
-          marginBottom: "-25px",
-          scrollMarginTop: "-15px",
           position: "relative",
-          width: "100vw",
+          width: "90vw",
+          height: "120vh",
           left: "50%",
           transform: "translateX(-50%)"
         }}
+        s={{ style: { height: "370vh" }}}
+        m={{ style: { height: "210vh" }}}
       >
         <PicTimeIntegration />
       </RevealFx>

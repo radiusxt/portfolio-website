@@ -43,7 +43,7 @@ export const Header = () => {
 
   return (
     <>
-      <Fade zIndex={4} position="fixed" to="bottom" height={8} style={{ marginTop: "-8px" }} />
+      <Fade zIndex={4} position="fixed" to="bottom" height={6} style={{ marginTop: "-8px" }} />
       <Row
         as="header"
         className={styles.position}

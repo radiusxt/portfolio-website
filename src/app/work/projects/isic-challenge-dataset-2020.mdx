@@ -16,11 +16,20 @@ Skin cancer is the most prevalent type of cancer. Melanoma, specifically, is res
 
 # Architecture Design
 
+The classifier follows a traditional Siamese Neural Network (SNN) that learns a similarity function over a direction prediction on whether an image is malignant or benign. During training, pairs of lesion images are generated dynamically, with positive pairs containing the same class and negative pairs containing different classes. Each image undergoes preprocessing, including standard augmentation techniques such as random flips and rotations to improve the model’s ability to generalize to variations in lesion size and appearance. The network is trained specifically to determine whether two input images belong to the same class by learning meaningful visual patterns and representations of lesions.
 
+<Row fillWidth direction="column" horizontal="center" align="center">
+  ![Architecture Diagram](/images/projects/isic-challenge/architecture-diagram.png)
+  <Text variant="body-default-m" onBackground="neutral-medium">*Architecture Diagram*</Text>
+</Row>
+
+The architecture consists of 2 identical ResNet-34 models which share weights and process each image independently. Each branch produces a 512-dimensional feature embedding, L2-normalized to lie on the unit hypersphere. The embeddings from both images are compared by computing the absolute difference (element-wise) to quantify their learned representations. This difference vector is passed through a small fully connected classifier to output a similarity score, representing the probability the two lesions belong to the same class. Training is performed using binary cross-entropy loss, while model performance is evaluated using accuracy, precision, recall, F1-score and ROC AUC. The model achieving the highest validation F1-score is retained for final evaluation. As the classifier is operating in a medical scenario, recall is significantly more important than precision. A false negative (missed positive) will increase the risk of death due to delayed treatment.
 
 # Tradeoffs & Decisions
 
+A Siamese architecture was chosen because lesion images often exhibit significant variation in factors such as lighting conditions, image scale, and skin tone. By learning an embedding space where lesions from the same class are positioned closer together and lesions from different classes are pushed further apart, the model focuses on relative similarity rather than absolute visual appearance. This approach can be more robust than traditional classification methods when dealing with high intra-class variability. To further improve performance and training efficiency, a pre-trained ResNet-34 backbone was adopted. Transfer learning provides strong visual feature extraction capabilities from the outset, reducing both training time and data requirements compared to training a deep network from scratch. While larger backbones could potentially achieve slightly higher accuracy, they would incur increased computational and memory costs.
 
+Training pairs are generated on-the-fly rather than being precomputed, creating a virtually unlimited number of image combinations and exposing the model to more diverse relationships between samples. This improves generalization but introduces a dependency on the quality and balance of the generated pairs. The similarity comparison stage uses the absolute difference between embeddings followed by a lightweight classifier head. This design is simple, computationally efficient, and produces easily interpretable similarity scores. Alternative approaches such as contrastive loss, triplet loss, or cosine similarity were considered, but a binary classification objective with a classifier head provided greater training stability and straightforward threshold selection. Finally, light augmentation and ImageNet normalization were applied to improve robustness to real-world image variations while ensuring compatibility with the pre-trained backbone's expected input distribution.
 
 # Challenges & Insights
 
