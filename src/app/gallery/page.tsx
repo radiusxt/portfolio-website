@@ -1,7 +1,7 @@
 import { Flex, Heading, Logo, Meta, RevealFx, Row, Schema } from "@once-ui-system/core";
 import { baseURL, gallery, person } from "@/resources";
 import { GalleryView } from "@/components/gallery/Gallery";
-import { PicTimeIntegration } from "@/components/gallery/PicTime";
+import { PicTime } from "@/components/gallery/PicTime";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -60,7 +60,7 @@ export default function Gallery() {
         s={{ style: { height: "370vh" }}}
         m={{ style: { height: "210vh" }}}
       >
-        <PicTimeIntegration />
+        <PicTime />
       </RevealFx>
     </Flex>
   );

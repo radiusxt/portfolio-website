@@ -16,19 +16,26 @@ The topic of Natural Language Processing (NLP) is a highly investigated subfield
 
 # Architecture Design
 
+The IMDB dataset is shuffled and partitioned into a smaller subset consisting of 3,200 training samples and 800 testing samples. The project's focus was placed on early training so the full dataset was not strictly necessary while maintaining an 80:20 split. For robustness experiments, an optional noise injection stage can be applied before training, where characters within words are randomly swapped, inserted or deleted to simulate misspelled text. The resulting text is processed using a pre-trained BERT tokenizer to convert raw text into token IDs and attention masks suitable for transformer-based processing.
 
+<Row fillWidth direction="column" horizontal="center" align="center">
+  ![Architecture Diagram](/images/projects/bert/architecture-diagram.png)
+  <Text variant="body-default-m" onBackground="neutral-medium">*Architecture Diagram*</Text>
+</Row>
+
+Tokenised samples are grouped into mini-batches for GPU efficiency using dataloaders with a batch size of 8. Batching the train and test sets allows matrix operations to be performed in parallel, a key benefit of the transformer architecture. Due to tight memory constraints, 8 was the maximium size it could allocate space for without exceeding available GPU VRAM. These batches are passed into a pre-trained BERT sequence model to perform binary classification for a sentiment analysis problem. Throughout training, different optimisation strategies are evaluated by differing optimiser selection, scheduler, learning rates and weight decay. Loss and accuracy are collected during model validation, while precision, recall, and F1-score are used to assess performance for evaluation. Multiple runs are performed for each configuration to understand volatility and potential instability so results can be aggregated and visualised to compare early-training behaviour across optimisation strategies.
 
 # Tradeoffs & Decisions
 
-
+A key design decision was using a pre-trained model rather than training a transformer from scratch. Pre-trained LMs already possess rich linguistic representations learned from massive corpora, allowing experiments to focus specifically on optimiser and hyperparameter behaviour during fine-tuning rather than spending computational resources learning language representations from the ground up. This significantly reduced training time and hardware requirements while producing more stable and meaningful comparisons in the given context. Another important choice was the use of a small training subset and a small batch size of 8. This enabled faster experimentation and allowed multiple optimiser configurations, learning rates and weight decay to be evaluated within constraints. Smaller batches made training dynamics more visible because gradient updates occured more frequently which resulted in a deeper investigation into the 'why' and 'how'. However, this introduced greater variance into the optimisation process compared to larger batch sizes. To mitigate this drawback, each experiment was repeated several times and the results were averaged to produce ranges of error.
 
 # Challenges & Insights
 
-Tuning BERT for sentiment analysis revealed the model's ability to analyze text demands significant compute resources, ultimately necessitating the use of an AWS GPU instance to manage the quadratic memory complexity of the transformer architecture. This computational requirement was further exacerbated by the high-precision batching to prevent insufficient memory errors during the optimiser process. A technical insight gained was the model's high sensitivity to data integrity. The introduction of noise created significant performance drawdowns as it disrupted tokenization and misled the bidirectional attention mechanism.
+Tuning BERT for sentiment analysis revealed the model's ability to analyze text demands significant compute resources, ultimately necessitating the use of an AWS GPU instance to manage the quadratic memory complexity of the transformer architecture. This computational requirement was further exacerbated by the high-precision batching to prevent insufficient memory errors during the optimiser process. A technical insight gained was the model's high sensitivity to data integrity. The introduction of noise created significant performance drawdowns as it disrupted tokenization and misled the bidirectional attention mechanism. After initial experimentation, penalising excessively large weights with L2 regularisation reduced the drawdown to become more inline with the regular dataset.
 
 # Outcomes
 
-The overall performance on the fine tuned BERT model sustained 85% accuracy with the AdamW optimiser where it yielded high stability in early training without forgetting its pretrained knowledge. This research project enhanced my knowledge and practical experience in pytorch, transformers and model training using real GPU compute.
+The overall performance on the fine tuned BERT model sustained 85% accuracy with the AdamW optimiser where it yielded high stability in early training without forgetting its pretrained knowledge. I gained understanding in how minute changes can have substantial effects in model quality demonstrated in the results I observed. This research project enhanced my knowledge and practical experience in using Pytorch, transformers and model training using real GPU compute.
 
 # References
 

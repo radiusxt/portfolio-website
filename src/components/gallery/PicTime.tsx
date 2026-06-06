@@ -3,7 +3,7 @@
 import { Flex } from '@once-ui-system/core';
 import Script from 'next/script';
 
-export function PicTimeIntegration() {
+export function PicTime() {
   return (
     <Flex style={{ width: "100%", height: "100%" }}>
       <Script

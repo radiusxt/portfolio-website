@@ -9,5 +9,6 @@ export { Bounce } from "@/components/Bounce";
 export { Loading } from "@/components/Loading";
 export { Reveal } from "@/components/Reveal";
 export { Scroll } from "@/components/Scroll";
+export { SpotlightBorder } from "@/components/SpotlightBorder";
 export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";

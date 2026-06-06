@@ -147,8 +147,10 @@ export default async function RootLayout({children}: Readonly<{children: React.R
                 flicker
                 revealFrom="top"
                 colors={[
-                  "brand-on-background-medium",
+                  "accent-on-background-weak",
                   "accent-on-background-medium",
+                  "brand-on-background-weak",
+                  "brand-on-background-medium",
                   "neutral-on-background-strong",
                 ]}
               >
@@ -208,7 +210,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
             }}
           >
             <RevealFx fill position="absolute" delay={1}>
-              <Particle fill speed={1.5} density={250} size="4" color="brand-background-strong" />
+              <Particle fill speed={1.5} density={150} size="4" color="brand-on-background-weak" />
             </RevealFx>
           </Flex>
           <Flex fillWidth minHeight="8" s={{ hide: true }} />

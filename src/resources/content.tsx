@@ -310,7 +310,7 @@ const about: About = {
 const work: Work = {
   path: "/work",
   label: "Software",
-  title: "Projects",
+  title: "Case Studies",
   description: `Software projects by ${person.name}`,
 };
 

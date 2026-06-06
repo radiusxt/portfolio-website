@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 import { Flex, RevealFx, type SpacingToken } from "@once-ui-system/core";
 
 interface RevealProps {
-  children: React.ReactNode;
+  children: ReactNode;
   translateY?: number | SpacingToken;
   fillWidth?: boolean;
   horizontal?: "start" | "center" | "end";
