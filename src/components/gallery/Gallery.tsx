@@ -1,10 +1,11 @@
-import { Carousel, Column, Flex, Line, Media } from "@once-ui-system/core";
+import { Carousel, Column, Flex, Media } from "@once-ui-system/core";
 import { gallery } from "@/resources";
-import { Loading } from "@/components";
+import { Loading, SpotlightBorder } from "@/components";
 import styles from "./Gallery.module.scss";
 
 export function GalleryView() {
   return (
+    <SpotlightBorder color="brand-on-background-weak">
     <Column fillWidth direction="column" horizontal="center" maxWidth="l">
       <Carousel
         aspectRatio="3 / 2"
@@ -20,14 +21,14 @@ export function GalleryView() {
           slide:
             <Flex className={styles.hover} fillWidth fillHeight horizontal="center" vertical="center">
               {image.orientation === "horizontal" &&
-                <Flex radius="l" overflow="hidden" style={{ height: "fit-content", width: "100%" }}>
+                <Flex radius="m" overflow="hidden" style={{ height: "fit-content", width: "100%" }}>
                   <Loading fallback={<Media src="" aspectRatio="3/2" loading />}>
                     <Media src={image.src} alt={image.alt} objectFit="contain" />
                   </Loading>
                 </Flex>
               }
               {image.orientation === "vertical" && 
-                <Flex radius="l" overflow="hidden" style={{ height: "100%", aspectRatio: "2/3" }}>
+                <Flex radius="m" overflow="hidden" style={{ height: "100%", aspectRatio: "2/3" }}>
                   <Loading fallback={<Media src="" aspectRatio="2/3" loading />}>
                     <Media src={image.src} alt={image.alt} objectFit="cover" />
                   </Loading>
@@ -38,14 +39,7 @@ export function GalleryView() {
           alt: image.alt
         }))}
       />
-      <Line
-        maxWidth={74}
-        height={0.12}
-        radius="m"
-        style={{ background: "var(--neutral-on-background-weak)" }}
-        xs={{ style: { maxWidth: "28rem" }}}
-        m={{ style: { maxWidth: "50rem" }}}
-      />
     </Column>
+    </SpotlightBorder>
   );
 }

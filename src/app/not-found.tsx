@@ -17,10 +17,10 @@ export default function NotFound() {
         fill
         interactive
         mode="repel"
-        speed={1.5}
-        density={80}
-        size="4"
-        color="neutral-on-background-strong"
+        density={150}
+        speed={1}
+        size="2"
+        color="brand-on-background-weak"
         style={{
           position: "absolute",
           inset: 0

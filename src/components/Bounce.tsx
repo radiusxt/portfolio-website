@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Flex } from "@once-ui-system/core"
 
-type BounceProps = {
+interface BounceProps {
   children: ReactNode;
   distance: number;
   duration: number;

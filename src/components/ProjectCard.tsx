@@ -1,5 +1,4 @@
 import {
-  Arrow,
   Column,
   Flex,
   Heading,
@@ -26,9 +25,8 @@ interface ProjectCardProps {
   tags?: string[];
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({
-  href, title, description, image, team, tags
-}) => {
+export function ProjectCard({
+    href, title, description, image, team, tags}: ProjectCardProps) {
   return (
     <Reveal translateY="16" fillWidth>
       <Column

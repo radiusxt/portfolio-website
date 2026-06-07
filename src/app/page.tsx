@@ -131,11 +131,7 @@ export default function Home() {
       </Reveal>
       <Reveal translateY="16" fillWidth>
         <Column fillWidth maxWidth="xl" gap="16" marginBottom="160" marginTop="16" horizontal="center">
-          <Heading
-            variant="display-default-m"
-            paddingBottom="48"
-            style={{ letterSpacing: "0px" }}
-          >
+          <Heading variant="display-default-m" paddingBottom="48" style={{ letterSpacing: "0px" }}>
             Gallery Highlights
           </Heading>
           <GalleryView />

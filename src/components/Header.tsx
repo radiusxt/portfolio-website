@@ -38,7 +38,7 @@ export const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en
   return <>{currentTime}</>;
 };
 
-export const Header = () => {
+export function Header() {
   const pathname = usePathname() ?? "";
 
   return (
@@ -180,7 +180,6 @@ export const Header = () => {
             horizontal="end"
             vertical="center"
             textVariant="code-default-m"
-            gap="20"
           >
             <Flex s={{ hide: true }}>
               {display.time && <TimeDisplay timeZone={person.location} />}
