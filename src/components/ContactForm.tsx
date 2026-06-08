@@ -126,7 +126,7 @@ export const ContactForm = () => {
           {status === "success" && 
             <Feedback variant="success">
               <Flex direction="column" align="center" padding="2" style={{ letterSpacing: "0.4px" }}>
-                <Heading variant="heading-default-s" style={{ color: "#80ff86" }}>
+                <Heading variant="heading-default-s" onBackground="neutral-strong">
                   Message Received! I will get in touch with you shortly.
                 </Heading>
               </Flex>
@@ -135,7 +135,7 @@ export const ContactForm = () => {
           {status === "error" && 
             <Feedback variant="danger">
               <Flex direction="column" align="center" padding="2" style={{ letterSpacing: "0.4px" }}>
-                <Heading variant="heading-default-s" style={{ color: "#e0e0e0" }}>
+                <Heading variant="heading-default-s" onBackground="neutral-strong">
                   Error! Something went wrong. Please try again.
                 </Heading>
               </Flex>

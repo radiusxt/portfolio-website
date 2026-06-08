@@ -6,24 +6,13 @@ import { Flex } from "@once-ui-system/core";
 interface SpotlightBorderProps {
   children: ReactNode;
   color: string;
-  /**
-   * Maximum arc spread in degrees when the cursor is directly on the border.
-   * Narrows automatically as the cursor moves further away.
-   * @default 100
-   */
-  //maxSpread?: number;
-  /**
-   * Distance (px) beyond which the spotlight fades to its minimum size.
-   * @default 400
-   */
-  //falloffDistance?: number;
 }
 
 export function SpotlightBorder({ children, color, ...props }: SpotlightBorderProps) {
+  const [mobile, setMobile] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
-  //const lastMouse = useRef({ x: 0, y: 0 });
-  const [mobile, setMobile] = useState(false);
+  const pos = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     const mq = window.matchMedia("(pointer: coarse)");
@@ -34,44 +23,66 @@ export function SpotlightBorder({ children, color, ...props }: SpotlightBorderPr
   }, []);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const calculate = (clientX: number, clientY: number) => {
       const wrapper = wrapperRef.current;
       const glow = glowRef.current;
 
       if (!wrapper || !glow) {
         return;
       }
-
-      /*
-       * Find element's centre (cx, cy). atan2 gives angle from centre to cursor in radians.
-       * Multiply by 180/π to get degrees, then +90 rotates for CSS (0° = top, clockwise).
-       * Clamp cursor to rect to find nearest point on or inside element.
-       * hypot measures straight-line distance from cursor to that point.
-       * proximity normalises distance to [0, 1]: 1 on the border, 0 at falloffDistance.
-       * arc scales the max spread (100°) by proximity, so glow widens as cursor approaches.
-       * conic-gradient takes percentage stops, not degrees.
-       * arcPercent converts  arc width to a 0–100 scale (arc / 360 * 100).
-       * peakPercent is midpoint, so gradient is transparent→peak→transparent, centred on peakDeg.
-       */
+      
+      // Find element's centre (cx, cy). atan2 gives angle from centre to cursor in radians.
+      // Multiply by 180/π to get degrees, then +90 rotates for CSS (0° = top, clockwise).
+      // distLeft/Right/Top/Bottom measure how far cursor is from each edge.
+      // Taking minimum gives signed distance to the nearest edge:
+      // negative/zero/positive = cursor is outside/on/inside element.
+      // proximity normalises |distToBorder| against falloff from 0 to 1.
+      // arc is spotlight's angular width in degrees, glow expands as cursor approaches.
+      // half offsets conic-gradient start so peakDeg lands at the midpoint.
+      // conic-gradient uses percent stops rather than degree stops to avoid -ve value wrapping.
+      // arcPercent maps arc width onto a 0–100 scale
+      // arcPercent converts  arc width to a 0–100 scale (arc / 360 * 100).
+      // peakPercent is midpoint, so gradient is transparent→peak→transparent, centred on peakDeg.
+      // opacityPercent scales opacity so glow dims as cursor moves away in either direction.
       const rect = wrapper.getBoundingClientRect();
       const cx = rect.left + rect.width / 2;
       const cy = rect.top + rect.height / 2;
-      const peakDeg = Math.atan2(e.clientY - cy, e.clientX - cx) * (180 / Math.PI) + 90;
-      const nearX = Math.max(rect.left, Math.min(e.clientX, rect.right));
-      const nearY = Math.max(rect.top, Math.min(e.clientY, rect.bottom));
-      const distToBorder = Math.hypot(e.clientX - nearX, e.clientY - nearY);
-      const proximity = Math.max(0, 1 - distToBorder / 400);
-      const arc = 90 * proximity;
+      const peakDeg = Math.atan2(clientY - cy, clientX - cx) * (180 / Math.PI) + 90;
+
+      const distLeft = clientX - rect.left;
+      const distRight = rect.right - clientX;
+      const distTop = clientY - rect.top;
+      const distBottom = rect.bottom - clientY;
+      const distToBorder = Math.min(distLeft, distRight, distTop, distBottom);
+
+      const proximity = Math.max(0, 1 - Math.abs(distToBorder) / 300);
+      const arc = 120 * proximity;
       const half = arc / 2;
       const arcPercent = (arc / 360) * 100;
       const peakPercent = arcPercent / 2;
+      const opacityPercent = (proximity * 100).toFixed(1);
 
+      const peakColor = `color-mix(in srgb, var(--${color}) ${opacityPercent}%, transparent)`;
       glow.style.background = `conic-gradient(from ${peakDeg - half}deg at 50% 50%, transparent 0%,
-        var(--${color}) ${peakPercent.toFixed(1)}%, transparent ${arcPercent.toFixed(1)}%)`;
+        ${peakColor} ${peakPercent.toFixed(1)}%, transparent ${arcPercent.toFixed(1)}%)`;
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      pos.current = { x: e.clientX, y: e.clientY };
+      calculate(e.clientX, e.clientY);
+    };
+
+    const handleScroll = () => {
+      calculate(pos.current.x, pos.current.y);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [color]);
 
   // Don't render border if viewed on mobile.

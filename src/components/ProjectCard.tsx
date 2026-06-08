@@ -26,7 +26,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({
-    href, title, description, image, team, tags}: ProjectCardProps) {
+    href, title, description, image, team, tags }: ProjectCardProps) {
   return (
     <Reveal translateY="16" fillWidth>
       <Column

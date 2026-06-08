@@ -43,7 +43,7 @@ export default function Gallery() {
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" delay={1}>
         <Heading variant="heading-default-l" style={{ letterSpacing: "0.2px", textAlign: "center" }}>
-          My images specialise in sport, wildlife & travel to capture moments in motion.
+          My images specialise in sports & travel to capture special moments in motion.
         </Heading>
       </RevealFx>
       <RevealFx

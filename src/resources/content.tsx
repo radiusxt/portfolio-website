@@ -1,7 +1,7 @@
 import type { About, Gallery, Home, Person, Social, Work } from "@/types";
 import { Row, Text } from "@once-ui-system/core";
 
-const person: Person = {
+export const person: Person = {
   firstName: "Nathaniel",
   lastName: "Chan",
   name: "Nathaniel Chan",
@@ -12,7 +12,7 @@ const person: Person = {
   languages: ["English", "Cantonese"],
 };
 
-const social: Social = [
+export const social: Social = [
   {
     name: "GitHub",
     icon: "github",
@@ -33,7 +33,7 @@ const social: Social = [
   },
 ];
 
-const home: Home = {
+export const home: Home = {
   path: "/",
   label: "Home",
   title: "Hyperdrive Media",
@@ -59,7 +59,7 @@ const home: Home = {
     </>
 };
 
-const about: About = {
+export const about: About = {
   path: "/about",
   label: "About",
   title: "About Me",
@@ -141,7 +141,6 @@ const about: About = {
     institutions: [
       {
         name: "University of Queensland",
-        timeframe: "Feb '21 - Nov '25",
         degree: "Bachelor of Engineering (Honours)",
         description: [
           "Software Engineering",
@@ -307,14 +306,14 @@ const about: About = {
   },
 };
 
-const work: Work = {
+export const work: Work = {
   path: "/work",
   label: "Software",
   title: "Case Studies",
   description: `Software projects by ${person.name}`,
 };
 
-const gallery: Gallery = {
+export const gallery: Gallery = {
   path: "/gallery",
   label: "Photography",
   title: "Highlights",
@@ -445,5 +444,3 @@ const gallery: Gallery = {
     },
   ],
 };
-
-export { person, social, home, about, work, gallery };

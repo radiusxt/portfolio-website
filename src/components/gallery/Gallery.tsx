@@ -5,7 +5,6 @@ import styles from "./Gallery.module.scss";
 
 export function GalleryView() {
   return (
-    <SpotlightBorder color="brand-on-background-weak">
     <Column fillWidth direction="column" horizontal="center" maxWidth="l">
       <Carousel
         aspectRatio="3 / 2"
@@ -40,6 +39,5 @@ export function GalleryView() {
         }))}
       />
     </Column>
-    </SpotlightBorder>
   );
 }

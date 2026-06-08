@@ -151,8 +151,6 @@ export interface About extends BasePageConfig {
     institutions: Array<{
       /** Institution name */
       name: string;
-      /** Timeframe at institution */
-      timeframe: string;
       /** Degree name */
       degree: string;
       /** Description of studies */

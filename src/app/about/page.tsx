@@ -288,9 +288,6 @@ export default function About() {
                               <Heading id={institution.name} variant="heading-default-xl">
                                 {institution.name}
                               </Heading>
-                              <Heading variant="heading-default-s" onBackground="neutral-weak">
-                                {institution.timeframe}
-                              </Heading>
                             </Row>
                             <Heading variant="body-default-m" onBackground="brand-weak" marginBottom="m">
                               {institution.degree}
