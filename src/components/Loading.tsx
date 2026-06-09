@@ -29,7 +29,7 @@ export function Loading({ fallback, children }: LoadingProps) {
       }
     };
 
-    // Load events do not bubble, so we use the capture phase (true)
+    // Load events do not bubble, so we use the capture phase
     container.addEventListener("load", handleLoad, true);
     return () => container.removeEventListener("load", handleLoad, true);
   }, []);

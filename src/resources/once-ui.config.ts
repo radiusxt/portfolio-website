@@ -133,7 +133,7 @@ const schema: SchemaConfig = {
   type: "Organization",
   name: "Hyperdrive Media",
   description: home.description,
-  email: "nathaniel@outlook.com.au",
+  email: process.env.EMAIL_ADDRESS ?? "",
 };
 
 const sameAs: SameAsConfig = {

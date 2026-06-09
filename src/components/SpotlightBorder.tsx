@@ -91,32 +91,22 @@ export function SpotlightBorder({ children, color, ...props }: SpotlightBorderPr
   }
 
   return (
-    <Flex
-      ref={wrapperRef}
-      position="relative"
-      padding="40"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        minWidth: 0,
-        minHeight: 0
-      }}
-    >
+    <Flex ref={wrapperRef} position="relative" padding="40">
       <div
         ref={glowRef}
         aria-hidden="true"
         style={{
           position: "absolute",
+          zIndex: 1,
           inset: 0,
-          borderRadius: "2rem",
           padding: 2,
+          borderRadius: "2rem",
+          pointerEvents: "none",
+          willChange: "background",
           background: "transparent",
+          maskComposite: "exclude",
           WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
           WebkitMaskComposite: "xor",
-          maskComposite: "exclude",
-          pointerEvents: "none",
-          zIndex: 1,
-          willChange: "background",
         }}
       />
       <Flex zIndex="0" position="relative" {...props}>

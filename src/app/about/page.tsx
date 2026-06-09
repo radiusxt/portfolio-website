@@ -202,8 +202,8 @@ export default function About() {
                     style={{
                       marginLeft: "-26px",
                       marginRight: "-18px",
-                      WebkitMaskImage: "linear-gradient(to bottom, black 94%, transparent 98%)",
-                      maskImage: "linear-gradient(to bottom, black 94%, transparent 98%)"
+                      maskImage: "linear-gradient(to bottom, black 94%, transparent 98%)",
+                      WebkitMaskImage: "linear-gradient(to bottom, black 94%, transparent 98%)"
                     }}
                     items={[
                       ...about.work.experiences.map((experience, index) => ({
@@ -273,8 +273,8 @@ export default function About() {
                     style={{
                       marginLeft: "-26px",
                       marginRight: "-18px",
-                      WebkitMaskImage: "linear-gradient(to bottom, black 75%, transparent 88%)",
-                      maskImage: "linear-gradient(to bottom, black 75%, transparent 88%)"
+                      maskImage: "linear-gradient(to bottom, black 75%, transparent 88%)",
+                      WebkitMaskImage: "linear-gradient(to bottom, black 75%, transparent 88%)"
                     }}
                     items={[
                       ...about.studies.institutions.map((institution, index) => ({
@@ -333,16 +333,14 @@ export default function About() {
                 </Heading>
                 <Row fillWidth gap="20" vertical="center" style={{ marginLeft: "-22px" }}>
                   <Line
-                    fillHeight
                     vert
+                    fillHeight
                     style={{
                       background: "var(--neutral-on-background-strong)",
-                      WebkitMaskImage: `linear-gradient(
-                        to bottom, transparent 1%, black 10%, black 90%, transparent 100%
-                      )`,
                       maskImage: `linear-gradient(
-                        to bottom, transparent 1%, black 10%, black 90%, transparent 100%
-                      )`
+                        to bottom, transparent 1%, black 10%, black 90%, transparent 100%)`,
+                      WebkitMaskImage: `linear-gradient(
+                        to bottom, transparent 1%, black 10%, black 90%, transparent 100%)`
                     }}
                   />
                   <Column fillWidth gap="l" style={{ marginRight: "-18px" }}>

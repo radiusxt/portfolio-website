@@ -1,20 +1,49 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { Flex } from "@once-ui-system/core";
 
 interface ScrollProps {
   children: ReactNode;
-  target: string;
+  target?: string;
+  href?: string;
 }
 
-export function Scroll({ children, target }: ScrollProps) {
-  const handleClick = () => {
-    const element = document.getElementById(target)
+export function Scroll({ children, target, href }: ScrollProps) {
+  const pathname = usePathname();
+  const router = useRouter();
 
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+  const handleClick = () => {
+    const isSamePage = !href || href === pathname;
+
+    if (isSamePage && target) {
+      const element = document.getElementById(target);
+
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      return;
     }
+
+    if (!href) {
+      return;
+    }
+    
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Wait till scroll animation reaches within 50 pixels of top.
+    const waitForTop = () => {
+      if (window.scrollY <= 50) {
+        router.push(href);
+        return;
+      }
+
+      requestAnimationFrame(waitForTop);
+    };
+
+    requestAnimationFrame(waitForTop);
   };
 
   return (

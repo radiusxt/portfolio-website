@@ -13,8 +13,8 @@ import {
   RevealFx,
   type SpacingToken,
 } from "@once-ui-system/core";
-import { Footer, Header, Reveal, RouteGuard, Providers } from "@/components";
-import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
+import { Footer, Header, Providers, Reveal, RouteGuard } from "@/components";
+import { baseURL, dataStyle, effects, fonts, home, style } from "@/resources";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -52,6 +52,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
                 try {
                   const root = document.documentElement;
                   const defaultTheme = 'system';
+                  root.setAttribute('data-scroll-behavior', 'smooth');
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({
@@ -109,15 +110,18 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           as="body"
           background="page"
           fillWidth
-          style={{ position: "relative", minHeight: "100dvh" }}
+          style={{
+            position: "relative",
+            minHeight: "100dvh"
+          }}
         >
           {/*Matrix Background Animation*/}
           <Flex
             zIndex={0}
+            fillHeight
             style={{
               position: "absolute",
               inset: 0,
-              height: "100%",
               maxHeight: "100vh",
               pointerEvents: "none",
               maskImage: "radial-gradient(circle at 50% 0%, black 18%, transparent 58%)",
@@ -200,10 +204,10 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           {/*Particle Background Animation*/}
           <Flex
             zIndex={0}
+            fillHeight
             style={{
               position: "absolute",
               inset: 0,
-              height: "100%",
               pointerEvents: "none",
               maskImage: "radial-gradient(circle at 50% 0%, transparent 20%, black 40%)",
               WebkitMaskImage: "radial-gradient(circle at 50% 0%, transparent 20%, black 40%)",

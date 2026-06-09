@@ -80,10 +80,9 @@ export function Header() {
           >
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && 
-                <Scroll target={home.title}>
+                <Scroll target={home.title} href="/">
                   <ToggleButton
                     prefixIcon="home"
-                    href="/"
                     size="l"
                     selected={pathname === "/"}
                   />
@@ -93,10 +92,9 @@ export function Header() {
               {routes["/about"] && 
                 <>
                   <Row s={{ hide: true }}>
-                    <Scroll target={about.intro.title}>
+                    <Scroll target={about.intro.title} href="/about">
                       <ToggleButton
                         prefixIcon="person"
-                        href="/about"
                         label={about.label}
                         size="l"
                         selected={pathname === "/about"}
@@ -104,10 +102,9 @@ export function Header() {
                     </Scroll>
                   </Row>
                   <Row hide s={{ hide: false }}>
-                    <Scroll target={about.intro.title}>
+                    <Scroll target={about.intro.title} href="/about">
                       <ToggleButton
                         prefixIcon="person"
-                        href="/about"
                         size="l"
                         selected={pathname === "/about"}
                       />
@@ -118,10 +115,9 @@ export function Header() {
               {routes["/work"] && 
                 <>
                   <Row s={{ hide: true }}>
-                    <Scroll target={work.title}>
+                    <Scroll target={work.title} href="/work">
                       <ToggleButton
                         prefixIcon="code"
-                        href="/work"
                         label={work.label}
                         size="l"
                         selected={pathname.startsWith("/work")}
@@ -129,10 +125,9 @@ export function Header() {
                     </Scroll>
                   </Row>
                   <Row hide s={{ hide: false }}>
-                    <Scroll target={work.title}>
+                    <Scroll target={work.title} href="/work">
                       <ToggleButton
                         prefixIcon="code"
-                        href="/work"
                         size="l"
                         selected={pathname.startsWith("/work")}
                       />
@@ -143,10 +138,9 @@ export function Header() {
               {routes["/gallery"] && 
                 <>
                   <Row s={{ hide: true }}>
-                    <Scroll target={gallery.title}>
+                    <Scroll target={gallery.title} href="/gallery">
                       <ToggleButton
                         prefixIcon="gallery"
-                        href="/gallery"
                         label={gallery.label}
                         size="l"
                         selected={pathname.startsWith("/gallery")}
@@ -154,10 +148,9 @@ export function Header() {
                     </Scroll>
                   </Row>
                   <Row hide s={{ hide: false }}>
-                    <Scroll target={gallery.title}>
+                    <Scroll target={gallery.title} href="/gallery">
                       <ToggleButton
                         prefixIcon="gallery"
-                        href="/gallery"
                         size="l"
                         selected={pathname.startsWith("/gallery")}
                       />

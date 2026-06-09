@@ -117,7 +117,7 @@ export default function Home() {
         </RevealFx>
       </Column>
       <Reveal translateY="16" fillWidth>
-        <Column fillWidth maxWidth="xl" gap="16" marginBottom="104" horizontal="center">
+        <Column fillWidth maxWidth="xl" gap="16" marginBottom="160" horizontal="center">
           <Heading
             id="featured"
             variant="display-default-m"
