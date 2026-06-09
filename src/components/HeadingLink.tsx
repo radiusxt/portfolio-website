@@ -2,8 +2,7 @@
 
 import type { JSX } from "react";
 import { Flex, Heading, IconButton, useToast } from "@once-ui-system/core";
-
-import styles from "@/components/HeadingLink.module.scss";
+import styles from "./HeadingLink.module.scss";
 
 interface HeadingLinkProps {
   id: string;
@@ -29,7 +28,7 @@ export function HeadingLink({ id, level, children, style }: HeadingLinkProps) {
           variant: "danger",
           message: "Failed to copy link.",
         });
-      },
+      }
     );
   };
 
@@ -47,22 +46,22 @@ export function HeadingLink({ id, level, children, style }: HeadingLinkProps) {
 
   return (
     <Flex
+      className={styles.control}
       style={style}
       onClick={() => copyURL(id)}
-      className={styles.control}
       vertical="center"
       gap="4"
     >
-    <Heading className={styles.text} id={id} variant={variant} as={asTag}>
+      <Heading className={styles.text} id={id} variant={variant} as={asTag}>
         {children}
       </Heading>
       <IconButton
         className={styles.visibility}
-        size="s"
         icon="openLink"
-        variant="ghost"
         tooltip="Copy"
         tooltipPosition="right"
+        variant="ghost"
+        size="s"
       />
     </Flex>
   );

@@ -16,7 +16,6 @@ import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
   href: string;
-  priority?: boolean;
   title: string;
   description: string;
   image: string;
@@ -34,15 +33,15 @@ export function ProjectCard({
           fillWidth
           horizontal="center"
           border="neutral-medium"
+          radius="l"
           marginBottom="80"
           paddingBottom="32"
           gap="12"
-          radius="l"
         >
           <SmartLink style={{ display: "contents" }}>
             <Hover
-              tabIndex={-1}
               fillWidth
+              tabIndex={-1}
               hideDelay={120}
               trigger={
                 <Loading fallback={<Media src="" radius="l" aspectRatio="16/9" loading />}>
@@ -51,12 +50,12 @@ export function ProjectCard({
               }
               overlay={
                 <Flex
-                  background="overlay"
+                  fill
                   position="absolute"
                   horizontal="center"
                   vertical="start"
+                  background="overlay"
                   radius="l"
-                  fill
                   paddingTop="48"
                 >
                   <Row vertical="center" gap="4">
@@ -103,7 +102,11 @@ export function ProjectCard({
                             size="xs"
                             padding="1"
                           />
-                          <Heading variant="label-default-s" onBackground="neutral-weak" padding="1">
+                          <Heading
+                            variant="label-default-s"
+                            onBackground="neutral-weak"
+                            padding="1"
+                          >
                             {tag}
                           </Heading>
                         </Row>

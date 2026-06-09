@@ -1,10 +1,10 @@
-import React from "react";
 import {
   Avatar,
   AutoScroll,
   Button,
   Column,
   Fade,
+  Flex,
   Heading,
   HoverCard,
   Icon,
@@ -68,7 +68,7 @@ export default function About() {
       />
       {about.tableOfContent.display && 
         <Column
-          zIndex={4}
+          zIndex={2}
           position="fixed"
           left="8"
           paddingLeft="24"
@@ -86,17 +86,17 @@ export default function About() {
           {/* Avatar */}
           {about.avatar.display && 
             <Column
-              className={styles.avatar}
-              top="64"
-              fitHeight
               position="sticky"
-              s={{ position: "relative", style: { top: "auto" } }}
-              xs={{ style: { top: "auto" } }}
+              flex={3}
+              className={styles.avatar}
+              fitHeight
+              horizontal="center"
+              top="64"
               paddingX="xl"
               paddingBottom="xl"
               gap="l"
-              flex={3}
-              horizontal="center"
+              xs={{ style: { top: "auto" } }}
+              s={{ position: "relative", style: { top: "auto" } }}
             >
               <Avatar src={person.avatar} size={15} border="neutral-alpha-weak" />
               <Row gap="8" vertical="center">
@@ -118,12 +118,7 @@ export default function About() {
           }
           {/* Introduction */}
           <Column minWidth="0" flex={9}>
-            <Column
-              fillWidth
-              minHeight="160"
-              vertical="center"
-              marginBottom="32"
-            >
+            <Column fillWidth vertical="center" minHeight="160" marginBottom="32">
               <Heading
                 id={about.intro.title}
                 className={styles.textAlign}
@@ -150,14 +145,14 @@ export default function About() {
               {social.length > 0 && 
                 <Row
                   className={styles.blockAlign}
-                  data-border="rounded"
+                  fitWidth
                   horizontal="center"
+                  data-border="rounded"
                   gap="16"
                   wrap
-                  fitWidth
                 >
                   {social.filter((item) => item.essential).map((item) => item.link && 
-                    <React.Fragment key={item.name}>
+                    <Flex key={item.name}>
                       <Row s={{ hide: true }}>
                         <Button
                           key={item.name}
@@ -167,7 +162,7 @@ export default function About() {
                           size="m"
                           weight="default"
                           variant="tertiary"
-                          style={{ gap: "8px", letterSpacing: "0.2px" }}
+                          style={{ gap: "8px", letterSpacing: "0.3px" }}
                         />
                       </Row>
                       <Row hide s={{ hide: false }}>
@@ -179,7 +174,7 @@ export default function About() {
                           variant="tertiary"
                         />
                       </Row>
-                    </React.Fragment>
+                    </Flex>
                   )}
                 </Row>
               }
@@ -192,7 +187,7 @@ export default function About() {
                   id={about.work.title}
                   variant="display-default-s"
                   marginBottom="32"
-                  style={{ scrollMarginTop: "60px" }}
+                  style={{ scrollMarginTop: "70px" }}
                 >
                   {about.work.title}
                 </Heading>
@@ -263,7 +258,7 @@ export default function About() {
                   id={about.studies.title}
                   variant="display-default-s"
                   marginBottom="32"
-                  style={{ scrollMarginTop: "60px" }}
+                  style={{ scrollMarginTop: "70px" }}
                 >
                   {about.studies.title}
                 </Heading>
@@ -327,11 +322,11 @@ export default function About() {
                   id={about.technical.title}
                   variant="display-default-s"
                   marginBottom="32"
-                  style={{ scrollMarginTop: "60px" }}
+                  style={{ scrollMarginTop: "70px" }}
                 >
                   {about.technical.title}
                 </Heading>
-                <Row fillWidth gap="20" vertical="center" style={{ marginLeft: "-22px" }}>
+                <Row fillWidth vertical="center" gap="20" style={{ marginLeft: "-22px" }}>
                   <Line
                     vert
                     fillHeight
@@ -386,7 +381,7 @@ export default function About() {
                                     </Row>
                                   }
                                 >
-                                  <Column maxWidth={14} fillWidth background="page" radius="xl" paddingY="4">
+                                  <Column maxWidth={14} background="page" radius="xl" paddingY="4">
                                     <Heading variant="label-default-m" align="center">
                                       {tag.description}
                                     </Heading>

@@ -53,8 +53,9 @@ export default function Home() {
               <Scroll target={"featured"}>
                 <Badge
                   icon="book"
-                  textVariant="label-default-s"
+                  textVariant="body-default-xl"
                   background="accent-alpha-weak"
+                  onBackground="brand-medium"
                   paddingX="20"
                   paddingY="8"
                   style={{ boxShadow: "0 0 52px var(--accent-alpha-strong)" }}
@@ -66,23 +67,22 @@ export default function Home() {
               </Scroll>
             </RevealFx>
           }
-          <RevealFx
-            translateY="16"
-            fillWidth
-            horizontal="center"
-            style={{ paddingBottom: "11dvh" }}
-          >
+          <RevealFx translateY="16" fillWidth horizontal="center" style={{ paddingBottom: "11dvh" }}>
             <Heading variant="display-default-xl" style={{ lineHeight: "1.2", letterSpacing: "-1.5px" }}>
               {home.headline}
             </Heading>
           </RevealFx>
           <RevealFx translateY="16" fillWidth horizontal="center" delay={0.6}>
-            <Row gap="8" horizontal="center" vertical="center" wrap>
+            <Row gap="8" horizontal="center" vertical="center" align="center" wrap>
               <Heading variant="heading-default-xl" style={{ letterSpacing: "0.3px" }}>
-                👋&nbsp;&nbsp;{home.subline}
+                {home.subline}
               </Heading>
               <Heading>
                 <TypeFx
+                  variant="heading-default-xl"
+                  speed={50}
+                  hold={2500}
+                  delay={0.4}
                   words={[
                     "Software Engineer.",
                     "Sports Photographer.",
@@ -90,11 +90,7 @@ export default function Home() {
                     "Travel Photographer.",
                     "Hardware Enthusiast."
                   ]}
-                  variant="heading-default-xl"
-                  speed={50}
-                  hold={2500}
-                  delay={0.4}
-                  style={{ lineHeight: "1.6", letterSpacing: "0.3px" }}
+                  style={{ lineHeight: "1.8", letterSpacing: "0.3px" }}
                 />
               </Heading>
             </Row>

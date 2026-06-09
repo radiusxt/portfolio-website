@@ -14,7 +14,10 @@ export function Loading({ fallback, children }: LoadingProps) {
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+
+    if (!container) {
+      return;
+    }
 
     // Check if image is already cached/loaded on mount
     const img = container.querySelector("img");

@@ -38,6 +38,7 @@ async function fetchWithTimeout(url: string, timeout = 5000) {
         'User-Agent': 'bot'
       }
     });
+    
     clearTimeout(timeoutId);
     return response;
   } catch (error) {

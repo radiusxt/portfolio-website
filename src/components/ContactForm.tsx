@@ -13,7 +13,7 @@ import {
   Textarea
 } from "@once-ui-system/core";
 
-export const ContactForm = () => {
+export function ContactForm() {
   const [formData, setFormData] = useState({name: "", email: "", description: ""});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 

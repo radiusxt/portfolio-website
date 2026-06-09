@@ -23,17 +23,17 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata(
-  { params }: { params: Promise<{ slug: string | string[] }> }
-): Promise<Metadata> {
+export async function generateMetadata({ params }:
+    { params: Promise<{ slug: string | string[] }> }): Promise<Metadata> {
   const routeParams = await params;
-  const slugPath = Array.isArray(routeParams.slug)
-    ? routeParams.slug.join("/") : routeParams.slug || "";
+  const slugPath = Array.isArray(routeParams.slug) ? routeParams.slug.join("/") : routeParams.slug || "";
 
   const posts = getPosts(["src", "app", "work", "projects"]);
   const post = posts.find((post) => post.slug === slugPath);
 
-  if (!post) return {};
+  if (!post) {
+    return {};
+  }
 
   return Meta.generate({
     title: post.metadata.title,
@@ -49,7 +49,9 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
   const slugPath = Array.isArray(routeParams.slug) ? routeParams.slug.join("/") : routeParams.slug || "";
   const post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slugPath);
 
-  if (!post) notFound();
+  if (!post) {
+    notFound();
+  }
 
   return (
     <Column maxWidth="l" direction="column" horizontal="center" gap="l">
@@ -64,7 +66,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
         image={post.metadata.image || `/api/og/generate?title=${encodeURIComponent(post.metadata.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <RevealFx translateY="16" fillWidth delay={0.1} paddingBottom="48">
+      <RevealFx translateY="16" fillWidth paddingBottom="48" delay={0.1}>
         <Column fillWidth maxWidth="l" gap="16" horizontal="center" align="center">
           <Heading variant="display-default-l" paddingBottom="32" style={{ lineHeight: "1.4" }}>
             {post.metadata.title}
@@ -88,13 +90,13 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
               )}
             </Row>
           }
-          <Heading variant="heading-default-xl" paddingBottom="24" onBackground="neutral-weak">
+          <Heading variant="heading-default-xl" onBackground="neutral-weak" paddingBottom="24">
             {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
           </Heading>
           <Heading
             variant="heading-default-m"
-            paddingBottom="24"
             onBackground="brand-medium"
+            paddingBottom="24"
             wrap="balance"
             style={{ lineHeight: "1.5" }}
           >

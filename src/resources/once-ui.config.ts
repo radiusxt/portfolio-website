@@ -9,58 +9,58 @@ import type {
   SchemaConfig,
   StyleConfig,
 } from "@/types";
-import { Rubik, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Rubik } from "next/font/google";
 import { home } from "./index";
 
-const baseURL: string = "https://hyperdrivemedia.co/";
+export const baseURL: string = "https://hyperdrivemedia.co/";
 
-const routes: RoutesConfig = {
+export const routes: RoutesConfig = {
   "/": true,
   "/about": true,
   "/work": true,
   "/gallery": true,
 };
 
-const display: DisplayConfig = {
+export const display: DisplayConfig = {
   location: true,
   time: true,
   themeSwitcher: true,
 };
 
-const protectedRoutes: ProtectedRoutesConfig = {};
+export const protectedRoutes: ProtectedRoutesConfig = {};
 
-const heading = Rubik({
+export const heading = Rubik({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
 });
 
-const body = Rubik({
+export const body = Rubik({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
 });
 
-const label = Rubik({
+export const label = Rubik({
   variable: "--font-label",
   subsets: ["latin"],
   display: "swap",
 });
 
-const code = Geist_Mono({
+export const code = Geist_Mono({
   variable: "--font-code",
   subsets: ["latin"],
   display: "swap",
 });
 
-const fonts: FontsConfig = {
+export const fonts: FontsConfig = {
   heading: heading,
   body: body,
   label: label,
   code: code,
 };
 
-const style: StyleConfig = {
+export const style: StyleConfig = {
   theme: "dark", // dark | light | system
   neutral: "gray", // sand | gray | slate | custom
   brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
@@ -73,7 +73,7 @@ const style: StyleConfig = {
   scaling: "100", // 90 | 95 | 100 | 105 | 110
 };
 
-const dataStyle: DataStyleConfig = {
+export const dataStyle: DataStyleConfig = {
   variant: "gradient", // flat | gradient | outline
   mode: "categorical", // categorical | divergent | sequential
   height: 24, // default chart height
@@ -87,7 +87,7 @@ const dataStyle: DataStyleConfig = {
   },
 };
 
-const effects: EffectsConfig = {
+export const effects: EffectsConfig = {
   mask: {
     cursor: false,
     x: 50,
@@ -128,7 +128,7 @@ const effects: EffectsConfig = {
   },
 };
 
-const schema: SchemaConfig = {
+export const schema: SchemaConfig = {
   logo: "",
   type: "Organization",
   name: "Hyperdrive Media",
@@ -136,21 +136,8 @@ const schema: SchemaConfig = {
   email: process.env.EMAIL_ADDRESS ?? "",
 };
 
-const sameAs: SameAsConfig = {
+export const sameAs: SameAsConfig = {
   github: "https://github.com/radiusxt",
   pictime: "https://hyperdrivemedia.pic-time.com/portfolio",
   linkedin: "https://www.linkedin.com/in/nathaniel-chan-/",
-};
-
-export {
-  display,
-  routes,
-  protectedRoutes,
-  baseURL,
-  fonts,
-  style,
-  schema,
-  sameAs,
-  effects,
-  dataStyle,
 };

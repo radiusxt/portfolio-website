@@ -19,9 +19,7 @@ export async function GET(request: NextRequest) {
     
     if (!response.ok) {
       return NextResponse.json(
-        { error: `Failed to fetch image: ${response.status}` },
-        { status: response.status }
-      );
+        { error: `Failed to fetch image: ${response.status}` }, { status: response.status });
     }
     
     // Get the image data

@@ -1,6 +1,5 @@
 "use client";
 
-import type React from "react";
 import { Column, Flex, Heading } from "@once-ui-system/core";
 import { Scroll } from "@/components";
 import styles from "./Contents.module.scss";
@@ -19,7 +18,7 @@ interface TableOfContentsProps {
   };
 }
 
-export const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) => {
+export function TableOfContents({ structure, about }: TableOfContentsProps) {
   if (!about.tableOfContent.display) {
     return null;
   }

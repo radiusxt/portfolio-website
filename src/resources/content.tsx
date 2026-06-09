@@ -1,5 +1,4 @@
 import type { About, Gallery, Home, Person, Social, Work } from "@/types";
-import { Row, Text } from "@once-ui-system/core";
 
 export const person: Person = {
   firstName: "Nathaniel",
@@ -7,7 +6,7 @@ export const person: Person = {
   name: "Nathaniel Chan",
   role: "Software Engineer, Photographer",
   avatar: "/images/brand/avatar.jpg",
-  email: "nathaniel@outlook.com.au",
+  email: process.env.EMAIL_ADDRESS ?? "",
   location: "Australia/Brisbane",
   languages: ["English", "Cantonese"],
 };
@@ -38,25 +37,12 @@ export const home: Home = {
   label: "Home",
   title: "Hyperdrive Media",
   description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}.`,
-  headline:
-    <>
-      Building software that scales.
-      Capturing photos that inspire.
-    </>,
+  headline: "Building software that scales. Capturing photos that inspire.",
+  subline: "👋 I'm Nathaniel and I consider myself a",
   featured: {
     display: true,
-    title: (
-      <Row gap="12" vertical="center">
-        <Text onBackground="brand-medium" variant="body-default-xl">
-          Featured Work
-        </Text>
-      </Row>
-    ),
-  },
-  subline:
-    <>
-      I'm Nathaniel and I consider myself a
-    </>
+    title: "Featured Work"
+  }
 };
 
 export const about: About = {
@@ -155,9 +141,7 @@ export const about: About = {
     skills: [
       {
         title: "Languages",
-        description: (
-          <>Building full-stack applications with AI/ML integrations.</>
-        ),
+        description: "Building full-stack applications with AI/ML integrations.",
         tags: [
           {
             name: "Python",
@@ -203,9 +187,7 @@ export const about: About = {
       },
       {
         title: "Development Tools",
-        description: (
-          <>Deploying production software efficiently for modern, scalable applications.</>
-        ),
+        description: "Deploying production software efficiently for modern, scalable applications.",
         tags: [
           {
             name: "AWS",
@@ -261,9 +243,7 @@ export const about: About = {
       },
       {
         title: "Frameworks",
-        description: (
-          <>Developing ML applications, scalable backends and modern web interfaces.</>
-        ),
+        description: "Developing ML applications, scalable backends and modern web interfaces.",
         tags: [
           {
             name: "PyTorch",
@@ -310,7 +290,7 @@ export const work: Work = {
   path: "/work",
   label: "Software",
   title: "Case Studies",
-  description: `Software projects by ${person.name}`,
+  description: `Case studies by ${person.name}`,
 };
 
 export const gallery: Gallery = {

@@ -115,7 +115,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
             minHeight: "100dvh"
           }}
         >
-          {/*Matrix Background Animation*/}
+          {/* Matrix Background Animation */}
           <Flex
             zIndex={0}
             fillHeight
@@ -127,6 +127,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               maskImage: "radial-gradient(circle at 50% 0%, black 18%, transparent 58%)",
               WebkitMaskImage: "radial-gradient(circle at 50% 0%, black 18%, transparent 58%)",
             }}
+            // Mobile Screen Size
             s={{
               style: {
                 maxHeight: "150vh",
@@ -134,6 +135,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
                 WebkitMaskImage: "radial-gradient(circle at 50% 0%, black 0%, transparent 50%)",
               } 
             }}
+            // Tablet Screen Size
             m={{
               style: {
                 maxHeight: "250vh",
@@ -201,7 +203,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               </MatrixFx>
             </RevealFx>
           </Flex>
-          {/*Particle Background Animation*/}
+          {/* Particle Background Animation */}
           <Flex
             zIndex={0}
             fillHeight

@@ -23,9 +23,8 @@ export function Projects({ range, exclude }: ProjectsProps) {
 
   return (
     <Column fillWidth gap="xl">
-      {displayedProjects.map((post, index) => 
+      {displayedProjects.map((post) => 
         <ProjectCard
-          priority={index < 8}
           key={post.slug}
           href={`/work/${post.slug}`}
           title={post.metadata.title}

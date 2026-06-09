@@ -1,6 +1,6 @@
 import { Carousel, Column, Flex, Media } from "@once-ui-system/core";
 import { gallery } from "@/resources";
-import { Loading, SpotlightBorder } from "@/components";
+import { Loading } from "@/components";
 import styles from "./Gallery.module.scss";
 
 export function GalleryView() {

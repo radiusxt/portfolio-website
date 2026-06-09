@@ -51,16 +51,16 @@ export function Header() {
         zIndex={10}
         fillWidth
         fitHeight
-        padding="4"
         horizontal="center"
         data-border="rounded"
+        padding="4"
       >
         <Row
-          paddingLeft="4"
           fillWidth
           vertical="center"
           textVariant="label-default-m"
-          style={{ letterSpacing: "0.01em" }}
+          paddingLeft="4"
+          style={{ letterSpacing: "0.3px" }}
         >
           {display.location && 
             <Row s={{ hide: true }}>
@@ -71,33 +71,33 @@ export function Header() {
         <Row fillWidth horizontal="center">
           <Row
             background="page"
+            zIndex={1}
+            horizontal="center"
             border="neutral-alpha-weak"
             radius="m-4"
             shadow="l"
             padding="4"
-            horizontal="center"
-            zIndex={1}
           >
-            <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
+            <Row vertical="center" textVariant="body-default-s" gap="4" suppressHydrationWarning>
               {routes["/"] && 
                 <Scroll target={home.title} href="/">
                   <ToggleButton
                     prefixIcon="home"
-                    size="l"
                     selected={pathname === "/"}
+                    size="l"
                   />
                 </Scroll>
               }
-              <Line background="neutral-alpha-strong" vert maxHeight="24" />
+              <Line vert maxHeight="24" background="neutral-alpha-strong" />
               {routes["/about"] && 
                 <>
                   <Row s={{ hide: true }}>
                     <Scroll target={about.intro.title} href="/about">
                       <ToggleButton
                         prefixIcon="person"
+                        selected={pathname === "/about"}
                         label={about.label}
                         size="l"
-                        selected={pathname === "/about"}
                       />
                     </Scroll>
                   </Row>
@@ -105,8 +105,8 @@ export function Header() {
                     <Scroll target={about.intro.title} href="/about">
                       <ToggleButton
                         prefixIcon="person"
-                        size="l"
                         selected={pathname === "/about"}
+                        size="l"
                       />
                     </Scroll>
                   </Row>
@@ -118,9 +118,9 @@ export function Header() {
                     <Scroll target={work.title} href="/work">
                       <ToggleButton
                         prefixIcon="code"
+                        selected={pathname.startsWith("/work")}
                         label={work.label}
                         size="l"
-                        selected={pathname.startsWith("/work")}
                       />
                     </Scroll>
                   </Row>
@@ -128,8 +128,8 @@ export function Header() {
                     <Scroll target={work.title} href="/work">
                       <ToggleButton
                         prefixIcon="code"
-                        size="l"
                         selected={pathname.startsWith("/work")}
+                        size="l"
                       />
                     </Scroll>
                   </Row>
@@ -141,9 +141,9 @@ export function Header() {
                     <Scroll target={gallery.title} href="/gallery">
                       <ToggleButton
                         prefixIcon="gallery"
+                        selected={pathname.startsWith("/gallery")}
                         label={gallery.label}
                         size="l"
-                        selected={pathname.startsWith("/gallery")}
                       />
                     </Scroll>
                   </Row>
@@ -151,8 +151,8 @@ export function Header() {
                     <Scroll target={gallery.title} href="/gallery">
                       <ToggleButton
                         prefixIcon="gallery"
-                        size="l"
                         selected={pathname.startsWith("/gallery")}
+                        size="l"
                       />
                     </Scroll>
                   </Row>
@@ -160,7 +160,7 @@ export function Header() {
               }
               {display.themeSwitcher && 
                 <>
-                  <Line background="neutral-alpha-strong" vert maxHeight="24" />
+                  <Line vert maxHeight="24" background="neutral-alpha-strong" />
                   <ThemeToggle />
                 </>
               }
@@ -169,13 +169,15 @@ export function Header() {
         </Row>
         <Flex fillWidth horizontal="end" vertical="center">
           <Flex
-            paddingRight="4"
             horizontal="end"
             vertical="center"
             textVariant="code-default-m"
+            paddingRight="4"
           >
             <Flex s={{ hide: true }}>
-              {display.time && <TimeDisplay timeZone={person.location} />}
+              {display.time && 
+                <TimeDisplay timeZone={person.location} />
+              }
             </Flex>
           </Flex>
         </Flex>

@@ -10,10 +10,13 @@ export function formatDate(date: string, includeRelative = false) {
 
   if (yearsAgo > 0) {
     formattedDate = `${yearsAgo}y ago`;
+
   } else if (monthsAgo > 0) {
     formattedDate = `${monthsAgo}mo ago`;
+
   } else if (daysAgo > 0) {
     formattedDate = `${daysAgo}d ago`;
+    
   } else {
     formattedDate = "Today";
   }

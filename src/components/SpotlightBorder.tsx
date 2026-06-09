@@ -64,7 +64,8 @@ export function SpotlightBorder({ children, color, ...props }: SpotlightBorderPr
 
       const peakColor = `color-mix(in srgb, var(--${color}) ${opacityPercent}%, transparent)`;
       glow.style.background = `conic-gradient(from ${peakDeg - half}deg at 50% 50%, transparent 0%,
-        ${peakColor} ${peakPercent.toFixed(1)}%, transparent ${arcPercent.toFixed(1)}%)`;
+        ${peakColor} ${peakPercent.toFixed(1)}%, transparent ${arcPercent.toFixed(1)}%
+      )`;
     };
 
     const handleMouseMove = (e: MouseEvent) => {

@@ -1,21 +1,21 @@
 export {
+  about,
+  gallery,
+  home,
   person,
   social,
-  home,
-  about,
   work,
-  gallery,
 } from "./content";
 
 export {
-  display,
-  routes,
-  protectedRoutes,
   baseURL,
-  fonts,
-  style,
-  schema,
-  sameAs,
-  effects,
   dataStyle,
+  display,
+  effects,
+  fonts,
+  protectedRoutes,
+  routes,
+  sameAs,
+  schema,
+  style,
 } from "./once-ui.config";

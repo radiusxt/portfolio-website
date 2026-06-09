@@ -1,7 +1,7 @@
 import { Column, Flex, Heading, Logo, Meta, RevealFx, Row, Schema } from "@once-ui-system/core";
-import { baseURL, gallery, person } from "@/resources";
 import { GalleryView } from "@/components/gallery/Gallery";
 import { PicTime } from "@/components/gallery/PicTime";
+import { baseURL, gallery, person } from "@/resources";
 
 export async function generateMetadata() {
   return Meta.generate({

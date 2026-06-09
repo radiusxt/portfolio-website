@@ -25,7 +25,9 @@ export const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
       setIsAuthenticated(false);
 
       const checkRouteEnabled = () => {
-        if (!pathname) return false;
+        if (!pathname) {
+          return false;
+        }
 
         if (pathname in routes) {
           return routes[pathname as keyof typeof routes];
