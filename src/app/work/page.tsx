@@ -24,7 +24,7 @@ export default function Work() {
         image={`/api/og/generate?title=${encodeURIComponent(work.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <RevealFx translateY="16" delay={0.2}>
+      <RevealFx translateY="16" delay={0.1}>
         <Column fillWidth maxWidth="xl" paddingTop="24" gap="16" horizontal="center">
           <Heading
             id={work.title}

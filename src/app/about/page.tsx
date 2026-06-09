@@ -76,14 +76,14 @@ export default function About() {
           style={{ top: "50%", transform: "translateY(-50%)" }}
           s={{ hide: true }}
         >
-          <RevealFx delay={1}>
+          <RevealFx delay={0.6}>
             <TableOfContents structure={structure} about={about} />
           </RevealFx>
         </Column>
       }
-      {/* Avatar */}
-      <RevealFx delay={0.2}>
+      <RevealFx delay={0.1}>
         <Row fillWidth horizontal="center" s={{ direction: "column" }}>
+          {/* Avatar */}
           {about.avatar.display && 
             <Column
               className={styles.avatar}

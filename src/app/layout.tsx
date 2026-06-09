@@ -213,7 +213,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               WebkitMaskImage: "radial-gradient(circle 350vh at 50% 0vh, transparent 23%, black 40%)",
             }}
           >
-            <RevealFx fill position="absolute" delay={1}>
+            <RevealFx fill position="absolute" delay={0.6}>
               <Particle fill speed={1} density={125} size="4" color="brand-on-background-weak" />
             </RevealFx>
           </Flex>

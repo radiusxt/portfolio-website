@@ -64,7 +64,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
         image={post.metadata.image || `/api/og/generate?title=${encodeURIComponent(post.metadata.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <RevealFx translateY="16" fillWidth delay={0.2} paddingBottom="48">
+      <RevealFx translateY="16" fillWidth delay={0.1} paddingBottom="48">
         <Column fillWidth maxWidth="l" gap="16" horizontal="center" align="center">
           <Heading variant="display-default-l" paddingBottom="32" style={{ lineHeight: "1.4" }}>
             {post.metadata.title}
