@@ -52,7 +52,6 @@ export default async function RootLayout({children}: Readonly<{children: React.R
                 try {
                   const root = document.documentElement;
                   const defaultTheme = 'system';
-                  root.setAttribute('data-scroll-behavior', 'smooth');
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({
@@ -69,6 +68,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
                   })};
                   
                   // Apply default values
+                  root.setAttribute('data-scroll-behavior', 'smooth');
                   Object.entries(config).forEach(([key, value]) => {
                     root.setAttribute('data-' + key, value);
                   });
@@ -209,15 +209,15 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               position: "absolute",
               inset: 0,
               pointerEvents: "none",
-              maskImage: "radial-gradient(circle at 50% 0%, transparent 20%, black 40%)",
-              WebkitMaskImage: "radial-gradient(circle at 50% 0%, transparent 20%, black 40%)",
+              maskImage: "radial-gradient(circle 350vh at 50% 0vh, transparent 23%, black 40%)",
+              WebkitMaskImage: "radial-gradient(circle 350vh at 50% 0vh, transparent 23%, black 40%)",
             }}
           >
             <RevealFx fill position="absolute" delay={1}>
-              <Particle fill speed={1} density={150} size="4" color="brand-on-background-weak" />
+              <Particle fill speed={1} density={125} size="4" color="brand-on-background-weak" />
             </RevealFx>
           </Flex>
-          <Flex fillWidth minHeight="8" s={{ hide: true }} />
+          <Flex fillWidth minHeight="2" s={{ hide: true }} />
           <Header />
           <Flex zIndex={0} flex={1} fillWidth horizontal="center" padding="40">
             <Flex fillWidth horizontal="center" minHeight="0">
