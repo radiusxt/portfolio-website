@@ -60,13 +60,12 @@ export const about: About = {
   intro: {
     display: true,
     title: "Introduction",
-    description: [
-      "Hi, I'm Nathaniel, a recent software engineering graduate from the University of Queensland, working across software development and sports photography.\n",
-      "I'm currently seeking a new challenge as a full-stack engineer with a focus on AI/ML development. ",
-      "I enjoy tackling technical challenges to push myself and explore what's possible.\n\n",
-      "When I'm on the move, I'm experimenting with a range of photography genres: sports, travel, wildlife and anything else catches my eye. ",
-      "After more than a decade of following F1 and the WEC, I've ignited my passion to document motorsport through my own lens."
-    ].join("")
+    description: `\
+      Hi, I'm Nathaniel, a software engineer from the University of Queensland, working across software development and sports photography. \
+      I enjoy tackling complex, technical challenges to grow my skillset and explore what's possible.\n
+      When I'm on the move, I'm experimenting with a range of photography genres, mainly including sports, travel and anything else that catches my eye. \
+      After more than a decade of following F1 and the WEC, I've ignited my passion to document motorsport through my own lens.
+    `
   },
   work: {
     display: true,
@@ -78,8 +77,10 @@ export const about: About = {
         role: "Academic Tutor",
         location: "Brisbane, Australia",
         achievements: [
-          "Tutored in probability, statistics, modelling and hypothesis testing in STAT2203.",
-          "Tutored in embedded systems design using C with ARM microcontrollers, RTOS and hardware interfacing in CSSE3010."
+          "Tutored core statistical concepts including probability theory, distributions, sampling, estimation and hypothesis testing \
+            with a focus on data analysis, regression modelling and engineering applications in STAT2203.",
+          "Tutored microcontroller-based system design, covering embedded C programming, RTOS concepts, hardware interfacing and \
+            the integration of sensors, actuators and communication protocols in real-world embedded applications on ARM Cortex processors in CSSE3010."
         ],
         images: [],
       },
@@ -90,7 +91,7 @@ export const about: About = {
         location: "Da Nang, Vietnam",
         achievements: [
           "Implemented facial recognition for an attendance system running on a Raspberry Pi 4 while using 20% less resources than reference solution.",
-          "Reduced overall system latency by 15% and maintained >95% uptime.",
+          "Reduced overall system latency by 15% and maintained 95%+ uptime.",
           "Interacted 40+ times by employees for daily attendance & recording lunch breaks."
         ],
         images: [],
@@ -101,10 +102,10 @@ export const about: About = {
         role: "Sales Support Engineer",
         location: "Gold Coast, Australia",
         achievements: [
-          "Provided support on industrial grade sensors for several industries.",
-          "Collaborated with clients to engineer solutions for their applications.",
+          "Resolved 98% of customer inquiries within 1 day and reduced average response delay by 10%.",
+          "Partnered with 20+ clients to develop solutions, reducing deployment time by 15%.",
+          "Reduced customer waiting times by 15% resulting in a 10% increase in service throughput.",
           "Improved lead conversion rates by 3.5% through timely communication.",
-          "Reduced average customer waiting times by >15%."
         ],
         images: [],
       },
@@ -114,8 +115,8 @@ export const about: About = {
         role: "Sales & Technician Specialist",
         location: "Brisbane, Australia",
         achievements: [
-          "Provided excellent customer service and applied knowledge to consumer electronics while increasing store sales by >10% via strategic upselling.",
-          "Repaired phones and tablets for customers in a timely manner.",
+          "Provided excellent customer service and applied knowledge to consumer electronics while increasing store sales by 10% via strategic upselling.",
+          "Repaired phones and tablets in a timely manner, achieving 80% same-day completion.",
         ],
         images: [],
       },
@@ -149,14 +150,19 @@ export const about: About = {
             icon: "python",
           },
           {
+            name: "TypeScript",
+            description: "Deployed a website to showcase my work and experience with Vercel.",
+            icon: "typescript",
+          },
+          {
             name: "JavaScript",
             description: "Integrated RESTful APIs for React-based websites and apps.",
             icon: "javascript",
           },
           {
-            name: "TypeScript",
-            description: "Deployed a website to showcase my work and experience with Vercel.",
-            icon: "typescript",
+            name: "Bash",
+            description: "Streamlined workflows and environments through automated scripts.",
+            icon: "bash",
           },
           {
             name: "C",
@@ -164,24 +170,9 @@ export const about: About = {
             icon: "c",
           },
           {
-            name: "HTML",
-            description: "Created semantic, accessible pages with optimised loading times.",
-            icon: "html",
-          },
-          {
-            name: "CSS",
-            description: "Styled responsive layouts with modern CSS/SCSS to enhance user experience.",
-            icon: "css",
-          },
-          {
             name: "SQL",
             description: "Optimised SQL queries for data analysis, reporting & backend data management.",
             icon: "database",
-          },
-          {
-            name: "Bash",
-            description: "Streamlined workflows and environments through automated scripts.",
-            icon: "bash",
           },
         ],
       },
@@ -205,14 +196,14 @@ export const about: About = {
             icon: "terraform",
           },
           {
+            name: "Jupyter",
+            description: "Preprocessed data and executed experiments to produce visualisations.",
+            icon: "jupyter",
+          },
+          {
             name: "Git",
             description: "Managed multi-branch codebases, handled code reviews and PRs.",
             icon: "git",
-          },
-          {
-            name: "Anaconda",
-            description: "Isolated production environments for Jupyter-based workflows.",
-            icon: "conda",
           },
           {
             name: "Vercel",
@@ -220,24 +211,9 @@ export const about: About = {
             icon: "vercel",
           },
           {
-            name: "Claude Code",
+            name: "Claude",
             description: "Applied Claude Code for AI-assisted coding and agent orchestration.",
             icon: "claude",
-          },
-          {
-            name: "Gemini",
-            description: "Utilised Gemini for AI reasoning, workflow assistance and smaller tasks.",
-            icon: "gemini",
-          },
-          {
-            name: "Jupyter",
-            description: "Preprocessed data and executed experiments to produce visualisations.",
-            icon: "jupyter",
-          },
-          {
-            name: "VS Code",
-            description: "My IDE of choice for most programming tasks.",
-            icon: "vscode",
           },
         ],
       },
@@ -249,6 +225,11 @@ export const about: About = {
             name: "PyTorch",
             description: "Trained and tuned models for computer vision and speech recognition.",
             icon: "pytorch",
+          },
+          {
+            name: "Huggingface",
+            description: "Leveraged transfer learning to improve image classification performance",
+            icon: "huggingface",
           },
           {
             name: "Next.js",
@@ -274,11 +255,6 @@ export const about: About = {
             name: "Flask",
             description: "Developed a lightweight API for a backend microservice.",
             icon: "flask",
-          },
-          {
-            name: "Jest",
-            description: "Wrote unit & integration tests ensuring reliability across components.",
-            icon: "jest",
           },
         ],
       },

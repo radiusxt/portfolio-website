@@ -132,7 +132,7 @@ export default function About() {
                 {person.role}
               </Heading>
               {about.intro.display && 
-                <Column fillWidth marginBottom="l">
+                <Column fillWidth marginBottom="32">
                   <Heading
                     variant="body-default-xl"
                     wrap="wrap"
