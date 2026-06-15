@@ -120,7 +120,7 @@ export default function Home() {
             paddingBottom="64"
             style={{ letterSpacing: "0px", scrollMarginTop: "100px" }}
           >
-            ISIC Challenge Dataset
+            Featured Case Study
           </Heading>
           <Projects range={[3, 3]} />
         </Column>

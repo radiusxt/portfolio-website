@@ -1,7 +1,7 @@
 ---
-title: "ISIC Challenge Dataset (2020)"
+title: "Classifying Melanoma Lesions"
 publishedAt: "2025-10-23"
-summary: "Machine learning task working with Siamese Neural Networks to classify melanoma cases as malignant or benign from an ISIC dataset."
+summary: "ML task working with siamese neural networks to classify melanoma cases as malignant or benign from an ISIC image-based dataset."
 image: "/trademarks/kaggle.png"
 team:
   - name: "Nathaniel Chan"
@@ -19,7 +19,7 @@ Skin cancer is the most prevalent type of cancer. Melanoma, specifically, is res
 The classifier follows a traditional Siamese Neural Network (SNN) that learns a similarity function over a direction prediction on whether an image is malignant or benign. During training, pairs of lesion images are generated dynamically, with positive pairs containing the same class and negative pairs containing different classes. Each image undergoes preprocessing, including standard augmentation techniques such as random flips and rotations to improve the model’s ability to generalize to variations in lesion size and appearance. The network is trained specifically to determine whether two input images belong to the same class by learning meaningful visual patterns and representations of lesions.
 
 <Row fillWidth direction="column" horizontal="center" align="center">
-  ![Architecture Diagram](/images/projects/isic-challenge/architecture-diagram.png)
+  ![Architecture Diagram](/images/projects/melanoma/architecture-diagram.png)
   <Text variant="body-default-m" onBackground="neutral-medium">*Architecture Diagram*</Text>
 </Row>
 
