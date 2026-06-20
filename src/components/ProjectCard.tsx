@@ -24,8 +24,7 @@ interface ProjectCardProps {
   tags?: string[];
 }
 
-export function ProjectCard({
-    href, title, description, image, team, tags }: ProjectCardProps) {
+export function ProjectCard({ href, title, description, image, team, tags }: ProjectCardProps) {
   return (
     <Reveal translateY="16" fillWidth>
       <Scroll href={href}>
@@ -34,8 +33,7 @@ export function ProjectCard({
           horizontal="center"
           border="neutral-medium"
           radius="l"
-          marginBottom="80"
-          paddingBottom="32"
+          paddingBottom="24"
           gap="12"
         >
           <SmartLink style={{ display: "contents" }}>

@@ -66,7 +66,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
         image={post.metadata.image || `/api/og/generate?title=${encodeURIComponent(post.metadata.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <RevealFx translateY="16" fillWidth paddingBottom="48" delay={0.1}>
+      <RevealFx translateY="16" fillWidth paddingBottom="32" delay={0.1}>
         <Column fillWidth maxWidth="l" gap="16" horizontal="center" align="center">
           <Heading variant="display-default-l" paddingBottom="32" style={{ lineHeight: "1.4" }}>
             {post.metadata.title}
@@ -100,12 +100,13 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
             wrap="balance"
             style={{ lineHeight: "1.5" }}
           >
-            {/* Inserts 3 spaces before and after '|' */}
-            {post.metadata.team.map((member) => member.name).join("\u00A0\u00A0 | \u00A0\u00A0")}
+            {/* Inserts 2 spaces before and after '|' */}
+            {post.metadata.team.map((member) => member.name).join("\u00A0 | \u00A0")}
           </Heading>
           {post.metadata.link && 
-            <SmartLink href={post.metadata.link}>
-              GitHub Repository<Icon name="arrowUpRightFromSquare" size="s" />
+            <SmartLink href={post.metadata.link} unstyled>
+              GitHub Repository
+              <Icon name="arrowUpRightFromSquare" size="s" />
             </SmartLink>
           }
           <Loading

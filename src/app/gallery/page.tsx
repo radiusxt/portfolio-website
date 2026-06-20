@@ -26,22 +26,20 @@ export default function Gallery() {
         author={{ name: person.name, url: `${baseURL}${gallery.path}`, image: `${baseURL}${person.avatar}` }}
       />
       <RevealFx translateY="16" fillWidth horizontal="center" paddingTop="24" paddingBottom="80" delay={0.1}>
-        <Column horizontal="center">
+        <Column horizontal="center" gap="80">
           <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
             {gallery.title}
           </Heading>
+          <GalleryView />
         </Column>
-      </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingBottom="128" delay={0.1}>
-        <GalleryView />
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingTop="64" delay={0.6}>
         <Column horizontal="center">
-          <Row dark paddingBottom="104">
-            <Logo wordmark="/images/brand/logo-light.png" style={{ transform: "scale(5)" }} />
+          <Row dark paddingBottom="80">
+            <Logo wordmark="/images/brand/logo-light.png" style={{ transform: "scale(3)" }} />
           </Row>
-          <Row light paddingBottom="104">
-            <Logo wordmark="/images/brand/logo-dark.png" style={{ transform: "scale(5)" }} />
+          <Row light paddingBottom="80">
+            <Logo wordmark="/images/brand/logo-dark.png" style={{ transform: "scale(3)" }} />
           </Row>
           <Heading variant="heading-default-l" style={{ letterSpacing: "0.2px", textAlign: "center" }}>
             My images specialise in sports & travel to capture special moments in motion.

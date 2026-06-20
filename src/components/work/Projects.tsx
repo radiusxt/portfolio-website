@@ -4,35 +4,27 @@ import { getPosts } from "@/utils/utils";
 
 interface ProjectsProps {
   range?: [number, number?];
-  exclude?: string[];
 }
 
-export function Projects({ range, exclude }: ProjectsProps) {
-  let allProjects = getPosts(["src", "app", "work", "projects"]);
-
-  if (exclude && exclude.length > 0) {
-    allProjects = allProjects.filter((post) => !exclude.includes(post.slug));
-  }
-
-  const sortedProjects = allProjects.sort((a, b) => {
+export function Projects({ range }: ProjectsProps) {
+  const projects = getPosts(["src", "app", "work", "projects"]).sort((a, b) => {
     return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
   });
 
-  const displayedProjects = range ?
-    sortedProjects.slice(range[0] - 1, range[1] ?? sortedProjects.length) : sortedProjects;
+  const displayedProjects = projects.slice((range?.[0] ?? 1) - 1, range?.[1]);
 
   return (
-    <Column fillWidth gap="xl">
-      {displayedProjects.map((post) => 
+    <Column fillWidth gap={14} paddingBottom="128">
+      {displayedProjects.map((project) => 
         <ProjectCard
-          key={post.slug}
-          href={`/work/${post.slug}`}
-          title={post.metadata.title}
-          description={post.metadata.summary}
-          image={post.metadata.image}
-          team={post.metadata.team}
-          link={post.metadata.link || ""}
-          tags={post.metadata.tags || []}
+          key={project.slug}
+          href={`/work/${project.slug}`}
+          title={project.metadata.title}
+          description={project.metadata.summary}
+          image={project.metadata.image}
+          team={project.metadata.team}
+          link={project.metadata.link || ""}
+          tags={project.metadata.tags || []}
         />
       )}
     </Column>

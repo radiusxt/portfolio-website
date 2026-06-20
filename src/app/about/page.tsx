@@ -34,11 +34,6 @@ export async function generateMetadata() {
 export default function About() {
   const structure = [
     {
-      title: about.intro.title,
-      display: about.intro.display,
-      items: [],
-    },
-    {
       title: about.work.title,
       display: about.work.display,
       items: about.work.experiences.map((experience) => experience.company),
@@ -88,7 +83,6 @@ export default function About() {
             <Column
               position="sticky"
               flex={3}
-              className={styles.avatar}
               fitHeight
               horizontal="center"
               top="64"
@@ -98,10 +92,12 @@ export default function About() {
               xs={{ style: { top: "auto" } }}
               s={{ position: "relative", style: { top: "auto" } }}
             >
-              <Avatar src={person.avatar} size={15} border="neutral-alpha-weak" />
+              <Avatar src={person.avatar} size={16} />
               <Row gap="8" vertical="center">
                 <Icon onBackground="brand-weak" size="l" name="globe" />
-                <Heading variant="body-default-xl">{person.location}</Heading>
+                <Heading variant="body-default-xl">
+                  {person.location}
+                </Heading>
               </Row>
               {person.languages && person.languages.length > 0 &&
                 <Row gap="12">
@@ -118,7 +114,7 @@ export default function About() {
           }
           {/* Introduction */}
           <Column minWidth="0" flex={9}>
-            <Column fillWidth vertical="center" minHeight="160" marginBottom="32">
+            <Column fillWidth vertical="center" marginBottom="32">
               <Heading
                 id={about.intro.title}
                 className={styles.textAlign}
@@ -148,12 +144,12 @@ export default function About() {
                   fitWidth
                   horizontal="center"
                   data-border="rounded"
-                  gap="16"
-                  wrap
+                  paddingBottom="16"
+                  gap="12"
                 >
                   {social.filter((item) => item.essential).map((item) => item.link && 
                     <Flex key={item.name}>
-                      <Row s={{ hide: true }}>
+                      <Row>
                         <Button
                           key={item.name}
                           href={item.link}
@@ -163,15 +159,6 @@ export default function About() {
                           weight="default"
                           variant="tertiary"
                           style={{ gap: "8px", letterSpacing: "0.3px" }}
-                        />
-                      </Row>
-                      <Row hide s={{ hide: false }}>
-                        <IconButton
-                          size="m"
-                          key={`${item.name}-icon`}
-                          href={item.link}
-                          icon={item.icon}
-                          variant="tertiary"
                         />
                       </Row>
                     </Flex>

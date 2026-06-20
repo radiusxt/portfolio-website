@@ -138,6 +138,6 @@ export const schema: SchemaConfig = {
 
 export const sameAs: SameAsConfig = {
   github: "https://github.com/radiusxt",
-  pictime: "https://hyperdrivemedia.pic-time.com/portfolio",
   linkedin: "https://www.linkedin.com/in/nathaniel-chan-/",
+  pictime: "https://hyperdrivemedia.pic-time.com/portfolio",
 };

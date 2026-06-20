@@ -17,14 +17,13 @@ export function Reveal({
   const [triggered, setTriggered] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTriggered(true);
-          observer.disconnect();
-        }
-      }, { threshold: 0.1 }
-    );
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setTriggered(true);
+        observer.disconnect();
+      }
+    // Fires when 250px is in viewport.
+    }, { rootMargin: "0px 0px 250px 0px" });
 
     if (ref.current) {
       observer.observe(ref.current);

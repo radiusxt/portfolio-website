@@ -7,7 +7,7 @@ import styles from "./ThemeToggle.module.scss";
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [_, setMounted] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState("light");
+  const [currentTheme, setCurrentTheme] = useState("dark");
 
   useEffect(() => {
     setMounted(true);

@@ -44,11 +44,7 @@ export default function Home() {
               fillWidth
               horizontal="center"
               delay={1.2}
-              style={{
-                scrollMarginTop: "160px",
-                paddingTop: "5dvh",
-                paddingBottom: "9dvh" 
-              }}
+              style={{ scrollMarginTop: "160px", paddingTop: "5dvh", paddingBottom: "9dvh" }}
             >
               <Scroll target={"featured"}>
                 <Badge
@@ -105,8 +101,8 @@ export default function Home() {
           s={{ style: { position: "absolute", bottom: "30vh" }}}
         >
           <Bounce distance={12} duration={3}>
-            <Column className="bounce-chevron" gap="-1">
-              <Icon name="chevronDown" size="xl" />
+            <Column horizontal="center" gap="-1" onBackground="neutral-weak" textVariant="body-default-s">
+              Scroll
               <Icon name="chevronDown" size="xl" />
             </Column>
           </Bounce>
@@ -122,7 +118,7 @@ export default function Home() {
           >
             Featured Case Study
           </Heading>
-          <Projects range={[3, 3]} />
+          <Projects range={[4, 4]} />
         </Column>
       </Reveal>
       <Reveal translateY="16" fillWidth>

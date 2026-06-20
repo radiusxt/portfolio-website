@@ -1,0 +1,48 @@
+---
+title: "Agentic PR"
+publishedAt: "2026-06-20"
+summary: "A minimal and iterable system on maintaining a pull request merge-ready to ship better production software faster."
+image: "/images/projects/agentic-pr/agentic-loop.png"
+team:
+  - name: "Nathaniel Chan"
+link: "https://github.com/radiusxt/agentic-pr"
+tags: ["Python", "Bash", "Docker", "Claude", "Git"]
+---
+
+# Overview
+
+This project is designed to encapsulate a small agentic system built to maintain a GitHub pull request to be merge-ready without constant manual monitoring. Rather than a developer repeatedly checking CI status, re-reading review comments and nudging the branch back into shape; the system observes a PR's state, reasons about what's blocking it and while staying within a configurable set of guardrails and parameters, takes action to fix it.
+
+# Architecture Design
+
+At its core, the agent is a Python application using Claude as its reasoning engine, GitHub CLI as its interface to GitHub and an optional Docker sandbox for isolated command execution. A YAML config file inside of `/config` defines the exact agent permissions for any given repository. The system is organized around a repeating cycle.
+
+<Row fillWidth direction="column" horizontal="center" align="center">
+  Observe → Reason → Execute → Evaluate → Repeat
+</Row>
+<Row fillWidth direction="column" horizontal="center" align="center">
+  ![Architecture Diagram](/images/projects/agentic-pr/architecture-diagram.png)
+  <Text variant="body-default-m" onBackground="neutral-medium">*Architecture Diagram*</Text>
+</Row>
+
+On each iteration, `agent.py` passes the current PR status and unresolved comments directly into the LLM's context, along with a system prompt from `prompts/monitor.md` defining a fixed priority order. Resolve merge conflicts first, in-scope CI failures second and then a final review with comments. The LLM can chain multiple tool calls per iteration (capped at `max_tool_rounds`) before the agent re-observes the PR and classifies the outcome as merge-ready, in-progress or blocked. Every iteration is logged to `logs/agent-history.jsonl`, with the latest PR snapshot written to `logs/latest-status.json` and `logs/latest-comments.json`. A `.cursor/rules/pr.mdc` file gives Cursor's editor assistant the same context the CLI uses to avoid passing the same contextual instructions and has no effect outside of Cursor. An optional GitHub Actions workflow, `pr-status-report.yml` mirrors the same ui.py status command inside CI and posts a merge-readiness summary as a PR comment, providing the same visibility to anyone viewing the PR on GitHub.
+
+# Tradeoffs & Decisions
+
+Every guardrail defaults to the most conservative setting (`auto_push: false`, `auto_merge: false`, `allow_ci_workflow_changes: false`) to ensure the user has the most control by default. Most users aren't tinkering with settings and configs all day, they want to use it as intended and the default experience should reflect that. The agent can diagnose and fix problems on its very first run with zero config changes, but it cannot affect the remote repository state until a human deliberately opts in. This trades pure convenience for a system that fails safely by default.
+
+Push and merge are independently kept as gated actions. Early in the design, push and merge were treated as a single trust boundary. They were deliberately split into two separate guardrails (`auto_push` and `auto_merge`) so a team could allow the agent to push verified fixes to a PR branch while still requiring a human to approve the physical merge into main. This mirrors how most small and large development teams work with CI/CD risk. Pushing to a feature branch is easily reversible and low-stakes while breaking production isn't. Rather than relying solely on the agent's own code to prevent unsafe merges, the design pairs with GitHub's own branch protection with status checks and PR approvals. Regardless if the application-level guardrail were ever bypassed or misconfigured, GitHub would still block an unreviewed merge.
+
+# Challenges & Insights
+
+While preparing to enable `auto_push`, a review surfaced `auto_merge` existed in the config schema but had no actual enforcement anywhere in the code. Nothing stopped the LLM from running `gh pr merge` regardless of the setting. The fix was a small, explicit guard added alongside the existing check. A guardrail declared in a config schema can create a false sense of security unless it's verified against the code that could violate it. This is the kind of gap that's easy to miss because the config looks complete but it needs to be checked against actual enforcement. GitHub Actions event payloads aren't uniform. Extending the `status-report` workflow to trigger on `workflow_run` (so it can comment after any CI check completes, not just on new commits) revealed `workflow_run` events don't carry the same context fields as git pull request events. The PR number and base branch both had to be resolved explicitly via `gh pr list` and `gh pr view` rather than read directly from `github.event.pull_request` which is empty with that trigger type.
+
+GitHub Actions has no early-exit primitive at the step level. An attempt to skip remaining steps when no PR could be resolved didn't behave as expected. It only ended one step successfully but not the full job it was designed to fulfil. The correct pattern required was rather simple, all it needed was to write the output to an environment variable, `GITHUB_OUTPUT` and add explicit checks to do so.
+
+# Outcomes
+
+I gained a strong understanding of how agents perceive change and the 'chain of thought' principle that goes into resolving problems. Watching it unfold made abstract ideas like state and reasoning feel concrete as if the agent behind it was approaching the problem from a human perspective. Seeing the agent reduce a complex GitHub PR into a simple fingerprint string, then act only when that fingerprint shifted, showed me how an agent's sense of "change" doesn't have to mean understanding everything about a situation but rather just enough of a signal to know something is worth reevaluating. The chain-of-thought piece became clearest in the tool-use loop itself. Watching Claude diagnose a blocker, call a tool, read the result and decide whether that resolved the problem or revealed a new one gave a tangible way to understand LLM reasoning. It starts as a sequence of small, conditional decisions, each one informed by the last, capped by a limit so it can't spiral indefinitely and waste its quota. The loop structure is the biggest takeaway; a pattern that generalizes well beyond this niche to almost any agentic system that needs to operate safely in a changing environment. I came away with a better intuition on how priority ordering in a system prompt shapes behaviour, as something the agent visibly follows step by step when given a clear hierarchy instead of an open-ended instruction.
+
+# References
+
+- [A loop is all you need](https://dev.to/adgapar/a-loop-is-all-you-need-building-conversation-ai-agents-1039)

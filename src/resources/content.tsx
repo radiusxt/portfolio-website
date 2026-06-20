@@ -19,15 +19,15 @@ export const social: Social = [
     essential: true,
   },
   {
-    name: "Pic-Time",
-    icon: "gallery",
-    link: "https://hyperdrivemedia.pic-time.com/portfolio",
-    essential: true,
-  },
-  {
     name: "LinkedIn",
     icon: "linkedin",
     link: "https://www.linkedin.com/in/nathaniel-chan-/",
+    essential: true,
+  },
+  {
+    name: "Pic-Time",
+    icon: "gallery",
+    link: "https://hyperdrivemedia.pic-time.com/portfolio",
     essential: true,
   },
 ];
@@ -38,7 +38,7 @@ export const home: Home = {
   title: "Hyperdrive Media",
   description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}.`,
   headline: "Building software that scales. Capturing photos that inspire.",
-  subline: "👋 I'm Nathaniel and I consider myself a",
+  subline: "👋 I'm Nathaniel and I'm a",
   featured: {
     display: true,
     title: "Featured Work"
@@ -62,9 +62,7 @@ export const about: About = {
     title: "Introduction",
     description: `\
       Hi, I'm a software engineer working across full-stack software development and sports photography. \
-      I enjoy tackling complex, technical challenges to grow my skillset and explore what's possible.\n
-      When I'm on the move, I'm experimenting with a range of photography genres, mainly including sports, travel and anything else that catches my eye. \
-      After more than a decade of following F1 and the WEC, I've ignited my passion to document motorsport through my own lens.
+      I enjoy tackling complex, technical challenges to grow my skillset and explore what's possible.
     `
   },
   work: {
@@ -271,7 +269,7 @@ export const work: Work = {
 
 export const gallery: Gallery = {
   path: "/gallery",
-  label: "Photography",
+  label: "Gallery",
   title: "Highlights",
   description: `Images by ${person.name}`,
   images: [

@@ -17,8 +17,10 @@ export function SpotlightBorder({ children, color, ...props }: SpotlightBorderPr
   useEffect(() => {
     const mq = window.matchMedia("(pointer: coarse)");
     setMobile(mq.matches);
+
     const handler = (e: MediaQueryListEvent) => setMobile(e.matches);
     mq.addEventListener("change", handler);
+    
     return () => mq.removeEventListener("change", handler);
   }, []);
 
