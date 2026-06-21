@@ -74,11 +74,6 @@ export interface BasePageConfig {
 export interface Home extends BasePageConfig {
   /** The headline of the home page */
   headline: React.ReactNode;
-  /** Featured badge, which appears above the headline */
-  featured: {
-    display: boolean;
-    title: React.ReactNode;
-  };
   /** The sub text which appears below the headline */
   subline: React.ReactNode;
 }
@@ -173,8 +168,6 @@ export interface About extends BasePageConfig {
       tags: Array<{
         /** Skill name */
         name: string;
-        /** Skill description */
-        description: string;
         /** Skill icon */
         icon: string;
       }>;

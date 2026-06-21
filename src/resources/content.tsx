@@ -39,10 +39,6 @@ export const home: Home = {
   description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}.`,
   headline: "Building software that scales. Capturing photos that inspire.",
   subline: "👋 I'm Nathaniel and I'm a",
-  featured: {
-    display: true,
-    title: "Featured Work"
-  }
 };
 
 export const about: About = {
@@ -144,32 +140,26 @@ export const about: About = {
         tags: [
           {
             name: "Python",
-            description: "Built AI/ML applications for computer vision and RAG solutions.",
             icon: "python",
           },
           {
             name: "TypeScript",
-            description: "Deployed a website to showcase my work and experience with Vercel.",
             icon: "typescript",
           },
           {
             name: "JavaScript",
-            description: "Integrated RESTful APIs for React-based websites and apps.",
             icon: "javascript",
           },
           {
             name: "Bash",
-            description: "Streamlined workflows and environments through automated scripts.",
             icon: "bash",
           },
           {
             name: "C",
-            description: "Tutored in embedded systems with mictrocontrollers, RTOS and hardware interfacing.",
             icon: "c",
           },
           {
             name: "SQL",
-            description: "Optimised SQL queries for data analysis, reporting & backend data management.",
             icon: "database",
           },
         ],
@@ -180,78 +170,64 @@ export const about: About = {
         tags: [
           {
             name: "AWS",
-            description: "Architected containerized microservices with ECS, EC2, RDS and SQS.",
             icon: "aws",
           },
           {
             name: "Docker",
-            description: "Containerised a scalable application with a microservices architecture.",
             icon: "docker",
           },
           {
             name: "Terraform",
-            description: "Managed IaC to provision & scale resources for several microservices.",
             icon: "terraform",
           },
           {
             name: "Jupyter",
-            description: "Preprocessed data and executed experiments to produce visualisations.",
             icon: "jupyter",
           },
           {
             name: "Git",
-            description: "Managed multi-branch codebases, handled code reviews and PRs.",
             icon: "git",
           },
           {
             name: "Vercel",
-            description: "Deployed a website with fast loading times and dynamic content.",
             icon: "vercel",
           },
           {
             name: "Claude",
-            description: "Applied Claude Code for AI-assisted coding and agent orchestration.",
             icon: "claude",
           },
         ],
       },
       {
         title: "Frameworks",
-        description: "Developing ML applications, scalable backends and modern web interfaces.",
+        description: "Accelerating development to build low-latency databases and creative interfaces.",
         tags: [
           {
             name: "PyTorch",
-            description: "Trained and tuned models for computer vision and speech recognition.",
             icon: "pytorch",
           },
           {
             name: "Huggingface",
-            description: "Leveraged transfer learning to improve image classification performance",
             icon: "huggingface",
           },
           {
             name: "Next.js",
-            description: "Implemented optimised, SEO-friendly websites with modern routing.",
             icon: "nextjs",
           },
           {
             name: "React",
-            description: "Designed modular, interactive and responsive client-side components.",
             icon: "react",
           },
           {
             name: "React Native",
-            description: "Designed modular and reusable cross-platform mobile components.",
             icon: "react",
           },
           {
             name: "PostgreSQL",
-            description: "Engineered database schemas and efficient relational queries.",
             icon: "postgresql",
           },
           {
             name: "Flask",
-            description: "Developed a lightweight API for a backend microservice.",
             icon: "flask",
           },
         ],

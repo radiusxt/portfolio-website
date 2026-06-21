@@ -29,6 +29,7 @@ export function ProjectCard({ href, title, description, image, team, tags }: Pro
     <Reveal translateY="16" fillWidth>
       <Scroll href={href}>
         <Column
+          className={styles.hover}
           fillWidth
           horizontal="center"
           border="neutral-medium"

@@ -27,7 +27,7 @@ export function GalleryView() {
                 </Flex>
               }
               {image.orientation === "vertical" && 
-                <Flex radius="m" overflow="hidden" style={{ height: "100%", aspectRatio: "2/3" }}>
+                <Flex className={styles.hover} radius="m" overflow="hidden" style={{ height: "100%", aspectRatio: "2/3" }}>
                   <Loading fallback={<Media src="" aspectRatio="2/3" loading />}>
                     <Media src={image.src} alt={image.alt} objectFit="cover" />
                   </Loading>

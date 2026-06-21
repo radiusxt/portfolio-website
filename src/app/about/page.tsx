@@ -6,9 +6,7 @@ import {
   Fade,
   Flex,
   Heading,
-  HoverCard,
   Icon,
-  IconButton,
   Line,
   Meta,
   RevealFx,
@@ -70,6 +68,7 @@ export default function About() {
           gap="48"
           style={{ top: "50%", transform: "translateY(-50%)" }}
           s={{ hide: true }}
+          l={{ hide: true }}
         >
           <RevealFx delay={0.6}>
             <TableOfContents structure={structure} about={about} />
@@ -86,7 +85,7 @@ export default function About() {
               fitHeight
               horizontal="center"
               top="64"
-              paddingX="xl"
+              paddingX="32"
               paddingBottom="xl"
               gap="l"
               xs={{ style: { top: "auto" } }}
@@ -144,23 +143,20 @@ export default function About() {
                   fitWidth
                   horizontal="center"
                   data-border="rounded"
-                  paddingBottom="16"
                   gap="12"
                 >
                   {social.filter((item) => item.essential).map((item) => item.link && 
                     <Flex key={item.name}>
-                      <Row>
-                        <Button
-                          key={item.name}
-                          href={item.link}
-                          prefixIcon={item.icon}
-                          label={item.name}
-                          size="m"
-                          weight="default"
-                          variant="tertiary"
-                          style={{ gap: "8px", letterSpacing: "0.3px" }}
-                        />
-                      </Row>
+                      <Button
+                        key={item.name}
+                        href={item.link}
+                        prefixIcon={item.icon}
+                        label={item.name}
+                        size="m"
+                        weight="default"
+                        variant="tertiary"
+                        style={{ gap: "8px", letterSpacing: "0.4px" }}
+                      />
                     </Flex>
                   )}
                 </Row>
@@ -264,14 +260,14 @@ export default function About() {
                           <Column
                             fillWidth
                             key={`${institution.name}-${index}`}
-                            style={index !== 0 ? { marginTop: "-16px" } : { marginTop: "-8px" }}
+                            style={ index !== 0 ? { marginTop: "-16px" } : { marginTop: "-8px" }}
                           >
                             <Row fillWidth horizontal="between" vertical="center" marginBottom="4">
                               <Heading id={institution.name} variant="heading-default-xl">
                                 {institution.name}
                               </Heading>
                             </Row>
-                            <Heading variant="body-default-m" onBackground="brand-weak" marginBottom="m">
+                            <Heading variant="body-default-m" onBackground="brand-weak" marginBottom="16">
                               {institution.degree}
                             </Heading>
                           </Column>
@@ -343,7 +339,7 @@ export default function About() {
                             zIndex={1}
                             to="right"
                             fillHeight
-                            width="104"
+                            width="64"
                             position="absolute"
                             left="0"
                             top="0"
@@ -357,23 +353,12 @@ export default function About() {
                           >
                             {skill.tags.map((tag, index) => 
                               <Column key={`${skill.title}-${index}`} paddingX="32">
-                                <HoverCard
-                                  placement="top"
-                                  trigger={
-                                    <Row vertical="center" margin="4" gap="16">
-                                      <Icon name={tag.icon} onBackground="brand-weak" size="l" />
-                                      <Heading variant="label-default-l" wrap="nowrap">
-                                        {tag.name}
-                                      </Heading>
-                                    </Row>
-                                  }
-                                >
-                                  <Column maxWidth={14} background="page" radius="xl" paddingY="4">
-                                    <Heading variant="label-default-m" align="center">
-                                      {tag.description}
-                                    </Heading>
-                                  </Column>
-                                </HoverCard>
+                                <Row vertical="center" margin="4" gap="16">
+                                  <Icon name={tag.icon} onBackground="brand-weak" size="l" />
+                                  <Heading variant="label-default-l" wrap="nowrap">
+                                    {tag.name}
+                                  </Heading>
+                                </Row>
                               </Column>
                             )}
                           </AutoScroll>

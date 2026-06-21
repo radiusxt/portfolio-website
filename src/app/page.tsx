@@ -35,9 +35,9 @@ export default function Home() {
         image={`/api/og/generate?title=${encodeURIComponent(home.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <Column position="relative" fillWidth horizontal="center" gap="l" style={{ minHeight: "100vh" }}>
+      <Column position="relative" fillWidth horizontal="center" gap="l" paddingTop="160" style={{ minHeight: "100vh" }}>
         <Column maxWidth="l" horizontal="center" align="center">
-          {home.featured.display && 
+          {/*home.featured.display && 
             <RevealFx
               id={home.title}
               translateY="16"
@@ -62,13 +62,13 @@ export default function Home() {
                 </Badge>
               </Scroll>
             </RevealFx>
-          }
+          */}
           <RevealFx translateY="16" fillWidth horizontal="center" style={{ paddingBottom: "11dvh" }}>
             <Heading variant="display-default-xl" style={{ lineHeight: "1.2", letterSpacing: "-1.5px" }}>
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="16" fillWidth horizontal="center" delay={0.6}>
+          <RevealFx translateY="16" fillWidth horizontal="center" delay={0.5}>
             <Row gap="8" horizontal="center" vertical="center" align="center" wrap>
               <Heading variant="heading-default-xl" style={{ letterSpacing: "0.3px" }}>
                 {home.subline}
@@ -96,7 +96,7 @@ export default function Home() {
           translateY="16"
           fillWidth
           horizontal="center"
-          delay={1.5}
+          delay={1.8}
           style={{ position: "absolute", bottom: "15dvh" }}
           s={{ style: { position: "absolute", bottom: "30vh" }}}
         >
@@ -108,7 +108,7 @@ export default function Home() {
           </Bounce>
         </RevealFx>
       </Column>
-      <Reveal translateY="16" fillWidth>
+      {/*<Reveal translateY="16" fillWidth>
         <Column fillWidth maxWidth="xl" gap="16" marginBottom="160" horizontal="center">
           <Heading
             id="featured"
@@ -128,7 +128,7 @@ export default function Home() {
           </Heading>
           <GalleryView />
         </Column>
-      </Reveal>
+      </Reveal>*/}
       <Reveal translateY="16" fillWidth>
         <ContactForm />
       </Reveal>

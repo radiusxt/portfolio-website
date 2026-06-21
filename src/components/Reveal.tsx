@@ -11,8 +11,7 @@ interface RevealProps {
 }
 
 export function Reveal({
-  children, translateY, fillWidth = false, horizontal = "center"
-}: RevealProps) {
+    children, translateY, fillWidth = false, horizontal = "center" }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [triggered, setTriggered] = useState(false);
 
@@ -22,8 +21,8 @@ export function Reveal({
         setTriggered(true);
         observer.disconnect();
       }
-    // Fires when 250px is in viewport.
-    }, { rootMargin: "0px 0px 250px 0px" });
+    // Fires when 20% of the element's height is in viewport.
+    }, { threshold: 0.2 });
 
     if (ref.current) {
       observer.observe(ref.current);
@@ -36,7 +35,6 @@ export function Reveal({
     <Flex ref={ref} direction="column" fillWidth={fillWidth}>
       <RevealFx
         translateY={translateY}
-        fillWidth={fillWidth}
         horizontal={horizontal}
         // Long delay until triggered
         delay={99999}

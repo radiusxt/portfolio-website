@@ -26,7 +26,7 @@ export default function Gallery() {
         author={{ name: person.name, url: `${baseURL}${gallery.path}`, image: `${baseURL}${person.avatar}` }}
       />
       <RevealFx translateY="16" fillWidth horizontal="center" paddingTop="24" paddingBottom="80" delay={0.1}>
-        <Column horizontal="center" gap="80">
+        <Column fillWidth horizontal="center" gap="80">
           <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
             {gallery.title}
           </Heading>
