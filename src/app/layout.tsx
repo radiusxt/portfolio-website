@@ -124,12 +124,11 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               maskImage: "radial-gradient(circle at 50% 0%, black 18%, transparent 58%)",
               WebkitMaskImage: "radial-gradient(circle at 50% 0%, black 18%, transparent 58%)",
             }}
-            s={{
-              style: {
+            s={{ style: {
                 maxHeight: "150vh",
                 maskImage: "radial-gradient(circle at 50% 0%, black 0%, transparent 50%)",
                 WebkitMaskImage: "radial-gradient(circle at 50% 0%, black 0%, transparent 50%)",
-              } 
+              }
             }}
           >
             <RevealFx fill position="absolute">

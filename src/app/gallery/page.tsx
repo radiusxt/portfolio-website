@@ -42,7 +42,7 @@ export default function Gallery() {
             <Logo wordmark="/images/brand/logo-dark.png" style={{ transform: "scale(3)" }} />
           </Row>
           <Heading variant="heading-default-l" style={{ letterSpacing: "0.2px", textAlign: "center" }}>
-            My images specialise in sports & travel to capture special moments in motion.
+            My images specialise in sports & travel genres to capture special moments in motion.
           </Heading>
         </Column>
       </RevealFx>

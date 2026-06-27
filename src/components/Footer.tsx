@@ -1,40 +1,42 @@
-import { IconButton, Row, SmartLink, Text } from "@once-ui-system/core";
+import { Heading, IconButton, Row, SmartLink } from "@once-ui-system/core";
 import { person, social } from "@/resources";
 import styles from "./Footer.module.scss";
 
+/* Page Footer for External Navigation */
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Row as="footer" fillWidth horizontal="center" s={{ direction: "column" }}>
+    <Row fillWidth horizontal="center" s={{ direction: "column" }}>
       <Row
         className={styles.mobile}
         maxWidth="l"
-        paddingX="16"
         horizontal="between"
         vertical="center"
+        paddingX="16"
+        gap="16"
         s={{ direction: "column", horizontal: "center" }}
       >
-        <Text
+        <Heading
           variant="body-default-s"
           onBackground="neutral-weak"
-          style={{ letterSpacing: "0.2px"}}
+          style={{ letterSpacing: "0.2px" }}
         >
           © {currentYear}. {person.name}. Built with{" "}
           <SmartLink href="https://once-ui.com/" unstyled>Once UI</SmartLink>
           {" and "}
           <SmartLink href="https://vercel.com/" unstyled>Vercel</SmartLink>
           .
-        </Text>
-        <Row gap="16">
+        </Heading>
+        <Row gap="24">
           {social.map((item) => item.link && 
             <IconButton
               key={item.name}
               href={item.link}
               icon={item.icon}
               tooltip={item.name}
-              size="m"
               variant="ghost"
+              size="m"
             />
           )}
         </Row>

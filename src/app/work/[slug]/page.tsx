@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
   Column,
@@ -23,8 +22,7 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata({ params }:
-    { params: Promise<{ slug: string | string[] }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string | string[] }> }) {
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug) ? routeParams.slug.join("/") : routeParams.slug || "";
 
@@ -138,9 +136,8 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
         </Column>
       </RevealFx>
       <Reveal translateY="16" fillWidth>
-        <Column as="article" maxWidth="s" gap="s" style={{ margin: "auto" }}>
+        <Column as="article" maxWidth="s" gap="s" paddingBottom="12">
           <CustomMDX source={post.content} />
-          <Line maxWidth={50} height={0.15} radius="m" marginTop="40" marginBottom="4" />
         </Column>
       </Reveal>
     </Column>

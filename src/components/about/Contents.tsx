@@ -24,11 +24,11 @@ export function TableOfContents({ structure, about }: TableOfContentsProps) {
   }
 
   return (
-    <Column paddingLeft="20" gap="32" m={{ hide: true }}>
+    <Column gap="32">
       {structure.filter((section) => section.display).map((section) => 
         <Column key={section.title} gap="12">
           <Scroll target={section.title}>
-            <Flex cursor="interactive" className={styles.hover} vertical="center" gap="12">
+            <Flex className={styles.hover} vertical="center" cursor="interactive" gap="12">
               <Flex background="brand-strong" minWidth="20" height="2" />
               <Heading variant="body-default-xl">
                 {section.title}

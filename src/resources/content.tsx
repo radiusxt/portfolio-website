@@ -8,6 +8,7 @@ export const person: Person = {
   avatar: "/images/brand/avatar.jpg",
   email: process.env.EMAIL_ADDRESS ?? "",
   location: "Australia/Brisbane",
+  locale: "en-AU",
   languages: ["English", "Cantonese"],
 };
 

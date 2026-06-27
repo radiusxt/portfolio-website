@@ -49,7 +49,7 @@ export default function About() {
   ];
 
   return (
-    <Column maxWidth="l" direction="column">
+    <Column direction="column" maxWidth="l">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -61,12 +61,11 @@ export default function About() {
       />
       {about.tableOfContent.display && 
         <Column
-          zIndex={2}
           position="fixed"
+          zIndex={2}
+          top="45%"
           left="8"
-          paddingLeft="24"
-          gap="48"
-          style={{ top: "50%", transform: "translateY(-50%)" }}
+          paddingLeft="48"
           s={{ hide: true }}
           l={{ hide: true }}
         >
@@ -81,10 +80,10 @@ export default function About() {
           {about.avatar.display && 
             <Column
               position="sticky"
-              flex={3}
-              fitHeight
               horizontal="center"
+              flex={3}
               top="64"
+              fitHeight
               paddingX="32"
               paddingBottom="xl"
               gap="l"
@@ -92,8 +91,8 @@ export default function About() {
               s={{ position: "relative", style: { top: "auto" } }}
             >
               <Avatar src={person.avatar} size={16} />
-              <Row gap="8" vertical="center">
-                <Icon onBackground="brand-weak" size="l" name="globe" />
+              <Row vertical="center" gap="8">
+                <Icon name="globe" onBackground="brand-weak" size="l" />
                 <Heading variant="body-default-xl">
                   {person.location}
                 </Heading>
@@ -101,7 +100,7 @@ export default function About() {
               {person.languages && person.languages.length > 0 &&
                 <Row gap="12">
                   {person.languages.map((language) => 
-                    <Tag variant="brand" key={language} size="l" radius="xl">
+                    <Tag key={language} variant="brand" size="l" radius="xl">
                       <Heading variant="label-default-l" padding="2">
                         {language}
                       </Heading>
@@ -112,7 +111,7 @@ export default function About() {
             </Column>
           }
           {/* Introduction */}
-          <Column minWidth="0" flex={9}>
+          <Column flex={9} minWidth="0">
             <Column fillWidth vertical="center" marginBottom="32">
               <Heading
                 id={about.intro.title}
@@ -211,7 +210,7 @@ export default function About() {
                         ),
                         description: (
                           <Column as="ul" marginBottom="16" gap="16">
-                            {experience.achievements.map((achievement, index) => (
+                            {experience.achievements.map((achievement, index) => 
                               <Heading
                                 as="li"
                                 key={`${experience.company}-${index}`}
@@ -221,7 +220,7 @@ export default function About() {
                               >
                                 {achievement}
                               </Heading>
-                            ))}
+                            )}
                           </Column>
                         ),
                         state: "active" as const
@@ -274,7 +273,7 @@ export default function About() {
                         ),
                         description: (
                           <Column as="ul" marginBottom="16" gap="16">
-                            {institution.description.map((line, lineIndex) => (
+                            {institution.description.map((line, lineIndex) => 
                               <Heading
                                 as="li"
                                 key={`${institution.name}-line-${lineIndex}`}
@@ -285,7 +284,7 @@ export default function About() {
                               >
                                 {line}
                               </Heading>
-                            ))}
+                            )}
                           </Column>
                         ),
                         state: "active" as const
@@ -336,20 +335,21 @@ export default function About() {
                         </Heading>
                         <Column>
                           <Fade
-                            zIndex={1}
-                            to="right"
-                            fillHeight
-                            width="64"
                             position="absolute"
-                            left="0"
+                            zIndex={1}
+                            fillHeight
                             top="0"
+                            left="0"
+                            to="right"
+                            width="64"
                           />
                           <AutoScroll
                             maxWidth="s"
                             speed="slow"
+                            hover="none"
+                            reverse={index % 2 === 0}
                             paddingTop="64"
                             paddingBottom="40"
-                            reverse={index % 2 === 0}
                           >
                             {skill.tags.map((tag, index) => 
                               <Column key={`${skill.title}-${index}`} paddingX="32">
@@ -363,13 +363,13 @@ export default function About() {
                             )}
                           </AutoScroll>
                           <Fade
-                            zIndex={1}
-                            to="left"
-                            fillHeight
-                            width="64"
                             position="absolute"
-                            right="0"
+                            zIndex={1}
+                            fillHeight
                             top="0"
+                            right="0"
+                            to="left"
+                            width="64"
                           />
                         </Column>
                       </Column>

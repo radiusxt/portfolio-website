@@ -1,49 +1,18 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
-import { routes, display, person, home, about, work, gallery } from "@/resources";
+import { Fade, Line, Row, ToggleButton } from "@once-ui-system/core";
 import { Scroll, ThemeToggle } from "@/components";
+import { about, display, gallery, home, routes, work } from "@/resources";
 import styles from "./Header.module.scss";
 
-type TimeDisplayProps = {
-  timeZone: string;
-  locale?: string;
-};
-
-export const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
-  const [currentTime, setCurrentTime] = useState("");
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const options: Intl.DateTimeFormatOptions = {
-        timeZone,
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: false,
-      };
-
-      setCurrentTime(new Intl.DateTimeFormat(locale, options).format(now));
-    };
-
-    updateTime();
-    const intervalId = setInterval(updateTime, 1000);
-
-    return () => clearInterval(intervalId);
-  }, [timeZone, locale]);
-
-  return <>{currentTime}</>;
-};
-
+/* Page Header for Navigation */
 export function Header() {
   const pathname = usePathname() ?? "";
 
   return (
     <>
-      <Fade zIndex={4} position="fixed" to="bottom" height={6} style={{ marginTop: "-8px" }} />
+      <Fade position="fixed" zIndex={4} to="bottom" height={6} style={{ marginTop: "-8px" }} />
       <Row
         as="header"
         className={styles.position}
@@ -55,28 +24,15 @@ export function Header() {
         data-border="rounded"
         padding="4"
       >
-        <Row
-          fillWidth
-          vertical="center"
-          textVariant="label-default-m"
-          paddingLeft="4"
-          style={{ letterSpacing: "0.3px" }}
-        >
-          {display.location && 
-            <Row s={{ hide: true }}>
-              {person.location}
-            </Row>
-          }
-        </Row>
         <Row fillWidth horizontal="center">
           <Row
             background="page"
             zIndex={1}
             horizontal="center"
             border="neutral-alpha-weak"
+            padding="4"
             radius="m-4"
             shadow="l"
-            padding="4"
           >
             <Row vertical="center" textVariant="body-default-s" gap="4" suppressHydrationWarning>
               {routes["/"] && 
@@ -91,6 +47,7 @@ export function Header() {
               <Line vert maxHeight="24" background="neutral-alpha-strong" />
               {routes["/about"] && 
                 <>
+                  {/* Desktop & Mobile Layout */}
                   <Row s={{ hide: true }}>
                     <Scroll target={about.intro.title} href="/about">
                       <ToggleButton
@@ -101,6 +58,7 @@ export function Header() {
                       />
                     </Scroll>
                   </Row>
+                  {/* Mobile Layout */}
                   <Row hide s={{ hide: false }}>
                     <Scroll target={about.intro.title} href="/about">
                       <ToggleButton
@@ -114,6 +72,7 @@ export function Header() {
               }
               {routes["/work"] && 
                 <>
+                  {/* Desktop & Mobile Layout */}
                   <Row s={{ hide: true }}>
                     <Scroll target={work.title} href="/work">
                       <ToggleButton
@@ -124,6 +83,7 @@ export function Header() {
                       />
                     </Scroll>
                   </Row>
+                  {/* Mobile Layout */}
                   <Row hide s={{ hide: false }}>
                     <Scroll target={work.title} href="/work">
                       <ToggleButton
@@ -137,6 +97,7 @@ export function Header() {
               }
               {routes["/gallery"] && 
                 <>
+                  {/* Desktop & Mobile Layout */}
                   <Row s={{ hide: true }}>
                     <Scroll target={gallery.title} href="/gallery">
                       <ToggleButton
@@ -147,6 +108,7 @@ export function Header() {
                       />
                     </Scroll>
                   </Row>
+                  {/* Mobile Layout */}
                   <Row hide s={{ hide: false }}>
                     <Scroll target={gallery.title} href="/gallery">
                       <ToggleButton
@@ -167,20 +129,6 @@ export function Header() {
             </Row>
           </Row>
         </Row>
-        <Flex fillWidth horizontal="end" vertical="center">
-          <Flex
-            horizontal="end"
-            vertical="center"
-            textVariant="code-default-m"
-            paddingRight="4"
-          >
-            <Flex s={{ hide: true }}>
-              {display.time && 
-                <TimeDisplay timeZone={person.location} />
-              }
-            </Flex>
-          </Flex>
-        </Flex>
       </Row>
     </>
   );
