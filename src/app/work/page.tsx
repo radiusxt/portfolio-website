@@ -12,6 +12,7 @@ export async function generateMetadata() {
   });
 }
 
+/* Software Page Layout */
 export default function Work() {
   return (
     <Column direction="column" maxWidth="l">

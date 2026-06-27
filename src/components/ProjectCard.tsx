@@ -79,7 +79,7 @@ export function ProjectCard({ href, title, description, image, team, tags }: Pro
               <Flex
                 className={styles.mobile}
                 fillWidth
-                paddingX="xs"
+                paddingX="12"
                 s={{ direction: "column", horizontal: "center" }}
               >
                 <Column flex={8}>

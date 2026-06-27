@@ -42,6 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   });
 }
 
+/* Case Study Page Layout */
 export default async function Project({ params }: { params: Promise<{ slug: string | string[] }> }) {
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug) ? routeParams.slug.join("/") : routeParams.slug || "";
@@ -103,7 +104,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
           </Heading>
           {post.metadata.link && 
             <SmartLink href={post.metadata.link} unstyled>
-              GitHub Repository
+              {work.tag}
               <Icon name="arrowUpRightFromSquare" size="s" />
             </SmartLink>
           }

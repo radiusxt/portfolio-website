@@ -40,6 +40,14 @@ export const home: Home = {
   description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}.`,
   headline: "Building software that scales. Capturing photos that inspire.",
   subline: "👋 I'm Nathaniel and I'm a",
+  instruction: "Scroll",
+  roles: [
+    "Software Engineer.",
+    "Sports Photographer.",
+    "Machine Learning Engineer.",
+    "Travel Photographer.",
+    "Hardware Enthusiast."
+  ]
 };
 
 export const about: About = {
@@ -242,6 +250,7 @@ export const work: Work = {
   label: "Software",
   title: "Case Studies",
   description: `Case studies by ${person.name}`,
+  tag: "GitHub Repository",
 };
 
 export const gallery: Gallery = {

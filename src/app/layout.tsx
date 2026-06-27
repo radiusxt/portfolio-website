@@ -193,22 +193,20 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           {/* Particle Background Animation */}
           <Flex
             zIndex={0}
-            fillHeight
             style={{
               position: "absolute",
               inset: 0,
               pointerEvents: "none",
               maskImage: "radial-gradient(circle 350vh at 50% 0vh, transparent 23%, black 40%)",
-              WebkitMaskImage: "radial-gradient(circle 350vh at 50% 0vh, transparent 23%, black 40%)",
+              WebkitMaskImage: "radial-gradient(circle 350vh at 50% 0vh, transparent 23%, black 40%)"
             }}
           >
             <RevealFx fill position="absolute" delay={0.6}>
-              <Particle fill speed={1} density={125} size="4" color="brand-on-background-weak" />
+              <Particle speed={1} density={125} size="4" color="brand-on-background-weak" />
             </RevealFx>
           </Flex>
-          <Flex fillWidth minHeight="2" s={{ hide: true }} />
           <Header />
-          <Flex zIndex={0} flex={1} fillWidth horizontal="center" padding="40">
+          <Flex zIndex={0} flex={1} fillWidth horizontal="center" padding="32">
             <Flex fillWidth horizontal="center" minHeight="0">
               <RouteGuard>
                 {children}

@@ -29,6 +29,7 @@ export async function generateMetadata() {
   });
 }
 
+/* About Page Layout */
 export default function About() {
   const structure = [
     {

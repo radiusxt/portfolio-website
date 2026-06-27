@@ -13,6 +13,7 @@ export async function generateMetadata() {
   });
 }
 
+/* Gallery Page Layout */
 export default function Gallery() {
   return (
     <Flex id={gallery.title} fillWidth direction="column" maxWidth="l" style={{ scrollMarginTop: "120px" }}>

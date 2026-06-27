@@ -1,5 +1,4 @@
 import {
-  Badge,
   Column,
   Heading,
   Icon,
@@ -10,9 +9,7 @@ import {
   TypeFx
 } from "@once-ui-system/core";
 import { home, about, person, baseURL } from "@/resources";
-import { Bounce, ContactForm, Reveal, Scroll } from "@/components";
-import { Projects } from "@/components/work/Projects";
-import { GalleryView } from "@/components/gallery/Gallery";
+import { Bounce, ContactForm, Reveal } from "@/components";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -23,9 +20,10 @@ export async function generateMetadata() {
   });
 }
 
+/* Home Page Layout */
 export default function Home() {
   return (
-    <Column maxWidth="l" horizontal="center">
+    <Column id={home.title} maxWidth="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -37,39 +35,18 @@ export default function Home() {
       />
       <Column position="relative" fillWidth horizontal="center" gap="l" paddingTop="160" style={{ minHeight: "100vh" }}>
         <Column maxWidth="l" horizontal="center" align="center">
-          {/*home.featured.display && 
-            <RevealFx
-              id={home.title}
-              translateY="16"
-              fillWidth
-              horizontal="center"
-              delay={1.2}
-              style={{ scrollMarginTop: "160px", paddingTop: "5dvh", paddingBottom: "9dvh" }}
-            >
-              <Scroll target={"featured"}>
-                <Badge
-                  icon="book"
-                  textVariant="body-default-xl"
-                  background="accent-alpha-weak"
-                  onBackground="brand-medium"
-                  paddingX="20"
-                  paddingY="8"
-                  style={{ boxShadow: "0 0 52px var(--accent-alpha-strong)" }}
-                >
-                  <Row paddingY="2">
-                    {home.featured.title}
-                  </Row>
-                </Badge>
-              </Scroll>
-            </RevealFx>
-          */}
-          <RevealFx translateY="16" fillWidth horizontal="center" style={{ paddingBottom: "11dvh" }}>
+          <RevealFx
+            translateY="16"
+            fillWidth
+            horizontal="center"
+            style={{ paddingBottom: "11dvh" }}
+          >
             <Heading variant="display-default-xl" style={{ lineHeight: "1.2", letterSpacing: "-1.5px" }}>
               {home.headline}
             </Heading>
           </RevealFx>
           <RevealFx translateY="16" fillWidth horizontal="center" delay={0.5}>
-            <Row gap="8" horizontal="center" vertical="center" align="center" wrap>
+            <Row horizontal="center" vertical="center" align="center" gap="8" s={{ direction: "column" }}>
               <Heading variant="heading-default-xl" style={{ letterSpacing: "0.3px" }}>
                 {home.subline}
               </Heading>
@@ -79,13 +56,7 @@ export default function Home() {
                   speed={50}
                   hold={2500}
                   delay={0.4}
-                  words={[
-                    "Software Engineer.",
-                    "Sports Photographer.",
-                    "Machine Learning Engineer.",
-                    "Travel Photographer.",
-                    "Hardware Enthusiast."
-                  ]}
+                  words={home.roles}
                   style={{ lineHeight: "1.8", letterSpacing: "0.3px" }}
                 />
               </Heading>
@@ -102,33 +73,12 @@ export default function Home() {
         >
           <Bounce distance={12} duration={3}>
             <Column horizontal="center" gap="-1" onBackground="neutral-weak" textVariant="body-default-s">
-              Scroll
+              {home.instruction}
               <Icon name="chevronDown" size="xl" />
             </Column>
           </Bounce>
         </RevealFx>
       </Column>
-      {/*<Reveal translateY="16" fillWidth>
-        <Column fillWidth maxWidth="xl" gap="16" marginBottom="160" horizontal="center">
-          <Heading
-            id="featured"
-            variant="display-default-m"
-            paddingBottom="64"
-            style={{ letterSpacing: "0px", scrollMarginTop: "100px" }}
-          >
-            Featured Case Study
-          </Heading>
-          <Projects range={[4, 4]} />
-        </Column>
-      </Reveal>
-      <Reveal translateY="16" fillWidth>
-        <Column fillWidth maxWidth="xl" gap="16" marginBottom="160" marginTop="16" horizontal="center">
-          <Heading variant="display-default-m" paddingBottom="48" style={{ letterSpacing: "0px" }}>
-            Gallery Highlights
-          </Heading>
-          <GalleryView />
-        </Column>
-      </Reveal>*/}
       <Reveal translateY="16" fillWidth>
         <ContactForm />
       </Reveal>

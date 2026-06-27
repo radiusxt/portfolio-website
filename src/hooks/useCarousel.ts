@@ -2,36 +2,38 @@
 
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-interface useCarouselOptions {
+interface UseCarouselOptions {
   /** Number of cards in the carousel. */
   count: number;
-  /** Set to false to skip pinning/scrubbing entirely (e.g. for reduced-motion users). */
+  /** Set to false to skip wheel/touch capture entirely (e.g. reduced-motion users). */
   enabled?: boolean;
-
+  
   /** Vertical drift (px) applied to cards as they enter/exit. */
   yAmplitude?: number;
-  /** Subtle rotation (deg) applied to cards as they enter/exit — the "wheel" feel. */
+  /** Subtle rotation (deg) applied to cards as they enter/exit, for the "wheel" feel. */
   rotationAmplitude?: number;
   /** Higher = snappier crossfade, lower = longer overlap between adjacent cards. */
   fadeSharpness?: number;
-  /** Fires when the card nearest the center changes (e.g. to drive a counter/label). */
+  /** Wheel/touch px needed to fully transition from one card to the next. Lower = more sensitive. */
+  scrollSensitivity?: number;
+  /** Fires when the nearest-to-center card changes (e.g. to update a counter/label). */
   onActiveIndexChange?: (index: number) => void;
 }
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 /**
- * Pins a tall wrapper element to the viewport with `position: sticky` and, as the
- * user scrolls through it, crossfades/translates a stack of absolutely-positioned
- * cards based on scroll progress. Only the page's native scrollbar is used — there's
- * no inner scroll container.
+ * Drives a stack of absolutely-positioned cards by intercepting wheel/touch input
+ * directly on `wrapperRef`, rather than by consuming real page-scroll distance.
+ * While the wrapper is what's under the cursor/finger, wheel and touch deltas are
+ * converted into an internal progress value (and the real scroll is prevented) —
+ * so the document's actual scroll position barely moves while cycling through
+ * cards. Once progress hits the first or last card and the user keeps scrolling
+ * in that direction, the event is allowed through normally, releasing the page to
+ * scroll on past the section as usual.
  *
- * Usage: attach `wrapperRef` to the tall outer div, and `setCardRef(index)` to each
- * absolutely-positioned card inside the sticky stage.
+ * Known tradeoffs: only wheel and touch input are captured. Page Down/spacebar
+ * and dragging the scrollbar thumb don't fire wheel/touch events, so they'll
+ * scroll straight through the section rather than stepping through cards.
  */
 export function useCarousel({
   count,
@@ -39,10 +41,12 @@ export function useCarousel({
   yAmplitude = 64,
   rotationAmplitude = 4,
   fadeSharpness = 1.4,
+  scrollSensitivity = 600,
   onActiveIndexChange,
-}: useCarouselOptions) {
+}: UseCarouselOptions) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const progressRef = useRef(0); // 0..count-1, "card space"
   const lastActiveIndex = useRef(-1);
 
   const setCardRef = (index: number) => (el: HTMLDivElement | null) => {
@@ -50,12 +54,13 @@ export function useCarousel({
   };
 
   useEffect(() => {
-    if (!enabled || count === 0 || !wrapperRef.current) return;
+    const wrapper = wrapperRef.current;
+    if (!enabled || count === 0 || !wrapper) return;
 
-    const updateCards = (progress: number) => {
-      // Map 0..1 scroll progress onto "card space": 0 = first card centered,
-      // count - 1 = last card centered.
-      const segment = progress * Math.max(count - 1, 0);
+    const maxProgress = Math.max(count - 1, 0);
+    const EPS = 0.001;
+
+    const updateCards = (segment: number) => {
       const activeIndex = Math.round(segment);
 
       cardRefs.current.forEach((card, i) => {
@@ -75,7 +80,6 @@ export function useCarousel({
           zIndex: Math.round((1 - absDistance) * 100),
         });
 
-        // Keep hidden cards out of the tab order / accessibility tree.
         card.setAttribute("aria-hidden", isActive ? "false" : "true");
         card.inert = !isActive;
       });
@@ -86,25 +90,60 @@ export function useCarousel({
       }
     };
 
-    const trigger = ScrollTrigger.create({
-      trigger: wrapperRef.current,
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-      //markers: true,
-      invalidateOnRefresh: true,
-      onUpdate: (self) => updateCards(self.progress),
-      onRefresh: (self) => updateCards(self.progress),
-    });
+    const step = (delta: number, sensitivity: number) => {
+      const goingForward = delta > 0;
+      const goingBackward = delta < 0;
 
-    updateCards(0);
+      // At a boundary and trying to go further out-of-bounds — release control,
+      // let the page scroll past the section normally.
+      if (goingForward && progressRef.current >= maxProgress - EPS) return false;
+      if (goingBackward && progressRef.current <= EPS) return false;
+
+      progressRef.current = gsap.utils.clamp(0, maxProgress, progressRef.current + delta / sensitivity);
+      updateCards(progressRef.current);
+      return true;
+    };
+
+    const handleWheel = (event: WheelEvent) => {
+      if (step(event.deltaY, scrollSensitivity)) {
+        event.preventDefault();
+      }
+    };
+
+    let touchStartY = 0;
+
+    const handleTouchStart = (event: TouchEvent) => {
+      if (!event.touches[0]) return;
+      touchStartY = event.touches[0].clientY;
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      if (!event.touches[0]) return;
+      const currentY = event.touches[0].clientY;
+      const delta = touchStartY - currentY; // swiping up = positive, like scrolling down
+      touchStartY = currentY;
+
+      // Touch deltas per event are smaller than wheel deltas, so it wants a
+      // gentler divisor to feel similarly responsive.
+      if (step(delta, scrollSensitivity * 0.5)) {
+        event.preventDefault();
+      }
+    };
+
+    updateCards(progressRef.current);
+
+    wrapper.addEventListener("wheel", handleWheel, { passive: false });
+    wrapper.addEventListener("touchstart", handleTouchStart, { passive: true });
+    wrapper.addEventListener("touchmove", handleTouchMove, { passive: false });
 
     return () => {
-      trigger.kill();
+      wrapper.removeEventListener("wheel", handleWheel);
+      wrapper.removeEventListener("touchstart", handleTouchStart);
+      wrapper.removeEventListener("touchmove", handleTouchMove);
     };
     // onActiveIndexChange intentionally omitted — pass a stable reference if you use it.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [enabled, count, yAmplitude, rotationAmplitude, fadeSharpness, onActiveIndexChange]);
+  }, [enabled, count, yAmplitude, rotationAmplitude, fadeSharpness, scrollSensitivity, onActiveIndexChange]);
 
   return { wrapperRef, setCardRef };
 }

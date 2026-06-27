@@ -78,6 +78,10 @@ export interface Home extends BasePageConfig {
   headline: React.ReactNode;
   /** The sub text which appears below the headline */
   subline: React.ReactNode;
+  /** Tag above chevron icon instructing user what to do */
+  instruction: string;
+  /** The text inside TypeFx to complete subline */
+  roles: Array<string>;
 }
 
 /**
@@ -181,7 +185,10 @@ export interface About extends BasePageConfig {
  * Work/projects page configuration.
  * @description Configuration for the Work/Projects page, including metadata and navigation label.
  */
-export interface Work extends BasePageConfig {}
+export interface Work extends BasePageConfig {
+  /** GitHub tag for repository link */
+  tag: string;
+}
 
 /**
  * Gallery page configuration.
