@@ -259,7 +259,6 @@ export const gallery: Gallery = {
   title: "Highlights",
   description: `Images by ${person.name}`,
   images: [
-    /* Sport */
     {
       src: "/images/gallery/DSC01001.jpg",
       alt: "2025, GT World Challenge Australia, Queensland Raceway, \#888 Kelso Electrical Team MPC, Audi R8 LMS GT3 EVO II",
@@ -298,68 +297,6 @@ export const gallery: Gallery = {
     {
       src: "/images/gallery/DSC00456.jpg",
       alt: "2025, Radical Cup Australia, Queensland Raceway, #28 Arise Racing, Radical SR3 XXR",
-      orientation: "horizontal",
-    },
-    /* Wildlife */
-    {
-      src: "/images/gallery/DSC02719.jpg",
-      alt: "Taronga Zoo, Meerkat",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/DSC03415.jpg",
-      alt: "Taronga Zoo, Red Panda",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/DSC03567.jpg",
-      alt: "Taronga Zoo",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/DSC03741.jpg",
-      alt: "Taronga Zoo",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/DSC06996.jpg",
-      alt: "Chimelong Ocean Kingdom, Dolphin",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/DSC07218.jpg",
-      alt: "Chimelong Ocean Kingdom, Dolphin",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC06403.jpg",
-      alt: "Chimelong Ocean Kingdom, Dolphin",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC06587.jpg",
-      alt: "Chimelong Ocean Kingdom, Sea Lion",
-      orientation: "horizontal",
-    },
-    /* Travel */
-    {
-      src: "/images/gallery/DSC03850.jpg",
-      alt: "West Lake, Wuzhen",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/DSC04421.jpg",
-      alt: "West Lake, Hangzhou",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC05095.jpg",
-      alt: "Eyes of the GBA Bookstore, Shenzhen",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/DSC05126.jpg",
-      alt: "Gangxia North Metro Station, Shenzhen",
       orientation: "horizontal",
     },
     {

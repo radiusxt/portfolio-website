@@ -126,6 +126,13 @@ export const effects: EffectsConfig = {
     thickness: 1,
     angle: 45,
   },
+  colors: [
+    "accent-on-background-weak",
+    "accent-on-background-medium",
+    "brand-on-background-weak",
+    "brand-on-background-medium",
+    "neutral-on-background-strong",
+  ]
 };
 
 export const schema: SchemaConfig = {

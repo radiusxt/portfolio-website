@@ -109,18 +109,18 @@ export default async function RootLayout({children}: Readonly<{children: React.R
         <Column
           as="body"
           background="page"
+          position="relative"
+          minHeight="100vh"
           fillWidth
-          style={{ position: "relative", minHeight: "100dvh" }}
         >
           {/* Matrix Background Animation */}
           <Flex
+            position="absolute"
             zIndex={0}
-            fillHeight
+            maxHeight="100vh"
+            pointerEvents="none"
             style={{
-              position: "absolute",
               inset: 0,
-              maxHeight: "100vh",
-              pointerEvents: "none",
               maskImage: "radial-gradient(circle at 50% 0%, black 18%, transparent 58%)",
               WebkitMaskImage: "radial-gradient(circle at 50% 0%, black 18%, transparent 58%)",
             }}
@@ -139,13 +139,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
                 size={2}
                 flicker
                 revealFrom="top"
-                colors={[
-                  "accent-on-background-weak",
-                  "accent-on-background-medium",
-                  "brand-on-background-weak",
-                  "brand-on-background-medium",
-                  "neutral-on-background-strong",
-                ]}
+                colors={effects.colors}
               >
                 <Background
                   mask={{
@@ -192,11 +186,11 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           </Flex>
           {/* Particle Background Animation */}
           <Flex
+            position="absolute"
             zIndex={0}
+            pointerEvents="none"
             style={{
-              position: "absolute",
               inset: 0,
-              pointerEvents: "none",
               maskImage: "radial-gradient(circle 350vh at 50% 0vh, transparent 23%, black 40%)",
               WebkitMaskImage: "radial-gradient(circle 350vh at 50% 0vh, transparent 23%, black 40%)"
             }}

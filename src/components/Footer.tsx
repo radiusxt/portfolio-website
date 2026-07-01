@@ -20,7 +20,7 @@ export function Footer() {
         <Heading
           variant="body-default-s"
           onBackground="neutral-weak"
-          style={{ letterSpacing: "0.2px" }}
+          style={{ letterSpacing: "0.1px" }}
         >
           © {currentYear}. {person.name}. Built with{" "}
           <SmartLink href="https://once-ui.com/" unstyled>Once UI</SmartLink>

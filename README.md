@@ -29,7 +29,6 @@ Set up your own ```.env``` file with your dedicated email address, password for 
 
 - Next.js
 - React
-- GSAP
 
 ### Backend
 

@@ -4,7 +4,7 @@ import { Column, Flex, Heading } from "@once-ui-system/core";
 import { Scroll } from "@/components";
 import styles from "./Contents.module.scss";
 
-interface TableOfContentsProps {
+interface ContentsProps {
   structure: {
     title: string;
     display: boolean;
@@ -18,7 +18,7 @@ interface TableOfContentsProps {
   };
 }
 
-export function TableOfContents({ structure, about }: TableOfContentsProps) {
+export function TableOfContents({ structure, about }: ContentsProps) {
   if (!about.tableOfContent.display) {
     return null;
   }

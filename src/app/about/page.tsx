@@ -155,7 +155,7 @@ export default function About() {
                         size="m"
                         weight="default"
                         variant="tertiary"
-                        style={{ gap: "8px", letterSpacing: "0.4px" }}
+                        style={{ gap: "8px", letterSpacing: "0.3px" }}
                       />
                     </Flex>
                   )}
@@ -327,11 +327,7 @@ export default function About() {
                         <Heading id={skill.title} variant="heading-default-xl" marginBottom="8">
                           {skill.title}
                         </Heading>
-                        <Heading
-                          variant="body-default-l"
-                          onBackground="neutral-strong"
-                          style={{ lineHeight: "1.6" }}
-                        >
+                        <Heading variant="body-default-l" onBackground="neutral-strong">
                           {skill.description}
                         </Heading>
                         <Column>

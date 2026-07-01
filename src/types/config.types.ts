@@ -117,6 +117,7 @@ export type EffectsConfig = {
     thickness: number;
     angle: number;
   };
+  colors: Array<string>;
 };
 
 /**

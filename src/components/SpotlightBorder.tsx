@@ -8,6 +8,7 @@ interface SpotlightBorderProps {
   color: string;
 }
 
+/* Dynamic border based on cursor proximity for styling */
 export function SpotlightBorder({ children, color, ...props }: SpotlightBorderProps) {
   const [mobile, setMobile] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);

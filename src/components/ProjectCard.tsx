@@ -1,17 +1,17 @@
 import {
+  Card,
   Column,
   Flex,
   Heading,
   Hover,
   Icon,
-  Line,
   Media,
   Row,
   SmartLink,
   Tag,
   TiltFx
 } from "@once-ui-system/core";
-import { Loading, Scroll } from "@/components";
+import { Loading, Reveal, Scroll } from "@/components";
 import type { Team } from "@/utils/utils";
 import styles from "./ProjectCard.module.scss";
 
@@ -25,16 +25,19 @@ interface ProjectCardProps {
   tags?: string[];
 }
 
+/* Card Prop for Case Study */
 export function ProjectCard({ href, title, description, image, team, tags }: ProjectCardProps) {
   return (
+    <Reveal translateY="16" fillWidth>
       <TiltFx fillWidth intensity={0.35}>
         <Scroll href={href}>
-          <Column
+          <Card
             className={styles.hover}
-            fillWidth
+            direction="column"
             horizontal="center"
-            border="neutral-medium"
+            fillWidth
             radius="l"
+            border="neutral-medium"
             paddingBottom="24"
             gap="12"
           >
@@ -44,8 +47,12 @@ export function ProjectCard({ href, title, description, image, team, tags }: Pro
                 tabIndex={-1}
                 hideDelay={120}
                 trigger={
-                  <Loading fallback={<Media src="" radius="l" aspectRatio="16/9" loading />}>
-                    <Media src={image} alt={title} radius="l" priority />
+                  <Loading
+                    fallback={
+                      <Media src="" radius="l" aspectRatio="16/9" loading border="neutral-weak" />
+                    }
+                  >
+                    <Media src={image} alt={title} radius="l" priority border="neutral-weak" />
                   </Loading>
                 }
                 overlay={
@@ -67,32 +74,17 @@ export function ProjectCard({ href, title, description, image, team, tags }: Pro
                   </Flex>
                 }
               />
-              <Line
-                maxWidth={74}
-                height={0.13}
-                radius="l"
-                marginBottom="2"
-                style={{ background: "var(--neutral-on-background-weak)" }}
-                xs={{ style: { maxWidth: "28rem" }}}
-                m={{ style: { maxWidth: "50rem" }}}
-              />
               <Flex
-                className={styles.mobile}
                 fillWidth
                 paddingX="12"
                 s={{ direction: "column", horizontal: "center" }}
               >
                 <Column flex={8}>
-                  <Heading
-                    variant="heading-default-xl"
-                    wrap="pretty"
-                    paddingBottom="16"
-                    style={{ letterSpacing: "0.2px" }}
-                  >
+                  <Heading variant="heading-default-xl" wrap="pretty" paddingBottom="16">
                     {title}
                   </Heading>
                   {tags && tags.length > 0 && 
-                    <Row gap="8" wrap s={{ horizontal: "center" }}>
+                    <Row gap="8" wrap s={{ hide: true }}>
                       {tags.map((tag) => 
                         <Tag key={tag} border="neutral-alpha-weak">
                           <Row vertical="center" gap="8">
@@ -115,26 +107,29 @@ export function ProjectCard({ href, title, description, image, team, tags }: Pro
                     </Row>
                   }
                 </Column>
-                <Column flex={9} s={{ hide: true }}>
+                <Column flex={8} align="right">
                   <Heading
+                    className={styles.mobile}
                     variant="body-default-l"
                     onBackground="neutral-medium"
                     wrap="pretty"
-                    align="right"
                     paddingBottom="12"
                     style={{ lineHeight: "1.4", letterSpacing: "0.15px" }}
                   >
                     {description}
                   </Heading>
-                  <Heading variant="body-default-xs" onBackground="neutral-weak" align="right">
-                    {/* Inserts 2 spaces before and after '|' */}
-                    {team.map((member) => member.name).join("\u00A0 | \u00A0")}
-                  </Heading>
+                  <Column s={{ hide: true }}>
+                    <Heading variant="body-default-xs" onBackground="neutral-weak" align="right">
+                      {/* Inserts 2 spaces before and after '|' */}
+                      {team.map((member) => member.name).join("\u00A0 | \u00A0")}
+                    </Heading>
+                  </Column>
                 </Column>
               </Flex>
             </SmartLink>
-          </Column>
+          </Card>
         </Scroll>
       </TiltFx>
+    </Reveal>
   );
 }

@@ -47,7 +47,7 @@ export function Scroll({ children, target, href }: ScrollProps) {
   };
 
   return (
-    <Flex onClick={handleClick} style={{ cursor: "pointer" }}>
+    <Flex cursor="pointer" onClick={handleClick}>
       {children}
     </Flex>
   );

@@ -66,8 +66,8 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
       <RevealFx translateY="16" fillWidth paddingBottom="32" delay={0.1}>
-        <Column fillWidth maxWidth="l" gap="16" horizontal="center" align="center">
-          <Heading variant="display-default-l" paddingBottom="32" style={{ lineHeight: "1.4" }}>
+        <Column fillWidth maxWidth="l" gap="24" horizontal="center" align="center">
+          <Heading variant="display-default-l" paddingBottom="32">
             {post.metadata.title}
           </Heading>
           {post.metadata.tags && post.metadata.tags.length > 0 && 
@@ -97,7 +97,6 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
             onBackground="brand-medium"
             paddingBottom="24"
             wrap="balance"
-            style={{ lineHeight: "1.5" }}
           >
             {/* Inserts 2 spaces before and after '|' */}
             {post.metadata.team.map((member) => member.name).join("\u00A0 | \u00A0")}

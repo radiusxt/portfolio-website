@@ -33,20 +33,26 @@ export default function Home() {
         image={`/api/og/generate?title=${encodeURIComponent(home.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <Column position="relative" fillWidth horizontal="center" gap="l" paddingTop="160" style={{ minHeight: "100vh" }}>
-        <Column maxWidth="l" horizontal="center" align="center">
+      <Column
+        position="relative"
+        minHeight="100vh"
+        fillWidth
+        horizontal="center"
+        gap="l"
+      >
+        <Column maxWidth="l" horizontal="center" align="center" top="18vh">
           <RevealFx
             translateY="16"
             fillWidth
             horizontal="center"
             style={{ paddingBottom: "11dvh" }}
           >
-            <Heading variant="display-default-xl" style={{ lineHeight: "1.2", letterSpacing: "-1.5px" }}>
+            <Heading variant="display-default-xl" style={{ lineHeight: "1.25", letterSpacing: "-1.5px" }}>
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="16" fillWidth horizontal="center" delay={0.5}>
-            <Row horizontal="center" vertical="center" align="center" gap="8" s={{ direction: "column" }}>
+          <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8}>
+            <Row center gap="8" s={{ direction: "column" }}>
               <Heading variant="heading-default-xl" style={{ letterSpacing: "0.3px" }}>
                 {home.subline}
               </Heading>
@@ -64,12 +70,13 @@ export default function Home() {
           </RevealFx>
         </Column>
         <RevealFx
+          position="absolute"
           translateY="16"
           fillWidth
           horizontal="center"
+          bottom="14vh"
           delay={1.8}
-          style={{ position: "absolute", bottom: "15dvh" }}
-          s={{ style: { position: "absolute", bottom: "30vh" }}}
+          s={{ style: { bottom: "30vh" }}}
         >
           <Bounce distance={12} duration={3}>
             <Column horizontal="center" gap="-1" onBackground="neutral-weak" textVariant="body-default-s">

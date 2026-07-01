@@ -14,6 +14,7 @@ export default function NotFound() {
       }}
     >
       <Particle
+        position="absolute"
         fill
         interactive
         mode="repel"
@@ -21,7 +22,6 @@ export default function NotFound() {
         speed={1}
         size="2"
         color="brand-on-background-weak"
-        style={{ position: "absolute", inset: 0 }}
       />
       <Column center>
         <Heading marginBottom="24" variant="display-strong-xl">

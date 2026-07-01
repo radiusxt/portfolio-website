@@ -8,6 +8,7 @@ interface LoadingProps {
   children: ReactNode;
 }
 
+/* Loading animation for unrendered components */
 export function Loading({ fallback, children }: LoadingProps) {
   const [loaded, setLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
