@@ -338,10 +338,9 @@ export default function About() {
                             top="0"
                             left="0"
                             to="right"
-                            width="64"
+                            width="80"
                           />
                           <AutoScroll
-                            maxWidth="s"
                             speed="slow"
                             hover="none"
                             reverse={index % 2 === 0}
@@ -366,7 +365,7 @@ export default function About() {
                             top="0"
                             right="0"
                             to="left"
-                            width="64"
+                            width="80"
                           />
                         </Column>
                       </Column>

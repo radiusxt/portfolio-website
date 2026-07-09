@@ -16,7 +16,7 @@ export async function generateMetadata() {
 /* Gallery Page Layout */
 export default function Gallery() {
   return (
-    <Flex id={gallery.title} fillWidth direction="column" maxWidth="l" style={{ scrollMarginTop: "120px" }}>
+    <Flex id={gallery.title} fillWidth direction="column" style={{ scrollMarginTop: "120px" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -27,7 +27,7 @@ export default function Gallery() {
         author={{ name: person.name, url: `${baseURL}${gallery.path}`, image: `${baseURL}${person.avatar}` }}
       />
       <RevealFx translateY="16" fillWidth horizontal="center" paddingTop="24" paddingBottom="80" delay={0.1}>
-        <Column fillWidth horizontal="center" gap="80">
+        <Column fillWidth horizontal="center" gap="104">
           <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
             {gallery.title}
           </Heading>
@@ -36,15 +36,12 @@ export default function Gallery() {
       </RevealFx>
       <RevealFx translateY="16" fillWidth horizontal="center" paddingTop="64" delay={0.6}>
         <Column horizontal="center">
-          <Row dark paddingBottom="80">
+          <Row dark paddingBottom="32">
             <Logo wordmark="/images/brand/logo-light.png" style={{ transform: "scale(3)" }} />
           </Row>
-          <Row light paddingBottom="80">
+          <Row light paddingBottom="32">
             <Logo wordmark="/images/brand/logo-dark.png" style={{ transform: "scale(3)" }} />
           </Row>
-          <Heading variant="heading-default-l" style={{ letterSpacing: "0.2px", textAlign: "center" }}>
-            My images specialise in sports & travel genres to capture special moments in motion.
-          </Heading>
         </Column>
       </RevealFx>
       <RevealFx
@@ -52,7 +49,6 @@ export default function Gallery() {
         horizontal="center"
         delay={0.8}
         style={{
-          position: "relative",
           width: "90vw",
           height: "120vh",
           left: "50%",

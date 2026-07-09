@@ -96,7 +96,7 @@ export const effects: EffectsConfig = {
   },
   gradient: {
     display: true,
-    opacity: 50,
+    opacity: 60,
     x: 50,
     y: 25,
     width: 100,
@@ -146,5 +146,4 @@ export const schema: SchemaConfig = {
 export const sameAs: SameAsConfig = {
   github: "https://github.com/radiusxt",
   linkedin: "https://www.linkedin.com/in/nathaniel-chan-/",
-  pictime: "https://hyperdrivemedia.pic-time.com/portfolio",
 };

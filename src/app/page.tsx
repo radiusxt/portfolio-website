@@ -45,6 +45,7 @@ export default function Home() {
             translateY="16"
             fillWidth
             horizontal="center"
+            delay={0.1}
             style={{ paddingBottom: "11dvh" }}
           >
             <Heading variant="display-default-xl" style={{ lineHeight: "1.25", letterSpacing: "-1.5px" }}>

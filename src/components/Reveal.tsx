@@ -21,8 +21,8 @@ export function Reveal({
         setTriggered(true);
         observer.disconnect();
       }
-    // Fires when 20% of the element's height is in viewport.
-    }, { threshold: 0.2 });
+    // Fires when 15% of the element's height is in viewport.
+    }, { threshold: 0.15 });
 
     if (ref.current) {
       observer.observe(ref.current);

@@ -1,43 +1,23 @@
-import { Carousel, Column, Flex, Media } from "@once-ui-system/core";
+import { Column, Flex, MasonryGrid, Media, TiltFx } from "@once-ui-system/core";
 import { gallery } from "@/resources";
-import { Loading } from "@/components";
-import styles from "./Gallery.module.scss";
+import { Loading, Reveal } from "@/components";
 
 export function GalleryView() {
   return (
-    <Column fillWidth direction="column" horizontal="center" maxWidth="l">
-      <Carousel
-        aspectRatio="3 / 2"
-        indicator="thumbnail"
-        thumbnail={{ height: 8 }}
-        controls={false}
-        radius="l"
-        translateY={2}
-        border="transparent"
-        play={{ auto: true, interval: 5000, controls: true }}
-        paddingBottom="8"
-        items={gallery.images.map((image) => ({
-          slide:
-            <Flex className={styles.hover} fillWidth fillHeight horizontal="center" vertical="center">
-              {image.orientation === "horizontal" &&
-                <Flex radius="m" overflow="hidden" style={{ height: "fit-content", width: "100%" }}>
-                  <Loading fallback={<Media src="" aspectRatio="3/2" loading />}>
-                    <Media src={image.src} alt={image.alt} objectFit="contain" />
-                  </Loading>
-                </Flex>
-              }
-              {image.orientation === "vertical" && 
-                <Flex className={styles.hover} radius="m" overflow="hidden" style={{ height: "100%", aspectRatio: "2/3" }}>
-                  <Loading fallback={<Media src="" aspectRatio="2/3" loading />}>
-                    <Media src={image.src} alt={image.alt} objectFit="cover" />
-                  </Loading>
-                </Flex>
-              }
-            </Flex>
-          ,
-          alt: image.alt
-        }))}
-      />
+    <Column fill direction="column" horizontal="center" paddingX="104">
+      <MasonryGrid columns={3} gap="16" m={{ columns: 2 }} s={{ columns: 1 }}>
+        {gallery.images.map((image) => 
+          <Flex key={image.src} fill center>
+            <Reveal translateY="16" fillWidth>
+              <TiltFx intensity={0.5}>
+                <Loading fallback={<Media src="" aspectRatio="3/2" loading />}>
+                  <Media src={image.src} priority radius="l" border="neutral-medium" />
+                </Loading>
+              </TiltFx>
+            </Reveal>
+          </Flex>
+        )}
+      </MasonryGrid>
     </Column>
   );
 }

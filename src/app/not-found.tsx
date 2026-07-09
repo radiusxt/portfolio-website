@@ -5,13 +5,10 @@ export default function NotFound() {
     <Column
       fill
       center
+      minHeight="100vh"
+      minWidth="100vw"
       background="neutral-weak"
-      style={{
-        marginTop: "-8rem",
-        marginBottom: "-8rem",
-        minHeight: "100vh",
-        minWidth: "100vw"
-      }}
+      style={{ marginTop: "-8rem", marginBottom: "-8rem" }}
     >
       <Particle
         position="absolute"

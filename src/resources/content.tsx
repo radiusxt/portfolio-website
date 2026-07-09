@@ -25,12 +25,6 @@ export const social: Social = [
     link: "https://www.linkedin.com/in/nathaniel-chan-/",
     essential: true,
   },
-  {
-    name: "Pic-Time",
-    icon: "gallery",
-    link: "https://hyperdrivemedia.pic-time.com/portfolio",
-    essential: true,
-  },
 ];
 
 export const home: Home = {
@@ -257,66 +251,54 @@ export const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
   title: "Highlights",
-  description: `Images by ${person.name}`,
+  description: `Highlights by ${person.name}`,
   images: [
     {
+      src: "/images/gallery/DSC09060.jpg",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC09506.jpg",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC09550.jpg",
+      orientation: "horizontal",
+    },
+    {
       src: "/images/gallery/DSC01001.jpg",
-      alt: "2025, GT World Challenge Australia, Queensland Raceway, \#888 Kelso Electrical Team MPC, Audi R8 LMS GT3 EVO II",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/DSC00878.jpg",
-      alt: "2025, GT World Challenge Australia, Queensland Raceway, \#268 Team BRM/ACM Finance, Audi R8 LMS GT3 EVO II",
+      src: "/images/gallery/DSC08489.jpg",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/DSC08736.jpg",
-      alt: "2025, GT World Challenge Australia, Queensland Raceway, #1 Volante Rosso Motorsport, Aston Martin AMR GT3",
+      src: "/images/gallery/DSC08308.jpg",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/DSC07600.jpg",
-      alt: "2025, Monochrome GT4 Australia, Queensland Raceway, #20 AR Nineteen Motorsport, Mercedes AMG GT4, #17 Love Motorsport TSM, Mercedes AMG GT4",
+      src: "/images/gallery/DSC08624.jpg",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/DSC07690.jpg",
-      alt: "2025, Monochrome GT4 Australia, Queensland Raceway, #62 Wallis Motorsport, Ford Mustang GT4",
+      src: "/images/gallery/DSC00183.jpg",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/DSC09786.jpg",
-      alt: "2025, Monochrome GT4 Australia, Queensland Raceway, #19 AR Nineteen Motorsport, Mercedes AMG GT4",
+      src: "/images/gallery/DSC09916.jpg",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/DSC04971.jpg",
-      alt: "2025, Porsche Michelin Sprint Challenge Australia, Queensland Raceway, #24 McElrea Racing, Porsche 911 GT3 Cup",
+      src: "/images/gallery/DSC08620.jpg",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/DSC00456.jpg",
-      alt: "2025, Radical Cup Australia, Queensland Raceway, #28 Arise Racing, Radical SR3 XXR",
+      src: "/images/gallery/DSC09819.jpg",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/DSC05128.jpg",
-      alt: "Gangxia North Metro Station, Shenzhen",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC03395.jpg",
-      alt: "Shanghai City at Night, Shanghai",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC07429.jpg",
-      alt: "Hong Kong City at Night, Hong Kong SAR",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC07433.jpg",
-      alt: "Hong Kong City at Night, Hong Kong SAR",
+      src: "/images/gallery/DSC09319.jpg",
       orientation: "horizontal",
     },
   ],
