@@ -65,7 +65,7 @@ export async function ContributionGraph({ username }: { username: string }) {
   const labels = getMonthLabels(weeks);
 
   return (
-    <Column gap="8">
+    <Column fillWidth gap="8">
       {/* Month labels */}
       <Row position="relative" height="16">
         {labels.map(({ label, col }) =>

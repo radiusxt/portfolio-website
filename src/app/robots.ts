@@ -2,11 +2,8 @@ import { baseURL } from "@/resources";
 
 export default function robots() {
   return {
-    rules: [
-      {
+    rules: [{
         userAgent: "*",
-      },
-    ],
-    sitemap: `${baseURL}/sitemap.xml`,
+    }], sitemap: `${baseURL}/sitemap.xml`
   };
 }

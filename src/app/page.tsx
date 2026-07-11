@@ -8,7 +8,7 @@ import {
   Schema,
   TypeFx
 } from "@once-ui-system/core";
-import { Bounce, ContactForm, ContributionGraph, Reveal, SpotlightBorder } from "@/components";
+import { Bounce, ContactForm, Dashboard, Reveal, SpotlightBorder } from "@/components";
 import { home, about, person, baseURL } from "@/resources";
 
 export async function generateMetadata() {
@@ -34,42 +34,42 @@ export default function Home() {
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
       <Column
-        position="relative"
-        minHeight="100vh"
-        fillWidth
+        maxWidth="xl"
+        position="relative"        
         horizontal="center"
-        gap="l"
+        minHeight="100vh"
+        align="center"
+        fillWidth
       >
-        <Column maxWidth="l" horizontal="center" align="center" top="18vh">
-          <RevealFx
-            translateY="16"
-            fillWidth
-            horizontal="center"
-            delay={0.1}
-            style={{ paddingBottom: "11dvh" }}
-          >
-            <Heading variant="display-default-xl" style={{ lineHeight: "1.25", letterSpacing: "-1.5px" }}>
-              {home.headline}
+        <RevealFx
+          translateY="16"
+          fillWidth
+          horizontal="center"
+          top="18vh"
+          delay={0.1}
+          style={{ paddingBottom: "11dvh" }}
+        >
+          <Heading variant="display-default-xl" style={{ lineHeight: "1.25", letterSpacing: "-1.5px" }}>
+            {home.headline}
+          </Heading>
+        </RevealFx>
+        <RevealFx translateY="16" fillWidth horizontal="center" top="18vh" delay={0.8}>
+          <Row center gap="8" s={{ direction: "column" }}>
+            <Heading variant="heading-default-xl" style={{ letterSpacing: "0.3px" }}>
+              {home.subline}
             </Heading>
-          </RevealFx>
-          <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8}>
-            <Row center gap="8" s={{ direction: "column" }}>
-              <Heading variant="heading-default-xl" style={{ letterSpacing: "0.3px" }}>
-                {home.subline}
-              </Heading>
-              <Heading>
-                <TypeFx
-                  variant="heading-default-xl"
-                  speed={50}
-                  hold={2500}
-                  delay={0.4}
-                  words={home.roles}
-                  style={{ lineHeight: "1.8", letterSpacing: "0.3px" }}
-                />
-              </Heading>
-            </Row>
-          </RevealFx>
-        </Column>
+            <Heading>
+              <TypeFx
+                variant="heading-default-xl"
+                speed={50}
+                hold={2500}
+                delay={0.4}
+                words={home.roles}
+                style={{ lineHeight: "1.8", letterSpacing: "0.3px" }}
+              />
+            </Heading>
+          </Row>
+        </RevealFx>
         <RevealFx
           translateY="16"
           fillWidth
@@ -87,14 +87,16 @@ export default function Home() {
           </Bounce>
         </RevealFx>
       </Column>
-      <Reveal translateY="16" fillWidth>
-        <Column horizontal="center" gap="128">
+      <Column horizontal="center" gap="160">
+        <Reveal translateY="16">
           <SpotlightBorder color="brand-on-background-weak">
-            <ContributionGraph username="radiusxt" />
+            <Dashboard username="radiusxt" items={home.items}/>
           </SpotlightBorder>
+        </Reveal>
+        <Reveal translateY="16">
           <ContactForm />
-        </Column>
-      </Reveal>
+        </Reveal>
+      </Column>
     </Column>
   );
 }

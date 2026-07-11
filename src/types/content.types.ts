@@ -36,16 +36,9 @@ export type Person = {
 export type Social = Array<{
   /** Name of the social platform */
   name: string;
-  /** Icon for the social platform
-   * The icons are a part of "src/resources/icons.ts" file.
-   * If you need a different icon, import it there and reference it everywhere else
-   */
+  /** The icons are a part of "src/resources/icons.ts" file */
   icon: IconName;
-  /**
-   * The link to the social platform
-   *
-   * The link is not validated by code, make sure it's correct
-   */
+  /** The link to the social platform */
   link: string;
   /** Whether this social link is essential and should be displayed on the about page */
   essential?: boolean;
@@ -55,10 +48,7 @@ export type Social = Array<{
  * Base interface for page configuration with common properties.
  */
 export interface BasePageConfig {
-  /** Path to the page
-   *
-   * The path should be relative to the public directory
-   */
+  /** The path should be relative to the public directory */
   path: `/${string}` | string;
   /** Label for navigation or display */
   label: string;
@@ -82,6 +72,8 @@ export interface Home extends BasePageConfig {
   instruction: string;
   /** The text inside TypeFx to complete subline */
   roles: Array<string>;
+  /** Current things I'm working on */
+  items: Array<Object>;
 }
 
 /**

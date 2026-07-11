@@ -1,7 +1,7 @@
-export type ManualEntry = {
+export type Entry = {
   type: "manual";
   title: string;
-  progress: number; // 0-100
+  progress: number;
 };
 
 export type GithubEntry = {
@@ -9,7 +9,7 @@ export type GithubEntry = {
   title: string;
   owner: string;
   repo: string;
-  progress: number; // 0-100
+  progress: number;
 };
 
-export type WorkItem = ManualEntry | GithubEntry;
+export type WorkItem = Entry | GithubEntry;

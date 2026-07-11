@@ -135,7 +135,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
           <Line maxWidth={24} height={0.15} radius="m" />
         </Column>
       </RevealFx>
-      <Reveal translateY="16" fillWidth>
+      <Reveal translateY="16">
         <Column as="article" maxWidth="s" gap="s" paddingBottom="12">
           <CustomMDX source={post.content} />
         </Column>

@@ -120,7 +120,7 @@ export function ContactForm() {
             />
           </Flex>
           <Button fillWidth variant="primary" type="submit" loading={status === "loading"} size="l">
-            <ShineFx speed={2} opacity={1} inverse>
+            <ShineFx speed={2} baseOpacity={1} inverse>
                 Send
             </ShineFx>
           </Button>

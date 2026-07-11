@@ -19,17 +19,15 @@ export async function getContributions(username: string) {
   return data.contributions as Day[];
 }
 
-export async function getLatestCommit(owner: string, repo: string): 
-    Promise<LatestCommit | null> {
+export async function getLatestCommit(owner: string, repo: string): Promise<LatestCommit | null> {
   const response = await fetch(
     `https://api.github.com/repos/${owner}/${repo}/commits?per_page=1`,
-    {
-      headers: {
+    { headers: {
         Accept: "application/vnd.github+json",
-        ...(process.env.GITHUB_TOKEN && {
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        }),
-      }, next: { revalidate: 3600 },
+        ...(process.env.GITHUB_API_KEY && { 
+          Authorization: `Bearer ${process.env.GITHUB_API_KEY}`
+        })
+      }, next: { revalidate: 3600 }
     }
   );
 

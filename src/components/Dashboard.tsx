@@ -1,16 +1,20 @@
-// components/Dashboard.tsx
-import { Column, Heading, Line, ProgressBar, Row, Text } from "@once-ui-system/core";
+import { Column, Heading, Line, ProgressBar, Row } from "@once-ui-system/core";
 import { ContributionGraph } from "@/components";
 import { getLatestCommit } from "@/lib";
 import type { WorkItem } from "@/lib/dashboard";
 
-type ResolvedItem = {
+interface Item {
   title: string;
   progress: number;
   commit?: string;
 };
 
-async function resolveItem(item: WorkItem): Promise<ResolvedItem> {
+interface DashboardProps {
+  items: WorkItem[];
+  username: string;
+}
+
+async function resolveItem(item: WorkItem): Promise<Item> {
   if (item.type === "manual") {
     return { title: item.title, progress: item.progress };
   }
@@ -20,68 +24,60 @@ async function resolveItem(item: WorkItem): Promise<ResolvedItem> {
   return {
     title: item.title,
     progress: item.progress,
-    commit: latest?.message ?? "No commits found",
+    commit: latest?.message ?? "",
   };
-}
-
-interface DashboardProps {
-  items: WorkItem[];
-  username: string;
 }
 
 export async function Dashboard({ items, username }: DashboardProps) {
   const resolved = await Promise.all(items.map(resolveItem));
 
   return (
-    <Column fillWidth gap="24">
-      <Column fillWidth gap="12">
-        <Row fillWidth paddingX="16" gap="16">
-          <Row style={{ flex: 2 }}>
-            <Heading variant="label-default-s" onBackground="neutral-weak">What I'm building</Heading>
+    <Column fillWidth gap="32">
+      <Column gap="12">
+        {/* Headings */}
+        <Row center paddingX="12" gap="16">
+          <Row flex="3">
+            <Heading variant="label-default-m" onBackground="neutral-weak">Name</Heading>
           </Row>
-          <Row style={{ flex: 2 }}>
-            <Heading variant="label-default-s" onBackground="neutral-weak">Progress</Heading>
+          <Row center flex="1">
+            <Heading variant="label-default-m" onBackground="neutral-weak">Progress</Heading>
           </Row>
-          <Row style={{ flex: 3 }}>
-            <Heading variant="label-default-s" onBackground="neutral-weak">Latest commit</Heading>
+          <Row flex="4">
+            <Heading variant="label-default-m" onBackground="neutral-weak">Latest Commit</Heading>
           </Row>
         </Row>
-
+        {/* Items */}
         {resolved.map((item) => (
           <Row
             key={item.title}
-            fillWidth
-            vertical="center"
-            gap="16"
-            padding="16"
+            center
+            background="neutral-medium"
             radius="l"
-            border="neutral-alpha-weak"
-            background="neutral-alpha-weak"
+            border="neutral-alpha-medium"
+            padding="12"
+            gap="16"
           >
-            <Column style={{ flex: 2 }}>
-              <Text variant="body-default-m" onBackground="neutral-strong">{item.title}</Text>
+            <Column flex="3">
+              <Heading variant="body-default-m" onBackground="neutral-strong">
+                {item.title}
+              </Heading>
             </Column>
-
-            <Column style={{ flex: 2 }} gap="4">
-              <ProgressBar value={item.progress} />
-              <Text variant="label-default-s" onBackground="neutral-weak">{item.progress}%</Text>
+            <Column flex="1" textVariant="body-default-m">
+              <ProgressBar value={item.progress} labelPosition="right" barBackground="info-strong" />
             </Column>
-
-            <Column style={{ flex: 3 }}>
-              <Text
+            <Column overflow="hidden" flex="4">
+              <Heading
                 variant="body-default-s"
                 onBackground="neutral-medium"
                 style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
               >
-                {item.commit ?? "—"}
-              </Text>
+                {item.commit ?? ""}
+              </Heading>
             </Column>
           </Row>
         ))}
       </Column>
-
       <Line background="neutral-alpha-medium" />
-
       <Column fillWidth gap="16">
         <ContributionGraph username={username} />
       </Column>

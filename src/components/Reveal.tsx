@@ -6,12 +6,9 @@ import { Flex, RevealFx, type SpacingToken } from "@once-ui-system/core";
 interface RevealProps {
   children: ReactNode;
   translateY?: number | SpacingToken;
-  fillWidth?: boolean;
-  horizontal?: "start" | "center" | "end";
 }
 
-export function Reveal({
-    children, translateY, fillWidth = false, horizontal = "center" }: RevealProps) {
+export function Reveal({ children, translateY }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [triggered, setTriggered] = useState(false);
 
@@ -32,10 +29,10 @@ export function Reveal({
   }, []);
 
   return (
-    <Flex ref={ref} direction="column" fillWidth={fillWidth}>
+    <Flex ref={ref} direction="column" fillWidth>
       <RevealFx
         translateY={translateY}
-        horizontal={horizontal}
+        horizontal="center"
         // Long delay until triggered
         delay={99999}
         trigger={triggered}

@@ -6,7 +6,9 @@ import { Button, Column, Flex, Heading, PasswordInput, Spinner } from "@once-ui-
 import { routes, protectedRoutes } from "@/resources";
 import NotFound from "@/app/not-found";
 
-interface RouteGuardProps { children: React.ReactNode }
+interface RouteGuardProps { 
+  children: React.ReactNode 
+}
 
 export const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
   const pathname = usePathname();

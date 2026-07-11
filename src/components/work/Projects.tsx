@@ -1,5 +1,5 @@
-import { Column } from "@once-ui-system/core";
-import { ProjectCard } from "@/components";
+import { Column, TiltFx} from "@once-ui-system/core";
+import { ProjectCard, Reveal, Scroll } from "@/components";
 import { getPosts } from "@/utils/utils";
 
 interface ProjectsProps {
@@ -16,16 +16,21 @@ export function Projects({ range }: ProjectsProps) {
   return (
     <Column fillWidth gap="160" paddingBottom="24">
       {displayedProjects.map((project) => 
-        <ProjectCard
-          key={project.slug}
-          href={`/work/${project.slug}`}
-          title={project.metadata.title}
-          description={project.metadata.summary}
-          image={project.metadata.image}
-          team={project.metadata.team}
-          link={project.metadata.link || ""}
-          tags={project.metadata.tags || []}
-        />
+        <Reveal key={project.slug} translateY="16">
+          <TiltFx fillWidth intensity={0.5}>
+            <Scroll href={`/work/${project.slug}`}>
+              <ProjectCard
+                key={project.slug}
+                title={project.metadata.title}
+                description={project.metadata.summary}
+                image={project.metadata.image}
+                team={project.metadata.team}
+                link={project.metadata.link || ""}
+                tags={project.metadata.tags || []}
+              />
+            </Scroll>
+          </TiltFx>
+        </Reveal>
       )}
     </Column>
   );
