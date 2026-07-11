@@ -18,12 +18,12 @@ export type GitHubEntry = {
 
 interface Item {
   title: string;
-  progress: number;
   message: string;
+  progress: number;
 };
 
 interface DashboardProps {
-  activity: Entry[] | GitHubEntry[];
+  activity: Array<Entry | GitHubEntry>;
   username: string;
 }
 
