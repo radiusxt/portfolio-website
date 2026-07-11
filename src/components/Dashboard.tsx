@@ -2,14 +2,14 @@ import { Column, Heading, Line, ProgressBar, Row } from "@once-ui-system/core";
 import { ContributionGraph } from "@/components";
 import { getLastCommit } from "@/lib";
 
-type Entry = {
+export type Entry = {
   type: ""
   title: string;
   message: string;
   progress: number;
 };
 
-type GitHubEntry = {
+export type GitHubEntry = {
   type: "gh";
   title: string;
   name: string;
@@ -37,7 +37,7 @@ async function resolveItem(item: Entry | GitHubEntry): Promise<Item> {
   return {
     title: item.title,
     progress: item.progress,
-    message: message ?? "",
+    message: message ?? ""
   };
 }
 

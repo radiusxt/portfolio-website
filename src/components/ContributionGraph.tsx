@@ -15,8 +15,6 @@ const MONTH_NAMES = [
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
 ];
 
-const OFFSET = 0.35
-
 /* Groups days: Day[] into their respective weeks: Day[][]. */
 function groupByWeek(days: Day[]) {
   const weeks = days.reduce<Day[][]>((weeks, day) => {
@@ -27,7 +25,6 @@ function groupByWeek(days: Day[]) {
 
     } else {
       weeks[weeks.length - 1].push(day);
-
     }
 
     return weeks;
@@ -69,6 +66,7 @@ export async function ContributionGraph({ username }: { username: string }) {
   return (
     <Column fillWidth gap="8">
       <Flex horizontal="center" overflow="auto" paddingX="4" gap="4">
+        {/* Labels */}
         {weeks.map((week, col) =>
           <Column key={week[0]?.date} className={styles.mobile} gap="4">
             <Row horizontal="center" width="12" height="16">
@@ -79,6 +77,7 @@ export async function ContributionGraph({ username }: { username: string }) {
               }
             </Row>
             <Column gap="4">
+              {/* Grid Cells */}
               {week.map((day) =>
                 <HoverCard key={day.date} placement="top" trigger={
                     <Flex

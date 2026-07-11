@@ -33,7 +33,6 @@
     "resend": "^6.7.0",
     "sass": "^1.86.3",
     "server-only": "^0.0.1",
-    "svg-dotted-map": "^2.1.0",
     "transliteration": "^2.3.5"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-import type { WorkItem } from "@/lib/dashboard";
+import type { Entry, GitHubEntry } from "@/components/Dashboard";
 import type { IconName } from "@/resources/icons";
 import type { zones } from "tzdata";
 
@@ -74,7 +74,7 @@ export interface Home extends BasePageConfig {
   /** The text inside TypeFx to complete subline */
   roles: Array<string>;
   /** Current things I'm working on */
-  activity: Array<WorkItem>;
+  activity: Array<Entry> | Array<GitHubEntry>;
 }
 
 /**
