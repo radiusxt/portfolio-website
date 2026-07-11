@@ -14,7 +14,7 @@ export function Projects({ range }: ProjectsProps) {
   const displayedProjects = projects.slice((range?.[0] ?? 1) - 1, range?.[1]);
 
   return (
-    <Column fillWidth gap="128" paddingBottom="32">
+    <Column fillWidth gap="160" paddingBottom="24">
       {displayedProjects.map((project) => 
         <ProjectCard
           key={project.slug}

@@ -39,7 +39,6 @@ export const home: Home = {
     "Software Engineer.",
     "Sports Photographer.",
     "Machine Learning Engineer.",
-    "Travel Photographer.",
     "Hardware Enthusiast."
   ]
 };
@@ -188,16 +187,20 @@ export const about: About = {
             icon: "jupyter",
           },
           {
+            name: "Claude",
+            icon: "claude",
+          },
+          {
+            name: "Cursor",
+            icon: "cursor",
+          },
+          {
             name: "Git",
             icon: "git",
           },
           {
             name: "Vercel",
             icon: "vercel",
-          },
-          {
-            name: "Claude",
-            icon: "claude",
           },
         ],
       },

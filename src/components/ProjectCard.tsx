@@ -87,7 +87,6 @@ export function ProjectCard({ href, title, description, image, team, tags }: Pro
                         <Heading
                           className={styles.mobile}
                           variant="body-default-l"
-                          onBackground="neutral-medium"
                           wrap="pretty"
                           paddingBottom="12"
                           style={{ lineHeight: "1.4", letterSpacing: "0.15px" }}

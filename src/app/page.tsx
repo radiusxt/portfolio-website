@@ -8,7 +8,7 @@ import {
   Schema,
   TypeFx
 } from "@once-ui-system/core";
-import { Bounce, ContactForm, ContributionGraph, Reveal } from "@/components";
+import { Bounce, ContactForm, ContributionGraph, Reveal, SpotlightBorder } from "@/components";
 import { home, about, person, baseURL } from "@/resources";
 
 export async function generateMetadata() {
@@ -23,7 +23,7 @@ export async function generateMetadata() {
 /* Home Page Layout */
 export default function Home() {
   return (
-    <Column id={home.title} maxWidth="xl" horizontal="center" style={{ scrollMarginTop: "120px" }}>
+    <Column id={home.title} horizontal="center" style={{ scrollMarginTop: "120px" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -89,7 +89,9 @@ export default function Home() {
       </Column>
       <Reveal translateY="16" fillWidth>
         <Column horizontal="center" gap="128">
-          <ContributionGraph username="radiusxt" />
+          <SpotlightBorder color="brand-on-background-weak">
+            <ContributionGraph username="radiusxt" />
+          </SpotlightBorder>
           <ContactForm />
         </Column>
       </Reveal>

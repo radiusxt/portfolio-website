@@ -30,7 +30,7 @@ export default function Work() {
           <Heading
             id={work.title}
             variant="display-default-m"
-            paddingBottom="80"
+            paddingBottom="104"
             style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
           >
             {work.title}
