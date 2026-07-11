@@ -6,10 +6,13 @@ import { Flex } from "@once-ui-system/core";
 interface SpotlightBorderProps {
   children: ReactNode;
   color: string;
+  spread?: number;
+  falloff?: number;
 }
 
 /* Dynamic border based on cursor proximity for styling */
-export function SpotlightBorder({ children, color, ...props }: SpotlightBorderProps) {
+export function SpotlightBorder({
+    children, color, spread = 100, falloff = 350, ...props }: SpotlightBorderProps) {
   const [mobile, setMobile] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
@@ -58,8 +61,8 @@ export function SpotlightBorder({ children, color, ...props }: SpotlightBorderPr
       const distBottom = rect.bottom - clientY;
       const distToBorder = Math.min(distLeft, distRight, distTop, distBottom);
 
-      const proximity = Math.max(0, 1 - Math.abs(distToBorder) / 300);
-      const arc = 120 * proximity;
+      const proximity = Math.max(0, 1 - Math.abs(distToBorder) / falloff);
+      const arc = spread * proximity;
       const half = arc / 2;
       const arcPercent = (arc / 360) * 100;
       const peakPercent = arcPercent / 2;
@@ -87,7 +90,7 @@ export function SpotlightBorder({ children, color, ...props }: SpotlightBorderPr
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [color]);
+  }, [color, spread, falloff]);
 
   // Don't render border if viewed on mobile.
   if (mobile) {

@@ -32,8 +32,7 @@ export const home: Home = {
   label: "Home",
   title: "Hyperdrive Media",
   description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}.`,
-  headline: `Building software that scales. \
-  Capturing photos that inspire.`,
+  headline: "Building software that scales. Capturing photos that inspire.",
   subline: "👋 I'm Nathaniel and I'm a",
   instruction: "Scroll",
   roles: [
@@ -42,11 +41,10 @@ export const home: Home = {
     "Machine Learning Engineer.",
     "Hardware Enthusiast."
   ],
-  items: [
-    { type: "manual", title: "Images from GT Festival QLD 2026", progress: 40 },
-    { type: "github", title: "PR Copilot", owner: "radiusxt", repo: "pr-copilot", progress: 100 },
-    { type: "github", title: "This Website", owner: "radiusxt", repo: "portfolio-website", progress: 100 },
-  ]
+  activity: [
+    { type: "", title: "GT Festival QLD 2026", message: "Editing Images...", progress: 40 },
+    { type: "gh", title: "This Website", name: "radiusxt/portfolio-website", progress: 80 },
+  ],
 };
 
 export const about: About = {

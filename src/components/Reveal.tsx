@@ -29,7 +29,7 @@ export function Reveal({ children, translateY }: RevealProps) {
   }, []);
 
   return (
-    <Flex ref={ref} direction="column" fillWidth>
+    <Flex ref={ref} fillWidth>
       <RevealFx
         translateY={translateY}
         horizontal="center"

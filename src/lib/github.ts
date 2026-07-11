@@ -4,11 +4,6 @@ export interface Day {
   level: 0 | 1 | 2 | 3 | 4;
 }
 
-interface LatestCommit {
-  message: string;
-  url: string;
-};
-
 export async function getContributions(username: string) {
   const response = await fetch(
     `https://github-contributions-api.jogruber.de/v4/${username}?y=last`,
@@ -19,7 +14,8 @@ export async function getContributions(username: string) {
   return data.contributions as Day[];
 }
 
-export async function getLatestCommit(owner: string, repo: string): Promise<LatestCommit | null> {
+export async function getLastCommit(name: string): Promise<string | null> {
+  const [owner, repo] = name.split("/");
   const response = await fetch(
     `https://api.github.com/repos/${owner}/${repo}/commits?per_page=1`,
     { headers: {
@@ -42,5 +38,5 @@ export async function getLatestCommit(owner: string, repo: string): Promise<Late
   }
 
   const [firstLine] = latest.commit.message.split("\n");
-  return { message: firstLine, url: latest.html_url };
+  return firstLine;
 }

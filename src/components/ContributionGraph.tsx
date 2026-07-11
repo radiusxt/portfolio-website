@@ -2,6 +2,7 @@ import { type Colors, Column, Flex, Heading, HoverCard, Row } from "@once-ui-sys
 import { getContributions } from "@/lib";
 import type { Day } from "@/lib/github";
 import { format } from "date-fns";
+import styles from "./ContributionGraph.module.scss";
 
 // From low to high contributions
 const levelColors: Colors[] = [
@@ -63,50 +64,45 @@ export async function ContributionGraph({ username }: { username: string }) {
   const contributions = await getContributions(username);
   const weeks = groupByWeek(contributions);
   const labels = getMonthLabels(weeks);
+  const labelByCol = new Map(labels.map(({ label, col }) => [col, label]));
 
   return (
     <Column fillWidth gap="8">
-      {/* Month labels */}
-      <Row position="relative" height="16">
-        {labels.map(({ label, col }) =>
-          <Column key={`${label}-${col}`} position="absolute" left={col + OFFSET}>
-            <Heading
-              variant="label-default-s"
-              onBackground="neutral-medium"
-              style={{ transform: "translateX(-50%)" }}
-            >
-              {label}
-            </Heading>
-          </Column>
-        )}
-      </Row>
-      {/* Grid */}
-      <Flex overflow="auto" gap="4">
-        {weeks.map((week) =>
-          <Column key={week[0]?.date} gap="4">
-            {week.map((day) =>
-              <HoverCard key={day.date} placement="top" trigger={
-                  <Flex
-                    width="12"
-                    height="12"
-                    radius="xs"
-                    background={levelColors[day.level]}
-                  />
-                }
-              >
-                <Row
-                  center
-                  background="neutral-strong"
-                  textVariant="label-default-s"
-                  onBackground="neutral-medium"
-                  radius="l"
-                  padding="8"
+      <Flex horizontal="center" overflow="auto" paddingX="4" gap="4">
+        {weeks.map((week, col) =>
+          <Column key={week[0]?.date} className={styles.mobile} gap="4">
+            <Row horizontal="center" width="12" height="16">
+              {labelByCol.has(col) &&
+                <Heading variant="label-default-s" onBackground="neutral-medium">
+                  {labelByCol.get(col)}
+                </Heading>
+              }
+            </Row>
+            <Column gap="4">
+              {week.map((day) =>
+                <HoverCard key={day.date} placement="top" trigger={
+                    <Flex
+                      width="12"
+                      height="12"
+                      radius="xs"
+                      background={levelColors[day.level]}
+                    />
+                  }
                 >
-                  {day.count} contribution{day.count !== 1 ? "s" : ""} on {}
-                  {format(new Date(day.date), "MMMM do")}.
-                </Row>
-              </HoverCard>
-            )}
+                  <Row
+                    center
+                    background="neutral-strong"
+                    textVariant="label-default-s"
+                    onBackground="neutral-medium"
+                    radius="l"
+                    padding="8"
+                  >
+                    {day.count} contribution{day.count !== 1 ? "s" : ""} on {}
+                    {format(new Date(day.date), "MMMM do")}.
+                  </Row>
+                </HoverCard>
+              )}
+            </Column>
           </Column>
         )}
       </Flex>

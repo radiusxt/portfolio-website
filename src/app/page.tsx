@@ -23,7 +23,7 @@ export async function generateMetadata() {
 /* Home Page Layout */
 export default function Home() {
   return (
-    <Column id={home.title} horizontal="center" style={{ scrollMarginTop: "120px" }}>
+    <Column maxWidth="xl" id={home.title} horizontal="center" fillWidth style={{ scrollMarginTop: "120px" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -34,7 +34,6 @@ export default function Home() {
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
       <Column
-        maxWidth="xl"
         position="relative"        
         horizontal="center"
         minHeight="100vh"
@@ -47,6 +46,7 @@ export default function Home() {
           horizontal="center"
           top="18vh"
           delay={0.1}
+          wrap
           style={{ paddingBottom: "11dvh" }}
         >
           <Heading variant="display-default-xl" style={{ lineHeight: "1.25", letterSpacing: "-1.5px" }}>
@@ -89,8 +89,8 @@ export default function Home() {
       </Column>
       <Column horizontal="center" gap="160">
         <Reveal translateY="16">
-          <SpotlightBorder color="brand-on-background-weak">
-            <Dashboard username="radiusxt" items={home.items}/>
+          <SpotlightBorder color="brand-on-background-weak" spread={80} falloff={200}>
+            <Dashboard username="radiusxt" activity={home.activity}/>
           </SpotlightBorder>
         </Reveal>
         <Reveal translateY="16">

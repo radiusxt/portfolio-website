@@ -1,0 +1,11 @@
+@use "./breakpoints.scss" as breakpoints;
+
+.mobile:nth-last-child(n + 24) {
+  display: none;
+}
+
+@media (min-width: breakpoints.$s) {
+  .mobile {
+    display: flex !important;
+  }
+}

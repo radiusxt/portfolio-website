@@ -1,1 +1,1 @@
-export { getContributions, getLatestCommit } from "@/lib/github";
+export { getContributions, getLastCommit } from "@/lib/github";

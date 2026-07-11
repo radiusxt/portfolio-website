@@ -58,11 +58,11 @@ export function ContactForm() {
   };
 
   return (
-    <Column fillWidth horizontal="center" gap="l" paddingBottom="32" maxWidth="s">
+    <Column fillWidth horizontal="center" gap="l" paddingBottom="32" maxWidth="xs">
       <Heading variant="display-default-s" paddingBottom="16" style={{ letterSpacing: "0px" }}>
         Get in Touch
       </Heading>
-      <Heading variant="heading-default-s" align="center" paddingBottom="16">
+      <Heading variant="heading-default-s" align="center" wrap="nowrap" paddingBottom="16">
         For work opportunities, collaborations or other inquiries, please complete the form below.
       </Heading>
       <form onSubmit={handleSubmit} style={{ width: "100%" }}>
