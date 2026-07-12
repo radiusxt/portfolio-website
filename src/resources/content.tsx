@@ -42,8 +42,18 @@ export const home: Home = {
     "Hardware Enthusiast."
   ],
   activity: [
-    { type: "", title: "GT Festival QLD 2026", message: "Editing Images...", progress: 40 },
-    { type: "gh", title: "This Website", name: "radiusxt/portfolio-website", progress: 80 },
+    {
+      type: "",
+      title: "GT Festival QLD 2026",
+      message: "Editing Images...",
+      progress: 40
+    },
+    {
+      type: "gh",
+      title: "This Website",
+      name: "radiusxt/portfolio-website",
+      progress: 80
+    },
   ],
 };
 

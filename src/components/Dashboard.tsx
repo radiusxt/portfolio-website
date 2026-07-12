@@ -16,31 +16,22 @@ export type GitHubEntry = {
   progress: number;
 };
 
-interface Item {
-  title: string;
-  message: string;
-  progress: number;
-};
-
 interface DashboardProps {
   activity: Array<Entry | GitHubEntry>;
   username: string;
 }
 
-async function resolveItem(item: Entry | GitHubEntry): Promise<Item> {
+/* Resolves entries into well-formed objects */
+async function resolveItem(item: Entry | GitHubEntry): Promise<Omit<Entry, "type">> {
   if (!item.type) {
     return { title: item.title, message: item.message, progress: item.progress };
   }
 
   const message = await getLastCommit(item.name);
-
-  return {
-    title: item.title,
-    progress: item.progress,
-    message: message ?? ""
-  };
+  return { title: item.title, message: message ?? "", progress: item.progress };
 }
 
+/* A dashboard component displaying what I'm working on */
 export async function Dashboard({ activity, username }: DashboardProps) {
   const items = await Promise.all(activity.map(resolveItem));
 
@@ -48,19 +39,19 @@ export async function Dashboard({ activity, username }: DashboardProps) {
     <Column fillWidth gap="32">
       <Column gap="12">
         {/* Headings */}
-        <Row center paddingX="12" gap="16">
-          <Row flex="3">
-            <Heading variant="label-default-m" onBackground="neutral-weak">
-              Name
+        <Row center gap="16">
+          <Row flex="3" paddingLeft="12">
+            <Heading variant="label-default-s" onBackground="neutral-weak">
+              Title
             </Heading>
           </Row>
-          <Row flex="4" s={{ hide: true }}>
-            <Heading variant="label-default-m" onBackground="neutral-weak">
+          <Row flex="4" paddingRight="12" s={{ hide: true }}>
+            <Heading variant="label-default-s" onBackground="neutral-weak">
               Message
             </Heading>
           </Row>
-          <Row center flex="1">
-            <Heading variant="label-default-m" onBackground="neutral-weak">
+          <Row center flex="1" paddingRight="12">
+            <Heading variant="label-default-s" onBackground="neutral-weak">
               Progress
             </Heading>
           </Row>
@@ -74,10 +65,9 @@ export async function Dashboard({ activity, username }: DashboardProps) {
             radius="l"
             border="neutral-alpha-medium"
             padding="12"
-            gap="12"
           >
             <Column flex="3">
-              <Heading variant="body-default-m" onBackground="neutral-strong">
+              <Heading variant="body-default-s" onBackground="neutral-strong">
                 {item.title}
               </Heading>
             </Column>
@@ -91,7 +81,7 @@ export async function Dashboard({ activity, username }: DashboardProps) {
                 {item.message ?? ""}
               </Heading>
             </Column>
-            <Column flex="1" textVariant="body-default-m">
+            <Column flex="1" textVariant="body-default-s">
               <ProgressBar
                 value={item.progress}
                 labelPosition="right"
@@ -101,7 +91,7 @@ export async function Dashboard({ activity, username }: DashboardProps) {
           </Row>
         )}
       </Column>
-      <Line background="brand-strong" radius="l" />
+      <Line background="brand-strong" height="2" radius="l" />
       <Column fillWidth gap="12">
         <ContributionGraph username={username} />
       </Column>

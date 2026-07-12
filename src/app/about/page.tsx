@@ -199,7 +199,7 @@ export default function About() {
                                 {experience.timeframe}
                               </Heading>
                             </Row>
-                            <Row fillWidth horizontal="between" vertical="center" marginBottom="16">
+                            <Row fillWidth horizontal="between" vertical="center" marginBottom="4">
                               <Heading variant="body-default-m" onBackground="brand-weak">
                                 {experience.role}
                               </Heading>

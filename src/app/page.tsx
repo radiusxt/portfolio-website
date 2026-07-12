@@ -89,7 +89,12 @@ export default function Home() {
       </Column>
       <Column horizontal="center" gap="160">
         <Reveal>
-          <SpotlightBorder color="brand-on-background-weak" spread={80} falloff={200}>
+          <SpotlightBorder
+            primary="brand-on-background-weak"
+            secondary="accent-on-background-weak"
+            spread={90}
+            falloff={200}
+          >
             <Dashboard username="radiusxt" activity={home.activity}/>
           </SpotlightBorder>
         </Reveal>

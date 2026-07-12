@@ -10,6 +10,7 @@ interface ScrollProps {
   href?: string;
 }
 
+/* Scroll to top of page/target */
 export function Scroll({ children, target, href }: ScrollProps) {
   const pathname = usePathname();
   const router = useRouter();
