@@ -1,14 +1,9 @@
 "use client";
 
 import { type ReactNode, useEffect, useRef, useState } from "react";
-import { Flex, RevealFx, type SpacingToken } from "@once-ui-system/core";
+import { Flex, RevealFx } from "@once-ui-system/core";
 
-interface RevealProps {
-  children: ReactNode;
-  translateY?: number | SpacingToken;
-}
-
-export function Reveal({ children, translateY }: RevealProps) {
+export function Reveal({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const [triggered, setTriggered] = useState(false);
 
@@ -31,7 +26,7 @@ export function Reveal({ children, translateY }: RevealProps) {
   return (
     <Flex ref={ref} fillWidth>
       <RevealFx
-        translateY={translateY}
+        translateY="16"
         horizontal="center"
         // Long delay until triggered
         delay={99999}

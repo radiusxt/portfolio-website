@@ -13,7 +13,7 @@ import {
   RevealFx,
   type SpacingToken,
 } from "@once-ui-system/core";
-import { Footer, Header, Providers, Reveal, RouteGuard } from "@/components";
+import { Footer, Header, Providers, RouteGuard } from "@/components";
 import { baseURL, dataStyle, effects, fonts, home, style } from "@/resources";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -208,9 +208,9 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               </RouteGuard>
             </Flex>
           </Flex>
-          <Reveal>
+          <RevealFx>
             <Footer />
-          </Reveal>
+          </RevealFx>
         </Column>
         <Analytics />
         <SpeedInsights />

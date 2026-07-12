@@ -8,7 +8,7 @@ export function GalleryView() {
       <MasonryGrid columns={3} gap="24" m={{ columns: 2 }} s={{ columns: 1 }}>
         {gallery.images.map((image) => 
           <Flex key={image.src} fill center>
-            <Reveal translateY="16">
+            <Reveal>
               <TiltFx intensity={0.5}>
                 <Loading fallback={<Media src="" aspectRatio="3/2" loading />}>
                   <Media src={image.src} priority radius="xl-8" border="neutral-medium" />

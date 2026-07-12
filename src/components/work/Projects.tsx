@@ -16,7 +16,7 @@ export function Projects({ range }: ProjectsProps) {
   return (
     <Column fillWidth gap="160" paddingBottom="24">
       {displayedProjects.map((project) => 
-        <Reveal key={project.slug} translateY="16">
+        <Reveal key={project.slug}>
           <TiltFx fillWidth intensity={0.5}>
             <Scroll href={`/work/${project.slug}`}>
               <ProjectCard

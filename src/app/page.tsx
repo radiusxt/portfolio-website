@@ -88,12 +88,12 @@ export default function Home() {
         </RevealFx>
       </Column>
       <Column horizontal="center" gap="160">
-        <Reveal translateY="16">
+        <Reveal>
           <SpotlightBorder color="brand-on-background-weak" spread={80} falloff={200}>
             <Dashboard username="radiusxt" activity={home.activity}/>
           </SpotlightBorder>
         </Reveal>
-        <Reveal translateY="16">
+        <Reveal>
           <ContactForm />
         </Reveal>
       </Column>
