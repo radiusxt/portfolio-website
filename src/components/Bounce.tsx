@@ -1,15 +1,48 @@
-import type { ReactNode } from "react";
-import { Flex } from "@once-ui-system/core"
+"use client";
+
+import { type ReactNode, useEffect, useRef } from "react";
+import { Flex } from "@once-ui-system/core";
 
 interface BounceProps {
   children: ReactNode;
   distance: number;
   duration: number;
-};
+  // Set fade to high value to disable
+  fade?: number;
+}
 
-export function Bounce({ children, distance, duration }: BounceProps) {
+/* Bounce animation with fade in/out */
+export function Bounce({ children, distance, duration, fade = 400 }: BounceProps) {
+  const fadeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const updateOpacity = () => {
+      const opacity = Math.max(0, 1 - window.scrollY / fade);
+
+      if (fadeRef.current) {
+        fadeRef.current.style.opacity = opacity.toString();
+      }
+
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateOpacity);
+        ticking = true;
+      }
+    };
+
+    // Set correct state on mount
+    updateOpacity(); 
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [fade]);
+
   return (
-    <Flex>
+    <Flex ref={fadeRef} style={{ transition: "opacity 0.2s ease-out" }}>
       <style>
         {`@keyframes bounce {
             0%, 100% {

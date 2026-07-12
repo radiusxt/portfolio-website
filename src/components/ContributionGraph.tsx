@@ -4,7 +4,7 @@ import type { Day } from "@/lib/github";
 import { format } from "date-fns";
 import styles from "./ContributionGraph.module.scss";
 
-// From low to high contributions
+// From low to high # of contributions
 const levelColors: Colors[] = [
   "neutral-medium", "accent-alpha-medium", "accent-alpha-strong",
   "brand-alpha-strong", "brand-strong"
@@ -15,7 +15,7 @@ const MONTH_NAMES = [
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
 ];
 
-/* Groups days: Day[] into their respective weeks: Day[][]. */
+/* Groups days: Day[] into their respective weeks: Day[][] */
 function groupByWeek(days: Day[]) {
   const weeks = days.reduce<Day[][]>((weeks, day) => {
     const isSunday = new Date(day.date).getDay() === 0;
@@ -33,7 +33,7 @@ function groupByWeek(days: Day[]) {
   return weeks;
 }
 
-/* Outputs a list of { label, column } pairs to find month change. */
+/* Outputs a list of { label, column } pairs to find month change */
 function getMonthLabels(weeks: Day[][]) {
   const positions: { label: string, col: number }[] = [];
   let lastMonth = -1;
@@ -76,8 +76,8 @@ export async function ContributionGraph({ username }: { username: string }) {
                 </Heading>
               }
             </Row>
+            {/* Grid Cells */}
             <Column gap="4">
-              {/* Grid Cells */}
               {week.map((day) =>
                 <HoverCard key={day.date} placement="top" trigger={
                     <Flex
