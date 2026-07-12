@@ -1,16 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { type ReactElement, type ReactNode, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Button, Column, Flex, Heading, PasswordInput, Spinner } from "@once-ui-system/core";
 import { routes, protectedRoutes } from "@/resources";
 import NotFound from "@/app/not-found";
 
-interface RouteGuardProps { 
-  children: React.ReactNode 
-}
-
-export const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
+export function RouteGuard({ children }: { children: ReactNode }): ReactElement {
   const pathname = usePathname();
   const [isRouteEnabled, setIsRouteEnabled] = useState(false);
   const [isPasswordRequired, setIsPasswordRequired] = useState(false);

@@ -9,7 +9,9 @@
 }
 
 @media (max-width: breakpoints.$s) {
-  .textAlign {
+  .mobile {
+    width: 100%;
     text-align: center;
+    justify-content: center;
   }
 }

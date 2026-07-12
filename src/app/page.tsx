@@ -23,7 +23,7 @@ export async function generateMetadata() {
 /* Home Page Layout */
 export default function Home() {
   return (
-    <Column maxWidth="xl" id={home.title} horizontal="center" fillWidth style={{ scrollMarginTop: "120px" }}>
+    <Column id={home.title} horizontal="center" fillWidth style={{ scrollMarginTop: "120px" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -34,6 +34,7 @@ export default function Home() {
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
       <Column
+        maxWidth="xl"
         position="relative"        
         horizontal="center"
         minHeight="100vh"

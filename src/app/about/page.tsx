@@ -116,19 +116,20 @@ export default function About() {
             <Column fillWidth vertical="center" marginBottom="32">
               <Heading
                 id={about.intro.title}
-                className={styles.textAlign}
+                className={styles.mobile}
                 variant="display-default-xl"
                 paddingBottom="24"
                 style={{ letterSpacing: "-1px", scrollMarginTop: "120px" }}
               >
                 {person.name}
               </Heading>
-              <Heading className={styles.textAlign} variant="display-default-s" paddingBottom="32">
+              <Heading className={styles.mobile} variant="display-default-s" paddingBottom="32">
                 {person.role}
               </Heading>
               {about.intro.display && 
                 <Column fillWidth marginBottom="32">
                   <Heading
+                    className={styles.mobile} 
                     variant="body-default-xl"
                     wrap="wrap"
                     style={{ whiteSpace: "pre-line", lineHeight: "1.7", letterSpacing: "0.4px" }}
@@ -139,9 +140,9 @@ export default function About() {
               }
               {social.length > 0 && 
                 <Row
-                  className={styles.blockAlign}
+                  className={styles.mobile}
+                  horizontal="start"
                   fitWidth
-                  horizontal="center"
                   data-border="rounded"
                   gap="12"
                 >

@@ -30,11 +30,16 @@ export function ContactForm() {
   const handleEmail = formData.email.length > 0 && 
     !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SubmitEvent) => {
     e.preventDefault();
 
-    if (status === "loading") return;
-    if (!formData.email.includes("@")) return setStatus("error"); 
+    if (status === "loading") {
+      return;
+    }
+
+    if (!formData.email.includes("@")) {
+      return setStatus("error");
+    }
 
     setStatus("loading");
 

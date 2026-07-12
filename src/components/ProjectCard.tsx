@@ -26,7 +26,7 @@ interface ProjectCardProps {
 /* Card Prop for Case Study */
 export function ProjectCard({ title, description, image, team, tags }: ProjectCardProps) {
   return (
-    <SmartLink style={{ display: "contents" }}>
+    <SmartLink>
       <Hover
         fillWidth
         tabIndex={-1}
