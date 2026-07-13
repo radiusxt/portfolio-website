@@ -319,4 +319,7 @@ export const gallery: Gallery = {
       orientation: "horizontal",
     },
   ],
+  testimonials: [
+    
+  ],
 };

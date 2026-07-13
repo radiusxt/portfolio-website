@@ -188,11 +188,20 @@ export interface Work extends BasePageConfig {
  * @description Configuration for the Gallery page, including metadata, navigation label, and image list.
  */
 export interface Gallery extends BasePageConfig {
-  /** List of images in the gallery */
+  /** Array of highlight images in the gallery */
   images: Array<{
     /** Image source path */
     src: string;
     /** Image orientation (horizontal/vertical) */
     orientation: string;
+  }>;
+  /** Array of testimonials from past clients */
+  testimonials: Array<{
+    /** Name of person */
+    person: string;
+    /** Organisation they are representing */
+    organisation: string;
+    /** Their experience in writing */
+    testimonial: string;
   }>;
 }

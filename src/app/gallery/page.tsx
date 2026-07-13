@@ -50,10 +50,7 @@ export default function Gallery() {
         width="90vw"
         height="120vh"
         delay={0.8}
-        style={{
-          left: "50%",
-          transform: "translateX(-50%)"
-        }}
+        style={{ left: "50%", transform: "translateX(-50%)" }}
         s={{ style: { height: "370vh" }}}
         m={{ style: { height: "210vh" }}}
       >
