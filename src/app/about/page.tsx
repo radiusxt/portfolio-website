@@ -355,6 +355,7 @@ export default function About() {
                             right="0"
                             to="left"
                             width="80"
+                            s={{ style: { marginRight: "-4px" }}}
                           />
                         </Column>
                       </Column>

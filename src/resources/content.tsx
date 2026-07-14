@@ -52,7 +52,7 @@ export const home: Home = {
       type: "gh",
       title: "This Website",
       name: "radiusxt/portfolio-website",
-      progress: 80
+      progress: 85
     },
   ],
 };
