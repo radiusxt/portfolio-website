@@ -13,7 +13,8 @@ import {
   RevealFx,
   type SpacingToken,
 } from "@once-ui-system/core";
-import { Footer, Header, Providers, RouteGuard } from "@/components";
+import Script from "next/script";
+import { Footer, Header, Providers, RouteGuard, Transition } from "@/components";
 import { baseURL, dataStyle, effects, fonts, home, style } from "@/resources";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -43,8 +44,9 @@ export default async function RootLayout({children}: Readonly<{children: React.R
       )}
     >
       <head>
-        <script
+        <Script
           id="theme-init"
+          strategy="beforeInteractive"
           // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
           dangerouslySetInnerHTML={{
             __html: `
@@ -196,17 +198,19 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               WebkitMaskImage: "radial-gradient(circle 350vh at 50% 0vh, transparent 23%, black 40%)"
             }}
           >
-            <RevealFx fill position="absolute" delay={0.6}>
-              <Particle speed={1} density={125} size="4" color="brand-on-background-weak" />
-            </RevealFx>
+            <Transition>
+              <RevealFx fill position="absolute" delay={0.6}>
+                <Particle speed={1} density={125} size="4" color="brand-on-background-weak" />
+              </RevealFx>
+            </Transition>
           </Flex>
           <Header />
           <Flex zIndex={0} flex={1} fillWidth horizontal="center" padding="32">
-            <Flex fillWidth horizontal="center" minHeight="0">
+            <Transition>
               <RouteGuard>
                 {children}
               </RouteGuard>
-            </Flex>
+            </Transition>
           </Flex>
           <RevealFx>
             <Footer />

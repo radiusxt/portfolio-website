@@ -97,6 +97,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
             onBackground="brand-medium"
             paddingBottom="24"
             wrap="balance"
+            style={{ lineHeight: 1.5 }}
           >
             {/* Inserts 2 spaces before and after '|' */}
             {post.metadata.team.map((member) => member.name).join("\u00A0 | \u00A0")}

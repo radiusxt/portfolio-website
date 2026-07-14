@@ -1,8 +1,9 @@
 "use client";
 
 import type { MouseEvent, ReactNode } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Flex } from "@once-ui-system/core";
+import { useNavigation } from "@/components";
 
 interface ScrollProps {
   children: ReactNode;
@@ -13,7 +14,7 @@ interface ScrollProps {
 /* Scroll to top of page or target location */
 export function Scroll({ children, target, href }: ScrollProps) {
   const pathname = usePathname();
-  const router = useRouter();
+  const { navigate } = useNavigation();
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
     const isModifiedClick =
@@ -46,7 +47,7 @@ export function Scroll({ children, target, href }: ScrollProps) {
     // Wait for animation to reach within 25px of top before transitioning.
     const waitForTop = () => {
       if (window.scrollY <= 25) {
-        router.push(href);
+        navigate(href);
         return;
       }
 
@@ -58,7 +59,9 @@ export function Scroll({ children, target, href }: ScrollProps) {
 
   return (
     <a href={href} onClick={handleClick}>
-      <Flex cursor="pointer">{children}</Flex>
+      <Flex cursor="pointer">
+        {children}
+      </Flex>
     </a>
   );
 }

@@ -87,7 +87,7 @@ export const about: About = {
         role: "Academic Tutor",
         location: "Brisbane, Australia",
         achievements: [
-          "Tutored core statistical concepts including probability theory, distributions, sampling, estimation and hypothesis testing \
+          "Tutored core statistical concepts including probability theory, distribution sampling and hypothesis testing \
             with a focus on data analysis, regression modelling and engineering applications in STAT2203.",
           "Tutored microcontroller-based system design, covering embedded C programming, RTOS concepts, hardware interfacing and \
             the integration of sensors, actuators and communication protocols in real-world embedded applications on ARM Cortex processors in CSSE3010."

@@ -60,22 +60,10 @@ export default function About() {
         image={`/api/og/generate?title=${encodeURIComponent(about.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}`}}
       />
-      {about.tableOfContent.display && 
-        <Column
-          position="fixed"
-          zIndex={2}
-          top="45%"
-          left="8"
-          paddingLeft="48"
-          s={{ hide: true }}
-          l={{ hide: true }}
-        >
-          <RevealFx delay={0.6}>
-            <TableOfContents structure={structure} about={about} />
-          </RevealFx>
-        </Column>
+      {about.tableOfContent.display &&
+        <TableOfContents structure={structure} about={about} />
       }
-      <RevealFx delay={0.1}>
+      <RevealFx translateY="16" delay={0.1}>
         <Row fillWidth horizontal="center" s={{ direction: "column" }}>
           {/* Avatar */}
           {about.avatar.display && 
@@ -156,7 +144,7 @@ export default function About() {
                         size="m"
                         weight="default"
                         variant="tertiary"
-                        style={{ gap: "8px", letterSpacing: "0.3px" }}
+                        style={{ padding: "20px", gap: "12px", letterSpacing: "0.3px" }}
                       />
                     </Flex>
                   )}

@@ -15,9 +15,9 @@ export function ThemeToggle() {
   }, []);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-  useEffect(() => {
-    setCurrentTheme(document.documentElement.getAttribute("data-theme") || "light");
-  }, [theme]);
+  useEffect(() =>
+    setCurrentTheme(document.documentElement.getAttribute("data-theme") || "light"), [theme]
+  );
 
   const icon = currentTheme === "dark" ? "dark" : "light";
   const nextTheme = currentTheme === "light" ? "dark" : "light";

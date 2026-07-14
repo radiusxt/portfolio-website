@@ -7,6 +7,7 @@ export { Footer } from "@/components/Footer";
 export { Header } from "@/components/Header";
 export { HeadingLink } from "@/components/HeadingLink";
 export { Loading } from "@/components/Loading";
+export { NavigationProvider, useNavigation } from "@/components/Navigation";
 export { ProjectCard } from "@/components/ProjectCard";
 export { Providers } from "@/components/Providers";
 export { Reveal } from "@/components/Reveal";
@@ -14,3 +15,4 @@ export { RouteGuard } from "@/components/RouteGuard";
 export { Scroll } from "@/components/Scroll";
 export { SpotlightBorder } from "@/components/SpotlightBorder";
 export { ThemeToggle } from "@/components/ThemeToggle";
+export { Transition } from "@/components/Transition"
