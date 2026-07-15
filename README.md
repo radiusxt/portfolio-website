@@ -1,6 +1,6 @@
 # Portfolio Website
 
-My personal portfolio website showcasing work in software development and photography. This portfolio website was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+ and uses Biome for linting and type checking.
+My personal portfolio website showcasing work in software development and photography. This portfolio website was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v20.9+ and uses Biome for linting and type checking.
 
 ## Quick Start
 
@@ -21,7 +21,7 @@ npm run dev
 
 ## Environment Variables
 
-Set up your own ```.env``` file with your dedicated email address, password for webpage authentication and Resend/Emailable API keys for email functionality.
+Set up an ```.env``` file with your dedicated email address, password for authentication and GitHub/Resend/Emailable API keys.
 
 ## Tech Stack
 
