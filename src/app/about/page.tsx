@@ -174,11 +174,11 @@ export default function About() {
                     }}
                     items={[
                       ...about.work.experiences.map((experience, index) => ({
-                        label: (
+                        label:
                           <Column
                             fillWidth
                             key={`${experience.company}-${experience.role}-${index}`}
-                            style={ index !== 0 ? { marginTop: "-16px" } : { marginTop: "-8px" }}
+                            style={ index !== 0 ? { marginTop: "-6px" } : { marginTop: "-4px" }}
                           >
                             <Row fillWidth horizontal="between" vertical="center" marginBottom="4">
                               <Heading id={experience.company} variant="heading-default-xl">
@@ -197,8 +197,8 @@ export default function About() {
                               </Heading>
                             </Row>
                           </Column>
-                        ),
-                        description: (
+                        ,
+                        description:
                           <Column as="ul" marginBottom="16" gap="16">
                             {experience.achievements.map((achievement, index) => 
                               <Heading
@@ -212,7 +212,7 @@ export default function About() {
                               </Heading>
                             )}
                           </Column>
-                        ),
+                        ,
                         state: "active" as const
                       })),
                       // Null object for disappearing marker effect.
@@ -245,11 +245,11 @@ export default function About() {
                     }}
                     items={[
                       ...about.studies.institutions.map((institution, index) => ({
-                        label: (
+                        label:
                           <Column
                             fillWidth
                             key={`${institution.name}-${index}`}
-                            style={ index !== 0 ? { marginTop: "-16px" } : { marginTop: "-8px" }}
+                            style={ index !== 0 ? { marginTop: "-6px" } : { marginTop: "-4px" }}
                           >
                             <Row fillWidth horizontal="between" vertical="center" marginBottom="4">
                               <Heading id={institution.name} variant="heading-default-xl">
@@ -260,8 +260,8 @@ export default function About() {
                               {institution.degree}
                             </Heading>
                           </Column>
-                        ),
-                        description: (
+                        ,
+                        description:
                           <Column as="ul" marginBottom="16" gap="16">
                             {institution.description.map((line, lineIndex) => 
                               <Heading
@@ -276,7 +276,7 @@ export default function About() {
                               </Heading>
                             )}
                           </Column>
-                        ),
+                        ,
                         state: "active" as const
                       })),
                       // Null object for disappearing marker effect.
