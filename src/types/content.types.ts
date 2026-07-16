@@ -73,6 +73,8 @@ export interface Home extends BasePageConfig {
   instruction: string;
   /** The text inside TypeFx to complete subline */
   roles: Array<string>;
+  /** GitHub username */
+  github: string;
   /** Current things I'm working on */
   activity: Array<Entry | GitHubEntry>;
 }

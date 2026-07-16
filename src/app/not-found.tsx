@@ -7,7 +7,7 @@ export default function NotFound() {
       center
       minHeight="100vh"
       minWidth="100vw"
-      background="neutral-weak"
+      background="page"
       style={{ marginTop: "-8rem", marginBottom: "-8rem" }}
     >
       <Particle

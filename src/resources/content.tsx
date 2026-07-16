@@ -41,6 +41,7 @@ export const home: Home = {
     "Machine Learning Engineer.",
     "Hardware Enthusiast."
   ],
+  github: "radiusxt",
   activity: [
     {
       type: "",
@@ -81,6 +82,19 @@ export const about: About = {
     display: true,
     title: "Experience",
     experiences: [
+      {
+        company: "Contractor",
+        timeframe: "Feb '26 - Present",
+        role: "Software Engineer",
+        location: "Remote",
+        achievements: [
+          "Built and deployed custom full-stack applications for private clients from initial concept to production, managing the SDLC throughout.",
+          "Styled modern and responsive user interfaces with accessibility features using Next.js and React.",
+          "Integrated authentication, databases and cloud infrastructure to deliver scalable solutions with Auth0, Supabase and AWS.",
+          "Defined functional and non-functional requirements and iterated rapidly based on user feedback."
+        ],
+        images: [],
+      },
       {
         company: "University of Queensland",
         timeframe: "Feb '25 - Nov '25",

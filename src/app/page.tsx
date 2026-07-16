@@ -50,13 +50,13 @@ export default function Home() {
           wrap
           style={{ paddingBottom: "11dvh" }}
         >
-          <Heading variant="display-default-xl" style={{ lineHeight: "1.25", letterSpacing: "-1.5px" }}>
+          <Heading as="h1" variant="display-default-xl" style={{ lineHeight: "1.25", letterSpacing: "-1.5px" }}>
             {home.headline}
           </Heading>
         </RevealFx>
         <RevealFx translateY="16" fillWidth horizontal="center" top="18vh" delay={0.8}>
           <Row center gap="8" s={{ direction: "column" }}>
-            <Heading variant="heading-default-xl" style={{ letterSpacing: "0.3px" }}>
+            <Heading as="h2" variant="heading-default-xl" style={{ letterSpacing: "0.3px" }}>
               {home.subline}
             </Heading>
             <Heading>
@@ -96,7 +96,7 @@ export default function Home() {
             spread={90}
             falloff={200}
           >
-            <Dashboard username="radiusxt" activity={home.activity}/>
+            <Dashboard username={home.github} activity={home.activity}/>
           </SpotlightBorder>
         </Reveal>
         <Reveal>
