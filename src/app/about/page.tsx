@@ -204,7 +204,7 @@ export default function About() {
                               <Heading
                                 as="li"
                                 key={`${experience.company}-${index}`}
-                                variant="body-default-l"
+                                variant="body-default-m"
                                 wrap="wrap"
                                 style={{ marginLeft: "-24px" }}
                               >
@@ -267,7 +267,7 @@ export default function About() {
                               <Heading
                                 as="li"
                                 key={`${institution.name}-line-${lineIndex}`}
-                                variant="body-default-l"
+                                variant="body-default-m"
                                 onBackground="neutral-strong"
                                 wrap="wrap"
                                 style={{ marginLeft: "-24px" }}
@@ -316,7 +316,7 @@ export default function About() {
                         <Heading id={skill.title} variant="heading-default-xl" marginBottom="8">
                           {skill.title}
                         </Heading>
-                        <Heading variant="body-default-l" onBackground="neutral-strong">
+                        <Heading variant="body-default-m" onBackground="neutral-strong">
                           {skill.description}
                         </Heading>
                         <Column>
@@ -340,7 +340,7 @@ export default function About() {
                               <Column key={`${skill.title}-${index}`} paddingX="32">
                                 <Row vertical="center" margin="4" gap="16">
                                   <Icon name={tag.icon} onBackground="brand-weak" size="l" />
-                                  <Heading variant="label-default-l" wrap="nowrap">
+                                  <Heading variant="body-default-m" wrap="nowrap">
                                     {tag.name}
                                   </Heading>
                                 </Row>

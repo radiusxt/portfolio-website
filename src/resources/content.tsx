@@ -220,7 +220,7 @@ export const about: About = {
       },
       {
         title: "Frameworks",
-        description: "Accelerating development to build low-latency databases and creative interfaces.",
+        description: "Accelerating development to build responsive backends and creative interfaces.",
         tags: [
           {
             name: "PyTorch",

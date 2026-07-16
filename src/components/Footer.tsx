@@ -14,6 +14,7 @@ export function Footer() {
         horizontal="between"
         vertical="center"
         paddingX="16"
+        paddingBottom="4"
         gap="16"
         s={{ direction: "column", horizontal: "center" }}
       >
