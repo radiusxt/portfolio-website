@@ -15,7 +15,7 @@ export async function generateMetadata() {
 /* Software Page Layout */
 export default function Work() {
   return (
-    <Column maxWidth="xl" horizontal="center">
+    <Column maxWidth="xl" minHeight="90vh" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -26,7 +26,7 @@ export default function Work() {
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
       <RevealFx translateY="16" delay={0.1}>
-        <Column fillWidth paddingTop="24" horizontal="center">
+        <Column fillWidth horizontal="center" paddingTop="24">
           <Heading
             id={work.title}
             variant="display-default-m"

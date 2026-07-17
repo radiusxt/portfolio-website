@@ -15,7 +15,7 @@ export function Projects({ range }: ProjectsProps) {
   const displayedProjects = projects.slice((range?.[0] ?? 1) - 1, range?.[1]);
 
   return (
-    <Column fill center>
+    <Column fill horizontal="center">
       <Swiper
         fill
         priority
