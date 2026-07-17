@@ -133,7 +133,7 @@ export function ContactForm() {
             <Feedback variant="success">
               <Flex direction="column" align="center" padding="2" style={{ letterSpacing: "0.4px" }}>
                 <Heading variant="heading-default-s" onBackground="neutral-strong">
-                  Message Received! I will get in touch with you shortly.
+                  Message Received! I will respond to your inquiry as soon as possible.
                 </Heading>
               </Flex>
             </Feedback>

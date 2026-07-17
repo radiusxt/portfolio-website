@@ -1,5 +1,5 @@
-import { Column, TiltFx } from "@once-ui-system/core";
-import { ProjectCard, Reveal, Scroll } from "@/components";
+import { Column, Swiper, TiltFx } from "@once-ui-system/core";
+import { ProjectCard, Scroll } from "@/components";
 import { getPosts } from "@/utils/utils";
 
 interface ProjectsProps {
@@ -15,24 +15,36 @@ export function Projects({ range }: ProjectsProps) {
   const displayedProjects = projects.slice((range?.[0] ?? 1) - 1, range?.[1]);
 
   return (
-    <Column fillWidth gap="160" paddingBottom="24">
-      {displayedProjects.map((project) => 
-        <Reveal key={project.slug}>
-          <TiltFx fillWidth intensity={0.5}>
-            <Scroll href={`/work/${project.slug}`}>
-              <ProjectCard
-                key={project.slug}
-                title={project.metadata.title}
-                description={project.metadata.summary}
-                image={project.metadata.image}
-                team={project.metadata.team}
-                link={project.metadata.link || ""}
-                tags={project.metadata.tags || []}
-              />
-            </Scroll>
-          </TiltFx>
-        </Reveal>
-      )}
+    <Column fill center>
+      <Swiper
+        fill
+        priority
+        aspectRatio="3 / 2"
+        controls={false}
+        border="transparent"
+        m={{ aspectRatio: "1 / 1 "}}
+        s={{ aspectRatio: "4 / 5" }}
+        items={[
+          ...displayedProjects.map((project) => ({
+            slide:
+              <Column key={project.slug} fill center>
+                <TiltFx maxWidth="l" intensity={0.5}>
+                  <Scroll href={`/work/${project.slug}`}>
+                    <ProjectCard
+                      key={project.slug}
+                      title={project.metadata.title}
+                      description={project.metadata.summary}
+                      image={project.metadata.image}
+                      team={project.metadata.team}
+                      link={project.metadata.link || ""}
+                      tags={project.metadata.tags || []}
+                    />
+                  </Scroll>
+                </TiltFx>
+              </Column>
+          }))
+        ]}
+      />
     </Column>
   );
 }

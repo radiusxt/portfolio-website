@@ -83,7 +83,7 @@ export const about: About = {
     title: "Experience",
     experiences: [
       {
-        company: "Contractor",
+        company: "Freelance",
         timeframe: "Feb '26 - Present",
         role: "Software Engineer",
         location: "Remote",

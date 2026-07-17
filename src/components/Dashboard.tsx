@@ -86,6 +86,10 @@ export async function Dashboard({ activity, username }: DashboardProps) {
                 value={item.progress}
                 labelPosition="right"
                 barBackground="accent-strong"
+                aria-label={`${item.title}`}
+                aria-valuenow={item.progress}
+                aria-valuemin={0}
+                aria-valuemax={100}
               />
             </Column>
           </Row>

@@ -15,7 +15,7 @@ export async function generateMetadata() {
 /* Software Page Layout */
 export default function Work() {
   return (
-    <Column direction="column" maxWidth="l">
+    <Column maxWidth="xl" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -30,7 +30,7 @@ export default function Work() {
           <Heading
             id={work.title}
             variant="display-default-m"
-            paddingBottom="104"
+            paddingBottom="20"
             style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
           >
             {work.title}

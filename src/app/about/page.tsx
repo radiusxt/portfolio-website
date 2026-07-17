@@ -79,7 +79,7 @@ export default function About() {
               xs={{ style: { top: "auto" } }}
               s={{ position: "relative", style: { top: "auto" } }}
             >
-              <Avatar src={person.avatar} size={16} />
+              <Avatar src={person.avatar} size={16} border="neutral-strong" />
               <Row vertical="center" gap="8">
                 <Icon name="globe" onBackground="brand-weak" size="l" />
                 <Heading variant="body-default-xl">
@@ -156,6 +156,7 @@ export default function About() {
               <>
                 <Heading
                   as="h2"
+                  className={styles.mobile}
                   id={about.work.title}
                   variant="display-default-s"
                   marginBottom="32"
@@ -227,6 +228,7 @@ export default function About() {
               <>
                 <Heading
                   as="h2"
+                  className={styles.mobile}
                   id={about.studies.title}
                   variant="display-default-s"
                   marginBottom="32"
@@ -291,6 +293,7 @@ export default function About() {
               <>
                 <Heading
                   as="h2"
+                  className={styles.mobile}
                   id={about.technical.title}
                   variant="display-default-s"
                   marginBottom="32"
