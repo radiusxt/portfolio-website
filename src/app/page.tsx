@@ -6,6 +6,7 @@ import {
   RevealFx,
   Row,
   Schema,
+  ShineFx,
   TypeFx
 } from "@once-ui-system/core";
 import { Bounce, ContactForm, Dashboard, Reveal, SpotlightBorder } from "@/components";
@@ -50,9 +51,15 @@ export default function Home() {
           wrap
           style={{ paddingBottom: "11dvh" }}
         >
-          <Heading as="h1" variant="display-default-xl" style={{ lineHeight: "1.25", letterSpacing: "-1.5px" }}>
-            {home.headline}
-          </Heading>
+          <ShineFx speed={4} baseOpacity={0.5} inverse>
+            <Heading
+              as="h1"
+              variant="display-default-xl"
+              style={{ lineHeight: "1.25", letterSpacing: "-1.5px" }}
+            >
+              {home.headline}
+            </Heading>
+          </ShineFx>
         </RevealFx>
         <RevealFx translateY="16" fillWidth horizontal="center" top="18vh" delay={0.8}>
           <Row center gap="8" s={{ direction: "column" }}>

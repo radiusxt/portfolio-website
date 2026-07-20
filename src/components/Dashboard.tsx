@@ -67,7 +67,11 @@ export async function Dashboard({ activity, username }: DashboardProps) {
             padding="12"
           >
             <Column flex="3">
-              <Heading variant="body-default-s" onBackground="neutral-strong">
+              <Heading
+                variant="body-default-s"
+                onBackground="neutral-strong"
+                style={{ textOverflow: "ellipsis" }}
+              >
                 {item.title}
               </Heading>
             </Column>

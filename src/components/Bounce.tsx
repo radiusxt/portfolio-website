@@ -7,7 +7,7 @@ interface BounceProps {
   children: ReactNode;
   distance: number;
   duration: number;
-  // Set fade to high value to disable
+  // Set high value to disable
   fade?: number;
 }
 

@@ -9,7 +9,6 @@ export const person: Person = {
   email: process.env.EMAIL_ADDRESS ?? "",
   location: "Australia/Brisbane",
   locale: "en-AU",
-  languages: ["English", "Cantonese"],
 };
 
 export const social: Social = [
@@ -88,9 +87,9 @@ export const about: About = {
         role: "Software Engineer",
         location: "Remote",
         achievements: [
-          "Built and deployed custom full-stack applications for private clients from initial concept to production, managing the SDLC throughout.",
+          "Built & deployed custom full-stack applications for private clients from initial concept to production, managing the full SDLC.",
           "Styled modern and responsive user interfaces with accessibility features using Next.js and React.",
-          "Integrated authentication, databases and cloud infrastructure to deliver scalable solutions with Auth0, Supabase and AWS.",
+          "Integrated authentication, databases & cloud infrastructure to deliver scalable solutions with Auth0, Supabase & AWS.",
           "Defined functional and non-functional requirements and iterated rapidly based on user feedback."
         ],
         images: [],

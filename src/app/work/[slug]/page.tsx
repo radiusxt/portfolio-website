@@ -113,7 +113,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
               <Media
                 src=""
                 maxWidth="m"
-                radius="l"
+                radius="xl-8"
                 border="transparent"
                 marginTop="80"
                 marginBottom="80"
@@ -126,7 +126,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
               src={post.metadata.image}
               alt={post.metadata.title}
               maxWidth="m"
-              radius="l"
+              radius="xl-8"
               border="neutral-medium"
               marginTop="80"
               marginBottom="80"

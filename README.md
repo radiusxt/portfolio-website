@@ -1,6 +1,7 @@
 # Portfolio Website
 
-My personal portfolio website showcasing work in software development and photography. This portfolio website was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v20.9+ and uses Biome for linting and type checking.
+My personal portfolio website showcasing work in software development and photography built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org).
+It requires Node.js v20.9+ and uses Biome for linting and type checking.
 
 ## Quick Start
 
@@ -21,7 +22,8 @@ npm run dev
 
 ## Environment Variables
 
-Set up an ```.env``` file with your dedicated email address, password for authentication and GitHub/Resend/Emailable API keys.
+Set up an ```.env``` file with your dedicated email address, a password and GitHub/Resend/Emailable API keys.
+Without this, you lose email functionality, password protected pages and GitHub profile information.
 
 ## Tech Stack
 
@@ -34,8 +36,7 @@ Set up an ```.env``` file with your dedicated email address, password for authen
 
 - TypeScript
 - MDX
-- Resend
-- Emailable
+- Resend/Emailable
 
 ### Deployment
 

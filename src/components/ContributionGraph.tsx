@@ -106,7 +106,7 @@ export async function ContributionGraph({ username }: { username: string }) {
         )}
       </Flex>
       {/* Legend */}
-      <Row horizontal="end" vertical="center" gap="8">
+      <Row horizontal="end" vertical="center" paddingRight="4" gap="8">
         <Heading variant="label-default-s" onBackground="neutral-weak">
           Less
         </Heading>

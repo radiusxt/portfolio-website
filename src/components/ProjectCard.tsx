@@ -37,19 +37,34 @@ export function ProjectCard({ title, description, image, team, tags }: ProjectCa
             direction="column"
             horizontal="center"
             fillWidth
-            radius="l"
-            border="neutral-alpha-medium"
+            radius="xl-8"
+            border="neutral-medium"
             paddingBottom="24"
             gap="12"
           >
             <Loading
               fallback={
-                <Media src="" radius="l" aspectRatio="16/9" loading border="neutral-weak" />
+                <Media
+                  src=""
+                  radius="xl-8"
+                  aspectRatio="16/9"
+                  loading
+                />
               }
             >
-              <Media src={image} alt={title} radius="l" priority border="neutral-weak" />
+              <Media
+                src={image}
+                alt={title}
+                radius="xl-8"
+                bottomRadius="xs"
+                priority
+              />
             </Loading>
-            <Flex fillWidth paddingX="12" s={{ direction: "column", horizontal: "center" }}>
+            <Flex
+              fillWidth
+              paddingX="12"
+              s={{ direction: "column", horizontal: "center" }}
+            >
               <Column flex={8}>
                 <Heading variant="heading-default-xl" wrap="pretty" paddingBottom="16">
                   {title}
@@ -65,11 +80,7 @@ export function ProjectCard({ title, description, image, team, tags }: ProjectCa
                             size="xs"
                             padding="1"
                           />
-                          <Heading
-                            variant="label-default-s"
-                            onBackground="neutral-weak"
-                            padding="1"
-                          >
+                          <Heading variant="body-default-xs" onBackground="neutral-weak">
                             {tag}
                           </Heading>
                         </Row>

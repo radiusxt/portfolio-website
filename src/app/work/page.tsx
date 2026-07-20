@@ -1,4 +1,5 @@
-import { Column, Heading, Meta, RevealFx, Schema } from "@once-ui-system/core";
+import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
+import { Reveal } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { baseURL, about, person, work } from "@/resources";
 
@@ -25,9 +26,10 @@ export default function Work() {
         image={`/api/og/generate?title=${encodeURIComponent(work.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <RevealFx translateY="16" delay={0.1}>
+      <Reveal>
         <Column fillWidth horizontal="center" paddingTop="24">
           <Heading
+            as="h1"
             id={work.title}
             variant="display-default-m"
             paddingBottom="20"
@@ -37,7 +39,7 @@ export default function Work() {
           </Heading>
           <Projects />
         </Column>
-      </RevealFx>
+      </Reveal>
     </Column>
   );
 }

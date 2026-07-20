@@ -1,6 +1,7 @@
 import { Column, Heading, Logo, Meta, RevealFx, Row, Schema } from "@once-ui-system/core";
-import { GalleryView } from "@/components/gallery/Gallery";
-import { PicTime } from "@/components/gallery/PicTime";
+import { Reveal } from "@/components";
+import { Highlights } from "@/components/gallery/Highlights";
+import { PicTime } from "@/components/gallery/Portfolio";
 import { baseURL, gallery, person } from "@/resources";
 
 export async function generateMetadata() {
@@ -16,7 +17,7 @@ export async function generateMetadata() {
 /* Gallery Page Layout */
 export default function Gallery() {
   return (
-    <Column id={gallery.title} fillWidth style={{ scrollMarginTop: "120px" }}>
+    <Column horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -26,15 +27,21 @@ export default function Gallery() {
         image={`/api/og/generate?title=${encodeURIComponent(gallery.title)}`}
         author={{ name: person.name, url: `${baseURL}${gallery.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingTop="24" paddingBottom="80" delay={0.1}>
-        <Column fillWidth horizontal="center" gap="104">
-          <Heading variant="display-default-m" style={{ letterSpacing: "0px" }}>
+      <Reveal>
+        <Column maxWidth="xl" fillWidth horizontal="center" paddingTop="24">
+          <Heading
+            as="h1"
+            id={gallery.title}
+            variant="display-default-m"
+            paddingBottom="80"
+            style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
+          >
             {gallery.title}
           </Heading>
-          <GalleryView />
+          <Highlights />
         </Column>
-      </RevealFx>
-      <RevealFx translateY="16" fillWidth horizontal="center" paddingTop="64" delay={0.6}>
+      </Reveal>
+      <Reveal>
         <Column horizontal="center">
           <Row dark paddingBottom="32">
             <Logo wordmark="/images/brand/logo-light.png" style={{ transform: "scale(3)" }} />
@@ -43,7 +50,7 @@ export default function Gallery() {
             <Logo wordmark="/images/brand/logo-dark.png" style={{ transform: "scale(3)" }} />
           </Row>
         </Column>
-      </RevealFx>
+      </Reveal>
       <RevealFx
         fillWidth
         horizontal="center"

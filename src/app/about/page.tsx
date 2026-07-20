@@ -86,23 +86,13 @@ export default function About() {
                   {person.location}
                 </Heading>
               </Row>
-              {person.languages && person.languages.length > 0 &&
-                <Row gap="12">
-                  {person.languages.map((language) => 
-                    <Tag key={language} variant="brand" size="l" radius="xl">
-                      <Heading variant="label-default-l" padding="2">
-                        {language}
-                      </Heading>
-                    </Tag>
-                  )}
-                </Row>
-              }
             </Column>
           }
           {/* Introduction */}
           <Column flex={9} minWidth="0">
             <Column fillWidth vertical="center" marginBottom="32">
               <Heading
+                as="h1"
                 id={about.intro.title}
                 className={styles.mobile}
                 variant="display-default-xl"
@@ -175,6 +165,7 @@ export default function About() {
                     }}
                     items={[
                       ...about.work.experiences.map((experience, index) => ({
+                        state: "active" as const,
                         label:
                           <Column
                             fillWidth
@@ -198,23 +189,6 @@ export default function About() {
                               </Heading>
                             </Row>
                           </Column>
-                        ,
-                        description:
-                          <Column as="ul" marginBottom="16" gap="16">
-                            {experience.achievements.map((achievement, index) => 
-                              <Heading
-                                as="li"
-                                key={`${experience.company}-${index}`}
-                                variant="body-default-m"
-                                wrap="wrap"
-                                style={{ marginLeft: "-24px" }}
-                              >
-                                {achievement}
-                              </Heading>
-                            )}
-                          </Column>
-                        ,
-                        state: "active" as const
                       })),
                       // Null object for disappearing marker effect.
                       { description: <></>, marker: <></> }
@@ -247,6 +221,7 @@ export default function About() {
                     }}
                     items={[
                       ...about.studies.institutions.map((institution, index) => ({
+                        state: "active" as const,
                         label:
                           <Column
                             fillWidth
@@ -278,8 +253,6 @@ export default function About() {
                               </Heading>
                             )}
                           </Column>
-                        ,
-                        state: "active" as const
                       })),
                       // Null object for disappearing marker effect.
                       { description: <></>, marker: <></> }
@@ -343,7 +316,7 @@ export default function About() {
                               <Column key={`${skill.title}-${index}`} paddingX="32">
                                 <Row vertical="center" margin="4" gap="16">
                                   <Icon name={tag.icon} onBackground="brand-weak" size="l" />
-                                  <Heading variant="body-default-m" wrap="nowrap">
+                                  <Heading variant="code-default-l" wrap="nowrap">
                                     {tag.name}
                                   </Heading>
                                 </Row>

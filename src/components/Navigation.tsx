@@ -42,7 +42,7 @@ export function useNavigation() {
   const context = useContext(NavigationContext);
 
   if (!context) {
-    throw new Error("usePageTransition must be used within PageTransitionProvider");
+    throw new Error("useNavigation must be used within NavigationProvider");
   }
   
   return context;

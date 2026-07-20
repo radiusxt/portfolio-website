@@ -23,7 +23,7 @@ export function Footer() {
           onBackground="neutral-weak"
           style={{ letterSpacing: "0.1px" }}
         >
-          © {currentYear}. {person.name}. Built with{" "}
+          © {currentYear}. {person.name}. Built with {}
           <SmartLink href="https://once-ui.com/" unstyled>Once UI</SmartLink>
           {" and "}
           <SmartLink href="https://vercel.com/" unstyled>Vercel</SmartLink>

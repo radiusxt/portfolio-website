@@ -67,7 +67,7 @@ function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
         <Media
           src=""
           maxWidth="m"
-          radius="l"
+          radius="xl"
           border="transparent"
           marginTop="16"
           marginBottom="4"
@@ -80,7 +80,7 @@ function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
         src={src}
         alt={alt}
         maxWidth="m"
-        radius="l"
+        radius="xl"
         border="neutral-medium"
         marginTop="16"
         marginBottom="4"
