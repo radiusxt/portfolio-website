@@ -7,7 +7,7 @@ import { about, display, gallery, home, routes, work } from "@/resources";
 
 /* Page Header for Navigation */
 export function Header() {
-  const pathname = usePathname() ?? "";
+  //const pathname = usePathname() ?? "";
 
   return (
     <>
@@ -45,7 +45,7 @@ export function Header() {
                   <Scroll target={home.title} href="/">
                     <ToggleButton
                       prefixIcon="home"
-                      selected={pathname === "/"}
+                      //selected={pathname === "/"}
                       size="l"
                     />
                   </Scroll>
@@ -58,7 +58,7 @@ export function Header() {
                       <Scroll target={about.intro.title} href="/about">
                         <ToggleButton
                           prefixIcon="person"
-                          selected={pathname === "/about"}
+                          //selected={pathname === "/about"}
                           label={about.label}
                           size="l"
                         />
@@ -69,7 +69,7 @@ export function Header() {
                       <Scroll target={about.intro.title} href="/about">
                         <ToggleButton
                           prefixIcon="person"
-                          selected={pathname === "/about"}
+                          //selected={pathname === "/about"}
                           size="l"
                         />
                       </Scroll>
@@ -83,7 +83,7 @@ export function Header() {
                       <Scroll target={work.title} href="/work">
                         <ToggleButton
                           prefixIcon="code"
-                          selected={pathname.startsWith("/work")}
+                          //selected={pathname.startsWith("/work")}
                           label={work.label}
                           size="l"
                         />
@@ -94,7 +94,7 @@ export function Header() {
                       <Scroll target={work.title} href="/work">
                         <ToggleButton
                           prefixIcon="code"
-                          selected={pathname.startsWith("/work")}
+                          //selected={pathname.startsWith("/work")}
                           size="l"
                         />
                       </Scroll>
@@ -108,7 +108,7 @@ export function Header() {
                       <Scroll target={gallery.title} href="/gallery">
                         <ToggleButton
                           prefixIcon="gallery"
-                          selected={pathname.startsWith("/gallery")}
+                          //selected={pathname.startsWith("/gallery")}
                           label={gallery.label}
                           size="l"
                         />
@@ -119,7 +119,7 @@ export function Header() {
                       <Scroll target={gallery.title} href="/gallery">
                         <ToggleButton
                           prefixIcon="gallery"
-                          selected={pathname.startsWith("/gallery")}
+                          //selected={pathname.startsWith("/gallery")}
                           size="l"
                         />
                       </Scroll>

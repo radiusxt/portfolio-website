@@ -1,6 +1,23 @@
+// Mobile Portrait
+$xs: 480px;
+
+// Mobile Landscape / Tablet Portrait
 $s: 768px;
+
+// Tablet Landscape / Small Laptop
 $m: 1024px;
+
+// Desktop
 $l: 1440px;
+
+// Large Desktop
+$xl: 1920px;
+
+@mixin xs {
+  @media (max-width: #{$xs}) {
+    @content;
+  }
+}
 
 @mixin s {
   @media (max-width: #{$s}) {
@@ -16,6 +33,12 @@ $l: 1440px;
 
 @mixin l {
   @media (max-width: #{$l}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (max-width: #{$xl}) {
     @content;
   }
 }

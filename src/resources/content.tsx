@@ -54,6 +54,12 @@ export const home: Home = {
       name: "radiusxt/portfolio-website",
       progress: 85
     },
+    {
+      type: "",
+      title: "Portfolio Exposure Tool",
+      message: "",
+      progress: 5
+    },
   ],
 };
 
@@ -83,7 +89,7 @@ export const about: About = {
     experiences: [
       {
         company: "Freelance",
-        timeframe: "Feb '26 - Present",
+        timeframe: "Jan '26 - Present",
         role: "Software Engineer",
         location: "Remote",
         achievements: [
@@ -240,7 +246,7 @@ export const about: About = {
             icon: "pytorch",
           },
           {
-            name: "Huggingface",
+            name: "Hugging Face",
             icon: "huggingface",
           },
           {
@@ -284,6 +290,58 @@ export const gallery: Gallery = {
   description: `Highlights by ${person.name}`,
   images: [
     {
+      src: "/images/gallery/DSC00017.jpg",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC00088.jpg",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC00175.jpg",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC00295.jpg",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC00330.jpg",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC00806.jpg",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC00830.jpg",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC01558.jpg",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC02751.jpg",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC09646.jpg",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC09747.jpg",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC01055.jpg",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/DSC09431.jpg",
+      orientation: "horizontal",
+    },
+    {
       src: "/images/gallery/DSC09060.jpg",
       orientation: "horizontal",
     },
@@ -317,10 +375,6 @@ export const gallery: Gallery = {
     },
     {
       src: "/images/gallery/DSC09916.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC08620.jpg",
       orientation: "horizontal",
     },
     {

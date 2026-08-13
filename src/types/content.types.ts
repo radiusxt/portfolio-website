@@ -8,9 +8,9 @@ import type { zones } from "tzdata";
 export type IANATimeZone = Extract<keyof typeof zones, string>;
 
 /**
- * Represents a person featured in the portfolio.
+ * Represents the featured person in the portfolio.
  */
-export type Person = {
+export interface Person {
   /** First name of the person */
   firstName: string;
   /** Last name of the person */
@@ -25,14 +25,14 @@ export type Person = {
   email: string;
   /** IANA time zone location */
   location: IANATimeZone;
-  /** BCP 47 language and location */
+  /** BCP47 language and location */
   locale: string;
 };
 
 /**
  * Social link configuration.
  */
-export type Social = Array<{
+export interface Social extends Array<{
   /** Name of the social platform */
   name: string;
   /** The icons are a part of "src/resources/icons.ts" file */
@@ -41,7 +41,7 @@ export type Social = Array<{
   link: string;
   /** Whether this social link is essential and should be displayed on the about page */
   essential?: boolean;
-}>;
+}> {}
 
 /**
  * Base interface for page configuration with common properties.

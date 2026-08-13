@@ -12,7 +12,6 @@ import {
   RevealFx,
   Row,
   Schema,
-  Tag,
   Timeline
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
@@ -316,7 +315,7 @@ export default function About() {
                               <Column key={`${skill.title}-${index}`} paddingX="32">
                                 <Row vertical="center" margin="4" gap="16">
                                   <Icon name={tag.icon} onBackground="brand-weak" size="l" />
-                                  <Heading variant="code-default-l" wrap="nowrap">
+                                  <Heading variant="body-default-l" wrap="nowrap">
                                     {tag.name}
                                   </Heading>
                                 </Row>
