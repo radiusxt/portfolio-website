@@ -289,102 +289,30 @@ export const gallery: Gallery = {
   title: "Highlights",
   description: `Highlights by ${person.name}`,
   images: [
-    {
-      src: "/images/gallery/DSC00017.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC00088.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC00175.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC00295.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC00330.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC00806.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC00830.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC01558.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC02751.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC09646.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC09747.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC01055.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC09431.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC09060.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC09506.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC09550.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC01001.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC08489.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC08308.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC08624.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC00183.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC09916.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC09819.jpg",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/DSC09319.jpg",
-      orientation: "horizontal",
-    },
+    { src: "/images/gallery/DSC09431.jpg" },
+    { src: "/images/gallery/DSC00175.jpg" },
+    { src: "/images/gallery/DSC09819.jpg" },
+    { src: "/images/gallery/DSC02751.jpg" },
+    { src: "/images/gallery/DSC01001.jpg" },
+    { src: "/images/gallery/DSC09506.jpg" },
+    { src: "/images/gallery/DSC00830.jpg" },
+    { src: "/images/gallery/DSC08489.jpg" },
+    { src: "/images/gallery/DSC09060.jpg" },
+    { src: "/images/gallery/DSC00295.jpg" },
+    { src: "/images/gallery/DSC09646.jpg" },
+    { src: "/images/gallery/DSC01558.jpg" },
+    { src: "/images/gallery/DSC09319.jpg" },
+    { src: "/images/gallery/DSC08624.jpg" },
+    { src: "/images/gallery/DSC00088.jpg" },
+    { src: "/images/gallery/DSC00183.jpg" },
+    { src: "/images/gallery/DSC09747.jpg" },
+    { src: "/images/gallery/DSC08308.jpg" },
+    { src: "/images/gallery/DSC00017.jpg" },
+    { src: "/images/gallery/DSC09916.jpg" },
+    { src: "/images/gallery/DSC09550.jpg" },
+    { src: "/images/gallery/DSC01055.jpg" },
+    { src: "/images/gallery/DSC00806.jpg" },
+    { src: "/images/gallery/DSC00330.jpg" }
   ],
   testimonials: [
     

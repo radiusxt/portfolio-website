@@ -192,8 +192,6 @@ export interface Gallery extends BasePageConfig {
   images: Array<{
     /** Image source path */
     src: string;
-    /** Image orientation (horizontal/vertical) */
-    orientation: string;
   }>;
   /** Array of testimonials from past clients */
   testimonials: Array<{
