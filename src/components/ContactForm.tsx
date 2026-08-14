@@ -63,7 +63,7 @@ export function ContactForm() {
   };
 
   return (
-    <Column fillWidth horizontal="center" gap="l" paddingBottom="32" maxWidth="s">
+    <Column fillWidth horizontal="center" gap="l" paddingBottom="64" maxWidth="s">
       <Heading variant="display-default-s" paddingBottom="16" style={{ letterSpacing: "0px" }}>
         Get in Touch
       </Heading>

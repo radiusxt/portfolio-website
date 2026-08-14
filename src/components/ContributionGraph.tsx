@@ -65,7 +65,7 @@ export async function ContributionGraph({ username }: { username: string }) {
 
   return (
     <Column fillWidth gap="8">
-      <Flex horizontal="center" overflow="auto" paddingX="4" gap="4">
+      <Flex horizontal="center" overflow="auto" paddingX="8" gap="4">
         {/* Labels */}
         {weeks.map((week, col) =>
           <Column key={week[0]?.date} className={styles.mobile} gap="4">

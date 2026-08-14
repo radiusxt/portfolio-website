@@ -9,13 +9,6 @@ import { about, display, gallery, home, routes, work } from "@/resources";
 export function Header() {
   return (
     <>
-      <Fade
-        position="fixed"
-        zIndex={4}
-        to="bottom"
-        height={12}
-        style={{ marginTop: "-8px" }}
-      />
       <RevealFx position="sticky" zIndex={10} delay={0.2}>
         <Row
           as="header"

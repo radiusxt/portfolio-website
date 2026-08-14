@@ -56,7 +56,7 @@ export function ProjectCard({ title, description, image, team, tags }: ProjectCa
                 src={image}
                 alt={title}
                 radius="xl-8"
-                bottomRadius="xs"
+                bottomRadius="l"
                 priority
               />
             </Loading>
