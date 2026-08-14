@@ -2,22 +2,12 @@ import "@once-ui-system/core/css/styles.css";
 import "@once-ui-system/core/css/tokens.css";
 import classNames from "classnames";
 
-import {
-  Background,
-  Column,
-  Flex,
-  MatrixFx,
-  Meta,
-  type Opacity,
-  Particle,
-  RevealFx,
-  type SpacingToken,
-} from "@once-ui-system/core";
-import Script from "next/script";
-import { Footer, Header, Providers, RouteGuard, Transition } from "@/components";
-import { baseURL, dataStyle, effects, fonts, home, style } from "@/resources";
+import { Column, Flex, Meta, Particle, RevealFx } from "@once-ui-system/core";
+import { Footer, Header, Providers, RouteGuard, Starfield, Transition } from "@/components";
+import { baseURL, dataStyle, fonts, home, style } from "@/resources";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Script from "next/script";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -110,100 +100,41 @@ export default async function RootLayout({children}: Readonly<{children: React.R
       <Providers>
         <Column
           as="body"
-          background="page"
           position="relative"
           minHeight="100vh"
-          fillWidth
+          minWidth="100vw"
+          background="page"
+          fill
         >
-          {/* Matrix Background Animation */}
+          {/* Starfield Animation */}
           <Flex
-            position="absolute"
+            position="fixed"
             zIndex={0}
-            maxHeight="100vh"
             pointerEvents="none"
-            style={{
-              inset: 0,
-              maskImage: "radial-gradient(circle at 50% 0%, black 18%, transparent 58%)",
-              WebkitMaskImage: "radial-gradient(circle at 50% 0%, black 18%, transparent 58%)",
-            }}
-            s={{
-              style: {
-                maxHeight: "150vh",
-                maskImage: "radial-gradient(circle at 50% 0%, black 0%, transparent 50%)",
-                WebkitMaskImage: "radial-gradient(circle at 50% 0%, black 0%, transparent 50%)",
-              }
-            }}
+            style={{ inset: 0 }}
           >
-            <RevealFx fill position="absolute">
-              <MatrixFx
-                fill
-                speed={4}
-                spacing={40}
-                size={2}
-                revealFrom="top"
-                flicker
-                colors={effects.colors}
-              >
-                <Background
-                  mask={{
-                    x: effects.mask.x,
-                    y: effects.mask.y,
-                    radius: effects.mask.radius,
-                    cursor: effects.mask.cursor,
-                  }}
-                  gradient={{
-                    display: effects.gradient.display,
-                    opacity: effects.gradient.opacity as Opacity,
-                    x: effects.gradient.x,
-                    y: effects.gradient.y,
-                    width: effects.gradient.width,
-                    height: effects.gradient.height,
-                    tilt: effects.gradient.tilt,
-                    colorStart: effects.gradient.colorStart,
-                    colorEnd: effects.gradient.colorEnd,
-                  }}
-                  dots={{
-                    display: effects.dots.display,
-                    opacity: effects.dots.opacity as Opacity,
-                    size: effects.dots.size as SpacingToken,
-                    color: effects.dots.color,
-                  }}
-                  grid={{
-                    display: effects.grid.display,
-                    opacity: effects.grid.opacity as Opacity,
-                    color: effects.grid.color,
-                    width: effects.grid.width,
-                    height: effects.grid.height,
-                  }}
-                  lines={{
-                    display: effects.lines.display,
-                    opacity: effects.lines.opacity as Opacity,
-                    size: effects.lines.size as SpacingToken,
-                    thickness: effects.lines.thickness,
-                    angle: effects.lines.angle,
-                    color: effects.lines.color,
-                  }}
-                />
-              </MatrixFx>
+            <RevealFx>
+              <Starfield />
             </RevealFx>
           </Flex>
-          {/* Particle Background Animation */}
+          {/* Particle Animation */}
           <Flex
-            position="absolute"
+            fill
+            position="fixed"
             zIndex={0}
             pointerEvents="none"
-            style={{
-              inset: 0,
-              maskImage: "radial-gradient(circle 350vh at 50% 0vh, transparent 23%, black 40%)",
-              WebkitMaskImage: "radial-gradient(circle 350vh at 50% 0vh, transparent 23%, black 40%)"
-            }}
+            style={{ inset: 0 }}
           >
-            <Transition>
-              <RevealFx fill position="absolute" delay={0.6}>
-                <Particle speed={1} density={125} size="4" color="brand-on-background-weak" />
-              </RevealFx>
-            </Transition>
+            <RevealFx>
+              <Particle
+                speed={1.5}
+                density={60}
+                size="1"
+                color="neutral-on-background-strong"
+              />
+            </RevealFx>
           </Flex>
+          {/* Page Content */}
           <Header />
           <Flex zIndex={0} flex={1} fillWidth horizontal="center" padding="32">
             <Transition>

@@ -24,7 +24,7 @@ export async function generateMetadata() {
 /* Home Page Layout */
 export default function Home() {
   return (
-    <Column id={home.title} horizontal="center" fillWidth style={{ scrollMarginTop: "120px" }}>
+    <Column id={home.title} horizontal="center" fill style={{ scrollMarginTop: "120px" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -36,11 +36,11 @@ export default function Home() {
       />
       <Column
         maxWidth="xl"
-        position="relative"        
+        position="relative"
         horizontal="center"
         minHeight="100vh"
         align="center"
-        fillWidth
+        //fill
       >
         <RevealFx
           translateY="16"
@@ -95,7 +95,7 @@ export default function Home() {
           </Bounce>
         </RevealFx>
       </Column>
-      <Column horizontal="center" gap="160">
+      <Column horizontal="center" minHeight="100vh">
         <Reveal>
           <SpotlightBorder
             primary="brand-on-background-weak"
@@ -106,6 +106,8 @@ export default function Home() {
             <Dashboard username={home.github} activity={home.activity}/>
           </SpotlightBorder>
         </Reveal>
+      </Column>
+      <Column horizontal="center" align="center">
         <Reveal>
           <ContactForm />
         </Reveal>

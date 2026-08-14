@@ -1,4 +1,5 @@
-import { Column, Heading, Particle } from "@once-ui-system/core";
+import { Column, Heading } from "@once-ui-system/core";
+import { Starfield } from "@/components";
 
 export default function NotFound() {
   return (
@@ -10,21 +11,19 @@ export default function NotFound() {
       background="page"
       style={{ marginTop: "-8rem", marginBottom: "-8rem" }}
     >
-      <Particle
+      <Column
         position="absolute"
-        fill
-        interactive
-        mode="repel"
-        density={150}
-        speed={1}
-        size="2"
-        color="brand-on-background-weak"
-      />
-      <Column center>
-        <Heading marginBottom="24" variant="display-strong-xl">
+        zIndex={0}
+        pointerEvents="none"
+        style={{ inset: 0 }}
+      >
+        <Starfield />
+      </Column>
+      <Column center gap="32">
+        <Heading variant="display-strong-xl">
           404
         </Heading>
-        <Heading marginBottom="40" variant="display-default-m">
+        <Heading variant="display-default-m">
           Page Not Found
         </Heading>
         <Heading variant="body-default-xl" onBackground="neutral-weak">

@@ -8,7 +8,13 @@ export function Highlights() {
   const bottom = gallery.images.slice(16, 24);
 
   return (
-    <Column fill direction="column" horizontal="center" paddingBottom="128" gap="24">
+    <Column
+      fill
+      direction="column"
+      horizontal="center"
+      paddingBottom="128"
+      gap="24"
+    >
       {[
         { id: "top", images: top, reverse: false },
         { id: "middle", images: middle, reverse: true },

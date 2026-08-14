@@ -7,19 +7,16 @@ import { about, display, gallery, home, routes, work } from "@/resources";
 
 /* Page Header for Navigation */
 export function Header() {
-  //const pathname = usePathname() ?? "";
-
   return (
     <>
       <Fade
         position="fixed"
         zIndex={4}
         to="bottom"
-        height={6}
-        blur={1}
+        height={12}
         style={{ marginTop: "-8px" }}
       />
-      <RevealFx position="sticky" zIndex={10} delay={0.1}>
+      <RevealFx position="sticky" zIndex={10} delay={0.2}>
         <Row
           as="header"
           position="sticky"
@@ -32,22 +29,17 @@ export function Header() {
         >
           <Row fillWidth horizontal="center">
             <Row
-              background="page"
+              background="overlay"
               zIndex={1}
               horizontal="center"
-              border="neutral-alpha-weak"
-              radius="full"
+              border="neutral-weak"
+              radius="xs"
               padding="4"
-              shadow="xl"
             >
               <Row vertical="center" textVariant="body-default-s" gap="4" suppressHydrationWarning>
                 {routes["/"] && 
                   <Scroll target={home.title} href="/">
-                    <ToggleButton
-                      prefixIcon="home"
-                      //selected={pathname === "/"}
-                      size="l"
-                    />
+                    <ToggleButton prefixIcon="home" size="l" />
                   </Scroll>
                 }
                 <Line vert maxHeight="24" background="neutral-alpha-strong" />
@@ -58,7 +50,6 @@ export function Header() {
                       <Scroll target={about.intro.title} href="/about">
                         <ToggleButton
                           prefixIcon="person"
-                          //selected={pathname === "/about"}
                           label={about.label}
                           size="l"
                         />
@@ -67,11 +58,7 @@ export function Header() {
                     {/* Mobile Layout */}
                     <Row hide s={{ hide: false }}>
                       <Scroll target={about.intro.title} href="/about">
-                        <ToggleButton
-                          prefixIcon="person"
-                          //selected={pathname === "/about"}
-                          size="l"
-                        />
+                        <ToggleButton prefixIcon="person" size="l" />
                       </Scroll>
                     </Row>
                   </>
@@ -83,7 +70,6 @@ export function Header() {
                       <Scroll target={work.title} href="/work">
                         <ToggleButton
                           prefixIcon="code"
-                          //selected={pathname.startsWith("/work")}
                           label={work.label}
                           size="l"
                         />
@@ -92,11 +78,7 @@ export function Header() {
                     {/* Mobile Layout */}
                     <Row hide s={{ hide: false }}>
                       <Scroll target={work.title} href="/work">
-                        <ToggleButton
-                          prefixIcon="code"
-                          //selected={pathname.startsWith("/work")}
-                          size="l"
-                        />
+                        <ToggleButton prefixIcon="code" size="l" />
                       </Scroll>
                     </Row>
                   </>
@@ -108,7 +90,6 @@ export function Header() {
                       <Scroll target={gallery.title} href="/gallery">
                         <ToggleButton
                           prefixIcon="gallery"
-                          //selected={pathname.startsWith("/gallery")}
                           label={gallery.label}
                           size="l"
                         />
@@ -117,11 +98,7 @@ export function Header() {
                     {/* Mobile Layout */}
                     <Row hide s={{ hide: false }}>
                       <Scroll target={gallery.title} href="/gallery">
-                        <ToggleButton
-                          prefixIcon="gallery"
-                          //selected={pathname.startsWith("/gallery")}
-                          size="l"
-                        />
+                        <ToggleButton prefixIcon="gallery" size="l" />
                       </Scroll>
                     </Row>
                   </>

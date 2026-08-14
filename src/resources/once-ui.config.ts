@@ -1,7 +1,6 @@
 import type {
   DataStyleConfig,
   DisplayConfig,
-  EffectsConfig,
   FontsConfig,
   ProtectedRoutesConfig,
   RoutesConfig,
@@ -85,54 +84,6 @@ export const dataStyle: DataStyleConfig = {
     fontSize: 11,
     line: false,
   },
-};
-
-export const effects: EffectsConfig = {
-  mask: {
-    cursor: false,
-    x: 50,
-    y: 75,
-    radius: 125,
-  },
-  gradient: {
-    display: true,
-    opacity: 60,
-    x: 50,
-    y: 25,
-    width: 100,
-    height: 200,
-    tilt: 0,
-    colorStart: "brand-alpha-medium",
-    colorEnd: "brand-alpha-medium",
-  },
-  dots: {
-    display: false,
-    opacity: 60,
-    size: "1",
-    color: "neutral-alpha-weak",
-  },
-  grid: {
-    display: false,
-    opacity: 100,
-    color: "neutral-alpha-weak",
-    width: "0.25rem",
-    height: "0.25rem",
-  },
-  lines: {
-    display: false,
-    opacity: 100,
-    color: "neutral-alpha-weak",
-    size: "16",
-    thickness: 1,
-    angle: 45,
-  },
-  colors: [
-    "accent-on-background-weak",
-    "accent-on-background-medium",
-    "brand-on-background-weak",
-    "brand-on-background-medium",
-    "neutral-on-background-strong",
-  ]
 };
 
 export const schema: SchemaConfig = {
