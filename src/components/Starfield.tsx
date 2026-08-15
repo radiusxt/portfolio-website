@@ -10,13 +10,13 @@ interface Star {
 }
 
 interface StarfieldProps {
-  starCount?: number;
+  count?: number;
   speed?: number;
 }
 
 const MIN_Z = 40;
 
-export function Starfield({ starCount = 900, speed = 150 }: StarfieldProps) {
+export function Starfield({ count = 700, speed = 150 }: StarfieldProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -38,15 +38,19 @@ export function Starfield({ starCount = 900, speed = 150 }: StarfieldProps) {
     let centerY = 0;
     let animationId = 0;
     let lastTime = 0;
-
     const stars: Star[] = [];
 
-    // Spawn at a given depth, but choose the SCREEN position uniformly
-    // at random first, then back-solve world x/y so the star actually
-    // appears at that screen position — avoids the center-clustering
-    // that comes from picking world x/y and letting projection squash
-    // far-away stars toward the middle.
-    const makeStarAtDepth = (z: number): Star => {
+    // Projects a star's world x/y at depth z onto screen coordinates.
+    const project = (x: number, y: number, z: number) => {
+      const k = 4096 / z;
+      return { px: x * k + centerX, py: y * k + centerY };
+    };
+
+    // Creates a star at depth z.
+    // Picks its screen position uniformly at random first
+    // then back-solves the world x/y that would project there.
+    // This is what keeps stars spread evenly across the canvas.
+    const makeStar = (z: number): Star => {
       const screenX = Math.random() * width;
       const screenY = Math.random() * height;
       const k = 4096 / z;
@@ -56,11 +60,6 @@ export function Starfield({ starCount = 900, speed = 150 }: StarfieldProps) {
         z,
       };
     };
-
-    // Used only on init, so the very first frame already has stars
-    // spread across every depth, not all freshly spawned at max z.
-    const makeStarAnyDepth = (): Star =>
-      makeStarAtDepth(MIN_Z + Math.random() * (width - MIN_Z));
 
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
@@ -79,15 +78,16 @@ export function Starfield({ starCount = 900, speed = 150 }: StarfieldProps) {
     const init = () => {
       stars.length = 0;
 
-      for (let i = 0; i < starCount; i++) {
-        stars.push(makeStarAnyDepth());
+      // Spread initial stars across the full depth range so the first
+      // frame doesn't look like every star just spawned at once.
+      for (let i = 0; i < count; i++) {
+        stars.push(makeStar(MIN_Z + Math.random() * (width - MIN_Z)));
       }
     };
 
-    resize();
-    init();
-
     const tick = (time: number) => {
+      // Clamp dt to 0.05s so longer gaps between frames so returning from
+      // a backgrounded tab can't yank every star forward at once.
       const dt = lastTime ? Math.min((time - lastTime) / 1000, 0.05) : 0;
       lastTime = time;
 
@@ -95,23 +95,25 @@ export function Starfield({ starCount = 900, speed = 150 }: StarfieldProps) {
 
       for (const star of stars) {
         star.z -= speed * dt;
-
+        
+        // Star has reached the camera (or gone past MIN_Z) so send it
+        // back to the far plane and start its journey again.
+        // This is what creates the "continuous stream of stars" effect.
         if (star.z <= MIN_Z) {
-          const fresh = makeStarAtDepth(width); // reborn at the far plane
-          star.x = fresh.x;
-          star.y = fresh.y;
-          star.z = fresh.z;
+          Object.assign(star, makeStar(width));
         }
 
-        const k = 4096 / star.z;
-        const px = star.x * k + centerX;
-        const py = star.y * k + centerY;
+        const { px, py } = project(star.x, star.y, star.z);
 
-        if (px < 0 || px >= width || py < 0 || py >= height) continue;
-
+        if (px < 0 || px >= width || py < 0 || py >= height) {
+          continue;
+        }
+        
+        // Used to scale size and alpha so stars grow
+        // and brighten as they get closer.
         const depthRatio = 1 - star.z / width;
-        const size = depthRatio * 1.2;
-        const alpha = 0.3 + depthRatio * 0.7;
+        const size = 1.5 * depthRatio;
+        const alpha = 0.7 + 0.3 * depthRatio;
 
         ctx.beginPath();
         ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
@@ -122,27 +124,28 @@ export function Starfield({ starCount = 900, speed = 150 }: StarfieldProps) {
       animationId = requestAnimationFrame(tick);
     };
 
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    if (!prefersReducedMotion) {
-      animationId = requestAnimationFrame(tick);
-    }
-
-    const handleResize = () => {
-      resize();
-      init();
-    };
-    window.addEventListener("resize", handleResize);
-
     // Reset lastTime when the tab regains visibility so the next tick
-    // computes dt from "now," not from a stale pre-hidden timestamp.
+    // computes dt from "now", not from a stale pre-hidden timestamp.
     const handleVisibilityChange = () => {
       if (document.visibilityState === "visible") {
         lastTime = 0;
       }
     };
+
+    const handleResize = () => {
+      resize();
+      init();
+    };
+
+    resize();
+    init();
+
+    // Handle reduced motion setting
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      animationId = requestAnimationFrame(tick);
+    }
+    
+    window.addEventListener("resize", handleResize);
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
@@ -150,7 +153,7 @@ export function Starfield({ starCount = 900, speed = 150 }: StarfieldProps) {
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, [starCount, speed]);
+  }, [count, speed]);
 
-  return <canvas ref={canvasRef} className={styles.canvas} />;
+  return <canvas ref={canvasRef} className={styles.canvas} aria-hidden />;
 }

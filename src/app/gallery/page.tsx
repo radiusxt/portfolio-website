@@ -44,10 +44,10 @@ export default function Gallery() {
       <Reveal>
         <Column horizontal="center">
           <Row dark paddingBottom="32">
-            <Logo wordmark="/images/brand/logo-light.png" style={{ transform: "scale(3)" }} />
+            <Logo wordmark="/trademarks/logo-light.png" style={{ transform: "scale(3)" }} />
           </Row>
           <Row light paddingBottom="32">
-            <Logo wordmark="/images/brand/logo-dark.png" style={{ transform: "scale(3)" }} />
+            <Logo wordmark="/trademarks/logo-dark.png" style={{ transform: "scale(3)" }} />
           </Row>
         </Column>
       </Reveal>

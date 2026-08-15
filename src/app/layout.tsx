@@ -125,7 +125,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           </Flex>
           {/* Page Content */}
           <Header />
-          <Flex zIndex={0} flex={1} fill horizontal="center" padding="32">
+          <Flex zIndex={0} flex={1} fill horizontal="center">
             <Transition>
               <RouteGuard>
                 {children}
