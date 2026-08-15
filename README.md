@@ -47,4 +47,4 @@ To find how these technologies were used, see [here](https://hyperdrivemedia.co/
 
 ## Documentation
 
-Docs available [here](https://docs.once-ui.com/docs/magic-portfolio/quick-start).
+Docs available [here](https://docs.once-ui.com).
