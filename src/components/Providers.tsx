@@ -46,7 +46,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
             line: dataStyle.tick.line,
           }}
         >
-          <ToastProvider>
+          <ToastProvider xs="top" s="top" m="bottom" l="bottom" xl="bottom">
             <IconProvider icons={iconLibrary}>
               <NavigationProvider>
                 {children}

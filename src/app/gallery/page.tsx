@@ -33,7 +33,7 @@ export default function Gallery() {
             as="h1"
             id={gallery.title}
             variant="display-default-m"
-            paddingBottom="80"
+            paddingBottom="104"
             style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
           >
             {gallery.title}

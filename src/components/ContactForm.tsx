@@ -1,29 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { type CSSProperties, useState } from "react";
 import {
   Button,
   Column,
-  Feedback,
   Flex,
   Heading,
   IconButton,
   Input,
   ShineFx,
-  Textarea
+  Textarea,
+  useToast
 } from "@once-ui-system/core";
 
 /* Contact form for users to get in touch via email */
 export function ContactForm() {
   const [formData, setFormData] = useState({name: "", email: "", description: ""});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const { addToast } = useToast();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleClear = (field: 'name' | 'email') => {
+  const handleClear = (field: 'name' | 'email' | 'description') => {
     setFormData(prev => ({ ...prev, [field]: "" }));
   };
 
@@ -38,7 +39,11 @@ export function ContactForm() {
     }
 
     if (!formData.email.includes("@")) {
-      return setStatus("error");
+      addToast({
+        variant: "danger",
+        message: "Please enter a valid email address.",
+      });
+      return;
     }
 
     setStatus("loading");
@@ -51,14 +56,27 @@ export function ContactForm() {
       });
 
       if (response.ok) {
-        setStatus("success");
+        addToast({
+          variant: "success",
+          message: "Message received! I'll respond to your inquiry as soon as possible.",
+        });
         setFormData({ name: "", email: "", description: "" });
 
       } else {
-        setStatus("error");
+        addToast({
+          variant: "danger",
+          message: "Something went wrong. Please try again.",
+        });
       }
+
     } catch (error) {
-      setStatus("error");
+      addToast({
+        variant: "danger",
+        message: "Something went wrong. Please try again.",
+      });
+
+    } finally {
+      setStatus("idle");
     }
   };
 
@@ -71,7 +89,7 @@ export function ContactForm() {
         For work opportunities, collaborations or other inquiries, please complete the form below.
       </Heading>
       <form onSubmit={handleSubmit} style={{ width: "100%" }}>
-        <Flex direction="column" gap="24">
+        <Column gap="24" style={{ "--neutral-alpha-weak": "var(--neutral-background-medium)" } as CSSProperties}>
           <Input
             label="Name*"
             id="name"
@@ -79,16 +97,15 @@ export function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            style={{ "--neutral-alpha-weak": "var(--neutral-background-medium)" } as React.CSSProperties}
-            hasSuffix={formData.name.length > 0 && (
+            hasSuffix={formData.name.length > 0 &&
               <IconButton
                 variant="ghost"
                 icon="close"
                 size="s"
+                aria-label="clear"
                 onClick={() => handleClear("name")}
-                aria-label="Clear"
               />
-            )}
+            }
           />
           <Input
             label="Email*"
@@ -99,18 +116,17 @@ export function ContactForm() {
             onChange={handleChange}
             error={handleEmail}
             required
-            style={{ "--neutral-alpha-weak": "var(--neutral-background-medium)" } as React.CSSProperties}
-            hasSuffix={formData.email.length > 0 && (
+            hasSuffix={formData.email.length > 0 &&
               <IconButton
                 variant="ghost"
                 icon="close"
                 size="s"
+                aria-label="clear"
                 onClick={() => handleClear("email")}
-                aria-label="Clear"
               />
-            )}
+            }
           />
-          <Flex style={{ "--neutral-alpha-weak": "var(--neutral-background-medium)" } as React.CSSProperties}>
+          <Flex>
             <Textarea
               label="Message*"
               id="description"
@@ -122,6 +138,15 @@ export function ContactForm() {
               resize="none"
               characterCount
               required
+              hasSuffix={formData.description.length > 0 &&
+                <IconButton
+                  variant="ghost"
+                  icon="close"
+                  size="s"
+                  aria-label="clear"
+                  onClick={() => handleClear("description")}
+                />
+              }
             />
           </Flex>
           <Button fillWidth variant="primary" type="submit" loading={status === "loading"} size="l">
@@ -129,25 +154,7 @@ export function ContactForm() {
                 Send
             </ShineFx>
           </Button>
-          {status === "success" && 
-            <Feedback variant="success">
-              <Flex direction="column" align="center" padding="2" style={{ letterSpacing: "0.4px" }}>
-                <Heading variant="heading-default-s" onBackground="neutral-strong">
-                  Message Received! I will respond to your inquiry as soon as possible.
-                </Heading>
-              </Flex>
-            </Feedback>
-          }
-          {status === "error" && 
-            <Feedback variant="danger">
-              <Flex direction="column" align="center" padding="2" style={{ letterSpacing: "0.4px" }}>
-                <Heading variant="heading-default-s" onBackground="neutral-strong">
-                  Error! Something went wrong. Please try again.
-                </Heading>
-              </Flex>
-            </Feedback>
-          }
-        </Flex>
+        </Column>
       </form>
     </Column>
   );

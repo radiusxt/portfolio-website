@@ -43,12 +43,6 @@ export const home: Home = {
   github: "radiusxt",
   activity: [
     {
-      type: "",
-      title: "GT Festival QLD 2026",
-      message: "Editing Images...",
-      progress: 40
-    },
-    {
       type: "gh",
       title: "This Website",
       name: "radiusxt/portfolio-website",

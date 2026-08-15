@@ -102,7 +102,6 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           as="body"
           position="relative"
           minHeight="100vh"
-          minWidth="100vw"
           background="page"
           fill
         >
