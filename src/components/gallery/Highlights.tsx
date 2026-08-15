@@ -1,6 +1,6 @@
-import { AutoScroll, Column, Fade, Flex, Media, TiltFx } from "@once-ui-system/core";
+import { AutoScroll, Column, Fade, Flex, Media, RevealFx, TiltFx } from "@once-ui-system/core";
+import { Loading} from "@/components";
 import { gallery } from "@/resources";
-import { Loading, Reveal } from "@/components";
 
 export function Highlights() {
   const top = gallery.images.slice(0, 8);
@@ -8,9 +8,9 @@ export function Highlights() {
   const bottom = gallery.images.slice(16, 24);
 
   return (
-    <Column direction="column" horizontal="center" fill paddingBottom="128">
+    <Column direction="column" horizontal="center" fill>
       {Object.entries({ top, middle, bottom }).map(([id, images], index) => 
-        <Reveal key={id}>
+        <RevealFx key={id} delay={0.3 * index}>
           <Fade
             position="absolute"
             zIndex={1}
@@ -41,7 +41,7 @@ export function Highlights() {
             width="80"
             s={{ style: { marginRight: "-4px" } }}
           />
-        </Reveal>
+        </RevealFx>
       )}
     </Column>
   );

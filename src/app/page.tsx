@@ -103,7 +103,7 @@ export default function Home() {
           </SpotlightBorder>
         </Reveal>
       </Column>
-      <Column horizontal="center" align="center">
+      <Column horizontal="center" minHeight="100vh" align="center" paddingBottom="128">
         <Reveal>
           <ContactForm />
         </Reveal>

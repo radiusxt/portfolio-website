@@ -16,7 +16,7 @@ interface StarfieldProps {
 
 const MIN_Z = 40;
 
-export function Starfield({ count = 700, speed = 150 }: StarfieldProps) {
+export function Starfield({ count = 600, speed = 150 }: StarfieldProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {

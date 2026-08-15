@@ -1,7 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { Fade, Line, RevealFx, Row, ToggleButton } from "@once-ui-system/core";
+import { Line, RevealFx, Row, ToggleButton } from "@once-ui-system/core";
 import { Scroll, ThemeToggle } from "@/components";
 import { about, display, gallery, home, routes, work } from "@/resources";
 
@@ -22,7 +21,7 @@ export function Header() {
         >
           <Row fillWidth horizontal="center">
             <Row
-              background="overlay"
+              background="surface"
               zIndex={1}
               horizontal="center"
               border="neutral-weak"

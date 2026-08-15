@@ -42,19 +42,13 @@ export function Scroll({ children, target, href }: ScrollProps) {
     }
 
     e.preventDefault();
+
+    if (!isSamePage) {
+      navigate(href);
+      return;
+    }
+    
     window.scrollTo({ top: 0, behavior: "smooth" });
-
-    // Wait for animation to reach within 25px of top before transitioning.
-    const waitForTop = () => {
-      if (window.scrollY <= 25) {
-        navigate(href);
-        return;
-      }
-
-      requestAnimationFrame(waitForTop);
-    };
-
-    requestAnimationFrame(waitForTop);
   };
 
   return (

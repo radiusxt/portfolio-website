@@ -28,7 +28,7 @@ export default function Gallery() {
         author={{ name: person.name, url: `${baseURL}${gallery.path}`, image: `${baseURL}${person.avatar}` }}
       />
       <Reveal>
-        <Column maxWidth="xl" fillWidth horizontal="center" paddingTop="24">
+        <Column maxWidth="xl" fillWidth horizontal="center" paddingTop="24" paddingBottom="128">
           <Heading
             as="h1"
             id={gallery.title}
