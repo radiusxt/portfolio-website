@@ -14,11 +14,9 @@ interface StarfieldProps {
   speed?: number;
 }
 
-const FOCAL_LENGTH = 128;
-const MIN_Z = 40; // stars respawn before getting close enough to cause a speed spike
-const MAX_DT = 0.05;
+const MIN_Z = 40;
 
-export function Starfield({ starCount = 700, speed = 150 }: StarfieldProps) {
+export function Starfield({ starCount = 900, speed = 150 }: StarfieldProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -43,7 +41,7 @@ export function Starfield({ starCount = 700, speed = 150 }: StarfieldProps) {
 
     const stars: Star[] = [];
 
-     // Spawn at a given depth, but choose the SCREEN position uniformly
+    // Spawn at a given depth, but choose the SCREEN position uniformly
     // at random first, then back-solve world x/y so the star actually
     // appears at that screen position — avoids the center-clustering
     // that comes from picking world x/y and letting projection squash
@@ -51,7 +49,7 @@ export function Starfield({ starCount = 700, speed = 150 }: StarfieldProps) {
     const makeStarAtDepth = (z: number): Star => {
       const screenX = Math.random() * width;
       const screenY = Math.random() * height;
-      const k = FOCAL_LENGTH / z;
+      const k = 4096 / z;
       return {
         x: (screenX - centerX) / k,
         y: (screenY - centerY) / k,
@@ -90,7 +88,7 @@ export function Starfield({ starCount = 700, speed = 150 }: StarfieldProps) {
     init();
 
     const tick = (time: number) => {
-      const dt = lastTime ? Math.min((time - lastTime) / 1000, MAX_DT) : 0;
+      const dt = lastTime ? Math.min((time - lastTime) / 1000, 0.05) : 0;
       lastTime = time;
 
       ctx.clearRect(0, 0, width, height);
@@ -105,7 +103,7 @@ export function Starfield({ starCount = 700, speed = 150 }: StarfieldProps) {
           star.z = fresh.z;
         }
 
-        const k = FOCAL_LENGTH / star.z;
+        const k = 4096 / star.z;
         const px = star.x * k + centerX;
         const py = star.y * k + centerY;
 

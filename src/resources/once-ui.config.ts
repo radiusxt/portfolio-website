@@ -60,16 +60,26 @@ export const fonts: FontsConfig = {
 };
 
 export const style: StyleConfig = {
-  theme: "dark", // dark | light | system
-  neutral: "gray", // sand | gray | slate | custom
-  brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  accent: "blue", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  solid: "contrast", // color | contrast
-  solidStyle: "flat", // flat | plastic
-  border: "conservative", // rounded | playful | conservative
-  surface: "translucent", // filled | translucent
-  transition: "all", // all | micro | macro
-  scaling: "100", // 90 | 95 | 100 | 105 | 110
+  // dark | light | system
+  theme: "dark",
+  // sand | gray | slate | custom
+  neutral: "gray",
+  // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  brand: "cyan",
+  // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  accent: "blue",
+  // color | contrast
+  solid: "contrast",
+  // flat | plastic
+  solidStyle: "flat",
+  // rounded | playful | conservative
+  border: "conservative",
+  // filled | translucent
+  surface: "translucent",
+  // all | micro | macro
+  transition: "all",
+  // 90 | 95 | 100 | 105 | 110
+  scaling: "100",
 };
 
 export const dataStyle: DataStyleConfig = {

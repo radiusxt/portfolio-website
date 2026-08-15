@@ -107,24 +107,13 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           fill
         >
           {/* Starfield Animation */}
-          <Flex
-            position="fixed"
-            zIndex={0}
-            pointerEvents="none"
-            style={{ inset: 0 }}
-          >
+          <Flex position="fixed" zIndex={0} pointerEvents="none" style={{ inset: 0 }}>
             <RevealFx>
               <Starfield />
             </RevealFx>
           </Flex>
           {/* Particle Animation */}
-          <Flex
-            fill
-            position="fixed"
-            zIndex={0}
-            pointerEvents="none"
-            style={{ inset: 0 }}
-          >
+          <Flex position="fixed" zIndex={0} pointerEvents="none" style={{ inset: 0 }}>
             <RevealFx>
               <Particle
                 speed={1.5}
@@ -136,7 +125,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           </Flex>
           {/* Page Content */}
           <Header />
-          <Flex zIndex={0} flex={1} fillWidth horizontal="center" padding="32">
+          <Flex zIndex={0} flex={1} fill horizontal="center" padding="32">
             <Transition>
               <RouteGuard>
                 {children}

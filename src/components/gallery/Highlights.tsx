@@ -1,4 +1,4 @@
-import { AutoScroll, Column, Fade, Flex, Media } from "@once-ui-system/core";
+import { AutoScroll, Column, Fade, Flex, Media, TiltFx } from "@once-ui-system/core";
 import { gallery } from "@/resources";
 import { Loading, Reveal } from "@/components";
 
@@ -8,18 +8,8 @@ export function Highlights() {
   const bottom = gallery.images.slice(16, 24);
 
   return (
-    <Column
-      fill
-      direction="column"
-      horizontal="center"
-      paddingBottom="128"
-      gap="24"
-    >
-      {[
-        { id: "top", images: top, reverse: false },
-        { id: "middle", images: middle, reverse: true },
-        { id: "bottom", images: bottom, reverse: false },
-      ].map(({ id, images, reverse }) => 
+    <Column direction="column" horizontal="center" fill paddingBottom="128">
+      {Object.entries({ top, middle, bottom }).map(([id, images], index) => 
         <Reveal key={id}>
           <Fade
             position="absolute"
@@ -28,16 +18,18 @@ export function Highlights() {
             top="0"
             left="0"
             to="right"
-            width="160"
+            width="80"
           />
-          <AutoScroll speed="slow" hover="slow" reverse={reverse}>
-            {images.map((image) => (
-              <Flex key={image.src} center minWidth={28} paddingX="16">
-                <Loading fallback={<Media src="" aspectRatio="3/2" loading />}>
-                  <Media src={image.src} priority radius="xl" border="neutral-medium" />
-                </Loading>
+          <AutoScroll speed="slow" hover="slow" reverse={index % 2 === 0}>
+            {images.map((image) =>
+              <Flex key={image.src} center minWidth={28} padding="16">
+                <TiltFx>
+                  <Loading fallback={<Media src="" aspectRatio="3/2" loading />}>
+                    <Media src={image.src} priority radius="xl" />
+                  </Loading>
+                </TiltFx>
               </Flex>
-            ))}
+            )}
           </AutoScroll>
           <Fade
             position="absolute"
@@ -46,7 +38,7 @@ export function Highlights() {
             top="0"
             right="0"
             to="left"
-            width="160"
+            width="80"
             s={{ style: { marginRight: "-4px" } }}
           />
         </Reveal>
