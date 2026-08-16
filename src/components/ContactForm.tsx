@@ -107,7 +107,6 @@ export function ContactForm() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            required
             hasSuffix={formData.name.length > 0 &&
               <IconButton
                 variant="ghost"
@@ -125,7 +124,6 @@ export function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             validate={handleEmail}
-            required
             hasSuffix={formData.email.length > 0 &&
               <IconButton
                 variant="ghost"
@@ -145,7 +143,6 @@ export function ContactForm() {
             lines={10}
             maxLength={500}
             resize="none"
-            required
             characterCount
             hasSuffix={formData.message.length > 0 &&
               <IconButton
@@ -162,7 +159,7 @@ export function ContactForm() {
               />
             }
           />
-          <Button fillWidth variant="primary" type="submit" size="l" loading={status === "loading"}>
+          <Button fillWidth variant="primary" type="submit" loading={status === "loading"}>
             <ShineFx baseOpacity={1} speed={2} inverse>
               Send
             </ShineFx>

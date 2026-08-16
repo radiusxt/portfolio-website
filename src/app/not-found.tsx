@@ -17,7 +17,7 @@ export default function NotFound() {
         pointerEvents="none"
         style={{ inset: 0 }}
       >
-        <Starfield />
+        <Starfield multi />
       </Column>
       <Column center gap="32">
         <Heading variant="display-strong-xl">

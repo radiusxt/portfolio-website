@@ -7,16 +7,21 @@ interface Star {
   x: number;
   y: number;
   z: number;
+  hue: number;
 }
 
 interface StarfieldProps {
   count?: number;
   speed?: number;
+  multi?: boolean;
 }
 
+// Depth at which a star is considered "arrived" and gets respawned.
+// Keeps the 1/z projection from blowing up as z approaches 0.
 const MIN_Z = 40;
 
-export function Starfield({ count = 600, speed = 150 }: StarfieldProps) {
+/* Starfield Background */
+export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -42,7 +47,7 @@ export function Starfield({ count = 600, speed = 150 }: StarfieldProps) {
 
     // Projects a star's world x/y at depth z onto screen coordinates.
     const project = (x: number, y: number, z: number) => {
-      const k = 4096 / z;
+      const k = 128 / z;
       return { px: x * k + centerX, py: y * k + centerY };
     };
 
@@ -53,11 +58,12 @@ export function Starfield({ count = 600, speed = 150 }: StarfieldProps) {
     const makeStar = (z: number): Star => {
       const screenX = Math.random() * width;
       const screenY = Math.random() * height;
-      const k = 4096 / z;
+      const k = 128 / z;
       return {
         x: (screenX - centerX) / k,
         y: (screenY - centerY) / k,
         z,
+        hue: Math.random() * 360,
       };
     };
 
@@ -90,7 +96,6 @@ export function Starfield({ count = 600, speed = 150 }: StarfieldProps) {
       // a backgrounded tab can't yank every star forward at once.
       const dt = lastTime ? Math.min((time - lastTime) / 1000, 0.05) : 0;
       lastTime = time;
-
       ctx.clearRect(0, 0, width, height);
 
       for (const star of stars) {
@@ -115,12 +120,19 @@ export function Starfield({ count = 600, speed = 150 }: StarfieldProps) {
         const size = 1.5 * depthRatio;
         const alpha = 0.7 + 0.3 * depthRatio;
 
+        if (multi) {
+          ctx.fillStyle = `hsl(${star.hue}, 100%, 60%)`;
+        } else {
+          ctx.fillStyle = "white";
+        }
+        
+        ctx.globalAlpha = alpha;
         ctx.beginPath();
-        ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
         ctx.arc(px, py, size, 0, Math.PI * 2);
         ctx.fill();
       }
 
+      ctx.globalAlpha = 1;
       animationId = requestAnimationFrame(tick);
     };
 
@@ -153,7 +165,7 @@ export function Starfield({ count = 600, speed = 150 }: StarfieldProps) {
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, [count, speed]);
+  }, [count, speed, multi]);
 
   return <canvas ref={canvasRef} className={styles.canvas} aria-hidden />;
 }

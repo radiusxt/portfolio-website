@@ -21,10 +21,9 @@ export function Header() {
         >
           <Row fillWidth horizontal="center">
             <Row
-              background="surface"
               zIndex={1}
               horizontal="center"
-              border="neutral-weak"
+              background="page"
               radius="xs"
               padding="4"
             >

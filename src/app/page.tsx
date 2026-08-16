@@ -38,15 +38,15 @@ export default function Home() {
         position="relative"
         horizontal="center"
         minHeight="100vh"
+        top="20vh"
         align="center"
+        wrap
       >
         <RevealFx
           translateY="16"
           fillWidth
           horizontal="center"
-          top="18vh"
           delay={0.1}
-          wrap
           style={{ paddingBottom: "11dvh" }}
         >
           <Heading
@@ -57,7 +57,7 @@ export default function Home() {
             {home.headline}
           </Heading>
         </RevealFx>
-        <RevealFx translateY="16" fillWidth horizontal="center" top="18vh" delay={0.8}>
+        <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8}>
           <Row center gap="8" s={{ direction: "column" }}>
             <Heading as="h2" variant="heading-default-xl" style={{ letterSpacing: "0.3px" }}>
               {home.subline}
@@ -79,7 +79,7 @@ export default function Home() {
           fillWidth
           position="absolute"
           horizontal="center"
-          bottom="14vh"
+          bottom="32vh"
           delay={1.8}
           s={{ style: { bottom: "30vh" }}}
         >
