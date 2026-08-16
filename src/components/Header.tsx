@@ -1,110 +1,63 @@
 "use client";
 
-import { Line, RevealFx, Row, ToggleButton } from "@once-ui-system/core";
+import { Button, Line, RevealFx, Row } from "@once-ui-system/core";
 import { Scroll, ThemeToggle } from "@/components";
 import { about, display, gallery, home, routes, work } from "@/resources";
+import type { RoutesConfig } from "@/types";
+import styles from "./Header.module.scss";
 
 /* Page Header for Navigation */
 export function Header() {
+  const headerItems:
+      { path: keyof RoutesConfig; target: string; icon: string; label: string }[] = [
+    { path: "/about", target: about.intro.title, icon: "person", label: about.label },
+    { path: "/work", target: work.title, icon: "code", label: work.label },
+    { path: "/gallery", target: gallery.title, icon: "gallery", label: gallery.label },
+  ];
+
   return (
-    <>
-      <RevealFx position="sticky" zIndex={10} delay={0.2}>
+    <RevealFx position="sticky" zIndex={10} delay={0.2}>
+      <Row as="header" fill center margin="16">
         <Row
-          as="header"
-          position="sticky"
-          zIndex={10}
-          fillWidth
-          fitHeight
-          horizontal="center"
-          data-border="rounded"
-          padding="4"
+          className={styles.glass}
+          background="page"
+          border="neutral-alpha-weak"
+          radius="full"
+          padding="2"
+          shadow="m"
         >
-          <Row fillWidth horizontal="center">
-            <Row
-              zIndex={1}
-              horizontal="center"
-              background="page"
-              radius="xs"
-              padding="4"
-            >
-              <Row vertical="center" textVariant="body-default-s" gap="4" suppressHydrationWarning>
-                {routes["/"] && 
-                  <Scroll target={home.title} href="/">
-                    <ToggleButton prefixIcon="home" size="l" />
+          <Row center textVariant="body-default-s">
+            {routes["/"] &&
+              <Scroll target={home.title} href="/">
+                <Button variant="ghost" prefixIcon="home" size="xl" />
+              </Scroll>
+            }
+            <Line vert maxHeight="32" background="neutral-strong" />
+            {headerItems.map(({ path, target, icon, label }) =>
+              Object.entries({
+                desktop: { s: { hide: true }, label },
+                mobile: { hide: true, s: { hide: false }, label: undefined },
+              }).map(([key, { label, ...rowProps }]) =>
+                <Row key={`${path}-${key}`} {...rowProps}>
+                  <Scroll target={target} href={path}>
+                    <Button
+                      variant="ghost"
+                      prefixIcon={icon}
+                      label={label}
+                      weight="default"
+                      size="xl"
+                    />
                   </Scroll>
-                }
-                <Line vert maxHeight="24" background="neutral-alpha-strong" />
-                {routes["/about"] && 
-                  <>
-                    {/* Desktop & Mobile Layout */}
-                    <Row s={{ hide: true }}>
-                      <Scroll target={about.intro.title} href="/about">
-                        <ToggleButton
-                          prefixIcon="person"
-                          label={about.label}
-                          size="l"
-                        />
-                      </Scroll>
-                    </Row>
-                    {/* Mobile Layout */}
-                    <Row hide s={{ hide: false }}>
-                      <Scroll target={about.intro.title} href="/about">
-                        <ToggleButton prefixIcon="person" size="l" />
-                      </Scroll>
-                    </Row>
-                  </>
-                }
-                {routes["/work"] && 
-                  <>
-                    {/* Desktop & Mobile Layout */}
-                    <Row s={{ hide: true }}>
-                      <Scroll target={work.title} href="/work">
-                        <ToggleButton
-                          prefixIcon="code"
-                          label={work.label}
-                          size="l"
-                        />
-                      </Scroll>
-                    </Row>
-                    {/* Mobile Layout */}
-                    <Row hide s={{ hide: false }}>
-                      <Scroll target={work.title} href="/work">
-                        <ToggleButton prefixIcon="code" size="l" />
-                      </Scroll>
-                    </Row>
-                  </>
-                }
-                {routes["/gallery"] && 
-                  <>
-                    {/* Desktop & Mobile Layout */}
-                    <Row s={{ hide: true }}>
-                      <Scroll target={gallery.title} href="/gallery">
-                        <ToggleButton
-                          prefixIcon="gallery"
-                          label={gallery.label}
-                          size="l"
-                        />
-                      </Scroll>
-                    </Row>
-                    {/* Mobile Layout */}
-                    <Row hide s={{ hide: false }}>
-                      <Scroll target={gallery.title} href="/gallery">
-                        <ToggleButton prefixIcon="gallery" size="l" />
-                      </Scroll>
-                    </Row>
-                  </>
-                }
-                {display.themeSwitcher && 
-                  <>
-                    <Line vert maxHeight="24" background="neutral-alpha-strong" />
-                    <ThemeToggle />
-                  </>
-                }
-              </Row>
-            </Row>
+                </Row>
+              )
+            )}
+            <Line vert maxHeight="32" background="neutral-strong" />
+            {display.themeSwitcher &&
+              <ThemeToggle />
+            }
           </Row>
         </Row>
-      </RevealFx>
-    </>
+      </Row>
+    </RevealFx>
   );
 };

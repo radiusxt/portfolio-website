@@ -21,8 +21,6 @@ export const routes: RoutesConfig = {
 };
 
 export const display: DisplayConfig = {
-  location: true,
-  time: true,
   themeSwitcher: true,
 };
 

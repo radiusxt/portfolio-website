@@ -121,7 +121,7 @@ export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
         const alpha = 0.7 + 0.3 * depthRatio;
 
         if (multi) {
-          ctx.fillStyle = `hsl(${star.hue}, 100%, 60%)`;
+          ctx.fillStyle = `hsl(${star.hue}, 100%, 50%)`;
         } else {
           ctx.fillStyle = "white";
         }
@@ -167,5 +167,5 @@ export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
     };
   }, [count, speed, multi]);
 
-  return <canvas ref={canvasRef} className={styles.canvas} aria-hidden />;
+  return <canvas className={styles.canvas} ref={canvasRef} aria-hidden />;
 }

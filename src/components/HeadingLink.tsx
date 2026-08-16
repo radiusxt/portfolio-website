@@ -47,10 +47,9 @@ export function HeadingLink({ id, level, children, style }: HeadingLinkProps) {
   return (
     <Flex
       className={styles.control}
+      vertical="center"
       style={style}
       onClick={() => copyURL(id)}
-      vertical="center"
-      gap="4"
     >
       <Heading className={styles.text} id={id} variant={variant} as={asTag}>
         {children}

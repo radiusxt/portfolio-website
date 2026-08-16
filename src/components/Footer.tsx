@@ -24,9 +24,13 @@ export function Footer() {
           style={{ letterSpacing: "0.1px" }}
         >
           © {currentYear}. {person.name}. Built with {}
-          <SmartLink href="https://once-ui.com/" unstyled>Once UI</SmartLink>
+          <SmartLink href="https://once-ui.com/" unstyled>
+            Once UI
+          </SmartLink>
           {" and "}
-          <SmartLink href="https://vercel.com/" unstyled>Vercel</SmartLink>
+          <SmartLink href="https://vercel.com/" unstyled>
+            Vercel
+          </SmartLink>
           .
         </Heading>
         <Row gap="24">

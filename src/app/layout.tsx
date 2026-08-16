@@ -22,10 +22,10 @@ export async function generateMetadata() {
 export default async function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
     <Flex
-      suppressHydrationWarning
       as="html"
       lang="en"
       fillWidth
+      suppressHydrationWarning
       className={classNames(
         fonts.heading.variable,
         fonts.body.variable,
@@ -99,11 +99,12 @@ export default async function RootLayout({children}: Readonly<{children: React.R
       </head>
       <Providers>
         <Column
+          fill
           as="body"
           position="relative"
           minHeight="100vh"
           background="page"
-          fill
+          margin="0"
         >
           {/* Starfield Animation */}
           <Flex position="fixed" zIndex={0} pointerEvents="none" style={{ inset: 0 }}>

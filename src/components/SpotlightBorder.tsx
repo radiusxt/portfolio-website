@@ -110,7 +110,7 @@ export function SpotlightBorder({
     };
   }, [primary, secondary, spread, falloff]);
 
-  // Don't render border on mobile device.
+  // Don't render on mobile device as it doesn't have a cursor.
   if (mobile) {
     return <>{children}</>;
   }

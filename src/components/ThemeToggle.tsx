@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ToggleButton, useTheme } from "@once-ui-system/core";
+import { Button, useTheme } from "@once-ui-system/core";
 import styles from "./ThemeToggle.module.scss";
 
 export function ThemeToggle() {
@@ -23,13 +23,14 @@ export function ThemeToggle() {
   const nextTheme = currentTheme === "light" ? "dark" : "light";
 
   return (
-    <ToggleButton
-      className={styles.outline}
+    <Button
+      variant="ghost"
       prefixIcon={icon}
+      size="xl"
       onClick={() => setTheme(nextTheme)}
       aria-label={`Switch to ${nextTheme} mode.`}
-      size="l"
-      onClickCapture={(e) => {
+      
+      onClickCapture={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         setTheme(nextTheme);
         (e.currentTarget).blur();
       }}

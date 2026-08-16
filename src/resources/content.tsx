@@ -195,7 +195,7 @@ export const about: About = {
       },
       {
         title: "Development Tools",
-        description: "Deploying production software efficiently for modern, scalable applications.",
+        description: "Deploying efficient production software for modern, scalable applications.",
         tags: [
           {
             name: "AWS",
@@ -309,6 +309,20 @@ export const gallery: Gallery = {
     { src: "/images/gallery/DSC00330.jpg" }
   ],
   testimonials: [
-    
+    {
+      person: "Pastor Lai",
+      organisation: "Brisbane Cantonese Christian Church",
+      testimonial: "review" 
+    },
+    {
+      person: "Nathaniel",
+      organisation: "Hyperdrive Media",
+      testimonial: "Working with this team was an absolute pleasure from start to finish. They delivered the project on time, stayed within our budget, and exceeded our expectations in terms of quality. We saw a noticeable increase in client engagement within just the first month of implementing their strategies."
+    },
+    {
+      person: "test",
+      organisation: "test company",
+      testimonial: "test review" 
+    },
   ],
 };
