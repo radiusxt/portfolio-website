@@ -3,13 +3,10 @@
 }
 
 .header {
-  transition: transform 1s ease-out;
+  animation: slide 1.2s ease-out;
 }
 
-.pre {
-  transform: translateY(-150%);
-}
-
-.reveal {
-  transform: translateY(0);
+@keyframes slide {
+  0% { transform: translateY(-250%); }
+  100% { transform: translateY(0); }
 }

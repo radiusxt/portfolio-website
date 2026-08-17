@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Button, Line, Row } from "@once-ui-system/core";
 import { Scroll, ThemeToggle } from "@/components";
 import { about, gallery, home, routes, work } from "@/resources";
@@ -35,24 +34,15 @@ export function Header() {
     }
   ];
 
-  const [mounted, setMounted] = useState(false);
-
-  // AI Genereated Code
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-
   return (
-    <Row className={`${styles.header} ${mounted ? styles.reveal : styles.pre}`}
-      as="header" position="sticky" zIndex={10}>
+    <Row className={styles.header} as="header" position="sticky" zIndex={10}>
       <Row fill center radius="full" margin="20">
         <Row
           className={styles.glass}
           border="neutral-alpha-weak"
           radius="full"
           padding="2"
-          shadow="l"
+          shadow="xl"
         >
           <Row center>
             {routes["/"] &&
