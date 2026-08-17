@@ -122,17 +122,6 @@ export interface About extends BasePageConfig {
       location: string;
       /** Achievements at the company */
       achievements: React.ReactNode[];
-      /** Images related to the experience */
-      images?: Array<{
-        /** Image source path */
-        src: string;
-        /** Image alt text */
-        alt: string;
-        /** Image width ratio */
-        width: number;
-        /** Image height ratio */
-        height: number;
-      }>;
     }>;
   };
   /** Studies/education section */

@@ -1,38 +1,66 @@
 "use client";
 
-import { Button, Line, RevealFx, Row } from "@once-ui-system/core";
+import { useEffect, useState } from "react";
+import { Button, Line, Row } from "@once-ui-system/core";
 import { Scroll, ThemeToggle } from "@/components";
-import { about, display, gallery, home, routes, work } from "@/resources";
+import { about, gallery, home, routes, work } from "@/resources";
 import type { RoutesConfig } from "@/types";
 import styles from "./Header.module.scss";
 
 /* Page Header for Navigation */
 export function Header() {
-  const headerItems:
-      { path: keyof RoutesConfig; target: string; icon: string; label: string }[] = [
-    { path: "/about", target: about.intro.title, icon: "person", label: about.label },
-    { path: "/work", target: work.title, icon: "code", label: work.label },
-    { path: "/gallery", target: gallery.title, icon: "gallery", label: gallery.label },
+  const headerItems: {
+    path: keyof RoutesConfig;
+    target: string;
+    icon: string;
+    label: string
+  }[] = [
+    {
+      path: "/about",
+      target: about.intro.title,
+      icon: "person",
+      label: about.label
+    },
+    {
+      path: "/work",
+      target: work.title,
+      icon: "code",
+      label: work.label
+    },
+    {
+      path: "/gallery",
+      target: gallery.title,
+      icon: "gallery",
+      label: gallery.label
+    }
   ];
 
+  const [mounted, setMounted] = useState(false);
+
+  // AI Genereated Code
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+
   return (
-    <RevealFx position="sticky" zIndex={10} delay={0.2}>
-      <Row as="header" fill center margin="16">
+    <Row className={`${styles.header} ${mounted ? styles.reveal : styles.pre}`}
+      as="header" position="sticky" zIndex={10}>
+      <Row fill center radius="full" margin="20">
         <Row
           className={styles.glass}
-          background="page"
           border="neutral-alpha-weak"
           radius="full"
           padding="2"
-          shadow="m"
+          shadow="l"
         >
-          <Row center textVariant="body-default-s">
+          <Row center>
             {routes["/"] &&
               <Scroll target={home.title} href="/">
                 <Button variant="ghost" prefixIcon="home" size="xl" />
               </Scroll>
             }
-            <Line vert maxHeight="32" background="neutral-strong" />
+            <Line vert maxHeight="32" background="neutral-alpha-strong" />
             {headerItems.map(({ path, target, icon, label }) =>
               Object.entries({
                 desktop: { s: { hide: true }, label },
@@ -51,13 +79,11 @@ export function Header() {
                 </Row>
               )
             )}
-            <Line vert maxHeight="32" background="neutral-strong" />
-            {display.themeSwitcher &&
-              <ThemeToggle />
-            }
+            <Line vert maxHeight="32" background="neutral-alpha-strong" />
+            <ThemeToggle />
           </Row>
         </Row>
       </Row>
-    </RevealFx>
+    </Row>
   );
 };

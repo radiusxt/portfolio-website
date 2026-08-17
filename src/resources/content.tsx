@@ -92,7 +92,6 @@ export const about: About = {
           "Integrated authentication, databases & cloud infrastructure to deliver scalable solutions with Auth0, Supabase & AWS.",
           "Defined functional and non-functional requirements and iterated rapidly based on user feedback."
         ],
-        images: [],
       },
       {
         company: "University of Queensland",
@@ -105,7 +104,6 @@ export const about: About = {
           "Tutored microcontroller-based system design, covering embedded C programming, RTOS concepts, hardware interfacing and \
             the integration of sensors, actuators and communication protocols in real-world embedded applications on ARM Cortex processors in CSSE3010."
         ],
-        images: [],
       },
       {
         company: "Enable Startup",
@@ -117,7 +115,6 @@ export const about: About = {
           "Reduced overall system latency by 15% and maintained 95%+ uptime.",
           "Interacted 40+ times by employees for daily attendance & recording lunch breaks."
         ],
-        images: [],
       },
       {
         company: "ifm efector",
@@ -130,7 +127,6 @@ export const about: About = {
           "Reduced customer waiting times by 15% resulting in a 10% increase in service throughput.",
           "Improved lead conversion rates by 3.5% through timely communication.",
         ],
-        images: [],
       },
       {
         company: "PTC Phone Tech & Comm",
@@ -141,7 +137,6 @@ export const about: About = {
           "Provided excellent customer service and applied knowledge to consumer electronics while increasing store sales by 10% via strategic upselling.",
           "Repaired phones and tablets in a timely manner, achieving 80% same-day completion.",
         ],
-        images: [],
       },
     ],
   },

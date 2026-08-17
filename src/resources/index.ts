@@ -10,8 +10,6 @@ export {
 export {
   baseURL,
   dataStyle,
-  display,
-  effects,
   fonts,
   protectedRoutes,
   routes,

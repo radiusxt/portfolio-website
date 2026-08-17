@@ -79,7 +79,7 @@ export default function Home() {
           fillWidth
           position="absolute"
           horizontal="center"
-          bottom="32vh"
+          bottom="34vh"
           delay={1.8}
           s={{ style: { bottom: "30vh" }}}
         >

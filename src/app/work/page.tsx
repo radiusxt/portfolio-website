@@ -1,5 +1,4 @@
-import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
-import { Reveal } from "@/components";
+import { Column, Heading, Meta, RevealFx, Schema } from "@once-ui-system/core";
 import { Projects } from "@/components/work/Projects";
 import { baseURL, about, person, work } from "@/resources";
 
@@ -16,7 +15,7 @@ export async function generateMetadata() {
 /* Software Page Layout */
 export default function Work() {
   return (
-    <Column maxWidth="xl" minHeight="90vh" horizontal="center">
+    <Column horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -26,8 +25,8 @@ export default function Work() {
         image={`/api/og/generate?title=${encodeURIComponent(work.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <Reveal>
-        <Column fillWidth horizontal="center" paddingTop="24">
+      <RevealFx>
+        <Column maxWidth="xl" minHeight="100vh" horizontal="center" fill paddingTop="24">
           <Heading
             as="h1"
             id={work.title}
@@ -39,7 +38,7 @@ export default function Work() {
           </Heading>
           <Projects />
         </Column>
-      </Reveal>
+      </RevealFx>
     </Column>
   );
 }

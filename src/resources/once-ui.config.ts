@@ -1,6 +1,5 @@
 import type {
   DataStyleConfig,
-  DisplayConfig,
   FontsConfig,
   ProtectedRoutesConfig,
   RoutesConfig,
@@ -18,10 +17,6 @@ export const routes: RoutesConfig = {
   "/about": true,
   "/work": true,
   "/gallery": true,
-};
-
-export const display: DisplayConfig = {
-  themeSwitcher: true,
 };
 
 export const protectedRoutes: ProtectedRoutesConfig = {};

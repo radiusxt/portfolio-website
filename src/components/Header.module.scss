@@ -1,19 +1,15 @@
 .glass {
-  /* The Base */
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(1rem) !important;
+}
 
-  /* The Thickness (Rim Light) */
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-top: 1px solid rgba(255, 255, 255, 0.4); /* Catching top light */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.header {
+  transition: transform 1s ease-out;
+}
 
-  /* The Texture */
-  box-shadow: 
-    0 4px 30px rgba(0, 0, 0, 0.1), /* Soft depth */
-    inset 0 0 0 1px rgba(255, 255, 255, 0.1); /* Inner shine */
-    
-  /* Performance */
-  transform: translateZ(0);
+.pre {
+  transform: translateY(-150%);
+}
+
+.reveal {
+  transform: translateY(0);
 }

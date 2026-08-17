@@ -146,7 +146,7 @@ export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
 
     const handleResize = () => {
       resize();
-      init();
+      init(); // maybe remove this?
     };
 
     resize();

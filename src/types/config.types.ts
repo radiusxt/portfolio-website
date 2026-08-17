@@ -14,13 +14,6 @@ import type {
 import type { NextFontWithVariable } from "next/dist/compiled/@next/font";
 
 /**
- * Display configuration for UI elements.
- */
-export type DisplayConfig = {
-  themeSwitcher: boolean;
-};
-
-/**
  * Route configuration for enabled/disabled routes.
  */
 export type RoutesConfig = Record<`/${string}`, boolean>;
@@ -114,7 +107,6 @@ export type SocialSharingConfig = {
  * Top-level config types for once-ui.config.js
  */
 export type OnceUIConfig = {
-  display: DisplayConfig;
   routes: RoutesConfig;
   protectedRoutes: ProtectedRoutesConfig;
   baseURL: string;
