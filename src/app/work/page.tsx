@@ -1,6 +1,7 @@
 import { Column, Heading, Meta, RevealFx, Schema } from "@once-ui-system/core";
 import { Projects } from "@/components/work/Projects";
 import { baseURL, about, person, work } from "@/resources";
+import { getPosts } from "@/utils/utils";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -14,8 +15,13 @@ export async function generateMetadata() {
 
 /* Software Page Layout */
 export default function Work() {
+  const projects = getPosts(["src", "app", "work", "projects"]).sort((a, b) => {
+    return new Date(b.metadata.publishedAt).getTime() -
+      new Date(a.metadata.publishedAt).getTime();
+  });
+
   return (
-    <Column horizontal="center">
+    <Column maxWidth="l" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -26,17 +32,16 @@ export default function Work() {
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
       <RevealFx>
-        <Column fill maxWidth="xl" minHeight="100vh" horizontal="center">
+        <Column fill minHeight="100vh" horizontal="center">
           <Heading
             as="h1"
             id={work.title}
             variant="display-default-m"
-            paddingBottom="20"
             style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
           >
             {work.title}
           </Heading>
-          <Projects />
+          <Projects projects={projects} />
         </Column>
       </RevealFx>
     </Column>

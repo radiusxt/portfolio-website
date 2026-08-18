@@ -108,13 +108,13 @@ export default async function RootLayout({children}: Readonly<{children: React.R
         >
           {/* Starfield Animation */}
           <Flex position="fixed" zIndex={0} pointerEvents="none" style={{ inset: 0 }}>
-            <RevealFx>
+            <RevealFx speed="fast">
               <Starfield />
             </RevealFx>
           </Flex>
           {/* Particle Animation */}
           <Flex position="fixed" zIndex={0} pointerEvents="none" style={{ inset: 0 }}>
-            <RevealFx>
+            <RevealFx speed="fast">
               <Particle
                 speed={1.5}
                 density={60}

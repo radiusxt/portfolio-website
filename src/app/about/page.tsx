@@ -59,9 +59,6 @@ export default function About() {
         image={`/api/og/generate?title=${encodeURIComponent(about.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}`}}
       />
-      {about.tableOfContent.display &&
-        <TableOfContents structure={structure} about={about} />
-      }
       <RevealFx translateY="16" delay={0.1}>
         <Row fillWidth horizontal="center" s={{ direction: "column" }}>
           {/* Avatar */}

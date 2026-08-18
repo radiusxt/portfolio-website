@@ -1,14 +1,13 @@
 import {
   Column,
   Heading,
-  Icon,
   Meta,
   RevealFx,
   Row,
   Schema,
   TypeFx
 } from "@once-ui-system/core";
-import { Bounce, ContactForm, Dashboard, Reveal, SpotlightBorder } from "@/components";
+import { ContactForm, Dashboard, Reveal, SpotlightBorder } from "@/components";
 import { home, about, person, baseURL } from "@/resources";
 
 export async function generateMetadata() {
@@ -37,26 +36,30 @@ export default function Home() {
         maxWidth="xl"
         position="relative"
         horizontal="center"
-        minHeight="100vh"
-        top="20vh"
         align="center"
+        minHeight="100vh"
+        top="16vh"
         wrap
       >
-        <RevealFx
-          translateY="16"
-          fillWidth
-          horizontal="center"
-          style={{ paddingBottom: "11dvh" }}
-        >
-          <Heading
-            as="h1"
-            variant="display-default-xl"
-            style={{ lineHeight: "1.25", letterSpacing: "-1.5px" }}
+        {String(home.headline).split(". ").map((sentence, index) =>
+          <RevealFx
+            key={sentence}
+            translateY="16"
+            fillWidth
+            horizontal="center"
+            delay={0.8 * index}
+            style={{ paddingBottom: index === 1 ? "8vh" : "0" }}
           >
-            {home.headline}
-          </Heading>
-        </RevealFx>
-        <RevealFx translateY="16" fillWidth horizontal="center" delay={0.8}>
+            <Heading
+              as="h1"
+              variant="display-default-xl"
+              style={{ lineHeight: "1.3", letterSpacing: "-1.5px" }}
+            >
+              {sentence}{index === 0 && "."}
+            </Heading>
+          </RevealFx>
+        )}
+        <RevealFx translateY="16" fillWidth horizontal="center" delay={2}>
           <Row center gap="8" s={{ direction: "column" }}>
             <Heading as="h2" variant="heading-default-xl" style={{ letterSpacing: "0.3px" }}>
               {home.subline}

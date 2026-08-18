@@ -301,20 +301,20 @@ export const gallery: Gallery = {
     { src: "/images/gallery/DSC09550.jpg" },
     { src: "/images/gallery/DSC01055.jpg" },
     { src: "/images/gallery/DSC00806.jpg" },
-    { src: "/images/gallery/DSC00330.jpg" }
+    { src: "/images/gallery/DSC00330.jpg" },
   ],
   testimonials: [
     {
       person: "Pastor Lai",
       organisation: "Brisbane Cantonese Christian Church",
-      testimonial: "review" 
+      testimonial: "review"
     },
-    {
+    { // remove when finished
       person: "Nathaniel",
       organisation: "Hyperdrive Media",
       testimonial: "Working with this team was an absolute pleasure from start to finish. They delivered the project on time, stayed within our budget, and exceeded our expectations in terms of quality. We saw a noticeable increase in client engagement within just the first month of implementing their strategies."
     },
-    {
+    { // remove when finished
       person: "test",
       organisation: "test company",
       testimonial: "test review" 

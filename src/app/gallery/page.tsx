@@ -1,7 +1,6 @@
 import { Column, Heading, Logo, Meta, RevealFx, Row, Schema } from "@once-ui-system/core";
 import { Reveal } from "@/components";
 import { Highlights } from "@/components/gallery/Highlights";
-import { PicTime } from "@/components/gallery/Portfolio";
 import { baseURL, gallery, person } from "@/resources";
 
 export async function generateMetadata() {
@@ -27,7 +26,7 @@ export default function Gallery() {
         image={`/api/og/generate?title=${encodeURIComponent(gallery.title)}`}
         author={{ name: person.name, url: `${baseURL}${gallery.path}`, image: `${baseURL}${person.avatar}` }}
       />
-        <Column maxWidth="xl" fill horizontal="center" paddingTop="24" paddingBottom="128">
+        <Column maxWidth="xl" fill horizontal="center" paddingBottom="128">
           <RevealFx translateY="16" fillWidth horizontal="center">
             <Heading
               as="h1"

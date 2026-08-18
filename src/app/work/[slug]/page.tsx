@@ -66,7 +66,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
       <RevealFx translateY="16" fillWidth delay={0.1}>
-        <Column fill maxWidth="l" horizontal="center" align="center" gap="56" paddingBottom="40">
+        <Column fill maxWidth="l" horizontal="center" align="center" gap="56" paddingBottom="64">
           <Heading variant="display-default-l">
             {post.metadata.title}
           </Heading>
@@ -85,7 +85,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
           </Row>
           <Heading
             variant="heading-default-m"
-            onBackground="brand-medium"
+            onBackground="neutral-weak"
             wrap="balance"
             style={{ lineHeight: 1.5 }}
           >
@@ -119,8 +119,8 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
                 radius="xl-8"
                 border="transparent"
                 aspectRatio="16/9"
-                loading
                 marginBottom="24"
+                loading
               />
             }
           >
@@ -134,7 +134,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
               marginBottom="24"
             />
           </Loading>
-          <Line maxWidth={24} height={0.15} radius="m" />
+          <Line maxWidth="40%" height="2" radius="m" />
         </Column>
       </RevealFx>
       <Reveal>

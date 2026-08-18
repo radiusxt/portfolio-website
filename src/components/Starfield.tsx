@@ -67,6 +67,7 @@ export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
       };
     };
 
+    // Handles page resizing to ensure 'space travel' effect is consistent.
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
       const rect = canvas.getBoundingClientRect();
@@ -154,10 +155,14 @@ export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
     }
     
     let resizeTimeout: ReturnType<typeof setTimeout>;
+
     const handleResize = () => {
       clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(resize, 150);
+      
+      // Resizing can happen at most once every 250ms.
+      resizeTimeout = setTimeout(resize, 250);
     };
+
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {

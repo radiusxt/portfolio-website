@@ -69,9 +69,8 @@ function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
           maxWidth="m"
           radius="xl"
           border="transparent"
-          marginTop="16"
-          marginBottom="4"
           aspectRatio="16/9"
+          marginBottom="4"
           loading
         />
       }
@@ -82,7 +81,6 @@ function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
         maxWidth="m"
         radius="xl"
         border="neutral-medium"
-        marginTop="16"
         marginBottom="4"
         enlarge
         {...props}
@@ -107,8 +105,7 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
         id={slug}
         variant="display-default-s"
         align="center"
-        marginTop="20"
-        marginBottom="20"
+        marginY="12"
       >
         {children}
       </Heading>
@@ -124,8 +121,7 @@ function createParagraph({ children }: TextProps) {
     <Heading
       variant="body-default-l"
       wrap="wrap"
-      marginTop="12"
-      marginBottom="12"
+      marginY="12"
       style={{ lineHeight: "2" }}
     >
       {children}
@@ -151,8 +147,7 @@ function createCodeBlock(props: any) {
 
     return (
       <CodeBlock
-        marginTop="16"
-        marginBottom="16"
+        marginY="12"
         codes={[{
           code: children,
           language,
@@ -175,10 +170,9 @@ function createListItem({ children }: { children: ReactNode }) {
   return (
     <Heading
       variant="body-default-l"
-      marginTop="4"
-      marginBottom="4"
-      style={{ lineHeight: "2" }}
       wrap="wrap"
+      marginY="4"
+      style={{ lineHeight: "2" }}
     >
       <ListItem>
         {children}

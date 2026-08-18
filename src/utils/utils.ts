@@ -4,6 +4,12 @@ import path from "node:path";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 
+export type Post = {
+  metadata: Metadata;
+  slug: string;
+  content: string;
+}
+
 export type Team = {
   name: string;
   linkedIn?: string;
