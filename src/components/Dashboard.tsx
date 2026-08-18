@@ -99,7 +99,7 @@ export async function Dashboard({ activity, username }: DashboardProps) {
           </Row>
         )}
       </Column>
-      <Line background="neutral-alpha-weak" height="1" radius="l" />
+      <Line background="brand-strong" height="1" radius="l" />
       <Column fillWidth gap="12">
         <ContributionGraph username={username} />
       </Column>

@@ -53,7 +53,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
   }
 
   return (
-    <Column maxWidth="l" direction="column" horizontal="center" gap="l">
+    <Column maxWidth="l" direction="column" horizontal="center">
       <Schema
         as="article"
         baseURL={baseURL}
@@ -65,13 +65,35 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
         image={post.metadata.image || `/api/og/generate?title=${encodeURIComponent(post.metadata.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <RevealFx translateY="16" fillWidth paddingBottom="32" delay={0.1}>
-        <Column fillWidth maxWidth="l" gap="24" horizontal="center" align="center">
-          <Heading variant="display-default-l" paddingBottom="32">
+      <RevealFx translateY="16" fillWidth delay={0.1}>
+        <Column fill maxWidth="l" horizontal="center" align="center" gap="56" paddingBottom="40">
+          <Heading variant="display-default-l">
             {post.metadata.title}
           </Heading>
+          <Row gap="64">
+            <Heading variant="heading-default-m" onBackground="neutral-weak">
+              {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
+            </Heading>
+            <Heading variant="heading-default-m" onBackground="neutral-weak">
+              {post.metadata.link &&
+                <SmartLink href={post.metadata.link} unstyled>
+                  {work.tag}
+                  <Icon name="arrowUpRight" size="s" />
+                </SmartLink>
+              }
+            </Heading>
+          </Row>
+          <Heading
+            variant="heading-default-m"
+            onBackground="brand-medium"
+            wrap="balance"
+            style={{ lineHeight: 1.5 }}
+          >
+            {/* Inserts 2 spaces before and after '|' */}
+            {post.metadata.team.map((member) => member.name).join("\u00A0 | \u00A0")}
+          </Heading>
           {post.metadata.tags && post.metadata.tags.length > 0 && 
-            <Row paddingBottom="32" gap="16" horizontal="center" wrap>
+            <Row horizontal="center" gap="16" wrap>
               {post.metadata.tags.map((tag) => 
                 <Tag key={tag} border="neutral-alpha-weak">
                   <Row vertical="center" gap="8">
@@ -81,32 +103,13 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
                       size="s"
                       padding="2"
                     />
-                    <Heading variant="label-default-l" onBackground="neutral-weak" padding="2">
+                    <Heading variant="label-default-m" onBackground="neutral-weak" padding="2">
                       {tag}
                     </Heading>
                   </Row>
                 </Tag>
               )}
             </Row>
-          }
-          <Heading variant="heading-default-xl" onBackground="neutral-weak" paddingBottom="24">
-            {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
-          </Heading>
-          <Heading
-            variant="heading-default-m"
-            onBackground="brand-medium"
-            paddingBottom="24"
-            wrap="balance"
-            style={{ lineHeight: 1.5 }}
-          >
-            {/* Inserts 2 spaces before and after '|' */}
-            {post.metadata.team.map((member) => member.name).join("\u00A0 | \u00A0")}
-          </Heading>
-          {post.metadata.link && 
-            <SmartLink href={post.metadata.link} unstyled>
-              {work.tag}
-              <Icon name="arrowUpRightFromSquare" size="s" />
-            </SmartLink>
           }
           <Loading
             fallback={
@@ -115,10 +118,9 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
                 maxWidth="m"
                 radius="xl-8"
                 border="transparent"
-                marginTop="80"
-                marginBottom="80"
                 aspectRatio="16/9"
                 loading
+                marginBottom="24"
               />
             }
           >
@@ -128,16 +130,15 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
               maxWidth="m"
               radius="xl-8"
               border="neutral-medium"
-              marginTop="80"
-              marginBottom="80"
               priority
+              marginBottom="24"
             />
           </Loading>
           <Line maxWidth={24} height={0.15} radius="m" />
         </Column>
       </RevealFx>
       <Reveal>
-        <Column as="article" maxWidth="s" gap="s" paddingBottom="12">
+        <Column as="article" maxWidth="s" gap="xs" paddingBottom="48">
           <CustomMDX source={post.content} />
         </Column>
       </Reveal>

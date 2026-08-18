@@ -46,7 +46,6 @@ export default function Home() {
           translateY="16"
           fillWidth
           horizontal="center"
-          delay={0.1}
           style={{ paddingBottom: "11dvh" }}
         >
           <Heading
@@ -73,22 +72,6 @@ export default function Home() {
               />
             </Heading>
           </Row>
-        </RevealFx>
-        <RevealFx
-          translateY="16"
-          fillWidth
-          position="absolute"
-          horizontal="center"
-          bottom="34vh"
-          delay={1.8}
-          s={{ style: { bottom: "30vh" }}}
-        >
-          <Bounce distance={12} duration={3}>
-            <Column horizontal="center" gap="-1" onBackground="neutral-weak" textVariant="body-default-s">
-              {home.instruction}
-              <Icon name="chevronDown" size="xl" />
-            </Column>
-          </Bounce>
         </RevealFx>
       </Column>
       <Column horizontal="center" minHeight="100vh">

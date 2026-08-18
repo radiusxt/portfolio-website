@@ -2,12 +2,12 @@ import "@once-ui-system/core/css/styles.css";
 import "@once-ui-system/core/css/tokens.css";
 import classNames from "classnames";
 
+import Script from "next/script";
 import { Column, Flex, Meta, Particle, RevealFx } from "@once-ui-system/core";
 import { Footer, Header, Providers, RouteGuard, Starfield, Transition } from "@/components";
 import { baseURL, dataStyle, fonts, home, style } from "@/resources";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import Script from "next/script";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -104,7 +104,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           position="relative"
           minHeight="100vh"
           background="page"
-          margin="0"
+          marginTop="0"
         >
           {/* Starfield Animation */}
           <Flex position="fixed" zIndex={0} pointerEvents="none" style={{ inset: 0 }}>

@@ -27,20 +27,20 @@ export default function Gallery() {
         image={`/api/og/generate?title=${encodeURIComponent(gallery.title)}`}
         author={{ name: person.name, url: `${baseURL}${gallery.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <Reveal>
-        <Column maxWidth="xl" fillWidth horizontal="center" paddingTop="24" paddingBottom="128">
-          <Heading
-            as="h1"
-            id={gallery.title}
-            variant="display-default-m"
-            paddingBottom="104"
-            style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
-          >
-            {gallery.title}
-          </Heading>
+        <Column maxWidth="xl" fill horizontal="center" paddingTop="24" paddingBottom="128">
+          <RevealFx translateY="16" fillWidth horizontal="center">
+            <Heading
+              as="h1"
+              id={gallery.title}
+              variant="display-default-m"
+              paddingBottom="104"
+              style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
+            >
+              {gallery.title}
+            </Heading>
+          </RevealFx>
           <Highlights />
         </Column>
-      </Reveal>
       <Reveal>
         <Column horizontal="center">
           <Row dark paddingBottom="32">
@@ -51,18 +51,6 @@ export default function Gallery() {
           </Row>
         </Column>
       </Reveal>
-      <RevealFx
-        fillWidth
-        horizontal="center"
-        width="90vw"
-        height="120vh"
-        delay={0.8}
-        style={{ left: "50%", transform: "translateX(-50%)" }}
-        s={{ style: { height: "370vh" }}}
-        m={{ style: { height: "210vh" }}}
-      >
-        <PicTime />
-      </RevealFx>
     </Column>
   );
 }

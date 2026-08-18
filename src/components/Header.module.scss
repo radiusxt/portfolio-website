@@ -1,5 +1,13 @@
-.glass {
-  backdrop-filter: blur(1rem) !important;
+:global([data-theme="dark"]) .glass {
+  backdrop-filter: blur(0.75rem) !important;
+  background-color: rgba(8, 8, 8, 0.3) !important;
+  transition: background-color 0.2s ease;
+}
+
+:global([data-theme="light"]) .glass {
+  backdrop-filter: blur(0.75rem) !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  transition: background-color 0.2s ease;
 }
 
 .header {

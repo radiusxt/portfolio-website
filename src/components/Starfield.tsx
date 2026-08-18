@@ -116,7 +116,8 @@ export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
         
         // Used to scale size and alpha so stars grow
         // and brighten as they get closer.
-        const depthRatio = 1 - star.z / width;
+        // Clamps to [0, 1] to accomodate viewport resize.
+        const depthRatio = Math.max(0, Math.min(1, 1 - star.z / width));
         const size = 1.5 * depthRatio;
         const alpha = 0.7 + 0.3 * depthRatio;
 
@@ -144,11 +145,6 @@ export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
       }
     };
 
-    const handleResize = () => {
-      resize();
-      init(); // maybe remove this?
-    };
-
     resize();
     init();
 
@@ -157,11 +153,16 @@ export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
       animationId = requestAnimationFrame(tick);
     }
     
-    window.addEventListener("resize", handleResize);
+    let resizeTimeout: ReturnType<typeof setTimeout>;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(resize, 150);
+    };
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
       cancelAnimationFrame(animationId);
+      clearTimeout(resizeTimeout);
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };

@@ -31,7 +31,7 @@ export const home: Home = {
   label: "Home",
   title: "Hyperdrive Media",
   description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}.`,
-  headline: "Building software that scales. Capturing photos that inspire.",
+  headline: "Building software that scales. Capturing images that inspire.",
   subline: "👋 I'm Nathaniel and I'm a",
   instruction: "Scroll",
   roles: [

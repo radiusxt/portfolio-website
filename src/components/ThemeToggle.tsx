@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { Button, useTheme } from "@once-ui-system/core";
-import styles from "./ThemeToggle.module.scss";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -24,12 +23,11 @@ export function ThemeToggle() {
 
   return (
     <Button
-      variant="ghost"
       prefixIcon={icon}
+      variant="ghost"
       size="xl"
       onClick={() => setTheme(nextTheme)}
       aria-label={`Switch to ${nextTheme} mode.`}
-      
       onClickCapture={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         setTheme(nextTheme);
         (e.currentTarget).blur();

@@ -18,7 +18,7 @@ export function Highlights() {
   return (
     <Column center fill>
       {Object.entries({ top, middle, bottom }).map(([id, images], index) => 
-        <RevealFx key={id} delay={0.3 * index}>
+        <RevealFx key={id} delay={0.6 + 0.4 * index}>
           <Fade
             position="absolute"
             zIndex={1}
@@ -30,7 +30,13 @@ export function Highlights() {
           />
           <AutoScroll speed="slow" hover="slow" reverse={index % 2 === 0}>
             {images.map((image) =>
-              <Flex key={image.src} width="20vw" center padding="16">
+              <Flex
+                key={image.src}
+                center
+                minWidth="20vw"
+                padding="16"
+                s={{ style: { minWidth: "100%" }}}
+              >
                 <Loading
                   fallback={
                     <Media src="" radius="xl" aspectRatio="3/2" loading />

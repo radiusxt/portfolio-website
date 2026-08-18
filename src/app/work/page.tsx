@@ -26,7 +26,7 @@ export default function Work() {
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
       <RevealFx>
-        <Column maxWidth="xl" minHeight="100vh" horizontal="center" fill paddingTop="24">
+        <Column fill maxWidth="xl" minHeight="100vh" horizontal="center">
           <Heading
             as="h1"
             id={work.title}
