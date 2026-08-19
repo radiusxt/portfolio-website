@@ -4,7 +4,7 @@ export const person: Person = {
   firstName: "Nathaniel",
   lastName: "Chan",
   name: "Nathaniel Chan",
-  role: "Software Engineer, Photographer",
+  role: "Software Engineer, Sports Photographer",
   avatar: "/images/brand/avatar.jpg",
   email: process.env.EMAIL_ADDRESS ?? "",
   location: "Australia/Brisbane",
@@ -16,13 +16,11 @@ export const social: Social = [
     name: "GitHub",
     icon: "github",
     link: "https://github.com/radiusxt",
-    essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
     link: "https://www.linkedin.com/in/nathaniel-chan-/",
-    essential: true,
   },
 ];
 
@@ -33,7 +31,6 @@ export const home: Home = {
   description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}.`,
   headline: "Building software that scales. Capturing images that inspire.",
   subline: "👋 I'm Nathaniel and I'm a",
-  instruction: "Scroll",
   roles: [
     "Software Engineer.",
     "Sports Photographer.",
@@ -276,7 +273,8 @@ export const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
   title: "Highlights",
-  description: `Highlights by ${person.name}`,
+  subtitle: "Testimonials",
+  description: `Images by ${person.name}`,
   images: [
     { src: "/images/gallery/DSC09431.jpg" },
     { src: "/images/gallery/DSC00175.jpg" },
@@ -307,17 +305,12 @@ export const gallery: Gallery = {
     {
       person: "Pastor Lai",
       organisation: "Brisbane Cantonese Christian Church",
-      testimonial: "review"
+      testimonial: "temp review (to be finished later)",
     },
     { // remove when finished
       person: "Nathaniel",
       organisation: "Hyperdrive Media",
-      testimonial: "Working with this team was an absolute pleasure from start to finish. They delivered the project on time, stayed within our budget, and exceeded our expectations in terms of quality. We saw a noticeable increase in client engagement within just the first month of implementing their strategies."
-    },
-    { // remove when finished
-      person: "test",
-      organisation: "test company",
-      testimonial: "test review" 
+      testimonial: "Working with this team was an absolute pleasure from start to finish. They delivered the project on time, stayed within our budget, and exceeded our expectations in terms of quality. We saw a noticeable increase in client engagement within just the first month of implementing their strategies.",
     },
   ],
 };

@@ -39,8 +39,6 @@ export interface Social extends Array<{
   icon: IconName;
   /** The link to the social platform */
   link: string;
-  /** Whether this social link is essential and should be displayed on the about page */
-  essential?: boolean;
 }> {}
 
 /**
@@ -67,8 +65,6 @@ export interface Home extends BasePageConfig {
   headline: React.ReactNode;
   /** The sub text which appears below the headline */
   subline: React.ReactNode;
-  /** Tag above chevron icon instructing user what to do */
-  instruction: string;
   /** The text inside TypeFx to complete subline */
   roles: Array<string>;
   /** GitHub username */
@@ -177,6 +173,7 @@ export interface Work extends BasePageConfig {
  * @description Configuration for the Gallery page, including metadata, navigation label, and image list.
  */
 export interface Gallery extends BasePageConfig {
+  subtitle: string;
   /** Array of highlight images in the gallery */
   images: Array<{
     /** Image source path */

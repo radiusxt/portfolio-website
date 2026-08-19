@@ -120,7 +120,7 @@ export default function About() {
                   data-border="rounded"
                   gap="12"
                 >
-                  {social.filter((item) => item.essential).map((item) => item.link && 
+                  {social.map((item) => item.link && 
                     <Flex key={item.name}>
                       <Button
                         key={item.name}

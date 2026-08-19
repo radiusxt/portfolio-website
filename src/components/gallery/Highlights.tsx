@@ -7,7 +7,7 @@ import {
   RevealFx,
   TiltFx
 } from "@once-ui-system/core";
-import { Loading} from "@/components";
+import { Loading } from "@/components";
 import { gallery } from "@/resources";
 
 export function Highlights() {
@@ -16,7 +16,7 @@ export function Highlights() {
   const bottom = gallery.images.slice(16, 24);
 
   return (
-    <Column center fill>
+    <Column fill center>
       {Object.entries({ top, middle, bottom }).map(([id, images], index) => 
         <RevealFx key={id} delay={0.6 + 0.4 * index}>
           <Fade
@@ -33,9 +33,9 @@ export function Highlights() {
               <Flex
                 key={image.src}
                 center
-                minWidth="20vw"
-                padding="16"
-                s={{ style: { minWidth: "100%" }}}
+                width="20vw"
+                margin="16"
+                s={{ style: { minWidth: "60vw" }}}
               >
                 <Loading
                   fallback={

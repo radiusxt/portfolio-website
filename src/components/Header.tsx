@@ -8,7 +8,7 @@ import styles from "./Header.module.scss";
 
 /* Page Header for Navigation */
 export function Header() {
-  const headerItems: {
+  const structure: {
     path: keyof RoutesConfig;
     target: string;
     icon: string;
@@ -51,7 +51,7 @@ export function Header() {
               </Scroll>
             }
             <Line vert maxHeight="32" background="neutral-alpha-strong" />
-            {headerItems.map(({ path, target, icon, label }) =>
+            {structure.map(({ path, target, icon, label }) =>
               Object.entries({
                 desktop: { s: { hide: true }, label },
                 mobile: { hide: true, s: { hide: false }, label: undefined },

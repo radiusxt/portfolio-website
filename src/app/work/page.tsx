@@ -31,7 +31,7 @@ export default function Work() {
         image={`/api/og/generate?title=${encodeURIComponent(work.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
-      <RevealFx>
+      <RevealFx translateY="16" fillWidth horizontal="center">
         <Column fill minHeight="100vh" horizontal="center">
           <Heading
             as="h1"

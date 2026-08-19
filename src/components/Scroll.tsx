@@ -24,9 +24,9 @@ export function Scroll({ children, target, href }: ScrollProps) {
       return;
     }
 
-    const isSamePage = !href || href === pathname;
+    const samePage = !href || href === pathname;
 
-    if (isSamePage && target) {
+    if (samePage && target) {
       e.preventDefault();
       const element = document.getElementById(target);
 
@@ -43,7 +43,7 @@ export function Scroll({ children, target, href }: ScrollProps) {
 
     e.preventDefault();
 
-    if (!isSamePage) {
+    if (!samePage) {
       navigate(href);
       return;
     }

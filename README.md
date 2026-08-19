@@ -41,7 +41,6 @@ Without this, you lose email functionality, password protected pages and GitHub 
 ### Deployment
 
 - Vercel
-- GitHub
 
 To find how these technologies were used, see [here](https://hyperdrivemedia.co/work/portfolio-website).
 
