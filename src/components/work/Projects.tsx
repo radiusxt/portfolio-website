@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Column, TiltFx } from "@once-ui-system/core";
 import { ProjectCard, Scroll } from "@/components";
 import type { Post } from "@/utils/utils";
@@ -8,43 +8,36 @@ import type { Post } from "@/utils/utils";
 export function Projects({ projects }: { projects: Post[] }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const activeIndexRef = useRef(0);
   const [activeIndex, setActiveIndex] = useState(0);
+  const activeIndexRef = useRef(0);
+
+  const setCardRefs = useMemo(() => Array.from({ length: projects.length }, (_, i) =>
+    (el: HTMLDivElement | null) => {
+      cardRefs.current[i] = el;
+    }), [projects.length]
+  );
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
 
-    if (!wrapper) {
+    if (!wrapper || projects.length === 0) {
       return;
     }
 
-    const updateOpacities = () => {
+    const updateOpacity = () => {
       const rect = wrapper.getBoundingClientRect();
       const scrollableDistance = rect.height - window.innerHeight;
       const scrolled = Math.min(Math.max(-rect.top, 0), scrollableDistance);
       const progress = scrollableDistance > 0 ? scrolled / scrollableDistance : 0;
       const floatIndex = progress * (projects.length - 1);
       const nearestIndex = Math.round(floatIndex);
+      const distance = Math.abs(floatIndex - nearestIndex);
+      const opacity = distance <= 0.25 ? 1 : Math.max(0, 1 - (distance - 0.25) / 0.225);
+      const activeCard = cardRefs.current[nearestIndex];
 
-      cardRefs.current.forEach((card, i) => {
-        if (!card) {
-          return;
-        }
-
-        const distance = Math.abs(floatIndex - i);
-        let opacity: number;
-
-        if (distance <= 0.25) {
-          opacity = 1;
-
-        } else {
-          const rampProgress = (distance - 0.25) / (0.5 - 0.25);
-          opacity = Math.max(0, 1 - rampProgress);
-        }
-
-        card.style.opacity = String(opacity);
-        card.style.zIndex = i === nearestIndex ? "2" : "1";
-      });
+      if (activeCard) {
+        activeCard.style.opacity = String(opacity);
+      }
 
       if (nearestIndex !== activeIndexRef.current) {
         activeIndexRef.current = nearestIndex;
@@ -53,17 +46,21 @@ export function Projects({ projects }: { projects: Post[] }) {
     };
 
     let ticking = false;
+
     const onScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          updateOpacities();
-          ticking = false;
-        });
-        ticking = true;
+      if (ticking) {
+        return;
       }
+
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        updateOpacity();
+        ticking = false;
+      });
     };
 
-    updateOpacities();
+    updateOpacity();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
 
@@ -74,100 +71,35 @@ export function Projects({ projects }: { projects: Post[] }) {
   }, [projects.length]);
 
   return (
-    <Column
-      ref={wrapperRef}
-      fill
-      style={{ position: "relative", height: `${projects.length * 100}vh` }}
-    >
-      <Column
-        fill
-        horizontal="center"
-        vertical="center"
-        style={{ position: "sticky", top: 40, height: "100vh" }}
-      >
-        {projects.map((project, index) => {
-          const card = (
-            <TiltFx intensity={0.5}>
-              <ProjectCard
-                title={project.metadata.title}
-                description={project.metadata.summary}
-                image={project.metadata.image}
-                team={project.metadata.team}
-                link={project.metadata.link || ""}
-                tags={project.metadata.tags || []}
-              />
-            </TiltFx>
-          );
-
-          return (
-            <Column
-              key={project.slug}
-              ref={(el) => { cardRefs.current[index] = el; }}
-              fill
-              center
-              style={{ position: "absolute", inset: 0, transition: "opacity 0.15s linear" }}
-            >
-              {index === activeIndex ? (
-                <Scroll href={`/work/${project.slug}`}>{card}</Scroll>
-              ) : (
-                card
-              )}
-            </Column>
-          );
-        })}
+    <Column ref={wrapperRef} fill position="relative" height={`${projects.length * 100}vh`}>
+      <Column fill center position="sticky" top="40" height="100vh">
+        {projects.map(({ slug, metadata }, index) =>
+          <Column
+            key={slug}
+            ref={setCardRefs[index]}
+            fill
+            center
+            position="absolute"
+            pointerEvents={index === activeIndex ? "auto" : "none" }
+            style={{ inset: 0, willChange: "opacity" }}
+          >
+            {index === activeIndex &&
+              <Scroll href={`/work/${slug}`}>
+                <TiltFx intensity={0.5}>
+                  <ProjectCard
+                    title={metadata.title}
+                    description={metadata.summary}
+                    image={metadata.image}
+                    team={metadata.team}
+                    link={metadata.link || ""}
+                    tags={metadata.tags || []}
+                  />
+                </TiltFx>
+              </Scroll>
+            }
+          </Column>
+        )}
       </Column>
     </Column>
   );
 }
-
-/*
-import { Column, Swiper, TiltFx } from "@once-ui-system/core";
-import { ProjectCard, Scroll } from "@/components";
-import { getPosts } from "@/utils/utils";
-
-interface ProjectsProps {
-  range?: [number, number?];
-}
-
-export function Projects({ range }: ProjectsProps) {
-  const projects = getPosts(["src", "app", "work", "projects"]).sort((a, b) => {
-    return new Date(b.metadata.publishedAt).getTime() -
-      new Date(a.metadata.publishedAt).getTime();
-  });
-
-  const displayedProjects = projects.slice((range?.[0] ?? 1) - 1, range?.[1]);
-
-  return (
-    <Column fill horizontal="center">
-      <Swiper
-        fill
-        priority
-        aspectRatio="3 / 2"
-        controls={false}
-        border="transparent"
-        m={{ aspectRatio: "1 / 1 "}}
-        s={{ aspectRatio: "4 / 5" }}
-        items={[
-          ...displayedProjects.map((project) => ({
-            slide:
-              <Column key={project.slug} fill center>
-                <TiltFx intensity={0.5}>
-                  <Scroll href={`/work/${project.slug}`}>
-                    <ProjectCard
-                      key={project.slug}
-                      title={project.metadata.title}
-                      description={project.metadata.summary}
-                      image={project.metadata.image}
-                      team={project.metadata.team}
-                      link={project.metadata.link || ""}
-                      tags={project.metadata.tags || []}
-                    />
-                  </Scroll>
-                </TiltFx>
-              </Column>
-          }))
-        ]}
-      />
-    </Column>
-  );
-}*/
