@@ -27,8 +27,21 @@ export function Projects({ projects }: { projects: Post[] }) {
       const nearestIndex = Math.round(floatIndex);
 
       cardRefs.current.forEach((card, i) => {
-        if (!card) return;
-        const opacity = Math.max(0, 1 - Math.abs(floatIndex - i));
+        if (!card) {
+          return;
+        }
+
+        const distance = Math.abs(floatIndex - i);
+        let opacity: number;
+
+        if (distance <= 0.25) {
+          opacity = 1;
+
+        } else {
+          const rampProgress = (distance - 0.25) / (0.5 - 0.25);
+          opacity = Math.max(0, 1 - rampProgress);
+        }
+
         card.style.opacity = String(opacity);
         card.style.zIndex = i === nearestIndex ? "2" : "1";
       });

@@ -1,4 +1,4 @@
-export { Bounce } from "@/components/Bounce";
+//export { Bounce } from "@/components/Bounce";
 export { ContactForm } from "@/components/ContactForm";
 export { ContributionGraph } from "@/components/ContributionGraph";
 export { CustomMDX } from "@/components/mdx";

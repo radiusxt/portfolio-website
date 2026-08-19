@@ -47,7 +47,7 @@ export default function Home() {
             translateY="16"
             fillWidth
             horizontal="center"
-            delay={0.8 * index}
+            delay={0.6 * index}
             style={{ paddingBottom: index === 1 ? "8vh" : "0" }}
           >
             <Heading
@@ -59,7 +59,7 @@ export default function Home() {
             </Heading>
           </RevealFx>
         )}
-        <RevealFx translateY="16" fillWidth horizontal="center" delay={2}>
+        <RevealFx translateY="16" fillWidth horizontal="center" delay={1.2}>
           <Row center gap="8" s={{ direction: "column" }}>
             <Heading as="h2" variant="heading-default-xl" style={{ letterSpacing: "0.3px" }}>
               {home.subline}
