@@ -57,7 +57,7 @@ export default function About() {
         description={about.description}
         path={about.path}
         image={`/api/og/generate?title=${encodeURIComponent(about.title)}`}
-        author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}`}}
+        author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.image}`}}
       />
       <RevealFx translateY="16" delay={0.1}>
         <Row fillWidth horizontal="center" s={{ direction: "column" }}>
@@ -75,7 +75,7 @@ export default function About() {
               xs={{ style: { top: "auto" } }}
               s={{ position: "relative", style: { top: "auto" } }}
             >
-              <Avatar src={person.avatar} size={16} border="neutral-strong" />
+              <Avatar src={person.image} size={16} border="neutral-strong" />
               <Row vertical="center" gap="8">
                 <Icon name="globe" onBackground="brand-weak" size="l" />
                 <Heading variant="body-default-xl">

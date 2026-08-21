@@ -18,7 +18,7 @@ export function Highlights() {
   return (
     <Column fill center>
       {Object.entries({ top, middle, bottom }).map(([id, images], index) => 
-        <RevealFx key={id} delay={0.6 + 0.4 * index}>
+        <RevealFx key={id} translateY="16" delay={0.6 + 0.4 * index}>
           <Fade
             position="absolute"
             zIndex={1}

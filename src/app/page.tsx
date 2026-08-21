@@ -30,7 +30,7 @@ export default function Home() {
         title={home.title}
         description={home.description}
         image={`/api/og/generate?title=${encodeURIComponent(home.title)}`}
-        author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
+        author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.image}` }}
       />
       <Column
         maxWidth="xl"

@@ -63,21 +63,21 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
         datePublished={post.metadata.publishedAt}
         dateModified={post.metadata.publishedAt}
         image={post.metadata.image || `/api/og/generate?title=${encodeURIComponent(post.metadata.title)}`}
-        author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
+        author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.image}` }}
       />
       <RevealFx translateY="16" fillWidth delay={0.1}>
         <Column fill maxWidth="l" horizontal="center" align="center" gap="56" paddingBottom="64">
           <Heading variant="display-default-l">
             {post.metadata.title}
           </Heading>
-          <Row gap="64">
+          <Row gap={post.metadata.publishedAt && post.metadata.link ? "64" : "0"}>
             <Heading variant="heading-default-m" onBackground="neutral-weak">
               {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
             </Heading>
             <Heading variant="heading-default-m" onBackground="neutral-weak">
               {post.metadata.link &&
                 <SmartLink href={post.metadata.link} unstyled>
-                  {work.tag}
+                  {work.link}
                   <Icon name="arrowUpRight" size="s" />
                 </SmartLink>
               }

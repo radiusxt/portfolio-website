@@ -5,7 +5,7 @@ export const person: Person = {
   lastName: "Chan",
   name: "Nathaniel Chan",
   role: "Software Engineer, Sports Photographer",
-  avatar: "/images/brand/avatar.jpg",
+  image: "/images/brand/avatar.jpg",
   email: process.env.EMAIL_ADDRESS ?? "",
   location: "Australia/Brisbane",
   locale: "en-AU",
@@ -28,7 +28,7 @@ export const home: Home = {
   path: "/",
   label: "Home",
   title: "Hyperdrive Media",
-  description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}.`,
+  description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}`,
   headline: "Building software that scales. Capturing images that inspire.",
   subline: "👋 I'm Nathaniel and I'm a",
   roles: [
@@ -266,16 +266,18 @@ export const work: Work = {
   label: "Software",
   title: "Case Studies",
   description: `Case studies by ${person.name}`,
-  tag: "GitHub Repository",
+  kicker: "Driving growth & efficiency through thoughtful engineering.",
+  link: "GitHub Repository",
 };
 
 export const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
   title: "Highlights",
-  subtitle: "Testimonials",
   description: `Images by ${person.name}`,
+  kicker: "Greatest hits from the track.",
   images: [
+    // 0 - 7
     { src: "/images/gallery/DSC09431.jpg" },
     { src: "/images/gallery/DSC00175.jpg" },
     { src: "/images/gallery/DSC09819.jpg" },
@@ -284,6 +286,7 @@ export const gallery: Gallery = {
     { src: "/images/gallery/DSC09506.jpg" },
     { src: "/images/gallery/DSC00830.jpg" },
     { src: "/images/gallery/DSC08489.jpg" },
+    // 8 - 15
     { src: "/images/gallery/DSC09060.jpg" },
     { src: "/images/gallery/DSC00295.jpg" },
     { src: "/images/gallery/DSC09646.jpg" },
@@ -292,6 +295,7 @@ export const gallery: Gallery = {
     { src: "/images/gallery/DSC08624.jpg" },
     { src: "/images/gallery/DSC00088.jpg" },
     { src: "/images/gallery/DSC00183.jpg" },
+    // 16 - 23
     { src: "/images/gallery/DSC09747.jpg" },
     { src: "/images/gallery/DSC08308.jpg" },
     { src: "/images/gallery/DSC00017.jpg" },
@@ -301,16 +305,13 @@ export const gallery: Gallery = {
     { src: "/images/gallery/DSC00806.jpg" },
     { src: "/images/gallery/DSC00330.jpg" },
   ],
+  subtitle: "Testimonials",
+  subkicker: "Real feedback from people I've partnered with.",
   testimonials: [
     {
       person: "Pastor Lai",
       organisation: "Brisbane Cantonese Christian Church",
-      testimonial: "temp review (to be finished later)",
-    },
-    { // remove when finished
-      person: "Nathaniel",
-      organisation: "Hyperdrive Media",
-      testimonial: "Working with this team was an absolute pleasure from start to finish. They delivered the project on time, stayed within our budget, and exceeded our expectations in terms of quality. We saw a noticeable increase in client engagement within just the first month of implementing their strategies.",
+      testimonial: "Nathaniel beautifully captured the joy and happiness of our congregation, while preserving the solemn, dignified atmosphere of this special occasion. His photographs have given our church precious memories we will treasure for years to come. We express our sincere appreciation to Nathaniel for using his photography talents to preserve these meaningful moments for us.",
     },
   ],
 };

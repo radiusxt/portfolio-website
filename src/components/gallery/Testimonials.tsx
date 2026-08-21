@@ -1,4 +1,4 @@
-import { AutoScroll, Card, Column, Fade, Heading } from "@once-ui-system/core";
+import { AutoScroll, Column, Fade, Heading } from "@once-ui-system/core";
 import { Reveal } from "@/components";
 import { gallery } from "@/resources";
 
@@ -17,19 +17,19 @@ export function Testimonials() {
         />
         <AutoScroll speed="slow" hover="slow">
           {gallery.testimonials.map((testimonial) =>
-            <Card
-              key={`${testimonial.organisation}`}
+            <Column
+              key={`${testimonial.person}`}
               fill
               direction="column"
-              width="20vw"
-              pointerEvents="none"
+              width="25vw"
               background="neutral-medium"
+              border="neutral-medium"
               radius="xl"
               paddingX="16"
               paddingY="12"
               marginX="16"
               gap="12"
-              s={{ style: { minWidth: "60vw" }}}
+              s={{ style: { minWidth: "70vw" }}}
             >
               <Heading
                 variant="body-default-m"
@@ -38,15 +38,15 @@ export function Testimonials() {
               >
                 {testimonial.testimonial}
               </Heading>
-              <Column>
-                <Heading variant="body-strong-l" onBackground="accent-weak">
+              <Column center>
+                <Heading variant="body-default-l" onBackground="accent-weak">
                   {testimonial.person}
                 </Heading>
                 <Heading variant="body-default-s" onBackground="neutral-weak">
                   {testimonial.organisation}
                 </Heading>
               </Column>
-            </Card>
+            </Column>
           )}
         </AutoScroll>
         <Fade

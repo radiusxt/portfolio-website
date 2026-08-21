@@ -2,6 +2,7 @@ import { Column, Heading, Logo, Meta, RevealFx, Row, Schema } from "@once-ui-sys
 import { Reveal } from "@/components";
 import { Highlights } from "@/components/gallery/Highlights";
 import { Testimonials } from "@/components/gallery/Testimonials";
+import { Portfolio } from "@/components/gallery/Portfolio";
 import { baseURL, gallery, person } from "@/resources";
 
 
@@ -18,7 +19,7 @@ export async function generateMetadata() {
 /* Gallery Page Layout */
 export default function Gallery() {
   return (
-    <Column maxWidth="xl" horizontal="center">
+    <Column maxWidth="80vw" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -26,30 +27,35 @@ export default function Gallery() {
         title={gallery.title}
         description={gallery.description}
         image={`/api/og/generate?title=${encodeURIComponent(gallery.title)}`}
-        author={{ name: person.name, url: `${baseURL}${gallery.path}`, image: `${baseURL}${person.avatar}` }}
+        author={{ name: person.name, url: `${baseURL}${gallery.path}`, image: `${baseURL}${person.image}` }}
       />
       <Column fill minHeight="100vh" horizontal="center">
         <RevealFx translateY="16" fillWidth horizontal="center">
-          <Heading
-            as="h1"
-            id={gallery.title}
-            variant="display-default-m"
-            style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
-          >
-            {gallery.title}
-          </Heading>
+          <Column center gap="56">
+            <Heading
+              as="h1"
+              id={gallery.title}
+              variant="display-default-m"
+              style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
+            >
+              {gallery.title}
+            </Heading>
+            <Heading as="h2" variant="heading-default-m">
+              {gallery.kicker}
+            </Heading>
+          </Column>
         </RevealFx>
         <Highlights />
       </Column>
       <Column fill maxWidth="l" minHeight="100vh" horizontal="center">
-        <Heading
-          as="h2"
-          id={gallery.subtitle}
-          variant="display-default-m"
-          style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
-        >
-          {gallery.subtitle}
-        </Heading>
+        <Column center gap="56">
+          <Heading as="h1" variant="display-default-m">
+            {gallery.subtitle}
+          </Heading>
+          <Heading as="h2" variant="heading-default-m">
+            {gallery.subkicker}
+          </Heading>
+        </Column>
         <Testimonials />
       </Column>
       <Column horizontal="center">

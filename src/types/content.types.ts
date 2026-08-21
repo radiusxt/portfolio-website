@@ -20,7 +20,7 @@ export interface Person {
   /** Role or job title */
   role: string;
   /** Path to avatar image */
-  avatar: string;
+  image: string;
   /** Email address */
   email: string;
   /** IANA time zone location */
@@ -164,8 +164,10 @@ export interface About extends BasePageConfig {
  * @description Configuration for the Work/Projects page, including metadata and navigation label.
  */
 export interface Work extends BasePageConfig {
+  /** Page summary */
+  kicker: string;
   /** GitHub tag for repository link */
-  tag: string;
+  link: string;
 }
 
 /**
@@ -173,12 +175,17 @@ export interface Work extends BasePageConfig {
  * @description Configuration for the Gallery page, including metadata, navigation label, and image list.
  */
 export interface Gallery extends BasePageConfig {
-  subtitle: string;
+  /** Page summary */
+  kicker: string;
   /** Array of highlight images in the gallery */
   images: Array<{
     /** Image source path */
     src: string;
   }>;
+  /** Subtitle for Testimonial section */
+  subtitle: string;
+  /** */
+  subkicker: string;
   /** Array of testimonials from past clients */
   testimonials: Array<{
     /** Name of person */

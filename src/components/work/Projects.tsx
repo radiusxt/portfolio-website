@@ -71,7 +71,12 @@ export function Projects({ projects }: { projects: Post[] }) {
   }, [projects.length]);
 
   return (
-    <Column ref={wrapperRef} fill position="relative" height={`${projects.length * 100}vh`}>
+    <Column
+      ref={wrapperRef}
+      fill
+      position="relative"
+      height={`${projects.length * 100}vh`}
+    >
       <Column fill center position="sticky" top="40" height="100vh">
         {projects.map(({ slug, metadata }, index) =>
           <Column

@@ -29,21 +29,28 @@ export default function Work() {
         title={work.title}
         description={work.description}
         image={`/api/og/generate?title=${encodeURIComponent(work.title)}`}
-        author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
+        author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.image}` }}
       />
-      <RevealFx translateY="16" fillWidth horizontal="center">
-        <Column fill minHeight="100vh" horizontal="center">
-          <Heading
-            as="h1"
-            id={work.title}
-            variant="display-default-m"
-            style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
-          >
-            {work.title}
-          </Heading>
+      <Column fill minHeight="100vh" horizontal="center">
+        <RevealFx translateY="16" fillWidth horizontal="center">
+          <Column center gap="56">
+            <Heading
+              as="h1"
+              id={work.title}
+              variant="display-default-m"
+              style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
+            >
+              {work.title}
+            </Heading>
+            <Heading as="h2" variant="heading-default-m">
+              {work.kicker}
+            </Heading>
+          </Column>
+        </RevealFx>
+        <RevealFx translateY="16" fillWidth horizontal="center" delay={0.6}>
           <Projects projects={projects} />
-        </Column>
-      </RevealFx>
+        </RevealFx>
+      </Column>
     </Column>
   );
 }
