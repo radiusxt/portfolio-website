@@ -19,7 +19,7 @@ export async function generateMetadata() {
 /* Gallery Page Layout */
 export default function Gallery() {
   return (
-    <Column maxWidth="80vw" horizontal="center">
+    <Column horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -29,7 +29,7 @@ export default function Gallery() {
         image={`/api/og/generate?title=${encodeURIComponent(gallery.title)}`}
         author={{ name: person.name, url: `${baseURL}${gallery.path}`, image: `${baseURL}${person.image}` }}
       />
-      <Column fill minHeight="100vh" horizontal="center">
+      <Column fill maxWidth="80vw" minHeight="100vh" horizontal="center">
         <RevealFx translateY="16" fillWidth horizontal="center">
           <Column center gap="56">
             <Heading
@@ -47,7 +47,7 @@ export default function Gallery() {
         </RevealFx>
         <Highlights />
       </Column>
-      <Column fill maxWidth="l" minHeight="100vh" horizontal="center">
+      <Column fill maxWidth="60vw" minHeight="100vh" horizontal="center">
         <Column center gap="56">
           <Heading as="h1" variant="display-default-m">
             {gallery.subtitle}
@@ -58,13 +58,14 @@ export default function Gallery() {
         </Column>
         <Testimonials />
       </Column>
-      <Column horizontal="center">
-        <Row dark paddingBottom="32">
+      <Column fill maxWidth="80vw" minHeight="100vh" horizontal="center">
+        <Row dark>
           <Logo wordmark="/trademarks/logo-light.png" style={{ transform: "scale(3)" }} />
         </Row>
-        <Row light paddingBottom="32">
+        <Row light>
           <Logo wordmark="/trademarks/logo-dark.png" style={{ transform: "scale(3)" }} />
         </Row>
+        <Portfolio />
       </Column>
     </Column>
   );

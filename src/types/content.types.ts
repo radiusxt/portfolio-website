@@ -195,4 +195,11 @@ export interface Gallery extends BasePageConfig {
     /** Their experience in writing */
     testimonial: string;
   }>;
+  /** Sport photo galleries */
+  galleries: Array<{
+    /** Gallery type */
+    type: string;
+    /** Gallery URL */
+    link: string;
+  }>;
 }

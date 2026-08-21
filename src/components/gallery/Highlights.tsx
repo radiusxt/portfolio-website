@@ -2,7 +2,6 @@ import {
   AutoScroll,
   Column,
   Fade,
-  Flex,
   Media,
   RevealFx,
   TiltFx
@@ -10,6 +9,7 @@ import {
 import { Loading } from "@/components";
 import { gallery } from "@/resources";
 
+/* Gallery Highlights */
 export function Highlights() {
   const top = gallery.images.slice(0, 8);
   const middle = gallery.images.slice(8, 16);
@@ -30,7 +30,7 @@ export function Highlights() {
           />
           <AutoScroll speed="slow" hover="slow" reverse={index % 2 === 0}>
             {images.map((image) =>
-              <Flex
+              <Column
                 key={image.src}
                 center
                 width="20vw"
@@ -46,7 +46,7 @@ export function Highlights() {
                     <Media src={image.src} priority radius="xl" />
                   </TiltFx>
                 </Loading>
-              </Flex>
+              </Column>
             )}
           </AutoScroll>
           <Fade

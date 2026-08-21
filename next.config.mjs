@@ -7,10 +7,23 @@ const nextConfig = {
     '*': ['public/images/gallery/**/*'],
   },
   images: {
+    localPatterns: [
+      {
+        pathname: "/api/og/proxy",
+      },
+      {
+        pathname: "/**",
+      },
+    ],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "www.google.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.picflow.com",
         pathname: "**",
       },
     ],

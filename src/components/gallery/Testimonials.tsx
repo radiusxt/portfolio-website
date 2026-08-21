@@ -2,6 +2,7 @@ import { AutoScroll, Column, Fade, Heading } from "@once-ui-system/core";
 import { Reveal } from "@/components";
 import { gallery } from "@/resources";
 
+/* Testimonials section */
 export function Testimonials() {
   return (
     <Column fill center>
@@ -57,7 +58,7 @@ export function Testimonials() {
           right="0"
           to="left"
           width="80"
-          s={{ style: { marginRight: "-4px" } }}
+          s={{ style: { marginRight: "-4px" }}}
         />
       </Reveal>
     </Column>

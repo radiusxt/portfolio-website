@@ -314,4 +314,16 @@ export const gallery: Gallery = {
       testimonial: "Nathaniel beautifully captured the joy and happiness of our congregation, while preserving the solemn, dignified atmosphere of this special occasion. His photographs have given our church precious memories we will treasure for years to come. We express our sincere appreciation to Nathaniel for using his photography talents to preserve these meaningful moments for us.",
     },
   ],
+  galleries: [
+    // Sport
+    {
+      type: "sport",
+      link: "https://hyperdrivemedia.picflow.com/0EorhjdVk3h6JMrU",
+    },
+    // Travel
+    {
+      type: "travel",
+      link: "https://hyperdrivemedia.picflow.com/Bfu0SHUlYiw6c23O",
+    },
+  ],
 };

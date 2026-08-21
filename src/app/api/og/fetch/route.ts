@@ -55,7 +55,10 @@ async function extractMetadata(html: string) {
   const imageMatch = html.match(/<meta[^>]*property="og:image"[^>]*content="([^"]+)"[^>]*>/i)
     || html.match(/<meta[^>]*content="([^"]+)"[^>]*property="og:image"[^>]*>/i);
 
-  const title = titleMatch?.[1]?.trim() || '';
+  // Strip " by Hyperdrive Media" (case-insensitive)
+  let title = titleMatch?.[1]?.trim() || '';
+  title = title.replace(/\s*by\s+Hyperdrive\s+Media/gi, "").trim();
+  
   const description = descMatch?.[1]?.trim() || '';
   const image = imageMatch?.[1]?.trim() || '';
 
