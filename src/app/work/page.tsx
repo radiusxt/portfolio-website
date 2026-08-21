@@ -33,7 +33,7 @@ export default function Work() {
       />
       <Column fill minHeight="100vh" horizontal="center">
         <RevealFx translateY="16" fillWidth horizontal="center">
-          <Column center gap="56">
+          <Column center align="center" gap="56">
             <Heading
               as="h1"
               id={work.title}
@@ -42,7 +42,7 @@ export default function Work() {
             >
               {work.title}
             </Heading>
-            <Heading as="h2" variant="heading-default-m">
+            <Heading as="h2" variant="heading-default-m" style={{ lineHeight: 1.5 }}>
               {work.kicker}
             </Heading>
           </Column>

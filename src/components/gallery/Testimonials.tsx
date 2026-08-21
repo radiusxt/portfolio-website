@@ -5,7 +5,7 @@ import { gallery } from "@/resources";
 /* Testimonials section */
 export function Testimonials() {
   return (
-    <Column fill center>
+    <Column fill center s={{ style: { minWidth: "100vw" }}}>
       <Reveal>
         <Fade
           position="absolute"
@@ -35,7 +35,7 @@ export function Testimonials() {
               <Heading
                 variant="body-default-m"
                 onBackground="neutral-strong"
-                wrap="pretty"
+                wrap="balance"
               >
                 {testimonial.testimonial}
               </Heading>

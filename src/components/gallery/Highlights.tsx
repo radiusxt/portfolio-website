@@ -16,7 +16,7 @@ export function Highlights() {
   const bottom = gallery.images.slice(16, 24);
 
   return (
-    <Column fill center>
+    <Column fill center s={{ style: { minWidth: "100vw" }}}>
       {Object.entries({ top, middle, bottom }).map(([id, images], index) => 
         <RevealFx key={id} translateY="16" delay={0.6 + 0.4 * index}>
           <Fade

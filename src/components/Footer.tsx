@@ -19,7 +19,7 @@ export function Footer() {
         s={{ direction: "column", horizontal: "center" }}
       >
         <Heading
-          variant="body-default-s"
+          variant="body-default-m"
           onBackground="neutral-weak"
           style={{ letterSpacing: "0.1px" }}
         >
@@ -34,7 +34,7 @@ export function Footer() {
           .
         </Heading>
         <Row gap="24">
-          {social.map((item) => item.link && 
+          {social.map((item) =>
             <IconButton
               key={item.name}
               href={item.link}

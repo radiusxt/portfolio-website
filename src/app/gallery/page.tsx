@@ -1,10 +1,8 @@
 import { Column, Heading, Logo, Meta, RevealFx, Row, Schema } from "@once-ui-system/core";
-import { Reveal } from "@/components";
 import { Highlights } from "@/components/gallery/Highlights";
 import { Testimonials } from "@/components/gallery/Testimonials";
 import { Portfolio } from "@/components/gallery/Portfolio";
 import { baseURL, gallery, person } from "@/resources";
-
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -31,7 +29,7 @@ export default function Gallery() {
       />
       <Column fill maxWidth="80vw" minHeight="100vh" horizontal="center">
         <RevealFx translateY="16" fillWidth horizontal="center">
-          <Column center gap="56">
+          <Column center align="center" gap="56">
             <Heading
               as="h1"
               id={gallery.title}
@@ -48,11 +46,11 @@ export default function Gallery() {
         <Highlights />
       </Column>
       <Column fill maxWidth="60vw" minHeight="100vh" horizontal="center">
-        <Column center gap="56">
+        <Column center align="center" gap="56">
           <Heading as="h1" variant="display-default-m">
             {gallery.subtitle}
           </Heading>
-          <Heading as="h2" variant="heading-default-m">
+          <Heading as="h2" variant="heading-default-m" wrap="nowrap">
             {gallery.subkicker}
           </Heading>
         </Column>
