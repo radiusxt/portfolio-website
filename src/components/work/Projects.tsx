@@ -77,7 +77,14 @@ export function Projects({ projects }: { projects: Post[] }) {
       position="relative"
       height={`${projects.length * 100}vh`}
     >
-      <Column fill center position="sticky" top="40" height="100vh">
+      <Column
+        fill
+        center
+        position="sticky"
+        height="100vh"
+        top="40"
+        s={{ style: { top: "-4rem" }}}
+      >
         {projects.map(({ slug, metadata }, index) =>
           <Column
             key={slug}

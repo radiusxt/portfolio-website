@@ -37,8 +37,8 @@ export function ProjectCard({ title, description, image, team, tags }: ProjectCa
             direction="column"
             horizontal="center"
             fillWidth
-            radius="xl-8"
             border="neutral-medium"
+            radius="xl-8"
             paddingBottom="24"
             gap="12"
           >

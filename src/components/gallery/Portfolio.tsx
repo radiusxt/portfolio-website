@@ -27,8 +27,9 @@ export function Portfolio() {
                     url={link}
                     description={false}
                     favicon={false}
-                    align="center"
                     width="20vw"
+                    align="center"
+                    border="neutral-alpha-medium"
                     s={{ style: { width: "60vw" }}}
                   />
                 </TiltFx>
