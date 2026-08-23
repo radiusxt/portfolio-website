@@ -1,0 +1,12 @@
+"use client";
+
+import type { ReactNode } from "react";
+import { ReactLenis } from "lenis/react";
+
+export function ScrollProvider({ children }: { children: ReactNode }) {
+  return (
+    <ReactLenis root options={{ lerp: 0.08, duration: 1.2 }}>
+      {children}
+    </ReactLenis>
+  );
+}

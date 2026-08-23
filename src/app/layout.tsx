@@ -8,6 +8,7 @@ import { Footer, Header, Providers, RouteGuard, Starfield, Transition } from "@/
 import { baseURL, dataStyle, fonts, home, style } from "@/resources";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import "lenis/dist/lenis.css";
 
 export async function generateMetadata() {
   return Meta.generate({

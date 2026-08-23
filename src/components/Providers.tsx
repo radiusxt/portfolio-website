@@ -17,7 +17,7 @@ import {
   ToastProvider,
   type TransitionStyle,
 } from "@once-ui-system/core";
-import { NavigationProvider } from "@/components";
+import { NavigationProvider, ScrollProvider } from "@/components";
 import { dataStyle, style } from "@/resources";
 import { iconLibrary } from "@/resources/icons";
 
@@ -49,7 +49,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
           <ToastProvider xs="top" s="top" m="bottom" l="bottom" xl="bottom">
             <IconProvider icons={iconLibrary}>
               <NavigationProvider>
-                {children}
+                <ScrollProvider>
+                  {children}
+                </ScrollProvider>
               </NavigationProvider>
             </IconProvider>
           </ToastProvider>

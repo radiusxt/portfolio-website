@@ -12,6 +12,7 @@ export { Providers } from "@/components/Providers";
 export { Reveal } from "@/components/Reveal";
 export { RouteGuard } from "@/components/RouteGuard";
 export { Scroll } from "@/components/Scroll";
+export { ScrollProvider } from "@/components/ScrollProvider";
 export { SpotlightBorder } from "@/components/SpotlightBorder";
 export { Starfield } from "@/components/Starfield";
 export { ThemeToggle } from "@/components/ThemeToggle";

@@ -36,7 +36,7 @@ export function Header() {
 
   return (
     <Row className={styles.header} as="header" position="sticky" zIndex={10}>
-      <Row fill center radius="full" margin="20">
+      <Row fill center radius="full" paddingTop="20" paddingBottom="32">
         <Row
           className={styles.glass}
           border="neutral-alpha-weak"
