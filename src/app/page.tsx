@@ -7,7 +7,7 @@ import {
   Schema,
   TypeFx
 } from "@once-ui-system/core";
-import { ContactForm, Dashboard, Reveal, SpotlightBorder } from "@/components";
+import { ContactForm, Dashboard, SpotlightBorder } from "@/components";
 import { home, about, person, baseURL } from "@/resources";
 
 export async function generateMetadata() {
@@ -78,21 +78,17 @@ export default function Home() {
         </RevealFx>
       </Column>
       <Column horizontal="center" minHeight="100vh">
-        <Reveal>
-          <SpotlightBorder
-            primary="brand-on-background-weak"
-            secondary="accent-on-background-weak"
-            spread={90}
-            falloff={200}
-          >
-            <Dashboard username={home.github} activity={home.activity}/>
-          </SpotlightBorder>
-        </Reveal>
+        <SpotlightBorder
+          primary="brand-on-background-weak"
+          secondary="accent-on-background-weak"
+          spread={90}
+          falloff={200}
+        >
+          <Dashboard username={home.github} activity={home.activity} />
+        </SpotlightBorder>
       </Column>
       <Column horizontal="center" minHeight="100vh" align="center" paddingBottom="128">
-        <Reveal>
-          <ContactForm />
-        </Reveal>
+        <ContactForm />
       </Column>
     </Column>
   );

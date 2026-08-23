@@ -29,24 +29,22 @@ export function Testimonials() {
               paddingX="16"
               paddingY="12"
               marginX="16"
-              gap="12"
               s={{ style: { minWidth: "70vw" }}}
             >
               <Heading
                 variant="body-default-m"
                 onBackground="neutral-strong"
-                wrap="balance"
+                wrap="pretty"
+                paddingBottom="12"
               >
                 {testimonial.testimonial}
               </Heading>
-              <Column center>
-                <Heading variant="body-default-l" onBackground="accent-weak">
-                  {testimonial.person}
-                </Heading>
-                <Heading variant="body-default-s" onBackground="neutral-weak">
-                  {testimonial.organisation}
-                </Heading>
-              </Column>
+              <Heading variant="body-default-l" onBackground="accent-weak">
+                {testimonial.person}
+              </Heading>
+              <Heading variant="body-default-s" onBackground="neutral-weak">
+                {testimonial.organisation}
+              </Heading>
             </Column>
           )}
         </AutoScroll>

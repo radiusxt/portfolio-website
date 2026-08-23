@@ -29,24 +29,6 @@ export async function generateMetadata() {
 
 /* About Page Layout */
 export default function About() {
-  const structure = [
-    {
-      title: about.work.title,
-      display: about.work.display,
-      items: about.work.experiences.map((experience) => experience.company),
-    },
-    {
-      title: about.studies.title,
-      display: about.studies.display,
-      items: about.studies.institutions.map((institution) => institution.name),
-    },
-    {
-      title: about.technical.title,
-      display: about.technical.display,
-      items: about.technical.skills.map((skill) => skill.title),
-    },
-  ];
-
   return (
     <Column direction="column" maxWidth="l">
       <Schema
@@ -71,8 +53,8 @@ export default function About() {
               paddingX="32"
               paddingBottom="xl"
               gap="l"
-              xs={{ style: { top: "auto" } }}
-              s={{ position: "relative", style: { top: "auto" } }}
+              xs={{ style: { top: "auto" }}}
+              s={{ position: "relative", style: { top: "auto" }}}
             >
               <Avatar src={person.image} size={16} border="neutral-strong" />
               <Row vertical="center" gap="8">
@@ -145,7 +127,6 @@ export default function About() {
                   id={about.work.title}
                   variant="display-default-s"
                   marginBottom="32"
-                  style={{ scrollMarginTop: "70px" }}
                 >
                   {about.work.title}
                 </Heading>
@@ -201,7 +182,6 @@ export default function About() {
                   id={about.studies.title}
                   variant="display-default-s"
                   marginBottom="32"
-                  style={{ scrollMarginTop: "70px" }}
                 >
                   {about.studies.title}
                 </Heading>
@@ -232,22 +212,6 @@ export default function About() {
                               {institution.degree}
                             </Heading>
                           </Column>
-                        ,
-                        description:
-                          <Column as="ul" marginBottom="16" gap="16">
-                            {institution.description.map((line, lineIndex) => 
-                              <Heading
-                                as="li"
-                                key={`${institution.name}-line-${lineIndex}`}
-                                variant="body-default-m"
-                                onBackground="neutral-strong"
-                                wrap="wrap"
-                                style={{ marginLeft: "-24px" }}
-                              >
-                                {line}
-                              </Heading>
-                            )}
-                          </Column>
                       })),
                       // Null object for disappearing marker effect.
                       { description: <></>, marker: <></> }
@@ -265,7 +229,6 @@ export default function About() {
                   id={about.technical.title}
                   variant="display-default-s"
                   marginBottom="32"
-                  style={{ scrollMarginTop: "70px" }}
                 >
                   {about.technical.title}
                 </Heading>

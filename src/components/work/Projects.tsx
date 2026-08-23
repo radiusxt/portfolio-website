@@ -5,6 +5,9 @@ import { Column, TiltFx } from "@once-ui-system/core";
 import { ProjectCard, Scroll } from "@/components";
 import type { Post } from "@/utils/utils";
 
+const HOLD = 0.3;
+const FADE = 0.45;
+
 export function Projects({ projects }: { projects: Post[] }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -32,7 +35,7 @@ export function Projects({ projects }: { projects: Post[] }) {
       const floatIndex = progress * (projects.length - 1);
       const nearestIndex = Math.round(floatIndex);
       const distance = Math.abs(floatIndex - nearestIndex);
-      const opacity = distance <= 0.25 ? 1 : Math.max(0, 1 - (distance - 0.25) / 0.225);
+      const opacity = distance <= HOLD ? 1 : Math.max(0, 1 - (distance - HOLD) / (FADE - HOLD));
       const activeCard = cardRefs.current[nearestIndex];
 
       if (activeCard) {

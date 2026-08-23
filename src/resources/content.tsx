@@ -43,7 +43,7 @@ export const home: Home = {
       type: "gh",
       title: "This Website",
       name: "radiusxt/portfolio-website",
-      progress: 85
+      progress: 90
     },
     {
       type: "",
@@ -143,7 +143,7 @@ export const about: About = {
     institutions: [
       {
         name: "University of Queensland",
-        degree: "Bachelor of Engineering (Honours)",
+        degree: "Bachelor of Software Engineering (Honours), Machine Learning",
         description: [
           "Software Engineering",
           "Machine Learning"

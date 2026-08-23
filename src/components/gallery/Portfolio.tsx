@@ -21,7 +21,7 @@ export function Portfolio() {
           />
           <AutoScroll speed="medium" hover="slow" reverse={index % 2 === 0}>
             {galleries.map(({ link }) =>
-              <Column key={link} center margin="24">
+              <Column key={link} center margin="16">
                 <TiltFx intensity={2} >
                   <OgCard
                     url={link}
