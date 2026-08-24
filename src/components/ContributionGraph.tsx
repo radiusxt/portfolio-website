@@ -1,4 +1,11 @@
-import { type Colors, Column, Flex, Heading, HoverCard, Row } from "@once-ui-system/core";
+import {
+  type Colors,
+  Column,
+  Flex,
+  Heading,
+  HoverCard,
+  Row
+} from "@once-ui-system/core";
 import { getContributions } from "@/lib";
 import type { Day } from "@/lib/github";
 import { format } from "date-fns";
@@ -66,9 +73,9 @@ export async function ContributionGraph({ username }: { username: string }) {
   return (
     <Column fillWidth gap="8">
       <Flex horizontal="center" overflow="auto" paddingX="8" gap="4">
-        {/* Labels */}
         {weeks.map((week, col) =>
           <Column key={week[0]?.date} className={styles.mobile} gap="4">
+            {/* Labels */}
             <Row horizontal="center" width="12" height="16">
               {labelByCol.has(col) &&
                 <Heading variant="label-default-s" onBackground="neutral-medium">

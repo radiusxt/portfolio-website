@@ -27,9 +27,9 @@ export default function Gallery() {
         image={`/api/og/generate?title=${encodeURIComponent(gallery.title)}`}
         author={{ name: person.name, url: `${baseURL}${gallery.path}`, image: `${baseURL}${person.image}` }}
       />
-      <Column fill maxWidth="80vw" minHeight="100vh" horizontal="center">
+      <Column fill maxWidth="80vw" minHeight="100vh" horizontal="center" marginBottom="128">
         <RevealFx translateY="16" fillWidth horizontal="center">
-          <Column center align="center" gap="56">
+          <Column center align="center" gap="56" marginBottom="64">
             <Heading
               as="h1"
               id={gallery.title}
@@ -56,7 +56,7 @@ export default function Gallery() {
         </Column>
         <Testimonials />
       </Column>
-      <Column fill maxWidth="80vw" minHeight="100vh" horizontal="center">
+      <Column fill maxWidth="80vw" minHeight="102vh" horizontal="center">
         <Row dark>
           <Logo wordmark="/trademarks/logo-light.png" style={{ transform: "scale(3)" }} />
         </Row>

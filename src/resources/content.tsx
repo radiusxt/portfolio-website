@@ -40,16 +40,10 @@ export const home: Home = {
   github: "radiusxt",
   activity: [
     {
-      type: "gh",
-      title: "This Website",
-      name: "radiusxt/portfolio-website",
-      progress: 90
-    },
-    {
       type: "",
       title: "Portfolio Exposure Tool",
       message: "",
-      progress: 5
+      progress: 10
     },
   ],
 };
@@ -318,12 +312,20 @@ export const gallery: Gallery = {
     // Sport
     {
       type: "sport",
-      link: "https://hyperdrivemedia.picflow.com/0EorhjdVk3h6JMrU",
+      link: "https://gallery.hyperdrivemedia.co/0EorhjdVk3h6JMrU",
+    },
+    {
+      type: "sport",
+      link: "https://gallery.hyperdrivemedia.co/KqjDnqmeokytp2Ae",
     },
     // Travel
     {
       type: "travel",
-      link: "https://hyperdrivemedia.picflow.com/Bfu0SHUlYiw6c23O",
+      link: "https://gallery.hyperdrivemedia.co/Bfu0SHUlYiw6c23O",
+    },
+    {
+      type: "travel",
+      link: "https://gallery.hyperdrivemedia.co/kSJBbRPqj890BFHz",
     },
   ],
 };

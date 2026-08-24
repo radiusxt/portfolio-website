@@ -1,6 +1,7 @@
 import "@once-ui-system/core/css/styles.css";
 import "@once-ui-system/core/css/tokens.css";
 import classNames from "classnames";
+import "lenis/dist/lenis.css";
 
 import Script from "next/script";
 import { Column, Flex, Meta, Particle, RevealFx } from "@once-ui-system/core";
@@ -8,7 +9,6 @@ import { Footer, Header, Providers, RouteGuard, Starfield, Transition } from "@/
 import { baseURL, dataStyle, fonts, home, style } from "@/resources";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import "lenis/dist/lenis.css";
 
 export async function generateMetadata() {
   return Meta.generate({

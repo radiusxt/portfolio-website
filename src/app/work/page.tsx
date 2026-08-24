@@ -33,7 +33,7 @@ export default function Work() {
       />
       <Column fill minHeight="100vh" horizontal="center">
         <RevealFx translateY="16" fillWidth horizontal="center">
-          <Column center align="center" gap="56" s={{ style: { marginBottom: "-12rem" }}}>
+          <Column center align="center" gap="56" s={{ style: { paddingBottom: "-12rem" }}}>
             <Heading
               as="h1"
               id={work.title}
