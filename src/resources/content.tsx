@@ -8,7 +8,6 @@ export const person: Person = {
   image: "/images/brand/avatar.jpg",
   email: process.env.EMAIL_ADDRESS ?? "",
   location: "Australia/Brisbane",
-  locale: "en-AU",
 };
 
 export const social: Social = [
@@ -53,15 +52,7 @@ export const about: About = {
   label: "About",
   title: "About Me",
   description: `${person.name}, a ${person.role.toLowerCase} based in ${person.location}.`,
-  tableOfContent: {
-    display: true,
-    subItems: true,
-  },
-  avatar: {
-    display: true,
-  },
   intro: {
-    display: true,
     title: "Introduction",
     description: `\
       Hi, I'm a software engineer working across full-stack software development and sports photography. \
@@ -69,84 +60,41 @@ export const about: About = {
     `
   },
   work: {
-    display: true,
     title: "Experience",
-    experiences: [
+    experience: [
       {
         company: "Freelance",
-        timeframe: "Jan '26 - Present",
         role: "Software Engineer",
-        location: "Remote",
-        achievements: [
-          "Built & deployed custom full-stack applications for private clients from initial concept to production, managing the full SDLC.",
-          "Styled modern and responsive user interfaces with accessibility features using Next.js and React.",
-          "Integrated authentication, databases & cloud infrastructure to deliver scalable solutions with Auth0, Supabase & AWS.",
-          "Defined functional and non-functional requirements and iterated rapidly based on user feedback."
-        ],
+        timeframe: "Jan '26 - Present",
+        location: "",
       },
       {
         company: "University of Queensland",
-        timeframe: "Feb '25 - Nov '25",
         role: "Academic Tutor",
-        location: "Brisbane, Australia",
-        achievements: [
-          "Tutored core statistical concepts including probability theory, distribution sampling and hypothesis testing \
-            with a focus on data analysis, regression modelling and engineering applications in STAT2203.",
-          "Tutored microcontroller-based system design, covering embedded C programming, RTOS concepts, hardware interfacing and \
-            the integration of sensors, actuators and communication protocols in real-world embedded applications on ARM Cortex processors in CSSE3010."
-        ],
+        timeframe: "Feb '25 - Nov '25",
+        location: "Brisbane, AU",
       },
       {
         company: "Enable Startup",
-        timeframe: "Nov '24 - Dec '24",
         role: "Software Engineer Intern",
-        location: "Da Nang, Vietnam",
-        achievements: [
-          "Implemented facial recognition for an attendance system running on a Raspberry Pi 4 while using 20% less resources than reference solution.",
-          "Reduced overall system latency by 15% and maintained 95%+ uptime.",
-          "Interacted 40+ times by employees for daily attendance & recording lunch breaks."
-        ],
+        timeframe: "Nov '24 - Dec '24",
+        location: "Da Nang, VN",
       },
       {
         company: "ifm efector",
-        timeframe: "Dec '22 - Jun '23",
         role: "Sales Support Engineer",
-        location: "Gold Coast, Australia",
-        achievements: [
-          "Resolved 98% of customer inquiries within 1 day and reduced average response delay by 10%.",
-          "Partnered with 20+ clients to develop solutions, reducing deployment time by 15%.",
-          "Reduced customer waiting times by 15% resulting in a 10% increase in service throughput.",
-          "Improved lead conversion rates by 3.5% through timely communication.",
-        ],
+        timeframe: "Dec '22 - Jun '23",
+        location: "Gold Coast, AU",
       },
       {
         company: "PTC Phone Tech & Comm",
-        timeframe: "Jan '22 - Nov '22",
         role: "Sales & Technician Specialist",
-        location: "Brisbane, Australia",
-        achievements: [
-          "Provided excellent customer service and applied knowledge to consumer electronics while increasing store sales by 10% via strategic upselling.",
-          "Repaired phones and tablets in a timely manner, achieving 80% same-day completion.",
-        ],
-      },
-    ],
-  },
-  studies: {
-    display: true,
-    title: "Education",
-    institutions: [
-      {
-        name: "University of Queensland",
-        degree: "Bachelor of Software Engineering (Honours), Machine Learning",
-        description: [
-          "Software Engineering",
-          "Machine Learning"
-        ],
+        timeframe: "Jan '22 - Nov '22",
+        location: "Brisbane, AU",
       },
     ],
   },
   technical: {
-    display: true,
     title: "Technical Skills",
     skills: [
       {

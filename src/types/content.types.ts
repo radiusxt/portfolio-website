@@ -25,8 +25,6 @@ export interface Person {
   email: string;
   /** IANA time zone location */
   location: IANATimeZone;
-  /** BCP47 language and location */
-  locale: string;
 };
 
 /**
@@ -78,23 +76,8 @@ export interface Home extends BasePageConfig {
  * @description Configuration for the About page, including sections for table of contents, avatar, calendar, introduction, work experience, studies, and technical skills.
  */
 export interface About extends BasePageConfig {
-  /** Table of contents configuration */
-  tableOfContent: {
-    /** Whether to display the table of contents */
-    display: boolean;
-    /** Whether to show sub-items in the table of contents */
-    subItems: boolean;
-  };
-  /** Avatar section configuration */
-  avatar: {
-    /** Whether to display the avatar */
-    display: boolean;
-  };
-  /** Calendar section configuration */
   /** Introduction section */
   intro: {
-    /** Whether to display the introduction */
-    display: boolean;
     /** Title of the introduction section */
     title: string;
     /** Description of the introduction section */
@@ -102,12 +85,10 @@ export interface About extends BasePageConfig {
   };
   /** Work experience section */
   work: {
-    /** Whether to display work experience */
-    display: boolean;
     /** Title for the work experience section */
     title: string;
     /** List of work experiences */
-    experiences: Array<{
+    experience: Array<{
       /** Company name */
       company: string;
       /** Timeframe of employment */
@@ -116,30 +97,10 @@ export interface About extends BasePageConfig {
       role: string;
       /** Location of employment */
       location: string;
-      /** Achievements at the company */
-      achievements: React.ReactNode[];
-    }>;
-  };
-  /** Studies/education section */
-  studies: {
-    /** Whether to display studies section */
-    display: boolean;
-    /** Title for the studies section */
-    title: string;
-    /** List of institutions attended */
-    institutions: Array<{
-      /** Institution name */
-      name: string;
-      /** Degree name */
-      degree: string;
-      /** Description of studies */
-      description: React.ReactNode[];
     }>;
   };
   /** Technical skills section */
   technical: {
-    /** Whether to display technical skills section */
-    display: boolean;
     /** Title for the technical skills section */
     title: string;
     /** List of technical skills */
@@ -147,7 +108,7 @@ export interface About extends BasePageConfig {
       /** Skill title */
       title: string;
       /** Skill description */
-      description?: React.ReactNode;
+      description: React.ReactNode;
       /** Skill tags */
       tags: Array<{
         /** Skill name */
