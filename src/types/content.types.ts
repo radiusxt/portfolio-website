@@ -2,18 +2,14 @@ import type { Entry, GitHubEntry } from "@/components/Dashboard";
 import type { IconName } from "@/resources/icons";
 import type { zones } from "tzdata";
 
-/**
- * IANA time zone string.
- */
-export type IANATimeZone = Extract<keyof typeof zones, string>;
+/** IANA time zone string */
+type IANATimeZone = Extract<keyof typeof zones, string>;
 
-/**
- * Represents the featured person in the portfolio.
- */
+/** Represents the featured person in the portfolio */
 export interface Person {
-  /** First name of the person */
+  /** First name */
   firstName: string;
-  /** Last name of the person */
+  /** Last name  */
   lastName: string;
   /** The name you want to display, allows variations like nicknames */
   name: string;
@@ -27,21 +23,17 @@ export interface Person {
   location: IANATimeZone;
 };
 
-/**
- * Social link configuration.
- */
+/** Social link configuration */
 export interface Social extends Array<{
   /** Name of the social platform */
   name: string;
-  /** The icons are a part of "src/resources/icons.ts" file */
+  /** Social platform icon */
   icon: IconName;
-  /** The link to the social platform */
+  /** Profile link */
   link: string;
 }> {}
 
-/**
- * Base interface for page configuration with common properties.
- */
+/** Base interface for page configuration with common properties */
 export interface BasePageConfig {
   /** The path should be relative to the public directory */
   path: `/${string}` | string;
@@ -51,13 +43,11 @@ export interface BasePageConfig {
   title: string;
   /** Description for SEO and metadata */
   description: string;
-  /** OG Image should be put inside `public/images` folder */
+  /** OG Image */
   image?: `/images/${string}` | string;
 }
 
-/**
- * Home page configuration.
- */
+/** Home page configuration */
 export interface Home extends BasePageConfig {
   /** The headline of the home page */
   headline: React.ReactNode;
@@ -71,46 +61,38 @@ export interface Home extends BasePageConfig {
   activity: Array<Entry | GitHubEntry>;
 }
 
-/**
- * About page configuration.
- * @description Configuration for the About page, including sections for table of contents, avatar, calendar, introduction, work experience, studies, and technical skills.
- */
+/** About page configuration */
 export interface About extends BasePageConfig {
   /** Introduction section */
-  intro: {
-    /** Title of the introduction section */
-    title: string;
-    /** Description of the introduction section */
-    description: string;
-  };
+  intro: string;
   /** Work experience section */
   work: {
     /** Title for the work experience section */
     title: string;
     /** List of work experiences */
     experience: Array<{
-      /** Company name */
-      company: string;
-      /** Timeframe of employment */
-      timeframe: string;
       /** Role or job title */
       role: string;
+      /** Company name */
+      company: string;
       /** Location of employment */
-      location: string;
+      location?: string;
+      /** Timeframe of employment */
+      timeframe: string;
     }>;
   };
   /** Technical skills section */
   technical: {
     /** Title for the technical skills section */
     title: string;
-    /** List of technical skills */
-    skills: Array<{
-      /** Skill title */
+    /** List skill categories */
+    category: Array<{
+      /** Category title*/
       title: string;
-      /** Skill description */
+      /** Category description */
       description: React.ReactNode;
-      /** Skill tags */
-      tags: Array<{
+      /** List of individual skills */
+      skills: Array<{
         /** Skill name */
         name: string;
         /** Skill icon */
@@ -120,10 +102,7 @@ export interface About extends BasePageConfig {
   };
 }
 
-/**
- * Work/projects page configuration.
- * @description Configuration for the Work/Projects page, including metadata and navigation label.
- */
+/** Projects page configuration */
 export interface Work extends BasePageConfig {
   /** Page summary */
   kicker: string;
@@ -131,10 +110,7 @@ export interface Work extends BasePageConfig {
   link: string;
 }
 
-/**
- * Gallery page configuration.
- * @description Configuration for the Gallery page, including metadata, navigation label, and image list.
- */
+/** Gallery page configuration */
 export interface Gallery extends BasePageConfig {
   /** Page summary */
   kicker: string;
@@ -143,7 +119,7 @@ export interface Gallery extends BasePageConfig {
     /** Image source path */
     src: string;
   }>;
-  /** Subtitle for Testimonial section */
+  /** Subtitle for testimonial section */
   subtitle: string;
   /** */
   subkicker: string;
@@ -151,12 +127,12 @@ export interface Gallery extends BasePageConfig {
   testimonials: Array<{
     /** Name of person */
     person: string;
-    /** Organisation they are representing */
+    /** Organisation they represent */
     organisation: string;
     /** Their experience in writing */
     testimonial: string;
   }>;
-  /** Sport photo galleries */
+  /** Photo galleries */
   galleries: Array<{
     /** Gallery type */
     type: string;

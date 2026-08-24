@@ -42,7 +42,7 @@ export const home: Home = {
       type: "",
       title: "Portfolio Exposure Tool",
       message: "",
-      progress: 10
+      progress: 15
     },
   ],
 };
@@ -52,55 +52,48 @@ export const about: About = {
   label: "About",
   title: "About Me",
   description: `${person.name}, a ${person.role.toLowerCase} based in ${person.location}.`,
-  intro: {
-    title: "Introduction",
-    description: `\
-      Hi, I'm a software engineer working across full-stack software development and sports photography. \
-      I enjoy tackling complex, technical challenges to grow my skillset and explore what's possible.
-    `
-  },
+  intro: "Hi, I'm a software engineer working across full-stack software development and sports photography. I enjoy tackling complex, technical challenges to grow my skillset and explore what's possible.",
   work: {
     title: "Experience",
     experience: [
       {
-        company: "Freelance",
         role: "Software Engineer",
+        company: "Freelance",
         timeframe: "Jan '26 - Present",
-        location: "",
       },
       {
-        company: "University of Queensland",
         role: "Academic Tutor",
+        company: "University of Queensland",
+        location: "Brisbane, AU",
         timeframe: "Feb '25 - Nov '25",
-        location: "Brisbane, AU",
       },
       {
-        company: "Enable Startup",
         role: "Software Engineer Intern",
-        timeframe: "Nov '24 - Dec '24",
+        company: "Enable Startup",
         location: "Da Nang, VN",
+        timeframe: "Nov '24 - Dec '24",
       },
       {
-        company: "ifm efector",
         role: "Sales Support Engineer",
-        timeframe: "Dec '22 - Jun '23",
+        company: "ifm efector",
         location: "Gold Coast, AU",
+        timeframe: "Dec '22 - Jun '23",
       },
       {
-        company: "PTC Phone Tech & Comm",
         role: "Sales & Technician Specialist",
-        timeframe: "Jan '22 - Nov '22",
+        company: "PTC Phone Tech & Comm",
         location: "Brisbane, AU",
+        timeframe: "Jan '22 - Nov '22",
       },
     ],
   },
   technical: {
     title: "Technical Skills",
-    skills: [
+    category: [
       {
         title: "Languages",
         description: "Building full-stack applications with AI/ML integrations.",
-        tags: [
+        skills: [
           {
             name: "Python",
             icon: "python",
@@ -130,7 +123,7 @@ export const about: About = {
       {
         title: "Development Tools",
         description: "Deploying efficient production software for modern, scalable applications.",
-        tags: [
+        skills: [
           {
             name: "AWS",
             icon: "aws",
@@ -168,7 +161,7 @@ export const about: About = {
       {
         title: "Frameworks",
         description: "Accelerating development to build responsive backends and creative interfaces.",
-        tags: [
+        skills: [
           {
             name: "PyTorch",
             icon: "pytorch",

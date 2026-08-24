@@ -16,7 +16,7 @@ export function Header() {
   }[] = [
     {
       path: "/about",
-      target: about.intro.title,
+      target: about.title,
       icon: "person",
       label: about.label
     },
