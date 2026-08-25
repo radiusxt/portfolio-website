@@ -64,7 +64,9 @@ export const about: About = {
   
     Same instinct, different channels.
 
-    I'm drawn to hard problems worth the effort and the dedication it takes to crack. Working on something interesting? Let's talk.
+    I'm drawn to solving hard problems worth the effort and dedication it takes to crack. I create my best work with people who care about detail as much as the big picture.
+    
+    Working on something interesting? Let's talk.
   `,
   work: {
     title: "Experience",

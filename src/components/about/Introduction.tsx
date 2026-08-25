@@ -1,13 +1,12 @@
-import { Button, Column, Heading, Flex, Icon, Media, RevealFx, Row } from "@once-ui-system/core";
+import { Button, Column, Heading, Media, RevealFx, Row } from "@once-ui-system/core";
 import { Loading, SpotlightBorder } from "@/components";
 import { about, person, social } from "@/resources";
-import styles from "@/components/about/Contents.module.scss";
 
 /* Introduction About Me */
 export function Introduction() {
   return (
-    <Row fill center gap="24" s={{ direction: "column" }}>
-      {/* Text & Links */}
+    <Row fill center gap="8" s={{ direction: "column" }}>
+      {/* Intro Text & Links */}
       <RevealFx translateY="16" fillWidth horizontal="center">
         <Column fill gap="32">
           <Heading
@@ -22,7 +21,6 @@ export function Introduction() {
             {about.kicker}
           </Heading>
           <Heading
-            className={styles.mobile}
             variant="body-default-xl"
             wrap="pretty"
             style={{ whiteSpace: "pre-line", lineHeight: "1.5" }}
@@ -30,12 +28,7 @@ export function Introduction() {
             {about.intro}
           </Heading>
           {social.length > 0 &&
-            <Row
-              className={styles.mobile}
-              data-border="rounded"
-              gap="24"
-              wrap
-            >
+            <Row data-border="rounded" gap="24">
               {social.map((item) =>
                 <Button
                   key={item.name}
@@ -45,7 +38,6 @@ export function Introduction() {
                   size="xl"
                   weight="default"
                   variant="tertiary"
-                  style={{ padding: "20px", letterSpacing: "0.3px" }}
                 />
               )}
             </Row>
@@ -53,8 +45,8 @@ export function Introduction() {
         </Column>
       </RevealFx>
       {/* Profile Image */}
-      <Column fill center>
-        <RevealFx translateY="16" fillWidth horizontal="center" delay={0.9}>
+      <RevealFx translateY="16" fillWidth horizontal="center">
+        <Column fill>
           <SpotlightBorder
             primary="success-on-background-weak"
             secondary="accent-on-background-weak"
@@ -72,8 +64,8 @@ export function Introduction() {
               />
             </Loading>
           </SpotlightBorder>
-        </RevealFx>
-      </Column>
+        </Column>
+      </RevealFx>
     </Row>
   );
 }

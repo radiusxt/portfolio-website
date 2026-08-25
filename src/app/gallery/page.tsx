@@ -56,7 +56,7 @@ export default function Gallery() {
         </Column>
         <Testimonials />
       </Column>
-      <Column fill maxWidth="80vw" minHeight="102vh" horizontal="center">
+      <Column fill maxWidth="80vw" minHeight="100vh" bottom="12" horizontal="center">
         <Row dark>
           <Logo wordmark="/trademarks/logo-light.png" style={{ transform: "scale(3)" }} />
         </Row>

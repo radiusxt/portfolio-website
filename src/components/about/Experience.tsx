@@ -1,4 +1,5 @@
 import { Column, Heading, Line, Row, Timeline, RevealFx } from "@once-ui-system/core";
+import { Reveal } from "@/components";
 import { about, person } from "@/resources";
 import styles from "@/components/about/Contents.module.scss";
 

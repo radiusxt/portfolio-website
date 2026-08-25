@@ -1,9 +1,8 @@
-import { Column, Heading, Meta, Row, Schema } from "@once-ui-system/core";
+import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
 import { Experience } from "@/components/about/Experience";
 import { Introduction } from "@/components/about/Introduction";
 import { Skills } from "@/components/about/Skills";
 import { about, baseURL, person } from "@/resources";
-import styles from "@/components/about/Contents.module.scss";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -28,21 +27,23 @@ export default function About() {
         image={`/api/og/generate?title=${encodeURIComponent(about.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.image}`}}
       />
-      <Column fill maxWidth="l" minHeight="100vh" horizontal="center" s={{ direction: "column" }}>
+      <Column fill maxWidth="l" minHeight="100vh" bottom="104" horizontal="center">
         <Introduction />
       </Column>
-      <Column fill maxWidth="l" minHeight="100vh" horizontal="center" s={{ direction: "column" }}>
-        <Heading
-          as="h2"
-          className={styles.mobile}
-          variant="display-default-s"
-          marginBottom="32"
-        >
-          {about.work.title}
-        </Heading>
+      <Column fill maxWidth="l" minHeight="100vh" horizontal="center">
+        <Column center align="center">
+          <Heading as="h1" variant="display-default-s">
+            {about.work.title}
+          </Heading>
+        </Column>
         <Experience />
       </Column>
-      <Column fill maxWidth="l" minHeight="100vh" horizontal="center" s={{ direction: "column" }}>
+      <Column fill maxWidth="l" minHeight="100vh" horizontal="center">
+        <Column center align="center" top="12">
+          <Heading as="h1" variant="display-default-s">
+            {about.technical.title}
+          </Heading>
+        </Column>
         <Skills />
       </Column>
     </Column>

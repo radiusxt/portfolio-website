@@ -35,10 +35,10 @@ export default function Home() {
       <Column
         maxWidth="xl"
         position="relative"
+        minHeight="100vh"
+        top="160"
         horizontal="center"
         align="center"
-        minHeight="100vh"
-        top="16vh"
         wrap
       >
         {String(home.headline).split(". ").map((sentence, index) =>
@@ -90,7 +90,7 @@ export default function Home() {
         </Column>
       </Reveal>
       <Reveal>
-        <Column horizontal="center" minHeight="100vh" align="center" paddingBottom="128">
+        <Column horizontal="center" minHeight="80vh" align="center" paddingBottom="128">
           <ContactForm />
         </Column>
       </Reveal>
