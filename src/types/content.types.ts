@@ -63,6 +63,10 @@ export interface Home extends BasePageConfig {
 
 /** About page configuration */
 export interface About extends BasePageConfig {
+  /** Multi-language greeting */
+  greetings: Array<string>;
+  /** Summary */
+  kicker: string;
   /** Introduction section */
   intro: string;
   /** Work experience section */

@@ -55,12 +55,6 @@ export default function About() {
           s={{ position: "relative", style: { top: "auto" }}}
         >
           <Avatar src={person.image} size={16} />
-          <Row vertical="center" gap="16">
-            <Icon name="globe" onBackground="brand-medium" size="xl" />
-            <Heading variant="heading-default-xl">
-              {person.location}
-            </Heading>
-          </Row>
         </Column>
         <Column flex={9} minWidth="0">
           <Column fillWidth vertical="center" marginBottom="32">
@@ -74,14 +68,11 @@ export default function About() {
             >
               {person.name}
             </Heading>
-            <Heading className={styles.mobile} variant="display-default-s" paddingBottom="32">
-              {person.role}
-            </Heading>
             <Column fillWidth marginBottom="32">
               <Heading
                 className={styles.mobile} 
                 variant="body-default-xl"
-                wrap="wrap"
+                wrap="pretty"
                 style={{ whiteSpace: "pre-line", lineHeight: "1.7", letterSpacing: "0.4px" }}
               >
                 {about.intro}

@@ -4,7 +4,7 @@ export const person: Person = {
   firstName: "Nathaniel",
   lastName: "Chan",
   name: "Nathaniel Chan",
-  role: "Software Engineer, Sports Photographer",
+  role: "Software Engineer & Sports Photographer",
   image: "/images/brand/avatar.jpg",
   email: process.env.EMAIL_ADDRESS ?? "",
   location: "Australia/Brisbane",
@@ -15,6 +15,11 @@ export const social: Social = [
     name: "GitHub",
     icon: "github",
     link: "https://github.com/radiusxt",
+  },
+  {
+    name: "Picflow",
+    icon: "gallery",
+    link: "https://gallery.hyperdrivemedia.co/",
   },
   {
     name: "LinkedIn",
@@ -52,7 +57,15 @@ export const about: About = {
   label: "About",
   title: "About Me",
   description: `${person.name}, a ${person.role.toLowerCase} based in ${person.location}.`,
-  intro: "Hi, I'm a software engineer working across full-stack software development and sports photography. I enjoy tackling complex, technical challenges to grow my skillset and explore what's possible.",
+  greetings: ["Hi,", "你好,"],
+  kicker: "👋 I'm Nathaniel",
+  intro: `\
+    I'm a full-stack engineer who spends weekdays building and weekends trying to freeze 300km/h in a single frame. Half my brain lives in software development while the other half is somewhere trackside with a camera, chasing shots most people see as a blur.
+  
+    Same instinct, different channels.
+
+    I'm drawn to hard problems worth the effort and the dedication it takes to crack. Working on something interesting? Let's talk.
+  `,
   work: {
     title: "Experience",
     experience: [

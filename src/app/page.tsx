@@ -53,7 +53,7 @@ export default function Home() {
             <Heading
               as="h1"
               variant="display-default-xl"
-              style={{ lineHeight: "1.3", letterSpacing: "-1.5px" }}
+              style={{ lineHeight: "1.3", letterSpacing: "-1px" }}
             >
               {sentence}{index === 0 && "."}
             </Heading>
