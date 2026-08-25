@@ -116,7 +116,7 @@ export function SpotlightBorder({
   }
 
   return (
-    <Flex ref={wrapperRef} position="relative" padding="40">
+    <Flex ref={wrapperRef} position="relative" padding="32">
       <div
         ref={glowRef}
         aria-hidden="true"

@@ -12,7 +12,7 @@ import {
   SmartLink,
   Tag
 } from "@once-ui-system/core";
-import { baseURL, about, person, work } from "@/resources";
+import { about, baseURL, person, work } from "@/resources";
 import { CustomMDX, Loading, Reveal } from "@/components";
 import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";

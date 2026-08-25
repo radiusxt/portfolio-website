@@ -29,7 +29,7 @@ export default function Gallery() {
       />
       <Column fill maxWidth="80vw" minHeight="100vh" horizontal="center" marginBottom="128">
         <RevealFx translateY="16" fillWidth horizontal="center">
-          <Column center align="center" gap="56" marginBottom="64">
+          <Column center align="center" marginBottom="64" gap="56">
             <Heading
               as="h1"
               id={gallery.title}

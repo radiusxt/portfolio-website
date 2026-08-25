@@ -8,7 +8,7 @@ import {
   TypeFx
 } from "@once-ui-system/core";
 import { ContactForm, Dashboard, Reveal, SpotlightBorder } from "@/components";
-import { home, about, person, baseURL } from "@/resources";
+import { about, baseURL, home, person } from "@/resources";
 
 export async function generateMetadata() {
   return Meta.generate({
