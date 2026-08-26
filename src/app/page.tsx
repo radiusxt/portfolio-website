@@ -36,7 +36,7 @@ export default function Home() {
         maxWidth="xl"
         position="relative"
         minHeight="100vh"
-        top="160"
+        top="18vh"
         horizontal="center"
         align="center"
         wrap
