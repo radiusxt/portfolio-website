@@ -116,9 +116,9 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
               <Media
                 src=""
                 maxWidth="m"
+                aspectRatio="16/9"
                 radius="xl-8"
                 border="transparent"
-                aspectRatio="16/9"
                 marginBottom="24"
                 loading
               />

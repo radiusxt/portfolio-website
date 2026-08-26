@@ -31,6 +31,7 @@ Without this, you lose email functionality, password protected pages and GitHub 
 
 - Next.js
 - React
+- GSAP
 
 ### Backend
 

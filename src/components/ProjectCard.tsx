@@ -43,7 +43,7 @@ export function ProjectCard({ title, description, image, team, tags }: ProjectCa
             gap="12"
           >
             <Loading
-              fallback={<Media src="" radius="xl-8" aspectRatio="16/9" loading /> }
+              fallback={<Media src="" aspectRatio="3/2" radius="xl-8" loading /> }
             >
               <Media
                 src={image}

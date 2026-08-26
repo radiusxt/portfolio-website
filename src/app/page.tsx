@@ -82,7 +82,7 @@ export default function Home() {
           <SpotlightBorder
             primary="brand-on-background-weak"
             secondary="accent-on-background-weak"
-            spread={90}
+            spread={80}
             falloff={200}
           >
             <Dashboard username={home.github} activity={home.activity} />

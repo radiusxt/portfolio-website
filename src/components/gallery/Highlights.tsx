@@ -39,7 +39,7 @@ export function Highlights() {
               >
                 <Loading
                   fallback={
-                    <Media src="" radius="xl" aspectRatio="3/2" loading />
+                    <Media src="" aspectRatio="3/2" radius="xl" loading />
                   }
                 >
                   <TiltFx intensity={2}>

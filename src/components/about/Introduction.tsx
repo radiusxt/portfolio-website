@@ -1,9 +1,47 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { Button, Column, Heading, Media, RevealFx, Row } from "@once-ui-system/core";
 import { Loading, SpotlightBorder } from "@/components";
 import { about, person, social } from "@/resources";
+import gsap from "gsap";
 
 /* Introduction About Me */
 export function Introduction() {
+  const indexRef = useRef(0);
+
+  useEffect(() => {
+    const el = document.getElementById("greeting");
+
+    if (!el || about.greetings.length <= 1) {
+      return;
+    }
+
+    const TRANSITION = 0.5;
+    const HOLD = 5 - 2 * TRANSITION;
+    const tl = gsap.timeline({ repeat: -1, delay: HOLD + 1, repeatDelay: HOLD });
+
+    tl.to(el, {
+      scaleY: 0.05,
+      opacity: 0,
+      duration: TRANSITION,
+      ease: "power2.in",
+      transformOrigin: "bottom",
+      onComplete: () => {
+        indexRef.current = (indexRef.current + 1) % about.greetings.length;
+        el.textContent = about.greetings[indexRef.current];
+      },
+    }).to(el, {
+      scaleY: 1,
+      opacity: 1,
+      duration: TRANSITION,
+      ease: "power2.out",
+      transformOrigin: "top",
+    });
+
+    return () => { tl.kill(); };
+  }, []);
+
   return (
     <Row
       fill
@@ -16,8 +54,8 @@ export function Introduction() {
       {/* Intro Text & Links */}
       <RevealFx translateY="16" fillWidth horizontal="center">
         <Column fill gap="32">
-          <Heading as="h1" variant="display-default-xl">
-            {about.greetings}
+          <Heading as="h1" id="greeting" variant="display-default-xl">
+            {about.greetings[0]}
           </Heading>
           <Heading variant="display-default-l">
             {about.kicker}
@@ -57,7 +95,7 @@ export function Introduction() {
           >
             <Loading
               fallback={
-                <Media src="" radius="xl-8" aspectRatio="1/1" loading />
+                <Media src="" aspectRatio="4/5" radius="xl-8" loading />
               }
             >
               <Media
