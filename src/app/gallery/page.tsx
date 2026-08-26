@@ -34,7 +34,7 @@ export default function Gallery() {
               as="h1"
               id={gallery.title}
               variant="display-default-m"
-              style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
+              style={{ letterSpacing: "0px", scrollMarginTop: "8rem" }}
             >
               {gallery.title}
             </Heading>

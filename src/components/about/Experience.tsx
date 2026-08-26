@@ -1,53 +1,44 @@
-import { Column, Heading, Line, Row, Timeline, RevealFx } from "@once-ui-system/core";
+import { Column, Heading, Line, Row } from "@once-ui-system/core";
 import { Reveal } from "@/components";
-import { about, person } from "@/resources";
-import styles from "@/components/about/Contents.module.scss";
+import { about } from "@/resources";
 
 /* Work Experience */
 export function Experience() {
   return (
-    <>
-      <Column fillWidth>
-        <Timeline
-          size="xs"
-          style={{
-            maskImage: "linear-gradient(to bottom, black 94%, transparent 98%)",
-            WebkitMaskImage: "linear-gradient(to bottom, black 94%, transparent 98%)"
-          }}
-          items={[
-            ...about.work.experience.map((experience, index) => ({
-              state: "active" as const,
-              label:
-                <Column
-                  fillWidth
-                  key={`${experience.company}-${experience.role}-${index}`}
-                  style={ index !== 0 ? { marginTop: "-6px" } : { marginTop: "-4px" }}
-                >
-                  <Row fillWidth horizontal="between" vertical="center" marginBottom="4">
-                    <Heading id={experience.company} variant="heading-default-xl">
-                      {experience.company}
-                    </Heading>
-                    <Heading variant="heading-default-s" onBackground="neutral-weak">
-                      {experience.timeframe}
-                    </Heading>
-                  </Row>
-                  <Row fillWidth horizontal="between" vertical="center" marginBottom="4">
-                    <Heading variant="body-default-m" onBackground="brand-weak">
-                      {experience.role}
-                    </Heading>
-                    {experience.location &&
-                      <Heading variant="body-default-m" onBackground="accent-weak">
-                        {experience.location}
-                      </Heading>
-                    }
-                  </Row>
-                </Column>
-            })),
-            // Null object for disappearing marker effect.
-            { description: <></>, marker: <></> }
-          ]}
-        />
-      </Column>
-    </>
+    <Column fill center gap="64">
+      {about.work.experience.map((experience) => 
+        <Reveal key={`${experience.timeframe}`}>
+          <Column fill gap="48">
+            <Row center>
+              <Row flex="2" vertical="center">
+                <Heading variant="heading-default-xl">
+                  {experience.role}
+                </Heading>
+              </Row>
+              <Row center flex="2">
+                <Heading variant="heading-default-m" onBackground="brand-medium">
+                  {experience.company}
+                </Heading>
+              </Row>
+              <Row center flex="1">
+                <Heading variant="heading-default-s" onBackground="accent-weak">
+                  {experience.location || ""}
+                </Heading>
+              </Row>
+              <Row flex="1" horizontal="end" vertical="center">
+                <Heading variant="heading-default-s" onBackground="neutral-weak">
+                  {experience.timeframe}
+                </Heading>
+              </Row>
+            </Row>
+          <Line
+            height="1"
+            radius="l"
+            style={{ background: "var(--neutral-on-background-strong)" }}
+          />
+          </Column>
+        </Reveal>
+      )}
+    </Column>
   );
 }

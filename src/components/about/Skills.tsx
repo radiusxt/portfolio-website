@@ -5,7 +5,7 @@ import { about } from "@/resources";
 /* Technical Skills */
 export function Skills() {
   return (
-    <Column fill center bottom="8" gap="104">
+    <Column fill center bottom="8" gap="80">
       {about.technical.category.map((category, index) => 
         <Reveal key={`${category.title}`}>
           <Column fillWidth align="center" gap="48">
@@ -29,7 +29,7 @@ export function Skills() {
                 speed="slow"
                 hover="none"
                 reverse={index % 2 === 0}
-                paddingTop="40"
+                paddingTop="32"
               >
                 {category.skills.map((skill) => 
                   <Column key={`${skill.name}`} paddingX="48">

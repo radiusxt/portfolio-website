@@ -22,7 +22,7 @@ export async function generateMetadata() {
 /* Home Page Layout */
 export default function Home() {
   return (
-    <Column id={home.title} horizontal="center" fill style={{ scrollMarginTop: "120px" }}>
+    <Column id={home.title} horizontal="center" fill style={{ scrollMarginTop: "8rem" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}

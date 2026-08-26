@@ -9,6 +9,7 @@ import {
   useState
 } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { useLenis } from "lenis/react";
 
 interface NavigationContextValue {
   exiting: boolean;
@@ -21,15 +22,21 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
   const [exiting, setExiting] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+  const lenis = useLenis();
 
   const navigate = useCallback((href: string) => {
     setExiting(true);
+    lenis?.stop();
     setTimeout(() => router.push(href), 200);
-  }, [router]);
+  }, [router, lenis]);
 
   // Reset fade once the route has changed and new page is mounted
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-  useEffect(() => setExiting(false), [pathname]);
+  useEffect(() => {
+    setExiting(false);
+    lenis?.scrollTo(0, { immediate: true });
+    lenis?.start();
+  }, [pathname]);
 
   return (
     <NavigationContext.Provider value={{ exiting, navigate }}>

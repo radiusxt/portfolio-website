@@ -38,7 +38,7 @@ export default function Work() {
               as="h1"
               id={work.title}
               variant="display-default-m"
-              style={{ letterSpacing: "0px", scrollMarginTop: "140px" }}
+              style={{ letterSpacing: "0px", scrollMarginTop: "8rem" }}
             >
               {work.title}
             </Heading>

@@ -31,8 +31,8 @@ export default function About() {
         <Introduction />
       </Column>
       <Column fill maxWidth="l" minHeight="100vh" horizontal="center">
-        <Column center align="center">
-          <Heading as="h1" variant="display-default-s">
+        <Column center align="center" top="48">
+          <Heading as="h1" variant="display-default-m">
             {about.work.title}
           </Heading>
         </Column>
@@ -40,7 +40,7 @@ export default function About() {
       </Column>
       <Column fill maxWidth="l" minHeight="100vh" horizontal="center">
         <Column center align="center" top="12">
-          <Heading as="h1" variant="display-default-s">
+          <Heading as="h1" variant="display-default-m">
             {about.technical.title}
           </Heading>
         </Column>

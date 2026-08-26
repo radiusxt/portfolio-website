@@ -5,17 +5,19 @@ import { about, person, social } from "@/resources";
 /* Introduction About Me */
 export function Introduction() {
   return (
-    <Row fill center gap="8" s={{ direction: "column" }}>
+    <Row
+      fill
+      center
+      id={about.title}
+      gap="8"
+      style={{ letterSpacing: "0px", scrollMarginTop: "6rem" }}
+      s={{ direction: "column" }}
+    >
       {/* Intro Text & Links */}
       <RevealFx translateY="16" fillWidth horizontal="center">
         <Column fill gap="32">
-          <Heading
-            as="h1"
-            id={about.title}
-            variant="display-default-xl"
-            style={{ letterSpacing: "0px", scrollMarginTop: "120px" }}
-          >
-            {about.greetings[0]}
+          <Heading as="h1" variant="display-default-xl">
+            {about.greetings}
           </Heading>
           <Heading variant="display-default-l">
             {about.kicker}
@@ -54,13 +56,16 @@ export function Introduction() {
             falloff={300}
           >
             <Loading
-              fallback={<Media src="" radius="xl-8" aspectRatio="1/1" loading /> }
+              fallback={
+                <Media src="" radius="xl-8" aspectRatio="1/1" loading />
+              }
             >
               <Media
                 src={person.image}
                 alt={person.name}
                 aspectRatio="4/5"
                 radius="xl-8"
+                priority
               />
             </Loading>
           </SpotlightBorder>
