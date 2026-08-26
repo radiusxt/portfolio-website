@@ -9,6 +9,11 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "allowScripts": {
+    "@biomejs/biome": true,
+    "@parcel/watcher": true,
+    "sharp": true
+  },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
     "@next/mdx": "^16.0.10",

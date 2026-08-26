@@ -78,7 +78,7 @@ export default function Home() {
         </RevealFx>
       </Column>
       <Reveal>
-        <Column horizontal="center" minHeight="100vh">
+        <Column horizontal="center" minHeight="80vh">
           <SpotlightBorder
             primary="brand-on-background-weak"
             secondary="accent-on-background-weak"
