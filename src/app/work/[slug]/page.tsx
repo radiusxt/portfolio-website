@@ -67,7 +67,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
       />
       <RevealFx translateY="16" fillWidth delay={0.1}>
         <Column fill maxWidth="l" horizontal="center" align="center" gap="56" paddingBottom="64">
-          <Heading variant="display-default-l">
+          <Heading variant="display-default-m">
             {post.metadata.title}
           </Heading>
           <Row gap={post.metadata.publishedAt && post.metadata.link ? "64" : "0"}>

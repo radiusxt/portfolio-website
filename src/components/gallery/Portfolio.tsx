@@ -41,7 +41,13 @@ export function Portfolio() {
                       border="neutral-medium"
                       radius="xl"
                     >
-                      <Media src="" aspectRatio="16/9" radius="xl" bottomRadius="l" loading />
+                      <Media
+                        src=""
+                        aspectRatio="16/9"
+                        radius="xl"
+                        bottomRadius="l"
+                        loading
+                      />
                       <Skeleton shape="line" height="s" margin="16" />
                     </Card>
                   }

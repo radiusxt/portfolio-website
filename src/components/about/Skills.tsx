@@ -1,18 +1,27 @@
-import { AutoScroll, Column, Fade, Heading, Icon, Row } from "@once-ui-system/core";
+import { AutoScroll, Column, Fade, Heading, Icon, Row, Text } from "@once-ui-system/core";
 import { Reveal } from "@/components";
 import { about } from "@/resources";
 
 /* Technical Skills */
 export function Skills() {
   return (
-    <Column fill center bottom="8" gap="80">
+    <Column fill center gap="80" s={{ style: { width: "100vw" }}}>
       {about.technical.category.map((category, index) => 
         <Reveal key={`${category.title}`}>
           <Column fillWidth align="center" gap="48">
-            <Heading id={category.title} variant="heading-default-xl">
+            <Heading as="h2" variant="display-default-xs">
               {category.title}
             </Heading>
-            <Heading variant="body-default-l" onBackground="neutral-strong">
+            <Heading
+              as="h3"
+              variant="body-default-l"
+              wrap="balance"
+              style={{
+                lineHeight: "1.5",
+                WebkitTextSizeAdjust: "100%",
+                textSizeAdjust: "100%",
+              }}
+            >
               {category.description}
             </Heading>
             <Column>
@@ -35,7 +44,7 @@ export function Skills() {
                   <Column key={`${skill.name}`} paddingX="48">
                     <Row vertical="center" gap="16">
                       <Icon name={skill.icon} onBackground="brand-weak" size="l" />
-                      <Heading variant="body-default-l" wrap="nowrap">
+                      <Heading variant="body-default-m" wrap="nowrap">
                         {skill.name}
                       </Heading>
                     </Row>

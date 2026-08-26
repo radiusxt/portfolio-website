@@ -107,7 +107,7 @@ export const about: About = {
     category: [
       {
         title: "Languages",
-        description: "Building full-stack applications with AI/ML integrations.",
+        description: "Designing and building scalable full-stack applications with AI/ML integrations",
         skills: [
           {
             name: "Python",

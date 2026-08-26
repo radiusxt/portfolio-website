@@ -27,7 +27,7 @@ export default function About() {
         image={`/api/og/generate?title=${encodeURIComponent(about.title)}`}
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.image}`}}
       />
-      <Column fill maxWidth="l" minHeight="100vh" bottom="104" horizontal="center">
+      <Column fill maxWidth="l" minHeight="90vh" bottom="32" horizontal="center">
         <Introduction />
       </Column>
       <Column fill maxWidth="l" minHeight="100vh" horizontal="center">
@@ -39,7 +39,7 @@ export default function About() {
         <Experience />
       </Column>
       <Column fill maxWidth="l" minHeight="100vh" horizontal="center">
-        <Column center align="center" top="12">
+        <Column center align="center">
           <Heading as="h1" variant="display-default-m">
             {about.technical.title}
           </Heading>

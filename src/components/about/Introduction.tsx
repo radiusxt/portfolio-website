@@ -48,15 +48,20 @@ export function Introduction() {
       center
       id={about.title}
       gap="8"
-      style={{ letterSpacing: "0px", scrollMarginTop: "6rem" }}
-      s={{ direction: "column" }}
+      style={{ letterSpacing: "0px", scrollMarginTop: "8rem" }}
+      s={{
+        direction: "column-reverse",
+        style: { width: "100vw", textAlign: "center", paddingBlock: "16rem" }
+      }}
     >
       {/* Intro Text & Links */}
       <RevealFx translateY="16" fillWidth horizontal="center">
         <Column fill gap="32">
-          <Heading as="h1" id="greeting" variant="display-default-xl">
-            {about.greetings[0]}
-          </Heading>
+          <Row s={{ hide: true }}>
+            <Heading as="h1" id="greeting" variant="display-default-xl">
+              {about.greetings[0]}
+            </Heading>
+          </Row>
           <Heading variant="display-default-l">
             {about.kicker}
           </Heading>
@@ -86,7 +91,7 @@ export function Introduction() {
       </RevealFx>
       {/* Profile Image */}
       <RevealFx translateY="16" fillWidth horizontal="center">
-        <Column fill>
+        <Column fill paddingY="24">
           <SpotlightBorder
             primary="success-on-background-weak"
             secondary="accent-on-background-weak"

@@ -66,7 +66,7 @@ export const style: StyleConfig = {
   // flat | plastic
   solidStyle: "flat",
   // rounded | playful | conservative
-  border: "playful",
+  border: "conservative",
   // filled | translucent
   surface: "translucent",
   // all | micro | macro

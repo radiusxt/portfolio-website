@@ -1,4 +1,4 @@
-import { AutoScroll, Column, Fade, Heading } from "@once-ui-system/core";
+import { AutoScroll, Card, Column, Fade, Heading } from "@once-ui-system/core";
 import { Reveal } from "@/components";
 import { gallery } from "@/resources";
 
@@ -18,7 +18,7 @@ export function Testimonials() {
         />
         <AutoScroll speed="slow" hover="slow">
           {gallery.testimonials.map((testimonial) =>
-            <Column
+            <Card
               key={`${testimonial.person}`}
               fill
               direction="column"
@@ -45,7 +45,7 @@ export function Testimonials() {
               <Heading variant="body-default-s" onBackground="neutral-weak">
                 {testimonial.organisation}
               </Heading>
-            </Column>
+            </Card>
           )}
         </AutoScroll>
         <Fade
