@@ -7,7 +7,7 @@ export interface Day {
 export async function getContributions(username: string) {
   const response = await fetch(
     `https://github-contributions-api.jogruber.de/v4/${username}?y=last`,
-    { next: { revalidate: 60 * 60 * 24 } }
+    { next: { revalidate: 60 * 60 * 12 } }
   );
   
   const data = await response.json();
