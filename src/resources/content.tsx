@@ -44,10 +44,10 @@ export const home: Home = {
   github: "radiusxt",
   activity: [
     {
-      type: "",
-      title: "Portfolio Exposure Tool",
-      message: "",
-      progress: 15
+      type: "gh",
+      title: "Overlap",
+      name: "radiusxt/overlap",
+      progress: 10
     },
   ],
 };

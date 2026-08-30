@@ -40,7 +40,7 @@ export async function Dashboard({ activity, username }: DashboardProps) {
       <Column gap="12">
         {/* Headings */}
         <Row center gap="16">
-          <Row flex="3" paddingLeft="12">
+          <Row flex="2" paddingLeft="12">
             <Heading variant="label-default-s" onBackground="neutral-weak">
               Title
             </Heading>
@@ -66,7 +66,7 @@ export async function Dashboard({ activity, username }: DashboardProps) {
             border="neutral-alpha-medium"
             padding="12"
           >
-            <Column flex="3">
+            <Column flex="2">
               <Heading
                 variant="body-default-s"
                 onBackground="neutral-strong"
