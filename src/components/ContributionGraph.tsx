@@ -60,6 +60,11 @@ function getMonthLabels(weeks: Day[][]) {
     }
   });
 
+  // Handle edge case for label overlap on new months
+  if (positions.length > 1 && positions[1].col - positions[0].col < 3) {
+    positions.shift();
+  }
+
   return positions;
 }
 
@@ -86,7 +91,10 @@ export async function ContributionGraph({ username }: { username: string }) {
             {/* Grid Cells */}
             <Column gap="4">
               {week.map((day) =>
-                <HoverCard key={day.date} placement="top" trigger={
+                <HoverCard
+                  key={day.date}
+                  placement="top"
+                  trigger={
                     <Flex
                       width="12"
                       height="12"
