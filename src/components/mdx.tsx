@@ -1,4 +1,4 @@
-import type { ComponentProps, ComponentPropsWithoutRef, ReactElement, ReactNode } from "react";
+import type { ComponentPropsWithoutRef, ReactElement, ReactNode } from "react";
 import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 import { slugify as transliterate } from "transliteration";
 import {
@@ -34,7 +34,6 @@ interface PreElementProps extends ComponentPropsWithoutRef<"pre"> {
     children?: string
   }>;
 }
-
 
 function CustomLink({ href, children, ...props }: CustomLinkProps) {
   if (href.startsWith("/")) {
@@ -228,5 +227,10 @@ const components = {
 type CustomMDXProps = MDXRemoteProps & { components?: typeof components; };
 
 export function CustomMDX(props: CustomMDXProps) {
-  return <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />;
+  return (
+    <MDXRemote
+      {...props}
+      components={{ ...components, ...(props.components || {}) }}
+    />
+  );
 }
