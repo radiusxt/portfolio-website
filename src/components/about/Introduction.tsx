@@ -1,10 +1,10 @@
 "use client";
 
+import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { Button, Column, Heading, Media, RevealFx, Row } from "@once-ui-system/core";
 import { Loading, SpotlightBorder } from "@/components";
 import { about, person, social } from "@/resources";
-import gsap from "gsap";
 
 /* Introduction About Me */
 export function Introduction() {

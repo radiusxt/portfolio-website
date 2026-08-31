@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ComponentProps, ComponentPropsWithoutRef, ReactElement, ReactNode } from "react";
 import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 import { slugify as transliterate } from "transliteration";
 import {
@@ -26,10 +26,15 @@ import {
 } from "@once-ui-system/core";
 import { Loading } from "@/components";
 
-type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-  href: string;
-  children: ReactNode;
-};
+type CustomLinkProps = ComponentPropsWithoutRef<"a"> & { href: string };
+
+interface PreElementProps extends ComponentPropsWithoutRef<"pre"> {
+  children?: ReactElement<{
+    className?: string;
+    children?: string
+  }>;
+}
+
 
 function CustomLink({ href, children, ...props }: CustomLinkProps) {
   if (href.startsWith("/")) {
@@ -58,7 +63,7 @@ function CustomLink({ href, children, ...props }: CustomLinkProps) {
 function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
   if (!src) {
     console.error("Media requires a valid 'src' property.");
-    return null;
+    return;
   }
 
   return (
@@ -130,17 +135,14 @@ function createParagraph({ children }: TextProps) {
 }
 
 function createInlineCode({ children }: { children: ReactNode }) {
-  return (
-    <InlineCode>
-      {children}
-    </InlineCode>
-  );
+  return <InlineCode>{children}</InlineCode>
 }
 
-function createCodeBlock(props: any) {
+function createCodeBlock(props: PreElementProps) {
   // For pre tags that contain code blocks
   if (props.children?.props?.className) {
     const { className, children } = props.children.props;
+
     // Extract language from className (format: language-xxx)
     const language = className.replace("language-", "");
     const label = language.charAt(0).toUpperCase() + language.slice(1);
@@ -149,7 +151,7 @@ function createCodeBlock(props: any) {
       <CodeBlock
         marginY="12"
         codes={[{
-          code: children,
+          code: children ?? "",
           language,
           label,
         }]}
@@ -190,21 +192,21 @@ function createHR() {
 }
 
 const components = {
-  p: createParagraph as any,
-  h1: createHeading("h1") as any,
-  h2: createHeading("h2") as any,
-  h3: createHeading("h3") as any,
-  h4: createHeading("h4") as any,
-  h5: createHeading("h5") as any,
-  h6: createHeading("h6") as any,
-  img: createImage as any,
-  a: CustomLink as any,
-  code: createInlineCode as any,
-  pre: createCodeBlock as any,
-  ol: createList as any,
-  ul: createList as any,
-  li: createListItem as any,
-  hr: createHR as any,
+  p: createParagraph,
+  h1: createHeading("h1"),
+  h2: createHeading("h2"),
+  h3: createHeading("h3"),
+  h4: createHeading("h4"),
+  h5: createHeading("h5"),
+  h6: createHeading("h6"),
+  img: createImage,
+  a: CustomLink,
+  code: createInlineCode,
+  pre: createCodeBlock,
+  ol: createList,
+  ul: createList,
+  li: createListItem,
+  hr: createHR,
   Heading,
   Text,
   CodeBlock,

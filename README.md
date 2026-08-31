@@ -1,7 +1,7 @@
 # Portfolio Website
 
 My personal portfolio website showcasing work in software development and photography built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org).
-It requires Node.js v20.9+ and uses Biome for linting and type checking.
+It requires Node v24.x and uses Biome for linting and type checking.
 
 ## Quick Start
 
