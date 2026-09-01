@@ -101,9 +101,10 @@ export async function Dashboard({ username, activity, gallery }: DashboardProps)
         )}
       </Column>
       <Line background="brand-strong" height="1" radius="l" />
-      <Column fillWidth gap="12">
+      <Column fillWidth gap="12" style={{ marginBottom: "-0.5rem" }}>
         <ContributionGraph username={username} />
       </Column>
+      <Line background="brand-strong" height="1" radius="l" />
       <Loading
         fallback={
           <Card
