@@ -50,6 +50,7 @@ export const home: Home = {
       progress: 10
     },
   ],
+  gallery: "https://gallery.hyperdrivemedia.co/KqjDnqmeokytp2Ae",
 };
 
 export const about: About = {

@@ -59,6 +59,8 @@ export interface Home extends BasePageConfig {
   github: string;
   /** Current things I'm working on */
   activity: Array<Entry | GitHubEntry>;
+  /** Featured gallery */
+  gallery: string;
 }
 
 /** About page configuration */

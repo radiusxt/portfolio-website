@@ -1,5 +1,5 @@
-import { Column, Heading, Line, ProgressBar, Row } from "@once-ui-system/core";
-import { ContributionGraph } from "@/components";
+import { Card, Column, Heading, Line, Media, OgCard, ProgressBar, Row, Skeleton, TiltFx } from "@once-ui-system/core";
+import { ContributionGraph, Loading } from "@/components";
 import { getLastCommit } from "@/lib";
 
 export type Entry = {
@@ -17,8 +17,9 @@ export type GitHubEntry = {
 };
 
 interface DashboardProps {
-  activity: Array<Entry | GitHubEntry>;
   username: string;
+  activity: Array<Entry | GitHubEntry>;
+  gallery: string;
 }
 
 /* Resolves entries into well-formed objects */
@@ -32,7 +33,7 @@ async function resolveItem(item: Entry | GitHubEntry): Promise<Omit<Entry, "type
 }
 
 /* A dashboard component displaying what I'm working on */
-export async function Dashboard({ activity, username }: DashboardProps) {
+export async function Dashboard({ username, activity, gallery }: DashboardProps) {
   const items = await Promise.all(activity.map(resolveItem));
 
   return (
@@ -103,6 +104,42 @@ export async function Dashboard({ activity, username }: DashboardProps) {
       <Column fillWidth gap="12">
         <ContributionGraph username={username} />
       </Column>
+        <Loading
+          fallback={
+            <Card
+              fill
+              direction="column"
+              horizontal="center"
+              width="xs"
+              border="neutral-medium"
+              radius="xl"
+            >
+              <Media
+                src=""
+                aspectRatio="16/9"
+                radius="xl"
+                bottomRadius="l"
+                loading
+              />
+              <Skeleton shape="line" height="s" margin="16" />
+            </Card>
+          }
+        >
+          <TiltFx intensity={1}>
+            <OgCard
+              direction="row"
+              url={gallery}
+              favicon={false}
+              description={false}
+              width="xs"
+              border="neutral-alpha-medium"
+              s={{
+                direction: "column",
+                style: { width: "60vw", textAlign: "center" }
+              }}
+            />
+          </TiltFx>
+        </Loading>
     </Column>
   );
 }
