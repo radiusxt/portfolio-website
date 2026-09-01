@@ -104,42 +104,42 @@ export async function Dashboard({ username, activity, gallery }: DashboardProps)
       <Column fillWidth gap="12">
         <ContributionGraph username={username} />
       </Column>
-        <Loading
-          fallback={
-            <Card
-              fill
-              direction="column"
-              horizontal="center"
-              width="xs"
-              border="neutral-medium"
+      <Loading
+        fallback={
+          <Card
+            fill
+            direction="column"
+            horizontal="center"
+            width="xs"
+            border="neutral-medium"
+            radius="xl"
+          >
+            <Media
+              src=""
+              aspectRatio="16/9"
               radius="xl"
-            >
-              <Media
-                src=""
-                aspectRatio="16/9"
-                radius="xl"
-                bottomRadius="l"
-                loading
-              />
-              <Skeleton shape="line" height="s" margin="16" />
-            </Card>
-          }
-        >
-          <TiltFx intensity={1}>
-            <OgCard
-              direction="row"
-              url={gallery}
-              favicon={false}
-              description={false}
-              width="xs"
-              border="neutral-alpha-medium"
-              s={{
-                direction: "column",
-                style: { width: "60vw", textAlign: "center" }
-              }}
+              bottomRadius="l"
+              loading
             />
-          </TiltFx>
-        </Loading>
+            <Skeleton shape="line" height="s" margin="16" />
+          </Card>
+        }
+      >
+        <TiltFx intensity={1}>
+          <OgCard
+            direction="row"
+            url={gallery}
+            favicon={false}
+            description={false}
+            width="xs"
+            border="neutral-alpha-medium"
+            s={{
+              direction: "column",
+              style: { width: "60vw", textAlign: "center" }
+            }}
+          />
+        </TiltFx>
+      </Loading>
     </Column>
   );
 }
