@@ -8,7 +8,7 @@ import {
   TypeFx
 } from "@once-ui-system/core";
 import { ContactForm, Dashboard, Reveal, SpotlightBorder } from "@/components";
-import { about, baseURL, home, person } from "@/resources";
+import { baseURL, home, person } from "@/resources";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -30,7 +30,7 @@ export default function Home() {
         title={home.title}
         description={home.description}
         image={`/api/og/generate?title=${encodeURIComponent(home.title)}`}
-        author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.image}` }}
+        author={{ name: person.name, url: `${baseURL}${home.path}`, image: `${baseURL}${person.image}` }}
       />
       <Column
         maxWidth="xl"

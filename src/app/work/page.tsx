@@ -1,6 +1,6 @@
 import { Column, Heading, Meta, RevealFx, Schema } from "@once-ui-system/core";
 import { Projects } from "@/components/work/Projects";
-import { about, baseURL, person, work } from "@/resources";
+import { baseURL, person, work } from "@/resources";
 import { getPosts } from "@/utils/utils";
 
 export async function generateMetadata() {
@@ -29,7 +29,7 @@ export default function Work() {
         title={work.title}
         description={work.description}
         image={`/api/og/generate?title=${encodeURIComponent(work.title)}`}
-        author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.image}` }}
+        author={{ name: person.name, url: `${baseURL}${work.path}`, image: `${baseURL}${person.image}` }}
       />
       <Column fill minHeight="100vh" horizontal="center">
         <RevealFx translateY="16" fillWidth horizontal="center">
