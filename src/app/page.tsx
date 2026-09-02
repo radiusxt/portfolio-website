@@ -8,7 +8,7 @@ import {
   TypeFx
 } from "@once-ui-system/core";
 import { ContactForm, Dashboard, Reveal, SpotlightBorder } from "@/components";
-import { baseURL, home, person } from "@/resources";
+import { baseURL, home, gallery, person } from "@/resources";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -41,9 +41,9 @@ export default function Home() {
         align="center"
         wrap
       >
-        {String(home.headline).split(". ").map((sentence, index) =>
+        {String(home.headline).split(". ").map((phrase, index) =>
           <RevealFx
-            key={sentence}
+            key={phrase}
             translateY="16"
             fillWidth
             horizontal="center"
@@ -55,7 +55,7 @@ export default function Home() {
               variant="display-default-xl"
               style={{ lineHeight: "1.3", letterSpacing: "-1px" }}
             >
-              {sentence}{index === 0 && "."}
+              {phrase}{index === 0 && "."}
             </Heading>
           </RevealFx>
         )}
@@ -85,7 +85,11 @@ export default function Home() {
             spread={90}
             falloff={300}
           >
-            <Dashboard username={home.github} activity={home.activity} gallery={home.gallery} />
+            <Dashboard
+              username={home.github}
+              activity={home.activity}
+              gallery={gallery.galleries.filter(item => item.type === "sport").at(-1)?.link}
+            />
           </SpotlightBorder>
         </Column>
       </Reveal>

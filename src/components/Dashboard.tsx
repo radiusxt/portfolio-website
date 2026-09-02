@@ -1,4 +1,15 @@
-import { Card, Column, Heading, Line, Media, OgCard, ProgressBar, Row, Skeleton, TiltFx } from "@once-ui-system/core";
+import {
+  Card,
+  Column,
+  Heading,
+  Line,
+  Media,
+  OgCard,
+  ProgressBar,
+  Row,
+  Skeleton,
+  TiltFx
+} from "@once-ui-system/core";
 import { ContributionGraph, Loading } from "@/components";
 import { getLastCommit } from "@/lib";
 
@@ -19,7 +30,7 @@ export type GitHubEntry = {
 interface DashboardProps {
   username: string;
   activity: Array<Entry | GitHubEntry>;
-  gallery: string;
+  gallery?: string;
 }
 
 /* Resolves entries into well-formed objects */
@@ -105,42 +116,44 @@ export async function Dashboard({ username, activity, gallery }: DashboardProps)
         <ContributionGraph username={username} />
       </Column>
       <Line background="brand-strong" height="1" radius="l" />
-      <Loading
-        fallback={
-          <Card
-            fill
-            direction="column"
-            horizontal="center"
-            width="xs"
-            border="neutral-medium"
-            radius="xl"
-          >
-            <Media
-              src=""
-              aspectRatio="16/9"
+      {gallery &&
+        <Loading
+          fallback={
+            <Card
+              fill
+              direction="column"
+              horizontal="center"
+              width="xs"
+              border="neutral-medium"
               radius="xl"
-              bottomRadius="l"
-              loading
+            >
+              <Media
+                src=""
+                aspectRatio="16/9"
+                radius="xl"
+                bottomRadius="l"
+                loading
+              />
+              <Skeleton shape="line" height="s" margin="16" />
+            </Card>
+          }
+        >
+          <TiltFx intensity={1}>
+            <OgCard
+              direction="row"
+              url={gallery}
+              favicon={false}
+              description={false}
+              width="xs"
+              border="neutral-alpha-medium"
+              s={{
+                direction: "column",
+                style: { width: "60vw", textAlign: "center" }
+              }}
             />
-            <Skeleton shape="line" height="s" margin="16" />
-          </Card>
-        }
-      >
-        <TiltFx intensity={1}>
-          <OgCard
-            direction="row"
-            url={gallery}
-            favicon={false}
-            description={false}
-            width="xs"
-            border="neutral-alpha-medium"
-            s={{
-              direction: "column",
-              style: { width: "60vw", textAlign: "center" }
-            }}
-          />
-        </TiltFx>
-      </Loading>
+          </TiltFx>
+        </Loading>
+      }
     </Column>
   );
 }
