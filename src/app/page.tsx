@@ -88,6 +88,7 @@ export default function Home() {
             <Dashboard
               username={home.github}
               activity={home.activity}
+              // Filter for the latest sport gallery I've created
               gallery={gallery.galleries.filter(item => item.type === "sport").at(-1)?.link}
             />
           </SpotlightBorder>
