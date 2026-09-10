@@ -152,6 +152,10 @@ export const about: About = {
             icon: "terraform",
           },
           {
+            name: "Supabase",
+            icon: "supabase",
+          },
+          {
             name: "Jupyter",
             icon: "jupyter",
           },
