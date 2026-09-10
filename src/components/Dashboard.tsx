@@ -57,12 +57,12 @@ export async function Dashboard({ username, activity, gallery }: DashboardProps)
               Title
             </Heading>
           </Row>
-          <Row flex="4" paddingRight="12" s={{ hide: true }}>
+          <Row flex="4" paddingRight="24" s={{ hide: true }}>
             <Heading variant="label-default-s" onBackground="neutral-weak">
               Message
             </Heading>
           </Row>
-          <Row center flex="1" paddingRight="12">
+          <Row center flex="1" paddingRight="16">
             <Heading variant="label-default-s" onBackground="neutral-weak">
               Progress
             </Heading>
@@ -87,7 +87,7 @@ export async function Dashboard({ username, activity, gallery }: DashboardProps)
                 {item.title}
               </Heading>
             </Column>
-            <Column overflow="hidden" flex="4" s={{ hide: true }}>
+            <Column flex="4" overflow="hidden" s={{ hide: true }}>
               <Heading
                 variant="body-default-s"
                 onBackground="neutral-medium"

@@ -47,7 +47,7 @@ export const home: Home = {
       type: "gh",
       title: "Overlap",
       name: "radiusxt/overlap",
-      progress: 10
+      progress: 15
     },
   ],
 };

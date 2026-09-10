@@ -114,7 +114,13 @@ export default async function RootLayout({children}: Readonly<{children: React.R
             </RevealFx>
           </Flex>
           {/* Particle Animation */}
-          <Flex position="fixed" zIndex={0} pointerEvents="none" style={{ inset: 0 }}>
+          <Flex
+            position="fixed"
+            zIndex={0}
+            pointerEvents="none"
+            style={{ inset: 0 }}
+            s={{ hide: true }}
+          >
             <RevealFx speed="fast">
               <Particle
                 speed={1.5}
