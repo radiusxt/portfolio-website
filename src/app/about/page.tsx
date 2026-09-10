@@ -1,4 +1,5 @@
 import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
+import { Reveal } from "@/components";
 import { Experience } from "@/components/about/Experience";
 import { Introduction } from "@/components/about/Introduction";
 import { Skills } from "@/components/about/Skills";
@@ -32,17 +33,21 @@ export default function About() {
       </Column>
       <Column fill maxWidth="l" minHeight="100vh" horizontal="center">
         <Column center align="center" top="48">
-          <Heading as="h1" variant="display-default-m">
-            {about.work.title}
-          </Heading>
+          <Reveal>
+            <Heading as="h1" variant="display-default-m">
+              {about.work.title}
+            </Heading>
+          </Reveal>
         </Column>
         <Experience />
       </Column>
       <Column fill maxWidth="l" minHeight="100vh" horizontal="center">
         <Column center align="center">
-          <Heading as="h1" variant="display-default-m">
-            {about.technical.title}
-          </Heading>
+          <Reveal>
+            <Heading as="h1" variant="display-default-m">
+              {about.technical.title}
+            </Heading>
+          </Reveal>
         </Column>
         <Skills />
       </Column>

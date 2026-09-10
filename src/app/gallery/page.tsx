@@ -1,4 +1,5 @@
 import { Column, Heading, Logo, Meta, RevealFx, Row, Schema } from "@once-ui-system/core";
+import { Reveal } from "@/components";
 import { Highlights } from "@/components/gallery/Highlights";
 import { Testimonials } from "@/components/gallery/Testimonials";
 import { Portfolio } from "@/components/gallery/Portfolio";
@@ -46,23 +47,27 @@ export default function Gallery() {
         <Highlights />
       </Column>
       <Column fill maxWidth="60vw" minHeight="100vh" horizontal="center">
-        <Column center align="center" gap="56">
-          <Heading as="h1" variant="display-default-m">
-            {gallery.subtitle}
-          </Heading>
-          <Heading as="h2" variant="heading-default-m" wrap="nowrap">
-            {gallery.subkicker}
-          </Heading>
-        </Column>
+        <Reveal>
+          <Column center align="center" gap="56">
+            <Heading as="h1" variant="display-default-m">
+              {gallery.subtitle}
+            </Heading>
+            <Heading as="h2" variant="heading-default-m" wrap="nowrap">
+              {gallery.subkicker}
+            </Heading>
+          </Column>
+        </Reveal>
         <Testimonials />
       </Column>
       <Column fill maxWidth="80vw" minHeight="100vh" bottom="12" horizontal="center">
-        <Row dark>
-          <Logo wordmark="/trademarks/logo-light.png" style={{ transform: "scale(3)" }} />
-        </Row>
-        <Row light>
-          <Logo wordmark="/trademarks/logo-dark.png" style={{ transform: "scale(3)" }} />
-        </Row>
+        <Reveal>
+          <Row dark bottom="24" marginY="32">
+            <Logo wordmark="/trademarks/logo-light.png" style={{ transform: "scale(3)" }} />
+          </Row>
+          <Row light bottom="24" marginY="32">
+            <Logo wordmark="/trademarks/logo-dark.png" style={{ transform: "scale(3)" }} />
+          </Row>
+        </Reveal>
         <Portfolio />
       </Column>
     </Column>

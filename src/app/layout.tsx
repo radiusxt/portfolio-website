@@ -139,9 +139,11 @@ export default async function RootLayout({children}: Readonly<{children: React.R
               </RouteGuard>
             </Transition>
           </Flex>
-          <RevealFx>
-            <Footer />
-          </RevealFx>
+          <Transition>
+            <RevealFx>
+              <Footer />
+            </RevealFx>
+          </Transition>
         </Column>
         <Analytics />
         <SpeedInsights />
