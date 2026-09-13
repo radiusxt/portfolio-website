@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "standalone",
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   allowedDevOrigins: ["192.168.4.34"],
   outputFileTracingExcludes: {
-    '*': ['public/images/gallery/**/*'],
+    "*": ["public/images/gallery/**/*"],
   },
   images: {
     localPatterns: [

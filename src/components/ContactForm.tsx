@@ -11,6 +11,7 @@ import {
   Textarea,
   useToast
 } from "@once-ui-system/core";
+import { Reveal } from "@/components";
 
 /* Contact form for users to get in touch via email */
 export function ContactForm() {
@@ -90,80 +91,92 @@ export function ContactForm() {
 
   return (
     <Column fillWidth horizontal="center" gap="l">
-      <Heading variant="display-default-m" paddingBottom="16">
-        Get in Touch
-      </Heading>
-      <Heading variant="heading-default-s" align="center" paddingBottom="16">
-        Let's build together. Send a message below for work opportunities or partnership inquiries.
-      </Heading>
+      <Reveal>
+        <Column gap="40">
+          <Heading variant="display-default-m" paddingBottom="16">
+            Get in Touch
+          </Heading>
+          <Heading variant="heading-default-s" align="center" paddingBottom="16">
+            Let's build together. Send a message below for work opportunities or partnership inquiries.
+          </Heading>
+        </Column>
+      </Reveal>
       <form onSubmit={handleSubmit} style={{ width: "100%" }}>
         <Column
           gap="24"
           style={{ "--neutral-alpha-weak": "var(--neutral-background-medium)" } as CSSProperties}
         >
-          <Input
-            label="Name*"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            hasSuffix={formData.name.length > 0 &&
-              <IconButton
-                variant="ghost"
-                icon="close"
-                size="s"
-                aria-label="clear"
-                onClick={() => handleClear("name")}
-              />
-            }
-          />
-          <Input
-            label="Email*"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            validate={handleEmail}
-            hasSuffix={formData.email.length > 0 &&
-              <IconButton
-                variant="ghost"
-                icon="close"
-                size="s"
-                aria-label="clear"
-                onClick={() => handleClear("email")}
-              />
-            }
-          />
-          <Textarea
-            label="Message*"
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            lines={10}
-            maxLength={500}
-            resize="none"
-            characterCount
-            hasSuffix={formData.message.length > 0 &&
-              <IconButton
-                variant="ghost"
-                icon="close"
-                size="s"
-                aria-label="clear"
-                onClick={() => handleClear("message")}
-                style={{
-                  position: "absolute",
-                  top: "calc(-1 * var(--static-space-128))",
-                  right: "var(--static-space-12)"
-                }}
-              />
-            }
-          />
-          <Button fillWidth variant="primary" type="submit" loading={status === "loading"}>
-            <ShineFx baseOpacity={1} speed={2} inverse>
-              Send
-            </ShineFx>
-          </Button>
+          <Reveal>
+            <Input
+              label="Name*"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              hasSuffix={formData.name.length > 0 &&
+                <IconButton
+                  variant="ghost"
+                  icon="close"
+                  size="s"
+                  aria-label="clear"
+                  onClick={() => handleClear("name")}
+                />
+              }
+            />
+          </Reveal>
+          <Reveal>
+            <Input
+              label="Email*"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              validate={handleEmail}
+              hasSuffix={formData.email.length > 0 &&
+                <IconButton
+                  variant="ghost"
+                  icon="close"
+                  size="s"
+                  aria-label="clear"
+                  onClick={() => handleClear("email")}
+                />
+              }
+            />
+          </Reveal>
+          <Reveal>
+            <Textarea
+              label="Message*"
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              lines={10}
+              maxLength={500}
+              resize="none"
+              characterCount
+              hasSuffix={formData.message.length > 0 &&
+                <IconButton
+                  variant="ghost"
+                  icon="close"
+                  size="s"
+                  aria-label="clear"
+                  onClick={() => handleClear("message")}
+                  style={{
+                    position: "absolute",
+                    top: "calc(-1 * var(--static-space-128))",
+                    right: "var(--static-space-12)"
+                  }}
+                />
+              }
+            />
+          </Reveal>
+          <Reveal>
+            <Button fillWidth variant="primary" type="submit" loading={status === "loading"}>
+              <ShineFx baseOpacity={1} speed={2} inverse>
+                Send
+              </ShineFx>
+            </Button>
+          </Reveal>
         </Column>
       </form>
     </Column>
