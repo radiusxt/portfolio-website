@@ -18,7 +18,7 @@ import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const posts = getPosts(["src", "app", "work", "projects"]);
+  const posts = getPosts();
   return posts.map((post) => ({ slug: post.slug }));
 }
 
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug) ? routeParams.slug.join("/") : routeParams.slug || "";
 
-  const posts = getPosts(["src", "app", "work", "projects"]);
+  const posts = getPosts();
   const post = posts.find((post) => post.slug === slugPath);
 
   if (!post) {
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function Project({ params }: { params: Promise<{ slug: string | string[] }> }) {
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug) ? routeParams.slug.join("/") : routeParams.slug || "";
-  const post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slugPath);
+  const post = getPosts().find((post) => post.slug === slugPath);
 
   if (!post) {
     notFound();
