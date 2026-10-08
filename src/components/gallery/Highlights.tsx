@@ -42,7 +42,7 @@ export function Highlights() {
                     <Media src="" aspectRatio="3/2" radius="xl" loading />
                   }
                 >
-                  <TiltFx intensity={2}>
+                  <TiltFx intensity={3}>
                     <Media src={image.src} priority radius="xl" />
                   </TiltFx>
                 </Loading>

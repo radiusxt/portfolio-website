@@ -232,32 +232,80 @@ export const gallery: Gallery = {
   kicker: "Greatest hits from the track.",
   images: [
     // 0 - 7
-    { src: "/images/gallery/DSC09431.jpg" },
-    { src: "/images/gallery/DSC00175.jpg" },
-    { src: "/images/gallery/DSC09819.jpg" },
-    { src: "/images/gallery/DSC02751.jpg" },
-    { src: "/images/gallery/DSC01001.jpg" },
-    { src: "/images/gallery/DSC09506.jpg" },
-    { src: "/images/gallery/DSC00830.jpg" },
-    { src: "/images/gallery/DSC08489.jpg" },
+    {
+      src: "/images/gallery/DSC09431.jpg"
+    },
+    {
+      src: "/images/gallery/DSC00175.jpg"
+    },
+    {
+      src: "/images/gallery/DSC02305.jpg"
+    },
+    {
+      src: "/images/gallery/DSC02751.jpg"
+    },
+    {
+      src: "/images/gallery/DSC01001.jpg"
+    },
+    {
+      src: "/images/gallery/DSC09506.jpg"
+    },
+    {
+      src: "/images/gallery/DSC00830.jpg"
+    },
+    {
+      src: "/images/gallery/DSC05385.jpg"
+    },
     // 8 - 15
-    { src: "/images/gallery/DSC09060.jpg" },
-    { src: "/images/gallery/DSC00295.jpg" },
-    { src: "/images/gallery/DSC09646.jpg" },
-    { src: "/images/gallery/DSC01558.jpg" },
-    { src: "/images/gallery/DSC09319.jpg" },
-    { src: "/images/gallery/DSC08624.jpg" },
-    { src: "/images/gallery/DSC00088.jpg" },
-    { src: "/images/gallery/DSC00183.jpg" },
+    {
+      src: "/images/gallery/DSC09060.jpg"
+    },
+    {
+      src: "/images/gallery/DSC00295.jpg"
+    },
+    {
+      src: "/images/gallery/DSC09646.jpg"
+    },
+    {
+      src: "/images/gallery/DSC01558.jpg"
+    },
+    {
+      src: "/images/gallery/DSC09319.jpg"
+    },
+    {
+      src: "/images/gallery/DSC08624.jpg"
+    },
+    {
+      src: "/images/gallery/DSC00088.jpg"
+    },
+    {
+      src: "/images/gallery/DSC00183.jpg"
+    },
     // 16 - 23
-    { src: "/images/gallery/DSC09747.jpg" },
-    { src: "/images/gallery/DSC08308.jpg" },
-    { src: "/images/gallery/DSC00017.jpg" },
-    { src: "/images/gallery/DSC09916.jpg" },
-    { src: "/images/gallery/DSC09550.jpg" },
-    { src: "/images/gallery/DSC01055.jpg" },
-    { src: "/images/gallery/DSC00806.jpg" },
-    { src: "/images/gallery/DSC00330.jpg" },
+    {
+      src: "/images/gallery/DSC09747.jpg"
+    },
+    {
+      src: "/images/gallery/DSC08308.jpg"
+    },
+    {
+      src: "/images/gallery/DSC01412.jpg"
+    },
+    {
+      src: "/images/gallery/DSC09916.jpg"
+    },
+    {
+      src: "/images/gallery/DSC01893.jpg"
+    },
+    {
+      src: "/images/gallery/DSC01055.jpg"
+    },
+    {
+      src: "/images/gallery/DSC00806.jpg"
+    },
+    {
+      src: "/images/gallery/DSC00330.jpg"
+    },
   ],
   subtitle: "Testimonials",
   subkicker: "Real feedback from people I've partnered with.",
