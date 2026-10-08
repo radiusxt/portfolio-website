@@ -278,6 +278,10 @@ export const gallery: Gallery = {
       type: "sport",
       link: "https://gallery.hyperdrivemedia.co/KqjDnqmeokytp2Ae",
     },
+    {
+      type: "sport",
+      link: "https://gallery.hyperdrivemedia.co/9KF3Yx4OmP7e96Nd",
+    },
     // Travel
     {
       type: "travel",
