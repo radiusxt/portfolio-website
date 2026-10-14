@@ -5,3 +5,15 @@
     text-align: center;
   }
 }
+
+:global([data-theme="dark"]) .glass {
+  backdrop-filter: blur(0.75rem) !important;
+  background-color: rgba(8, 8, 8, 0.9) !important;
+  transition: background-color 0.2s ease;
+}
+
+:global([data-theme="light"]) .glass {
+  backdrop-filter: blur(0.75rem) !important;
+  background-color: rgba(255, 255, 255, 1) !important;
+  transition: background-color 0.2s ease;
+}

@@ -33,7 +33,7 @@ export function ProjectCard({ title, description, image, team, tags }: ProjectCa
         hideDelay={120}
         trigger={
           <Card
-            className={styles.hover}
+            className={styles.glass}
             direction="column"
             horizontal="center"
             fillWidth

@@ -16,8 +16,7 @@ export async function generateMetadata() {
 /* Software Page Layout */
 export default function Work() {
   const projects = getPosts().sort((a, b) => {
-    return new Date(b.metadata.publishedAt).getTime() -
-      new Date(a.metadata.publishedAt).getTime();
+    return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
   });
 
   return (

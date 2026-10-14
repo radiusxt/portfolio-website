@@ -1,120 +1,150 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 import { Column, TiltFx } from "@once-ui-system/core";
 import { ProjectCard, Scroll } from "@/components";
 import type { Post } from "@/utils/utils";
 
-const HOLD = 0.3;
-const FADE = 0.45;
+gsap.registerPlugin(ScrollTrigger);
+
+const STACK_TOP = 100; // px from the viewport top where every card's top edge pins
+const STACK_OFFSET = 64; // px each card sits below the one before it
+const SCALE_STEP = 0.075; // how much smaller each earlier card ends up
+const MIN_SCALE = 0.5;
+const VISIBLE_STACK = 2; // cards left showing at rest (one more while a new card slides in)
 
 export function Projects({ projects }: { projects: Post[] }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeIndexRef = useRef(0);
-
-  const setCardRefs = useMemo(() => Array.from({ length: projects.length }, (_, i) =>
-    (el: HTMLDivElement | null) => {
-      cardRefs.current[i] = el;
-    }), [projects.length]
-  );
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
-
+ 
     if (!wrapper || projects.length === 0) {
       return;
     }
+ 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
 
-    const updateOpacity = () => {
-      const rect = wrapper.getBoundingClientRect();
-      const scrollableDistance = rect.height - window.innerHeight;
-      const scrolled = Math.min(Math.max(-rect.top, 0), scrollableDistance);
-      const progress = scrollableDistance > 0 ? scrolled / scrollableDistance : 0;
-      const floatIndex = progress * (projects.length - 1);
-      const nearestIndex = Math.round(floatIndex);
-      const distance = Math.abs(floatIndex - nearestIndex);
-      const opacity = distance <= HOLD ? 1 : Math.max(0, 1 - (distance - HOLD) / (FADE - HOLD));
-      const activeCard = cardRefs.current[nearestIndex];
-
-      if (activeCard) {
-        activeCard.style.opacity = String(opacity);
-      }
-
-      if (nearestIndex !== activeIndexRef.current) {
-        activeIndexRef.current = nearestIndex;
-        setActiveIndex(nearestIndex);
-      }
-    };
-
-    let ticking = false;
-
-    const onScroll = () => {
-      if (ticking) {
+    const observer = new ResizeObserver(() => ScrollTrigger.refresh());
+    
+    // gsap.context scopes the selector below to this component and
+    // lets ctx.revert() clean up the timeline + ScrollTrigger on unmount
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray<HTMLElement>("[data-stack-card]");
+      const first = cards[0];
+      const step = cards.length > 1 ? 1 / (cards.length - 1) : 1;
+      
+      // y offset that puts the first card in the vertical middle of the
+      // viewport (its pinned position is STACK_TOP, hence the subtraction)
+      const centerY = () => Math.max(0, (window.innerHeight - first.offsetHeight) / 2 - STACK_TOP);
+ 
+      // Nothing to stack, so just centre the single card
+      if (cards.length < 2) {
+        gsap.set(first, { y: centerY });
         return;
       }
 
-      ticking = true;
-
-      requestAnimationFrame(() => {
-        updateOpacity();
-        ticking = false;
+      // One timeline, scrubbed across the whole wrapper (0 -> 1)
+      const tl = gsap.timeline({
+        defaults: { ease: "none" },
+        scrollTrigger: {
+          trigger: wrapper,
+          start: `top ${STACK_TOP}px`,
+          end: `bottom bottom+=${STACK_TOP}`,
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
       });
-    };
+ 
+      cards.forEach((card, i) => {
+        const start = i * step;
+ 
+        if (start >= 1) {
+          return;
+        }
+ 
+        const targetScale = Math.max(MIN_SCALE, 1 - (cards.length - i - 1) * SCALE_STEP);
+ 
+        // Card i begins shrinking at i * step and finishes at the end,
+        // so earlier cards shrink further as more cards stack on top
+        tl.to(card, { scale: targetScale, duration: 1 - start }, start);
 
-    updateOpacity();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+        if (i + VISIBLE_STACK <= cards.length - 1) {
+          tl.to(
+            card,
+            { autoAlpha: 0, duration: step },
+            (i + VISIBLE_STACK - 1) * step
+          );
+        }
+      });
 
+      tl.fromTo(first, { y: centerY }, { y: 0, duration: step }, 0);
+
+      if (cards.length > VISIBLE_STACK) {
+        const slots = gsap.utils.toArray<HTMLElement>("[data-stack-slot]");
+        const pushStart = (VISIBLE_STACK - 1) * step;
+ 
+        tl.to(
+          slots,
+          {
+            y: -(cards.length - VISIBLE_STACK) * STACK_OFFSET,
+            duration: 1 - pushStart,
+          },
+          pushStart
+        );
+      }
+
+      observer.observe(first);
+    }, wrapper);
+ 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      observer.disconnect();
+      ctx.revert();
     };
   }, [projects.length]);
 
   return (
-    <Column
-      ref={wrapperRef}
-      fill
-      position="relative"
-      height={`${projects.length * 100}vh`}
-    >
-      <Column
-        fill
-        center
-        position="sticky"
-        height="100vh"
-        top="40"
-        s={{ style: { top: "-4rem" }}}
-      >
-        {projects.map(({ slug, metadata }, index) =>
-          <Column
-            key={slug}
-            ref={setCardRefs[index]}
-            fill
-            center
-            position="absolute"
-            pointerEvents={index === activeIndex ? "auto" : "none" }
-            style={{ inset: 0, willChange: "opacity" }}
+    <Column ref={wrapperRef} fillWidth position="relative" top="40">
+      {projects.map(({ slug, metadata }, index) =>
+        <Column
+          key={slug}
+          fillWidth
+          style={{
+            position: "sticky",
+            top: STACK_TOP,
+            height: "100vh",
+            justifyContent: "flex-start",
+          }}
+        >
+          <div
+            data-stack-card
+            style={{
+              position: "relative",
+              top: index * STACK_OFFSET,
+              width: "100%",
+              transformOrigin: "top center",
+              willChange: "transform",
+            }}
           >
-            {index === activeIndex &&
-              <Scroll href={`/work/${slug}`}>
-                <TiltFx intensity={0.5}>
-                  <ProjectCard
-                    title={metadata.title}
-                    description={metadata.summary}
-                    image={metadata.image}
-                    team={metadata.team}
-                    link={metadata.link || ""}
-                    tags={metadata.tags || []}
-                  />
-                </TiltFx>
-              </Scroll>
-            }
-          </Column>
-        )}
-      </Column>
+            <Scroll href={`/work/${slug}`}>
+              <TiltFx intensity={0.5}>
+                <ProjectCard
+                  title={metadata.title}
+                  description={metadata.summary}
+                  image={metadata.image}
+                  team={metadata.team}
+                  link={metadata.link || ""}
+                  tags={metadata.tags || []}
+                />
+              </TiltFx>
+            </Scroll>
+          </div>
+        </Column>
+      )}
     </Column>
   );
 }

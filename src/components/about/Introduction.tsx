@@ -44,9 +44,9 @@ export function Introduction() {
 
   return (
     <Row
+      id={about.title}
       fill
       center
-      id={about.title}
       gap="8"
       style={{ letterSpacing: "0px", scrollMarginTop: "8rem" }}
       s={{
