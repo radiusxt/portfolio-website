@@ -29,7 +29,7 @@ export function Testimonials() {
               paddingX="16"
               paddingY="12"
               marginX="16"
-              s={{ style: { minWidth: "70vw" }}}
+              s={{ style: { width: "70vw" }}}
             >
               <Heading
                 variant="body-default-m"

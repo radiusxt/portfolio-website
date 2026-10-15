@@ -11,6 +11,7 @@ import {
 import { Loading, Reveal } from "@/components";
 import { gallery } from "@/resources";
 
+/* Photography Portfolio */
 export function Portfolio() {
   const sport = gallery.galleries.filter((gallery) => gallery.type === "sport");
   const travel = gallery.galleries.filter((gallery) => gallery.type === "travel");
@@ -30,7 +31,7 @@ export function Portfolio() {
           />
           <AutoScroll speed="medium" hover="slow" reverse={index % 2 === 0}>
             {galleries.map(({ link }) =>
-              <Column key={link} center margin="16">
+              <Column key={link} center margin="16" s={{ style: { width: "60vw" }}}>
                 <Loading
                   fallback={
                     <Card

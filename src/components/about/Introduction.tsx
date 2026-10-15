@@ -6,7 +6,7 @@ import { Button, Column, Heading, Media, RevealFx, Row } from "@once-ui-system/c
 import { Loading, SpotlightBorder } from "@/components";
 import { about, person, social } from "@/resources";
 
-/* Introduction About Me */
+/* Introduction */
 export function Introduction() {
   const indexRef = useRef(0);
 

@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
-  allowedDevOrigins: ["192.168.4.34"],
+  allowedDevOrigins: ["192.168.4.*"],
   outputFileTracingExcludes: {
     "*": ["public/images/gallery/**/*"],
   },
