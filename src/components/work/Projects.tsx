@@ -7,19 +7,19 @@ import { Column, TiltFx } from "@once-ui-system/core";
 import { ProjectCard, Scroll } from "@/components";
 import type { Post } from "@/utils/utils";
 
+interface ProjectProps {
+  projects: Post[];
+  visible?: number;
+}
+
 gsap.registerPlugin(ScrollTrigger);
 
-const STACK_TOP = 100; // px from the viewport top where every card's top edge pins
-const STACK_OFFSET = 64; // px each card sits below the one before it
-const SCALE_STEP = 0.075; // how much smaller each earlier card ends up
-const MIN_SCALE = 0.5;
-const VISIBLE_STACK = 2; // cards left showing at rest (one more while a new card slides in)
-
-export function Projects({ projects }: { projects: Post[] }) {
+export function Projects({ projects, visible = 2 }: ProjectProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
+    const observer = new ResizeObserver(() => ScrollTrigger.refresh());
  
     if (!wrapper || projects.length === 0) {
       return;
@@ -29,32 +29,25 @@ export function Projects({ projects }: { projects: Post[] }) {
       return;
     }
 
-    const observer = new ResizeObserver(() => ScrollTrigger.refresh());
-    
-    // gsap.context scopes the selector below to this component and
-    // lets ctx.revert() clean up the timeline + ScrollTrigger on unmount
     const ctx = gsap.context(() => {
       const cards = gsap.utils.toArray<HTMLElement>("[data-stack-card]");
       const first = cards[0];
       const step = cards.length > 1 ? 1 / (cards.length - 1) : 1;
-      
-      // y offset that puts the first card in the vertical middle of the
-      // viewport (its pinned position is STACK_TOP, hence the subtraction)
-      const centerY = () => Math.max(0, (window.innerHeight - first.offsetHeight) / 2 - STACK_TOP);
+      const centerY = () => Math.max(0, (window.innerHeight - first.offsetHeight) / 2 - 104);
  
-      // Nothing to stack, so just centre the single card
+      // Nothing to stack, so centre a single card
       if (cards.length < 2) {
         gsap.set(first, { y: centerY });
         return;
       }
 
-      // One timeline, scrubbed across the whole wrapper (0 -> 1)
+      // One timeline, scrubbed across the whole wrapper
       const tl = gsap.timeline({
         defaults: { ease: "none" },
         scrollTrigger: {
           trigger: wrapper,
-          start: `top ${STACK_TOP}px`,
-          end: `bottom bottom+=${STACK_TOP}`,
+          start: "top 104px",
+          end: "bottom bottom+=104",
           scrub: true,
           invalidateOnRefresh: true,
         },
@@ -66,36 +59,25 @@ export function Projects({ projects }: { projects: Post[] }) {
         if (start >= 1) {
           return;
         }
- 
-        const targetScale = Math.max(MIN_SCALE, 1 - (cards.length - i - 1) * SCALE_STEP);
- 
+        
         // Card i begins shrinking at i * step and finishes at the end,
         // so earlier cards shrink further as more cards stack on top
+        const targetScale = Math.max(0.5, 1 - (cards.length - i - 1) * 0.1);
         tl.to(card, { scale: targetScale, duration: 1 - start }, start);
 
-        if (i + VISIBLE_STACK <= cards.length - 1) {
-          tl.to(
-            card,
-            { autoAlpha: 0, duration: step },
-            (i + VISIBLE_STACK - 1) * step
-          );
+        if (i + visible <= cards.length - 1) {
+          tl.to(card, { autoAlpha: 0, duration: step }, (i + visible - 1) * step);
         }
       });
 
       tl.fromTo(first, { y: centerY }, { y: 0, duration: step }, 0);
-
-      if (cards.length > VISIBLE_STACK) {
+      
+      // When a card starts to fade out, push the stack upwards
+      // on the viewport so it's position remains the same
+      if (cards.length > visible) {
         const slots = gsap.utils.toArray<HTMLElement>("[data-stack-slot]");
-        const pushStart = (VISIBLE_STACK - 1) * step;
- 
-        tl.to(
-          slots,
-          {
-            y: -(cards.length - VISIBLE_STACK) * STACK_OFFSET,
-            duration: 1 - pushStart,
-          },
-          pushStart
-        );
+        const pushStart = (visible - 1) * step;
+        tl.to(slots, { y: -(cards.length - visible) * 72, duration: 1 - pushStart }, pushStart);
       }
 
       observer.observe(first);
@@ -105,28 +87,28 @@ export function Projects({ projects }: { projects: Post[] }) {
       observer.disconnect();
       ctx.revert();
     };
-  }, [projects.length]);
+  }, [projects.length, visible]);
 
   return (
-    <Column ref={wrapperRef} fillWidth position="relative" top="40">
+    <Column ref={wrapperRef} fillWidth position="relative" top="48">
       {projects.map(({ slug, metadata }, index) =>
-        <Column
+        <div
           key={slug}
-          fillWidth
+          data-stack-slot
           style={{
-            position: "sticky",
-            top: STACK_TOP,
             height: "100vh",
             justifyContent: "flex-start",
+            position: "sticky",
+            top: 104,
           }}
         >
           <div
             data-stack-card
             style={{
               position: "relative",
-              top: index * STACK_OFFSET,
-              width: "100%",
+              top: index * 72,
               transformOrigin: "top center",
+              width: "100%",
               willChange: "transform",
             }}
           >
@@ -143,7 +125,7 @@ export function Projects({ projects }: { projects: Post[] }) {
               </TiltFx>
             </Scroll>
           </div>
-        </Column>
+        </div>
       )}
     </Column>
   );
