@@ -97,7 +97,7 @@ export function ContactForm() {
             Get in Touch
           </Heading>
           <Heading as="p" variant="heading-default-s" align="center" paddingBottom="16">
-            Let's build together. Send a message below for work opportunities or partnership inquiries.
+            Let's work together. Send a message below for work opportunities or partnership inquiries.
           </Heading>
         </Column>
       </Reveal>

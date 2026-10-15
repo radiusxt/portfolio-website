@@ -68,7 +68,7 @@ export function Introduction() {
           <Heading
             as="p"
             variant="body-default-xl"
-            wrap="pretty"
+            wrap="balance"
             style={{ whiteSpace: "pre-line", lineHeight: "1.5" }}
           >
             {about.intro}

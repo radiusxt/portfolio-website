@@ -60,11 +60,11 @@ export const about: About = {
   greetings: ["Hi,", "你好,"],
   kicker: "👋 I'm Nathaniel",
   intro: `\
-    I'm a full-stack engineer who spends weekdays building and weekends trying to freeze 300km/h in a single frame. Half my brain lives in software development while the other half is somewhere trackside with a camera, chasing shots most people see as a blur.
+    I'm a full-stack software engineer who spends weekdays building and weekends trying to freeze 300km/h in a single frame. Half my brain lives in software development while the other half is trackside with a camera, chasing shots most people see as a blur.
   
     Same instinct, different channels.
 
-    I'm drawn to solving hard problems worth the effort and dedication it takes to crack. I create my best work with people who care about detail as much as the big picture.
+    I'm drawn to solving hard problems worth the effort and dedication it takes to crack. I create my best work with people who care about detail as much as the bigger picture.
     
     Working on something interesting? Let's talk.
   `,

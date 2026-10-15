@@ -9,6 +9,7 @@ import type { Post } from "@/utils/utils";
 
 interface ProjectProps {
   projects: Post[];
+  // At most, visible + 1 cards will be displayed at any time
   visible?: number;
 }
 
@@ -34,14 +35,13 @@ export function Projects({ projects, visible = 2 }: ProjectProps) {
       const first = cards[0];
       const step = cards.length > 1 ? 1 / (cards.length - 1) : 1;
       const centerY = () => Math.max(0, (window.innerHeight - first.offsetHeight) / 2 - 104);
- 
+
       // Nothing to stack, so centre a single card
       if (cards.length < 2) {
         gsap.set(first, { y: centerY });
         return;
       }
 
-      // One timeline, scrubbed across the whole wrapper
       const tl = gsap.timeline({
         defaults: { ease: "none" },
         scrollTrigger: {
@@ -72,8 +72,7 @@ export function Projects({ projects, visible = 2 }: ProjectProps) {
 
       tl.fromTo(first, { y: centerY }, { y: 0, duration: step }, 0);
       
-      // When a card starts to fade out, push the stack upwards
-      // on the viewport so it's position remains the same
+      // When a card fades out, push the stack upwards on the viewport so it maintains its position
       if (cards.length > visible) {
         const slots = gsap.utils.toArray<HTMLElement>("[data-stack-slot]");
         const pushStart = (visible - 1) * step;
@@ -99,7 +98,7 @@ export function Projects({ projects, visible = 2 }: ProjectProps) {
             height: "100vh",
             justifyContent: "flex-start",
             position: "sticky",
-            top: 104,
+            top: "10vh",
           }}
         >
           <div

@@ -123,7 +123,7 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
 function createParagraph({ children }: TextProps) {
   return (
     <Heading
-      as="p"
+      as="h6"
       variant="body-default-l"
       wrap="wrap"
       marginY="12"
