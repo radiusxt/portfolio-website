@@ -32,6 +32,7 @@ export function Testimonials() {
               s={{ style: { width: "70vw" }}}
             >
               <Heading
+                as="p"
                 variant="body-default-m"
                 onBackground="neutral-strong"
                 wrap="pretty"
@@ -39,10 +40,18 @@ export function Testimonials() {
               >
                 {testimonial.testimonial}
               </Heading>
-              <Heading variant="body-default-l" onBackground="accent-weak">
+              <Heading
+                as="p"
+                variant="body-default-l"
+                onBackground="accent-weak"
+              >
                 {testimonial.person}
               </Heading>
-              <Heading variant="body-default-s" onBackground="neutral-weak">
+              <Heading
+                as="p"
+                variant="body-default-s"
+                onBackground="neutral-weak"
+              >
                 {testimonial.organisation}
               </Heading>
             </Card>

@@ -38,7 +38,9 @@ export function Header() {
     <Row className={styles.header} as="header" position="sticky" zIndex={10}>
       <Row fill center radius="full" paddingTop="20" paddingBottom="32">
         <Row
+          as="nav"
           className={styles.glass}
+          aria-label="Primary"
           border="neutral-alpha-weak"
           radius="full"
           padding="2"
@@ -46,24 +48,34 @@ export function Header() {
         >
           <Row center>
             {routes["/"] &&
-              <Scroll target={home.title} href="/">
-                <Button variant="ghost" prefixIcon="home" size="xl" />
+              <Scroll target={home.title} href="/" label="Home">
+                <Button
+                  variant="ghost"
+                  prefixIcon="home"
+                  tabIndex={-1}
+                  weight="default"
+                  size="xl"
+                  aria-hidden
+                />
               </Scroll>
             }
             <Line vert maxHeight="32" background="neutral-alpha-strong" />
             {structure.map(({ path, target, icon, label }) =>
               Object.entries({
-                desktop: { s: { hide: true }, label },
-                mobile: { hide: true, s: { hide: false }, label: undefined },
-              }).map(([key, { label, ...rowProps }]) =>
+                desktop: { s: { hide: true }, showLabel: true },
+                mobile: { hide: true, s: { hide: false }, showLabel: false },
+              }).map(([key, { showLabel, ...rowProps }]) =>
                 <Row key={`${path}-${key}`} {...rowProps}>
-                  <Scroll target={target} href={path}>
+                  <Scroll target={target} href={path} label={label}>
                     <Button
                       variant="ghost"
                       prefixIcon={icon}
-                      label={label}
+                      tabIndex={-1}
+                      label={showLabel ? label : undefined}
+                      aria-label={label}
                       weight="default"
                       size="xl"
+                      aria-hidden
                     />
                   </Scroll>
                 </Row>

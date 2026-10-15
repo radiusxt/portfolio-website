@@ -28,10 +28,6 @@ export function ThemeToggle() {
       size="xl"
       onClick={() => setTheme(nextTheme)}
       aria-label={`Switch to ${nextTheme} mode.`}
-      onClickCapture={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        setTheme(nextTheme);
-        (e.currentTarget).blur();
-      }}
     />
   );
 }

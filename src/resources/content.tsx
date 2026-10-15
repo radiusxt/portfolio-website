@@ -32,7 +32,7 @@ export const home: Home = {
   path: "/",
   label: "Home",
   title: "Hyperdrive Media",
-  description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase}`,
+  description: `A portfolio showcasing my work and experience as a ${person.role.toLowerCase()}.`,
   headline: "Building software that scales. Capturing images that inspire.",
   subline: "👋 I'm Nathaniel and I'm a",
   roles: [
@@ -56,7 +56,7 @@ export const about: About = {
   path: "/about",
   label: "About",
   title: "About Me",
-  description: `${person.name}, a ${person.role.toLowerCase} based in ${person.location}.`,
+  description: `${person.name}, a ${person.role.toLowerCase()} based in ${person.location}.`,
   greetings: ["Hi,", "你好,"],
   kicker: "👋 I'm Nathaniel",
   intro: `\

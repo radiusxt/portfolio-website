@@ -37,6 +37,8 @@ export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
       return;
     }
 
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     let width = 0;
     let height = 0;
     let centerX = 0;
@@ -135,7 +137,10 @@ export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
       }
 
       ctx.globalAlpha = 1;
-      animationId = requestAnimationFrame(tick);
+
+      if (!reduceMotion) {
+        animationId = requestAnimationFrame(tick);
+      }
     };
 
     // Reset lastTime when the tab regains visibility so the next tick
@@ -149,8 +154,10 @@ export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
     resize();
     init();
 
-    // Handle reduced motion setting
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (reduceMotion) {
+      tick(0);
+
+    } else {
       animationId = requestAnimationFrame(tick);
     }
     
@@ -158,11 +165,18 @@ export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
 
     const handleResize = () => {
       clearTimeout(resizeTimeout);
-      
+
       // Resizing can happen at most once every 250ms.
-      resizeTimeout = setTimeout(resize, 250);
+      resizeTimeout = setTimeout(() => {
+        resize();
+
+        if (reduceMotion) {
+          tick(0);
+        }
+      }, 250);
     };
 
+    window.addEventListener("resize", handleResize);
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {

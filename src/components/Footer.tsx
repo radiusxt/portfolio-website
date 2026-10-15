@@ -19,6 +19,7 @@ export function Footer() {
         s={{ direction: "column", horizontal: "center" }}
       >
         <Heading
+          as="p"
           variant="body-default-m"
           onBackground="neutral-weak"
           style={{ letterSpacing: "0.1px" }}
@@ -26,10 +27,6 @@ export function Footer() {
           © {currentYear}. {person.name}. Built with {}
           <SmartLink href="https://once-ui.com/" unstyled>
             Once UI
-          </SmartLink>
-          {" and "}
-          <SmartLink href="https://vercel.com/" unstyled>
-            Vercel
           </SmartLink>
           .
         </Heading>

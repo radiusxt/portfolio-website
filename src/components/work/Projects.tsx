@@ -112,7 +112,7 @@ export function Projects({ projects, visible = 2 }: ProjectProps) {
               willChange: "transform",
             }}
           >
-            <Scroll href={`/work/${slug}`}>
+            <Scroll href={`/work/${slug}`} label={`${metadata.title}`}>
               <TiltFx intensity={0.5}>
                 <ProjectCard
                   title={metadata.title}

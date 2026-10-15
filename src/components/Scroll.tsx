@@ -9,10 +9,11 @@ interface ScrollProps {
   children: ReactNode;
   target?: string;
   href?: string;
+  label?: string;
 }
 
 /* Scroll to top of page or target location */
-export function Scroll({ children, target, href }: ScrollProps) {
+export function Scroll({ children, target, href, label }: ScrollProps) {
   const pathname = usePathname();
   const { navigate } = useNavigation();
 
@@ -52,7 +53,12 @@ export function Scroll({ children, target, href }: ScrollProps) {
   };
 
   return (
-    <a href={href} onClick={handleClick}>
+    <a
+      href={href}
+      onClick={handleClick}
+      aria-label={label}
+      aria-current={href && href === pathname ? "page" : undefined}
+    >
       <Flex cursor="pointer">
         {children}
       </Flex>
