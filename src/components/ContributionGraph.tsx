@@ -83,7 +83,7 @@ export async function ContributionGraph({ username }: { username: string }) {
             {/* Labels */}
             <Row horizontal="center" width="12" height="16">
               {labelByCol.has(col) &&
-                <Heading variant="label-default-s" onBackground="neutral-medium">
+                <Heading as="h2" variant="label-default-s" onBackground="neutral-medium">
                   {labelByCol.get(col)}
                 </Heading>
               }
@@ -122,7 +122,7 @@ export async function ContributionGraph({ username }: { username: string }) {
       </Flex>
       {/* Legend */}
       <Row horizontal="end" vertical="center" paddingRight="4" gap="8">
-        <Heading variant="label-default-s" onBackground="neutral-weak">
+        <Heading as="h3" variant="label-default-s" onBackground="neutral-weak">
           Less
         </Heading>
         <Row gap="4">
@@ -130,7 +130,7 @@ export async function ContributionGraph({ username }: { username: string }) {
             <Flex key={color} width="12" height="12" radius="xs" background={color} />
           )}
         </Row>
-        <Heading variant="label-default-s" onBackground="neutral-weak">
+        <Heading as="h3" variant="label-default-s" onBackground="neutral-weak">
           More
         </Heading>
       </Row>

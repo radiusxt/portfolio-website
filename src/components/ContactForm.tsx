@@ -96,7 +96,7 @@ export function ContactForm() {
           <Heading variant="display-default-m" paddingBottom="16">
             Get in Touch
           </Heading>
-          <Heading variant="heading-default-s" align="center" paddingBottom="16">
+          <Heading as="p" variant="heading-default-s" align="center" paddingBottom="16">
             Let's build together. Send a message below for work opportunities or partnership inquiries.
           </Heading>
         </Column>

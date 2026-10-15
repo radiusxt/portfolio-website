@@ -35,7 +35,7 @@ export function Header() {
   ];
 
   return (
-    <Row className={styles.header} as="header" position="sticky" zIndex={10}>
+    <Row as="header" className={styles.header} position="sticky" zIndex={10}>
       <Row fill center radius="full" paddingTop="20" paddingBottom="32">
         <Row
           as="nav"

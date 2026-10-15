@@ -51,7 +51,6 @@ export default function Home() {
             style={{ paddingBottom: index === 1 ? "8vh" : "0" }}
           >
             <Heading
-              as="h1"
               variant="display-default-xl"
               style={{ lineHeight: "1.3", letterSpacing: "-1px" }}
             >
@@ -64,7 +63,7 @@ export default function Home() {
             <Heading as="h2" variant="heading-default-xl" style={{ letterSpacing: "0.3px" }}>
               {home.subline}
             </Heading>
-            <Heading>
+            <Heading as="h2">
               <TypeFx
                 variant="heading-default-xl"
                 speed={50}

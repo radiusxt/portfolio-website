@@ -123,6 +123,7 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
 function createParagraph({ children }: TextProps) {
   return (
     <Heading
+      as="p"
       variant="body-default-l"
       wrap="wrap"
       marginY="12"
@@ -170,6 +171,7 @@ function createList({ children }: { children: ReactNode }) {
 function createListItem({ children }: { children: ReactNode }) {
   return (
     <Heading
+      as="p"
       variant="body-default-l"
       wrap="wrap"
       marginY="4"

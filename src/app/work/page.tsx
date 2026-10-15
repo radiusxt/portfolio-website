@@ -34,7 +34,6 @@ export default function Work() {
         <RevealFx translateY="16" fillWidth horizontal="center">
           <Column center align="center" gap="56" s={{ style: { paddingBottom: "-12rem" }}}>
             <Heading
-              as="h1"
               id={work.title}
               variant="display-default-m"
               style={{ letterSpacing: "0px", scrollMarginTop: "8rem" }}

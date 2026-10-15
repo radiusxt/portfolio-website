@@ -53,17 +53,17 @@ export async function Dashboard({ username, activity, gallery }: DashboardProps)
         {/* Headings */}
         <Row center gap="16">
           <Row flex="2" paddingLeft="12">
-            <Heading variant="label-default-s" onBackground="neutral-weak">
+            <Heading as="h2" variant="label-default-s" onBackground="neutral-weak">
               Title
             </Heading>
           </Row>
           <Row flex="4" paddingRight="24" s={{ hide: true }}>
-            <Heading variant="label-default-s" onBackground="neutral-weak">
+            <Heading as="h2" variant="label-default-s" onBackground="neutral-weak">
               Message
             </Heading>
           </Row>
           <Row center flex="1" paddingRight="16">
-            <Heading variant="label-default-s" onBackground="neutral-weak">
+            <Heading as="h2" variant="label-default-s" onBackground="neutral-weak">
               Progress
             </Heading>
           </Row>
@@ -80,6 +80,7 @@ export async function Dashboard({ username, activity, gallery }: DashboardProps)
           >
             <Column flex="2">
               <Heading
+                as="h3"
                 variant="body-default-s"
                 onBackground="neutral-strong"
                 style={{ textOverflow: "ellipsis" }}
@@ -89,6 +90,7 @@ export async function Dashboard({ username, activity, gallery }: DashboardProps)
             </Column>
             <Column flex="4" overflow="hidden" s={{ hide: true }}>
               <Heading
+                as="p"
                 variant="body-default-s"
                 onBackground="neutral-medium"
                 wrap="nowrap"

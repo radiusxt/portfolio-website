@@ -71,10 +71,10 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
             {post.metadata.title}
           </Heading>
           <Row gap={post.metadata.publishedAt && post.metadata.link ? "64" : "0"}>
-            <Heading variant="heading-default-m" onBackground="neutral-weak">
+            <Heading as="h2" variant="heading-default-m" onBackground="neutral-weak">
               {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
             </Heading>
-            <Heading variant="heading-default-m" onBackground="neutral-weak">
+            <Heading as="h3" variant="heading-default-m" onBackground="neutral-weak">
               {post.metadata.link &&
                 <SmartLink href={post.metadata.link} unstyled>
                   {work.link}
@@ -84,6 +84,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
             </Heading>
           </Row>
           <Heading
+            as="h3"
             variant="heading-default-m"
             onBackground="neutral-weak"
             wrap="balance"
@@ -103,7 +104,7 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
                       size="s"
                       padding="2"
                     />
-                    <Heading variant="label-default-m" onBackground="neutral-weak" padding="2">
+                    <Heading as="h4" variant="label-default-m" onBackground="neutral-weak" padding="2">
                       {tag}
                     </Heading>
                   </Row>

@@ -37,6 +37,7 @@ export function Footer() {
               href={item.link}
               icon={item.icon}
               tooltip={item.name}
+              aria-label={item.name}
               variant="ghost"
               size="m"
             />

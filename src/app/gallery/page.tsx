@@ -52,7 +52,7 @@ export default function Gallery() {
             <Heading as="h1" variant="display-default-m">
               {gallery.subtitle}
             </Heading>
-            <Heading as="h2" variant="heading-default-m" wrap="nowrap">
+            <Heading as="h2" variant="heading-default-m" style={{ lineHeight: "1.5" }}>
               {gallery.subkicker}
             </Heading>
           </Column>

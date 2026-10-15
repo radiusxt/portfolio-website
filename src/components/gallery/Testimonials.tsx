@@ -41,14 +41,14 @@ export function Testimonials() {
                 {testimonial.testimonial}
               </Heading>
               <Heading
-                as="p"
+                as="h2"
                 variant="body-default-l"
                 onBackground="accent-weak"
               >
                 {testimonial.person}
               </Heading>
               <Heading
-                as="p"
+                as="h2"
                 variant="body-default-s"
                 onBackground="neutral-weak"
               >

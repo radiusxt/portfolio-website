@@ -20,7 +20,7 @@ export function Experience() {
                   </Heading>
                 </Row>
                 <Row center flex="1" s={{ horizontal: "start" }}>
-                  <Heading variant="heading-default-m" onBackground="brand-medium">
+                  <Heading as="h2" variant="heading-default-m" onBackground="brand-medium">
                     {experience.company}
                   </Heading>
                 </Row>
@@ -30,12 +30,12 @@ export function Experience() {
                 s={{ direction: "column", style: { padding: "0.5rem", gap: "0.5rem" }}}
               >
                 <Row center flex="1" s={{ horizontal: "end" }}>
-                  <Heading variant="heading-default-s" onBackground="accent-weak">
+                  <Heading as="h2"variant="heading-default-s" onBackground="accent-weak">
                     {experience.location || ""}
                   </Heading>
                 </Row>
                 <Row flex="1" horizontal="end" vertical="center">
-                  <Heading variant="heading-default-s" onBackground="neutral-weak">
+                  <Heading as="h2" variant="heading-default-s" onBackground="neutral-weak">
                     {experience.timeframe}
                   </Heading>
                 </Row>

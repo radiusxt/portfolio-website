@@ -48,7 +48,7 @@ export function Introduction() {
       fill
       center
       gap="8"
-      style={{ letterSpacing: "0px", scrollMarginTop: "8rem" }}
+      style={{ letterSpacing: "0px", scrollMarginTop: "16rem" }}
       s={{
         direction: "column-reverse",
         style: { width: "100vw", textAlign: "center", paddingBlock: "16rem" }
@@ -58,14 +58,15 @@ export function Introduction() {
       <RevealFx translateY="16" fillWidth horizontal="center">
         <Column fill gap="32">
           <Row s={{ hide: true }}>
-            <Heading as="h1" id="greeting" variant="display-default-xl">
+            <Heading id="greeting" variant="display-default-xl">
               {about.greetings[0]}
             </Heading>
           </Row>
-          <Heading variant="display-default-l">
+          <Heading as="h2" variant="display-default-l">
             {about.kicker}
           </Heading>
           <Heading
+            as="p"
             variant="body-default-xl"
             wrap="pretty"
             style={{ whiteSpace: "pre-line", lineHeight: "1.5" }}

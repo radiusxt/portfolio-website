@@ -24,7 +24,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
   return (
     <Flex
       as="html"
-      lang="en"
+      lang="en-AU"
       fillWidth
       suppressHydrationWarning
       className={classNames(

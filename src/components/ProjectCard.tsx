@@ -7,7 +7,6 @@ import {
   Icon,
   Media,
   Row,
-  SmartLink,
   Tag
 } from "@once-ui-system/core";
 import { Loading } from "@/components";

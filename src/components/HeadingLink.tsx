@@ -51,7 +51,7 @@ export function HeadingLink({ id, level, children, style }: HeadingLinkProps) {
       style={style}
       onClick={() => copyURL(id)}
     >
-      <Heading className={styles.text} id={id} variant={variant} as={asTag}>
+      <Heading as={asTag} className={styles.text} id={id} variant={variant}>
         {children}
       </Heading>
       <IconButton

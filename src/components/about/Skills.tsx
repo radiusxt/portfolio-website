@@ -9,7 +9,7 @@ export function Skills() {
       {about.technical.category.map((category, index) => 
         <Reveal key={`${category.title}`}>
           <Column fillWidth align="center" gap="48">
-            <Heading as="h2" variant="display-default-xs">
+            <Heading variant="display-default-xs">
               {category.title}
             </Heading>
             <Heading
@@ -44,7 +44,7 @@ export function Skills() {
                   <Column key={`${skill.name}`} paddingX="48">
                     <Row vertical="center" gap="16">
                       <Icon name={skill.icon} onBackground="brand-weak" size="l" />
-                      <Heading variant="body-default-m" wrap="nowrap">
+                      <Heading as="h3" variant="body-default-m" wrap="nowrap">
                         {skill.name}
                       </Heading>
                     </Row>

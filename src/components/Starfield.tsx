@@ -126,6 +126,7 @@ export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
 
         if (multi) {
           ctx.fillStyle = `hsl(${star.hue}, 100%, 50%)`;
+          
         } else {
           ctx.fillStyle = "white";
         }
@@ -166,7 +167,7 @@ export function Starfield({ count = 600, speed = 150, multi }: StarfieldProps) {
     const handleResize = () => {
       clearTimeout(resizeTimeout);
 
-      // Resizing can happen at most once every 250ms.
+      // Resizing can happen at most once every 250ms
       resizeTimeout = setTimeout(() => {
         resize();
 
