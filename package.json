@@ -1,13 +1,13 @@
 {
   "name": "@once-ui-system/magic-portfolio",
   "version": "2.3.0",
+  "packageManager": "pnpm@12.11.2",
   "scripts": {
     "dev": "next dev",
-    "export": "next export",
     "build": "next build",
-    "biome-write": "npx @biomejs/biome format --write .",
     "start": "next start",
-    "lint": "next lint"
+    "biome-write": "biome format --write .",
+    "lint": "biome lint ."
   },
   "allowScripts": {
     "@biomejs/biome": true,

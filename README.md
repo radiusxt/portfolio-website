@@ -12,12 +12,12 @@ git clone https://github.com/radiusxt/portfolio-website
 
 ### 2. Install Dependencies
 ```
-npm install
+pnpm install
 ```
 
 ### 3. Run Development Server
 ```
-npm run dev
+pnpm dev
 ```
 
 ## Environment Variables
