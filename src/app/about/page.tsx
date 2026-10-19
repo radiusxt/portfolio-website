@@ -1,8 +1,6 @@
 import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
 import { Reveal } from "@/components";
-import { Experience } from "@/components/about/Experience";
-import { Introduction } from "@/components/about/Introduction";
-import { Skills } from "@/components/about/Skills";
+import { Experience, Introduction, Skills } from "@/components/about";
 import { about, baseURL, person } from "@/resources";
 
 export async function generateMetadata() {

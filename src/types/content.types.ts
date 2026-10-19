@@ -1,6 +1,6 @@
+import type { zones } from "tzdata";
 import type { Entry, GitHubEntry } from "@/components/Dashboard";
 import type { IconName } from "@/resources/icons";
-import type { zones } from "tzdata";
 
 /** IANA time zone string */
 type IANATimeZone = Extract<keyof typeof zones, string>;

@@ -1,3 +1,4 @@
+import type { NextFontWithVariable } from "next/dist/compiled/@next/font";
 import type {
   BorderStyle,
   ChartMode,
@@ -11,7 +12,6 @@ import type {
   Theme,
   TransitionStyle,
 } from "@once-ui-system/core";
-import type { NextFontWithVariable } from "next/dist/compiled/@next/font";
 
 /**
  * Route configuration for enabled/disabled routes.

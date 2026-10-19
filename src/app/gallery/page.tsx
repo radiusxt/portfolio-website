@@ -1,8 +1,6 @@
 import { Column, Heading, Logo, Meta, RevealFx, Row, Schema } from "@once-ui-system/core";
 import { Reveal } from "@/components";
-import { Highlights } from "@/components/gallery/Highlights";
-import { Testimonials } from "@/components/gallery/Testimonials";
-import { Portfolio } from "@/components/gallery/Portfolio";
+import { Highlights, Portfolio, Testimonials } from "@/components/gallery";
 import { baseURL, gallery, person } from "@/resources";
 
 export async function generateMetadata() {

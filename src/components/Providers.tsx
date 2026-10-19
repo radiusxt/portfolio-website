@@ -18,8 +18,7 @@ import {
   type TransitionStyle,
 } from "@once-ui-system/core";
 import { NavigationProvider, ScrollProvider } from "@/components";
-import { dataStyle, style } from "@/resources";
-import { iconLibrary } from "@/resources/icons";
+import { dataStyle, iconLibrary, style } from "@/resources";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (

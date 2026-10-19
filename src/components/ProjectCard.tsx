@@ -10,7 +10,7 @@ import {
   Tag
 } from "@once-ui-system/core";
 import { Loading } from "@/components";
-import type { Team } from "@/utils/utils";
+import type { Team } from "@/utils";
 import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {

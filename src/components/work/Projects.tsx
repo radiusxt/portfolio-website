@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import { Column, TiltFx } from "@once-ui-system/core";
 import { ProjectCard, Scroll } from "@/components";
-import type { Post } from "@/utils/utils";
+import type { Post } from "@/utils";
 
 interface ProjectProps {
   projects: Post[];

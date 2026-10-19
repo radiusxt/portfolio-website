@@ -14,8 +14,7 @@ import {
 } from "@once-ui-system/core";
 import { about, baseURL, person, work } from "@/resources";
 import { CustomMDX, Loading, Reveal } from "@/components";
-import { formatDate } from "@/utils/formatDate";
-import { getPosts } from "@/utils/utils";
+import { formatDate, getPosts } from "@/utils";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts();

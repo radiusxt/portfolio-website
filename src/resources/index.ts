@@ -7,6 +7,8 @@ export {
   work,
 } from "./content";
 
+export { iconLibrary } from "./icons";
+
 export {
   baseURL,
   dataStyle,

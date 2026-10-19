@@ -1,7 +1,7 @@
 import { Column, Heading, Meta, RevealFx, Schema } from "@once-ui-system/core";
-import { Projects } from "@/components/work/Projects";
+import { Projects } from "@/components/work";
 import { baseURL, person, work } from "@/resources";
-import { getPosts } from "@/utils/utils";
+import { getPosts } from "@/utils";
 
 export async function generateMetadata() {
   return Meta.generate({

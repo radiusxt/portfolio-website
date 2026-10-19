@@ -1,3 +1,5 @@
+import { Geist_Mono, Rubik } from "next/font/google";
+import { home } from "@/resources";
 import type {
   DataStyleConfig,
   FontsConfig,
@@ -7,8 +9,6 @@ import type {
   SchemaConfig,
   StyleConfig,
 } from "@/types";
-import { Geist_Mono, Rubik } from "next/font/google";
-import { home } from "./index";
 
 export const baseURL: string = "https://hyperdrivemedia.co/";
 
