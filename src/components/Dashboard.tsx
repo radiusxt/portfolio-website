@@ -121,23 +121,28 @@ export async function Dashboard({ username, activity, gallery }: DashboardProps)
       {gallery &&
         <Loading
           fallback={
-            <Card
-              fill
-              direction="column"
-              horizontal="center"
-              width="xs"
-              border="neutral-medium"
-              radius="xl"
-            >
-              <Media
-                src=""
-                aspectRatio="16/9"
+            <Row fill horizontal="center">
+              <Card
+                direction="row"
+                width="xs"
+                border="neutral-alpha-medium"
                 radius="xl"
-                bottomRadius="l"
-                loading
-              />
-              <Skeleton shape="line" height="s" margin="16" />
-            </Card>
+                marginX="104"
+                s={{
+                  direction: "column",
+                  style: { width: "60vw" }
+                }}
+              >
+                <Media
+                  src=""
+                  aspectRatio="16/9"
+                  radius="xl"
+                  bottomRadius="l"
+                  loading
+                />
+                <Skeleton shape="line" height="s" margin="16" />
+              </Card>
+            </Row>
           }
         >
           <TiltFx intensity={1}>
