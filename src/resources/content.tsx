@@ -73,8 +73,15 @@ export const about: About = {
     experience: [
       {
         role: "Software Engineer",
+        company: "Opengear",
+        location: "Brisbane, AU",
+        timeframe: "Nov '26 - Present",
+      },
+      {
+        role: "Software Engineer",
         company: "Freelance",
-        timeframe: "Jan '26 - Present",
+        location: "Remote",
+        timeframe: "Jan '26 - Nov '26",
       },
       {
         role: "Academic Tutor",
@@ -93,13 +100,7 @@ export const about: About = {
         company: "ifm efector",
         location: "Gold Coast, AU",
         timeframe: "Dec '22 - Jun '23",
-      },
-      {
-        role: "Sales & Technician Specialist",
-        company: "PTC Phone Tech & Comm",
-        location: "Brisbane, AU",
-        timeframe: "Jan '22 - Nov '22",
-      },
+      }
     ],
   },
   technical: {
