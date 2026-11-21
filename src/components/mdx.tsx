@@ -70,7 +70,7 @@ function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
       fallback={
         <Media
           src=""
-          maxWidth="m"
+          width="m"
           radius="xl"
           border="transparent"
           aspectRatio="16/9"
@@ -82,7 +82,7 @@ function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
       <Media
         src={src}
         alt={alt}
-        maxWidth="m"
+        width="m"
         radius="xl"
         border="neutral-medium"
         marginBottom="4"
